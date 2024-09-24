@@ -41,7 +41,7 @@ export const ReceiveAtHomeContainer = ({ receiveAtHomeFunctions }: Props) => {
   const translations = useTranslations("receive-at-home-container");
   const { setRef_ReceiveAtHomeSection } = useRefStore();
   const receiveAtHomeSectionRef = useRef<HTMLDivElement | null>(null);
-  const [isClient, setIsClient] = useState(false);
+  // const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -65,9 +65,9 @@ export const ReceiveAtHomeContainer = ({ receiveAtHomeFunctions }: Props) => {
     resolver: zodResolver(FormSchema),
   });
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
 
   useEffect(() => {
     setValue("country", "Netherlands");

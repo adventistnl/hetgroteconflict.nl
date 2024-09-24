@@ -20,7 +20,7 @@ export const MainContainer = ({ children }: Props) => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const router = useRouter();
   const [openNavbar, setOpenNavbar] = useState(false);
-  const { ref_AboutSection, ref_DownloadSection, ref_TalkToUsSection } =
+  const { ref_AboutSection, ref_DownloadSection } =
     useRefStore();
 
   //Handlers
