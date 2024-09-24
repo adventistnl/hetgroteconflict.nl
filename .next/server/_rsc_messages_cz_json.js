@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "_rsc_messages_cz_json";
+exports.ids = ["_rsc_messages_cz_json"];
+exports.modules = {
+
+/***/ "(rsc)/./messages/cz.json":
+/*!**************************!*\
+  !*** ./messages/cz.json ***!
+  \**************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"home-page-container":{"title":"Projekt Velký spor věků","subtitle":"Objevte odpovědi na nejhlubší otázky o osudu lidstva. Stáhněte si nebo obdržíte domů knihu, která odhaluje boj mezi dobrem a zlem a jak se můžete připravit na budoucnost.","download-button":"Stáhnout","receive-at-home-button":"Obdržet doma"},"book-cover-container":{"downloads":"Stažení","languages":"Jazyky"},"summary-container":{"summary":"Shrnutí","paragraph-1":"Myslíte si, že se svět zlepšuje, nebo zhoršuje? Není překvapením, že velká většina lidí dnes věří, že svět se zhoršuje. Možná je tento globální pesimismus výsledkem kultury nasáklé špatnými zprávami, nebo možná instinktivně víme, že se za srdcem této knihy skrývá otřesná pravda: Na naší planetě je něco hluboce špatně a my jsme bezmocní to napravit.","paragraph-2":"Velký spor věků nejen odhaluje původ lidské degradace, ale také odkrývá titánský boj, který zuří pod hlukem pandemií a nebezpečí, korupce a masakrů, vražd a chaosu. V tomto úžasném díle zjistíte, že zlo má tvář, dobro má Šampiona a hřích má konec. Pokud se chcete připravit na konec tohoto světa a na příchod slavného světa, musíte si přečíst tuto knihu."},"book-language-container":{"language":"Jazyk:"},"book-available-formats-container":{"available":"Dostupné:","audio":"Audio","promotional":"Propagační materiály","reading":"Čtecí plán","study":"Studijní průvodce","no-options":"Pro tento jazyk zatím nemáme žádné možnosti ke stažení."},"download-menubar":{"download":"Stáhnout","promotional":"Propagační materiály","reading":"Čtecí plán","study":"Studijní průvodce"},"select-language":{"no-results":"Nebyly nalezeny žádné výsledky."},"select-country":{"netherlands":"Nizozemsko","belgium":"Belgie","germany":"Německo"},"receive-at-home-container":{"title":"Obdržet doma","subtitle":"Přijměte transformaci! Objevte život měnící pravdy ve Velkém konfliktu. Požádejte o svou kopii a najděte naději přímo u svého prahu.","form-errors":{"country":"Vyberte svou zemi, prosím","name":"Zadejte své jméno, prosím","email":"Zadejte svůj e-mail, prosím","valid-email":"Zadejte platný e-mail, prosím","street":"Zadejte svou ulici, prosím","number":"Zadejte své číslo a doplněk (pokud existuje), prosím","city":"Zadejte své město, prosím","postCode":"Zadejte své PSČ, prosím"},"form-placeholders":{"name":"Jméno","street":"Ulice","number":"Číslo a doplněk","city":"Město","postCode":"PSČ"},"success-message":"Objednávka je v procesu! Zkontrolujte prosím svou e-mailovou schránku.","error-message":"Při zpracování vaší objednávky došlo k chybě. Zkuste to prosím později.","loading":"Odesílání...","button":"Objednat nyní"},"navbar":{"about":"O knize","download":"Stáhnout","contact":"Kontaktujte nás"},"talk-to-us-container":{"title":"Kontaktujte nás","form-errors":{"name":"Prosím, zadejte své jméno","email":"Prosím, zadejte svůj e-mail","valid-email":"Prosím, zadejte platný e-mail","message":"Prosím, napište svou zprávu"},"form-placeholders":{"name":"Jméno","message":"Zpráva"},"success-message":"Zpráva byla úspěšně odeslána!","error-message":"Při odesílání zprávy došlo k chybě. Zkuste to prosím později","loading":"Odesílání...","button":"Odeslat"},"footer":{"policy":"Zásady ochrany osobních údajů","legal":"Právní upozornění","tradmark":"Používání ochranných známek a log"}}');
+
+/***/ })
+
+};
+;
