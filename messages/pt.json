@@ -79,7 +79,8 @@
     },
     "form-placeholders": {
       "name": "Nome",
-      "message": "Mensagem"
+      "message": "Mensagem",
+      "email": "Email"
     },
     "success-message": "Mensagem enviada com sucesso!",
     "error-message": "Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde",

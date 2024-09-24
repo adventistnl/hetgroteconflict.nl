@@ -18,22 +18,22 @@ interface Props {
 }
 
 const CustomTextField = styled(TextField)(() => ({
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: '#E0E3E7',
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#E0E3E7",
     },
-    '&:hover fieldset': {
-      borderColor: '#B2BAC2',
+    "&:hover fieldset": {
+      borderColor: "#B2BAC2",
     },
-    '&.Mui-focused fieldset': {
-      borderColor: '#E0E3E7',
+    "&.Mui-focused fieldset": {
+      borderColor: "#E0E3E7",
     },
   },
-  '& .MuiInputLabel-root': {
-    color: '#E0E3E7',
+  "& .MuiInputLabel-root": {
+    color: "#E0E3E7",
   },
-  '& .MuiInputLabel-root.Mui-focused': {
-    color: '#E0E3E7',
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "#E0E3E7",
   },
 }));
 
@@ -41,19 +41,34 @@ export const ReceiveAtHomeContainer = ({ receiveAtHomeFunctions }: Props) => {
   const translations = useTranslations("receive-at-home-container");
   const { setRef_ReceiveAtHomeSection } = useRefStore();
   const receiveAtHomeSectionRef = useRef<HTMLDivElement | null>(null);
-  // const [isClient, setIsClient] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
   const FormSchema = z.object({
-    country: z.string({ required_error: translations("form-errors.country") }).min(3, { message: translations("form-errors.country") }),
-    name: z.string({ required_error: translations("form-errors.name") }).min(3, { message: translations("form-errors.name") }),
-    email: z.string({ required_error: translations("form-errors.email") }).min(3, { message: translations("form-errors.email") }).email({ message: translations("form-errors.valid-email") }),
-    street: z.string({ required_error: translations("form-errors.street") }).min(3, { message: translations("form-errors.street") }),
-    number: z.string({ required_error: translations("form-errors.number") }).min(2, { message: translations("form-errors.number") }),
-    city: z.string({ required_error: translations("form-errors.city") }).min(3, { message: translations("form-errors.city") }),
-    postCode: z.string({ required_error: translations("form-errors.postCode") }).min(3, { message: translations("form-errors.postCode") }),
+    country: z
+      .string({ required_error: translations("form-errors.country") })
+      .min(3, { message: translations("form-errors.country") }),
+    name: z
+      .string({ required_error: translations("form-errors.name") })
+      .min(3, { message: translations("form-errors.name") }),
+    email: z
+      .string({ required_error: translations("form-errors.email") })
+      .min(3, { message: translations("form-errors.email") })
+      .email({ message: translations("form-errors.valid-email") }),
+    street: z
+      .string({ required_error: translations("form-errors.street") })
+      .min(3, { message: translations("form-errors.street") }),
+    number: z
+      .string({ required_error: translations("form-errors.number") })
+      .min(2, { message: translations("form-errors.number") }),
+    city: z
+      .string({ required_error: translations("form-errors.city") })
+      .min(3, { message: translations("form-errors.city") }),
+    postCode: z
+      .string({ required_error: translations("form-errors.postCode") })
+      .min(3, { message: translations("form-errors.postCode") }),
   });
 
   const {
@@ -65,9 +80,9 @@ export const ReceiveAtHomeContainer = ({ receiveAtHomeFunctions }: Props) => {
     resolver: zodResolver(FormSchema),
   });
 
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, []);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     setValue("country", "Netherlands");
@@ -105,50 +120,60 @@ export const ReceiveAtHomeContainer = ({ receiveAtHomeFunctions }: Props) => {
   );
 
   return (
-    <div
-      className="flex w-full bg-primary relative pb-12"
-      ref={receiveAtHomeSectionRef}
-    >
-      <Image
-        className="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover opacity-50"
-        src="/book-background.svg"
-        alt="book-background"
-        width={5000}
-        height={5000}
-      />
-      <form
-        className="flex w-full flex-col z-10 gap-3 p-2 mt-12 ml-12 laptop:w-[450px] relative"
-        onSubmit={handleSubmit(handleOrder)}
+    isClient && (
+      <div
+        className="relative flex w-full bg-primary pb-12"
+        ref={receiveAtHomeSectionRef}
       >
-        <h6 className="text-5xl font-bold text-white drop-shadow-2xl">{translations("title")}</h6>
-        <h6 className="text-gray drop-shadow-md">{translations("subtitle")}</h6>
-        
-        <div className="w-5/6">
-          <SelectCountry setValue={setValue} />
-          <span className="text-xs text-destructive">
-            {errors?.country?.message}
-          </span>
-        </div>
-        
-        {renderInput("name", translations("form-placeholders.name"))}
-        {renderInput("email", translations("form-placeholders.email"))}
-        {renderInput("street", translations("form-placeholders.street"))}
-        {renderInput("number", translations("form-placeholders.number"))}
-        {renderInput("city", translations("form-placeholders.city"))}
-        {renderInput("postCode", translations("form-placeholders.postCode"))}
-        
-        <div className="flex w-5/6 flex-col items-center justify-center gap-2">
-          <Button type="submit" size="md" disabled={isLoading}>
-            {isLoading ? translations("loading") : translations("button")}
-          </Button>
-          {error && (
-            <span className="text-sm font-medium text-destructive">{error}</span>
-          )}
-          {success && (
-            <span className="text-sm font-medium text-green-500">{success}</span>
-          )}
-        </div>
-      </form>
-    </div>
+        <Image
+          className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform object-cover opacity-50"
+          src="/book-background.svg"
+          alt="book-background"
+          width={5000}
+          height={5000}
+        />
+        <form
+          className="relative z-10 ml-12 mt-12 flex w-full flex-col gap-3 p-2 laptop:w-[450px]"
+          onSubmit={handleSubmit(handleOrder)}
+        >
+          <h6 className="text-5xl font-bold text-white drop-shadow-2xl">
+            {translations("title")}
+          </h6>
+          <h6 className="text-gray drop-shadow-md">
+            {translations("subtitle")}
+          </h6>
+
+          <div className="w-5/6">
+            <SelectCountry setValue={setValue} />
+            <span className="text-xs text-destructive">
+              {errors?.country?.message}
+            </span>
+          </div>
+
+          {renderInput("name", translations("form-placeholders.name"))}
+          {renderInput("email", "Email")}
+          {renderInput("street", translations("form-placeholders.street"))}
+          {renderInput("number", translations("form-placeholders.number"))}
+          {renderInput("city", translations("form-placeholders.city"))}
+          {renderInput("postCode", translations("form-placeholders.postCode"))}
+
+          <div className="flex w-5/6 flex-col items-center justify-center gap-2">
+            <Button type="submit" size="md" disabled={isLoading}>
+              {isLoading ? translations("loading") : translations("button")}
+            </Button>
+            {error && (
+              <span className="text-sm font-medium text-destructive">
+                {error}
+              </span>
+            )}
+            {success && (
+              <span className="text-sm font-medium text-green-500">
+                {success}
+              </span>
+            )}
+          </div>
+        </form>
+      </div>
+    )
   );
 };

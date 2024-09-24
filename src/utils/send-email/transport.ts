@@ -11,13 +11,16 @@ const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
 //   },
 // });
 
-//GoDaddy:
+//Microsoft:
 export const transport = nodemailer.createTransport({
-  host: "smtpout.secureserver.net",
-  port: 465,
-  secure: true,
+  host: "smtp.office365.com",
+  port: 587,
+  secure: false,
   auth: {
     user: SMTP_EMAIL,
     pass: SMTP_PASSWORD,
+  },
+  tls: {
+    ciphers: "SSLv3",
   },
 });
