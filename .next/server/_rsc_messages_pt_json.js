@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "_rsc_messages_pt_json";
+exports.ids = ["_rsc_messages_pt_json"];
+exports.modules = {
+
+/***/ "(rsc)/./messages/pt.json":
+/*!**************************!*\
+  !*** ./messages/pt.json ***!
+  \**************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"home-page-container":{"title":"O Projeto do Grande Conflito","subtitle":"Descubra as respostas para as perguntas mais profundas sobre o destino da humanidade. Baixe ou receba em casa o livro que revela a batalha entre o bem e o mal, e como você pode estar preparado para o futuro.","download-button":"Baixar","receive-at-home-button":"Receber em casa"},"book-cover-container":{"downloads":"Downloads","languages":"Idiomas"},"summary-container":{"summary":"Resumo","paragraph-1":"Você acha que o mundo está melhorando ou piorando? Não é surpresa que a grande maioria das pessoas hoje acredite que o mundo está piorando. Talvez esse pessimismo global seja o resultado de uma cultura imersa em más notícias, ou talvez saibamos instintivamente a verdade chocante apresentada no coração deste livro: Algo está profundamente errado com o nosso planeta, e somos impotentes para consertá-lo.","paragraph-2":"O Grande Conflito não apenas revela a origem da degradação humana, mas também expõe a luta titânica que acontece sob o barulho de pandemias e perigos, corrupção e carnificina, assassinato e caos. Nesta obra impressionante, você descobrirá que o mal tem um rosto, o bem tem um Campeão, e o pecado tem um fim. Se você deseja se preparar para o fim deste mundo e para o glorioso mundo vindouro, precisa ler este livro."},"book-language-container":{"language":"Idioma:"},"book-available-formats-container":{"available":"Disponível:","audio":"Áudio","promotional":"Materiais Promocionais","reading":"Plano de Leitura","study":"Guia de Estudo","no-options":"Ainda não temos opções de download para este idioma."},"download-menubar":{"download":"Baixar","promotional":"Materiais Promocionais","reading":"Plano de Leitura","study":"Guia de Estudo"},"select-language":{"no-results":"Nenhum resultado encontrado."},"select-country":{"netherlands":"Países Baixos","belgium":"Bélgica","germany":"Alemanha"},"receive-at-home-container":{"title":"Receber em casa","subtitle":"Abraça a transformação! Descobre verdades que mudam vidas em O Grande Conflito. Solicita a tua cópia e encontra esperança à porta.","form-errors":{"country":"Por favor, selecione seu país","name":"Por favor, insira seu nome","email":"Por favor, insira seu e-mail","valid-email":"Por favor, insira um e-mail válido","street":"Por favor, insira sua rua","number":"Por favor, insira seu número e complemento (se houver)","city":"Por favor, insira sua cidade","postCode":"Por favor, insira seu código postal"},"form-placeholders":{"name":"Nome","street":"Rua","number":"Número e complemento","city":"Cidade","postCode":"Código Postal"},"success-message":"Pedido em processamento! Por favor, verifique sua caixa de e-mail.","error-message":"Ocorreu um erro ao processar seu pedido. Por favor, tente novamente mais tarde.","loading":"Enviando...","button":"Pedir agora"},"navbar":{"about":"Sobre o livro","download":"Baixar","contact":"Fale conosco"},"talk-to-us-container":{"title":"Fale conosco","form-errors":{"name":"Por favor, digite seu nome","email":"Por favor, digite seu e-mail","valid-email":"Por favor, digite um e-mail válido","message":"Por favor, digite sua mensagem"},"form-placeholders":{"name":"Nome","message":"Mensagem"},"success-message":"Mensagem enviada com sucesso!","error-message":"Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde","loading":"Enviando...","button":"Enviar"},"footer":{"policy":"Política de Privacidade","legal":"Aviso Legal","tradmark":"Uso de Marcas Registradas e Logotipos"}}');
+
+/***/ })
+
+};
+;

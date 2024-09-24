@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "_rsc_messages_zh_json";
+exports.ids = ["_rsc_messages_zh_json"];
+exports.modules = {
+
+/***/ "(rsc)/./messages/zh.json":
+/*!**************************!*\
+  !*** ./messages/zh.json ***!
+  \**************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"home-page-container":{"title":"伟大的争议项目","subtitle":"发现关于人类命运最深刻问题的答案。下载或在家接收揭示善与恶斗争的书籍，以及如何为未来做好准备。","download-button":"下载","receive-at-home-button":"在家接收"},"book-cover-container":{"downloads":"下载","languages":"语言"},"summary-container":{"summary":"摘要","paragraph-1":"你认为世界在变得更好还是更坏？毫不奇怪，如今绝大多数人认为世界在变得更糟。也许这种全球性的悲观情绪是因为文化充斥着坏消息，或者我们本能地知道这本书核心中呈现的震撼真相：我们的星球深处存在严重的问题，而我们无力解决它。","paragraph-2":"《伟大的争议》不仅揭示了人类堕落的根源，还揭示了在疫情和危险、腐败和屠杀、谋杀和混乱的喧嚣下，进行的巨大的斗争。在这部令人惊叹的著作中，你将发现邪恶有其面貌，善良有其冠军，罪恶有其终结。如果你想为这个世界的终结和即将到来的荣耀世界做好准备，你必须阅读这本书。"},"book-language-container":{"language":"语言："},"book-available-formats-container":{"available":"可用：","audio":"音频","promotional":"宣传材料","reading":"阅读计划","study":"学习指南","no-options":"我们还没有该语言的下载选项。"},"download-menubar":{"download":"下载","promotional":"宣传材料","reading":"阅读计划","study":"学习指南"},"select-language":{"no-results":"没有找到结果。"},"select-country":{"netherlands":"荷兰","belgium":"比利时","germany":"德国"},"receive-at-home-container":{"title":"在家接收","subtitle":"拥抱转变！在《伟大争论》中发现改变生活的真理。请求您的副本，找到希望就在您家门口。","form-errors":{"country":"请选择您的国家","name":"请输入您的姓名","email":"请输入您的电子邮件","valid-email":"请输入有效的电子邮件","street":"请输入您的街道","number":"请输入您的门牌号和补充信息（如有）","city":"请输入您的城市","postCode":"请输入您的邮政编码"},"form-placeholders":{"name":"姓名","street":"街道","number":"门牌号和补充信息","city":"城市","postCode":"邮政编码"},"success-message":"订单处理中！请检查您的电子邮件。","error-message":"处理您的订单时发生错误。请稍后再试。","loading":"提交中...","button":"立即订购"},"navbar":{"about":"关于本书","download":"下载","contact":"联系我们"},"talk-to-us-container":{"title":"联系我们","form-errors":{"name":"请输入您的姓名","email":"请输入您的电子邮件","valid-email":"请输入有效的电子邮件","message":"请输入您的消息"},"form-placeholders":{"name":"姓名","message":"消息"},"success-message":"消息发送成功！","error-message":"发送消息时出错。请稍后再试","loading":"发送中...","button":"发送"},"footer":{"policy":"隐私政策","legal":"法律声明","tradmark":"商标和徽标使用"}}');
+
+/***/ })
+
+};
+;
