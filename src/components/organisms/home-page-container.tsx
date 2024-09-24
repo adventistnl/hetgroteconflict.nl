@@ -11,7 +11,7 @@ import { HiOutlineCloudDownload as CloudIcon } from "react-icons/hi";
 import { PiHouse as HouseIcon } from "react-icons/pi";
 import { useRefStore } from "../stores/ref-store";
 import { scrollToSection } from "@/utils/scroll-to-section";
-import { TalkToUsContainer } from "./talk-to-us-container";
+// import { TalkToUsContainer } from "./talk-to-us-container";
 import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 import { Footer } from "../molecules/footer";
 
@@ -22,7 +22,7 @@ interface Props {
 
 export const HomePageContainer = ({
   receiveAtHomeFunctions,
-  talkToUsFunctions,
+  // talkToUsFunctions,
 }: Props) => {
   const translations = useTranslations("home-page-container");
   const { ref_DownloadSection, ref_ReceiveAtHomeSection } = useRefStore();

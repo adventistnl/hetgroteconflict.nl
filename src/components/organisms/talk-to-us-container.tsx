@@ -7,9 +7,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Input } from "../atoms/input";
 import { Button } from "../atoms/button";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Textarea } from "../atoms/textarea";
-import { useRefStore } from "../stores/ref-store";
+// import { useRefStore } from "../stores/ref-store";
 
 interface Props {
   talkToUsFunctions: (formData: TalkToUsFormData) => Promise<null>;
@@ -18,9 +18,9 @@ interface Props {
 export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
   //States and Hooks
   const translations = useTranslations("talk-to-us-container");
-  const { setRef_TalkToUsSection } = useRefStore();
+  // const { setRef_TalkToUsSection } = useRefStore();
   const talkToUsSectionRef = useRef<HTMLDivElement | null>(null);
-  const [isClient, setIsClient] = useState(false);
+  // const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -47,13 +47,13 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
   });
 
   //Effects
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
 
-  useEffect(() => {
-    setRef_TalkToUsSection(talkToUsSectionRef);
-  }, []);
+  // useEffect(() => {
+  //   setRef_TalkToUsSection(talkToUsSectionRef);
+  // }, []);
 
   //Handlers
   const handleSendEmail = async (data: TalkToUsFormData) => {
@@ -70,7 +70,6 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
   };
 
   return (
-    isClient && (
       <div
         className="flex w-full items-center justify-center"
         ref={talkToUsSectionRef}
@@ -132,6 +131,5 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
           </div>
         </form>
       </div>
-    )
   );
 };
