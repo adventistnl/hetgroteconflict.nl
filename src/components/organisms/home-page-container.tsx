@@ -30,9 +30,10 @@ export const HomePageContainer = ({
   return (
     <>
       <div
-        className="relative flex w-full flex-col items-center laptop:justify-around pb-12"
+        className="relative flex w-full flex-col items-center laptop:justify-around pb-12 mt-[80px]"
         style={{
-          background: "linear-gradient(to top, #3b3b3b, #e8e8e8) bottom/100% 5% no-repeat", // Aplica o gradiente apenas nos últimos 20% da altura do componente
+          background:
+            "linear-gradient(to top, #3b3b3b, #e8e8e8) bottom/100% 5% no-repeat", // Aplica o gradiente apenas nos últimos 20% da altura do componente
         }}
       >
         <div className="relative flex w-full flex-col items-center laptop:flex-row laptop:justify-around laptop:px-10">

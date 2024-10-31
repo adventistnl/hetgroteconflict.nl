@@ -20,8 +20,7 @@ export const MainContainer = ({ children }: Props) => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const router = useRouter();
   const [openNavbar, setOpenNavbar] = useState(false);
-  const { ref_AboutSection, ref_DownloadSection } =
-    useRefStore();
+  const { ref_AboutSection, ref_DownloadSection } = useRefStore();
 
   //Handlers
   const handleOpenNavbar = () => {
@@ -30,7 +29,7 @@ export const MainContainer = ({ children }: Props) => {
 
   return (
     <div className="relative">
-      <header className="flex items-center justify-between bg-secondary px-5 py-3">
+      <header className="flex items-center justify-between bg-secondary px-5 py-3 fixed w-full z-[15] shadow-md shadow-brown">
         <Image
           src="/logo.svg"
           alt="logo"
@@ -76,7 +75,7 @@ export const MainContainer = ({ children }: Props) => {
         )}
       </header>
       {openNavbar && (
-        <nav className="absolute top-16 z-50 flex h-full w-screen items-start justify-center rounded-lg bg-secondary laptop:bottom-0 laptop:right-0 laptop:mx-3 laptop:h-52 laptop:w-52">
+        <nav className="fixed top-16 z-50 flex h-screen w-screen items-start justify-center rounded-lg bg-secondary laptop:bottom-0 laptop:right-0 laptop:mx-3 laptop:h-52 laptop:w-52">
           <ul className="mt-28 flex flex-col gap-5 p-8 text-center text-2xl text-primary laptop:mt-0">
             <li
               className="cursor-pointer"
