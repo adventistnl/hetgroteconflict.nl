@@ -109,7 +109,8 @@
   "navbar": {
     "about": "About the book",
     "download": "Download",
-    "contact": "Talk to us"
+    "contact": "Talk to us",
+    "participate": "Participate"
   },
   "talk-to-us-container": {
     "title": "Talk to us",
