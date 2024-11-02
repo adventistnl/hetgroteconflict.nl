@@ -5,6 +5,43 @@
     "download-button": "Download",
     "receive-at-home-button": "Receive at home"
   },
+  "participate-page-container": {
+    "video-container": {
+      "name": "Ted N. C. Wilson",
+      "role": "President, Seventh-day Adventistist Church",
+      "play-sub-text": "Participate Now"
+    },
+    "quote-container": {
+      "quote": "The Lord impressed me to write this book in order that without delay it might be circulated in every part of the world, because the warnings it contains are necessary for preparing a people to stand in the day of the Lord.",
+      "author": "Ellen G. White",
+      "book": "Mannuscript 24",
+      "year": "1891"
+    },
+    "how-to-participate-container": {
+      "title": "How to Participate",
+      "step-sub": "step",
+      "step-one": {
+        "step-count": "01",
+        "explanation": "Present Project to Local Church Board",
+        "link-sub": "Download Board Proposal"
+      },
+      "step-two": {
+        "step-count": "02",
+        "explanation": "Choose Outreach Territory",
+        "link-sub": ""
+      },
+      "step-three": {
+        "step-count": "03",
+        "explanation": "Order Inventory",
+        "link-sub": "Find Publishing House"
+      },
+      "step-four": {
+        "step-count": "04",
+        "explanation": "Distribute",
+        "link-sub": ""
+      }
+    }
+  },
   "book-cover-container": {
     "downloads": "Downloads",
     "languages": "Languages"
@@ -13,6 +50,11 @@
     "summary": "Summary",
     "paragraph-1": "Do you think the world is getting better or worse? Unsurprisingly, a huge majority of people today believe the world is getting worse. Maybe this global pessimism is the result of a culture bathed in bad news, or maybe we inherently know the earthshaking truth presented at the heart of this book: Something is deeply wrong with our planet, and we are powerless to fix it.",
     "paragraph-2": "The Great Controversy not only unveils the origin of human degradation, but also discloses the titanic struggle raging below the din of pandemics and peril, corruption and carnage, murder and mayhem. In this astonishing work you will discover that evil has a face, good has a Champion, and sin has an end. If you want to prepare for the end of this world and the glorious world to come, you must read this book."
+  },
+  "distribution-package-container": {
+    "summary": "The Distribution Package ",
+    "paragraph-1": "Are you ready to help share a message of hope? In this special distribution campaign for The Great Controversy, we offer a complete package of free promotional materials designed to support the outreach of this powerful message in your community.",
+    "paragraph-2": "Download the complete package now and be part of this movement transforming lives! Get creative, engage your community, and help spread the message of The Great Controversy effectively."
   },
   "book-language-container": {
     "language": "Language:"
