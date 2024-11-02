@@ -7,17 +7,30 @@ import { useEffect, useState } from "react";
 export const VideoContainer = () => {
   const [showVideo, setShowVideo] = useState(false);
   const [buttonSize, setButtonSize] = useState(65);
+  const [inframeHeigth, setInframeHeigth] = useState("56.25%");
   const translations = useTranslations(
     "participate-page-container.video-container"
   );
 
   const handleResize = () => {
-    if (window.innerWidth > 768) {
-      setButtonSize(65);
+    if (window.innerWidth <= 500) {
+      setButtonSize(30);
+      setInframeHeigth("24.25%");
     } else if (window.innerWidth <= 600) {
       setButtonSize(30);
-    } else {
+      setInframeHeigth("27.25%");
+    } else if (window.innerWidth <= 768) {
       setButtonSize(50);
+      setInframeHeigth("30.25%");
+    } else if (window.innerWidth <= 960) {
+      setButtonSize(50);
+      setInframeHeigth("36.25%");
+    } else if (window.innerWidth <= 1200) {
+      setButtonSize(50);
+      setInframeHeigth("46.25%");
+    } else {
+      setButtonSize(65);
+      setInframeHeigth("56.25%");
     }
   };
 
@@ -73,7 +86,7 @@ export const VideoContainer = () => {
               title="vimeo-player"
               src="https://player.vimeo.com/video/749148790?h=5fb7c065f9"
               width="100%"
-              height="56.25%"
+              height={inframeHeigth}
               allowFullScreen
             />
           </div>
