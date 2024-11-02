@@ -42,7 +42,7 @@ export const VideoContainer = () => {
 
   return (
     <div className="bg-deep_blue w-full flex justify-center">
-      <div className="relative max-w-[1800px] flex justify-center w-full flex gap-6 flex-col lg:flex-row-reverse xl:flex-row-reverse items-center justify-between ">
+      <div className="relative max-w-[1800px] flex justify-center w-full flex flex-col lg:flex-row-reverse xl:flex-row-reverse items-center justify-between ">
         <div className="relative flex items-center justify-center bg-right bg-no-repeat lg:max-w-[1074px]">
           <Image
             src="/video-cover.svg"
@@ -69,8 +69,8 @@ export const VideoContainer = () => {
           </button>
         </div>
 
-        <div className="md:absolute pb-4 flex flex-grow flex-col gap-2 justify-start lg:left-[140px] xl:left-[240px] left-[100px] bottom-[100px] lg:bottom-[150px] ">
-          <h1 className="text-3xl sm:text-5xl font-plus-jakarta-sans text-white font-normal drop-shadow-2xl">
+        <div className="md:absolute p-4 flex flex-grow flex-col gap-2 justify-start lg:left-[140px] xl:left-[240px] left-[100px] bottom-[70px] ">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-plus-jakarta-sans text-white font-normal drop-shadow-2xl">
             {translations("name")}
           </h1>
           <p className="text-white max-w-[60%] text-base">
