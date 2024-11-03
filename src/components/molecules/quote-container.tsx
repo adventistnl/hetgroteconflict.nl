@@ -26,7 +26,7 @@ export const QuoteContainer = () => {
   }, []);
 
   return (
-    <div className="flex flex-row flex-no-wrap gap-2 items-start max-w-[925px] p-4">
+    <div className="flex flex-row flex-no-wrap gap-2 items-start max-w-[925px] p-8">
       <Image
         className=""
         src="/quote.svg"

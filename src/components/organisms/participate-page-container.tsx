@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { QuoteContainer } from "../molecules/quote-container";
 import { ParticipateContainer } from "../molecules/participate-container";
+import { DistributionContainer } from "./distribution-container";
 
 interface Props {}
 
@@ -28,6 +29,7 @@ export const ParticipatePageContainer = ({}: Props) => {
         <CompaniesContainer />
         <QuoteContainer />
         <ParticipateContainer />
+        <DistributionContainer />
       </div>
       <Footer />
     </>
