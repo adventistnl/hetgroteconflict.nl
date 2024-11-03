@@ -5,7 +5,7 @@ import Image from "next/image";
 import { HamburguerIcon } from "../atoms/hamburguer-icon";
 import { useRouter } from "next/navigation";
 import { SelectTranslation } from "./select-translation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { scrollToSection } from "@/utils/scroll-to-section";
 import { useRefStore } from "../stores/ref-store";
@@ -19,6 +19,8 @@ export const MainContainer = ({ children }: Props) => {
   const translations = useTranslations("navbar");
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const router = useRouter();
+  const locale = useLocale();
+
   const [openNavbar, setOpenNavbar] = useState(false);
   const { ref_AboutSection, ref_DownloadSection } = useRefStore();
 
@@ -44,13 +46,15 @@ export const MainContainer = ({ children }: Props) => {
               <ul className="flex flex-row gap-16 text-center text-primary">
                 <li
                   className="cursor-pointer"
-                  onClick={() => scrollToSection(ref_AboutSection)}
+                  onClick={() =>
+                    router.push(`/${locale}/${translations("about")}`)
+                  }
                 >
                   {translations("about")}
                 </li>
                 <li
                   className="cursor-pointer"
-                  onClick={() => scrollToSection(ref_DownloadSection)}
+                  onClick={() => scrollToSection(ref_AboutSection)}
                 >
                   {translations("download")}
                 </li>
@@ -80,7 +84,8 @@ export const MainContainer = ({ children }: Props) => {
             <li
               className="cursor-pointer"
               onClick={() => {
-                scrollToSection(ref_AboutSection);
+                // scrollToSection(ref_AboutSection);
+                router.push(`/${locale}/${translations("about")}`);
                 setOpenNavbar(false);
               }}
             >

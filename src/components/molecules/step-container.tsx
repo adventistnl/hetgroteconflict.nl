@@ -75,7 +75,8 @@ export const StepContainer = ({
       </p>
       {href && (
         <a
-          className="border-b-[1.5px] border-black w-auto w-max"
+          className="underline
+        "
           href={href}
           target="_blank"
         >

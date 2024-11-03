@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { QuoteContainer } from "../molecules/quote-container";
 import { ParticipateContainer } from "../molecules/participate-container";
-import { DistributionContainer } from "./distribution-container";
+import { DistributionContainer } from "../molecules/distribution-container";
 
 interface Props {}
 

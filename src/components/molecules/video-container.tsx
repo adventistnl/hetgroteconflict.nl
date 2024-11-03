@@ -15,19 +15,19 @@ export const VideoContainer = () => {
   const handleResize = () => {
     if (window.innerWidth <= 500) {
       setButtonSize(30);
-      setInframeHeigth("24.25%");
+      setInframeHeigth("26.25%");
     } else if (window.innerWidth <= 600) {
       setButtonSize(30);
-      setInframeHeigth("27.25%");
+      setInframeHeigth("26.25%");
     } else if (window.innerWidth <= 768) {
       setButtonSize(50);
-      setInframeHeigth("30.25%");
+      setInframeHeigth("36.25%");
     } else if (window.innerWidth <= 960) {
       setButtonSize(50);
-      setInframeHeigth("36.25%");
+      setInframeHeigth("46.25%");
     } else if (window.innerWidth <= 1200) {
       setButtonSize(50);
-      setInframeHeigth("46.25%");
+      setInframeHeigth("56.25%");
     } else {
       setButtonSize(65);
       setInframeHeigth("56.25%");
@@ -38,6 +38,20 @@ export const VideoContainer = () => {
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" || event.key === "Backspace") {
+        setShowVideo(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   return (
@@ -80,13 +94,19 @@ export const VideoContainer = () => {
         {showVideo && (
           <div
             onClick={() => setShowVideo(false)}
-            className="fixed  flex flex-col items-center justify-center inset-0 z-10 bg-black bg-opacity-80 w-[100vw] h-[100vh]"
+            className="fixed flex flex-col items-center justify-center inset-0 z-10 w-[100vw] h-[100vh]"
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+            }}
           >
             <iframe
               title="vimeo-player"
               src="https://player.vimeo.com/video/749148790?h=5fb7c065f9"
               width="100%"
               height={inframeHeigth}
+              style={{
+                maxWidth: 800,
+              }}
               allowFullScreen
             />
           </div>
