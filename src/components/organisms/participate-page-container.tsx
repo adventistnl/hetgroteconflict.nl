@@ -6,6 +6,8 @@ import { Footer } from "../molecules/footer";
 import { VideoContainer } from "../molecules/video-container";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import { QuoteContainer } from "../molecules/quote-container";
+import { ParticipateContainer } from "../molecules/participate-container";
 
 interface Props {}
 
@@ -21,9 +23,11 @@ export const ParticipatePageContainer = ({}: Props) => {
 
   return (
     <>
-      <div className="relative flex w-full flex-col items-center laptop:justify-around pb-12 mt-[70px]">
+      <div className="relative flex w-full flex-col items-center laptop:justify-around pb-12 mt-[70px] gap-20">
         <VideoContainer />
         <CompaniesContainer />
+        <QuoteContainer />
+        <ParticipateContainer />
       </div>
       <Footer />
     </>
