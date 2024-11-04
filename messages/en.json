@@ -42,6 +42,12 @@
       }
     }
   },
+  "publish-houses": {
+    "language": "Languages",
+    "location": "Location",
+    "email": "Email",
+    "website": "Website"
+  },
   "book-cover-container": {
     "downloads": "Downloads",
     "languages": "Languages"
@@ -110,7 +116,8 @@
     "about": "About the book",
     "download": "Download",
     "contact": "Talk to us",
-    "participate": "Participate"
+    "participate": "Participate",
+    "publish-houses": "Publish Houses"
   },
   "talk-to-us-container": {
     "title": "Talk to us",
