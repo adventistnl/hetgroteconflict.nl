@@ -1,9 +1,52 @@
 {
   "home-page-container": {
-    "title": "O Projeto do Grande Conflito",
-    "subtitle": "Descubra as respostas para as perguntas mais profundas sobre o destino da humanidade. Baixe ou receba em casa o livro que revela a batalha entre o bem e o mal, e como você pode estar preparado para o futuro.",
+    "title": "O Grande Conflito",
+    "subtitle": "Descubra as respostas para as perguntas mais profundas sobre o destino da humanidade. Baixe ou receba em casa o livro que revela a batalha entre o bem e o mal, e como você pode se preparar para o futuro.",
     "download-button": "Baixar",
     "receive-at-home-button": "Receber em casa"
+  },
+  "participate-page-container": {
+    "video-container": {
+      "name": "Ted N. C. Wilson",
+      "role": "Presidente, Igreja Adventista do Sétimo Dia",
+      "play-sub-text": "Participe Agora"
+    },
+    "quote-container": {
+      "quote": "O Senhor me impressionou a escrever este livro para que *sem demora* ele fosse circulado em *todas as partes* do mundo, porque os avisos que ele contém são necessários para preparar um povo para estar em pé no dia do Senhor.",
+      "author": "Ellen G. White",
+      "book": "Manuscrito 24",
+      "year": "1891"
+    },
+    "how-to-participate-container": {
+      "title": "Como Participar",
+      "step-sub": "passo",
+      "step-one": {
+        "step-count": "01",
+        "explanation": "Apresentar Projeto ao Conselho da Igreja Local",
+        "link-sub": "Baixar Proposta para o Conselho"
+      },
+      "step-two": {
+        "step-count": "02",
+        "explanation": "Escolher Território de Evangelismo",
+        "link-sub": ""
+      },
+      "step-three": {
+        "step-count": "03",
+        "explanation": "Solicitar Estoque",
+        "link-sub": "Encontrar Casa Publicadora"
+      },
+      "step-four": {
+        "step-count": "04",
+        "explanation": "Distribuir",
+        "link-sub": ""
+      }
+    }
+  },
+  "publish-houses": {
+    "language": "Idiomas",
+    "location": "Localização",
+    "email": "Email",
+    "website": "Site"
   },
   "book-cover-container": {
     "downloads": "Downloads",
@@ -11,8 +54,13 @@
   },
   "summary-container": {
     "summary": "Resumo",
-    "paragraph-1": "Você acha que o mundo está melhorando ou piorando? Não é surpresa que a grande maioria das pessoas hoje acredite que o mundo está piorando. Talvez esse pessimismo global seja o resultado de uma cultura imersa em más notícias, ou talvez saibamos instintivamente a verdade chocante apresentada no coração deste livro: Algo está profundamente errado com o nosso planeta, e somos impotentes para consertá-lo.",
-    "paragraph-2": "O Grande Conflito não apenas revela a origem da degradação humana, mas também expõe a luta titânica que acontece sob o barulho de pandemias e perigos, corrupção e carnificina, assassinato e caos. Nesta obra impressionante, você descobrirá que o mal tem um rosto, o bem tem um Campeão, e o pecado tem um fim. Se você deseja se preparar para o fim deste mundo e para o glorioso mundo vindouro, precisa ler este livro."
+    "paragraph-1": "Você acha que o mundo está melhorando ou piorando? Não surpreendentemente, uma grande maioria das pessoas hoje acredita que o mundo está piorando. Talvez esse pessimismo global seja o resultado de uma cultura imersa em más notícias, ou talvez saibamos inerentemente a verdade impactante apresentada no coração deste livro: Algo está profundamente errado com o nosso planeta, e somos impotentes para consertá-lo.",
+    "paragraph-2": "O Grande Conflito não apenas revela a origem da degradação humana, mas também divulga a luta titânica que ocorre abaixo do barulho de pandemias e perigos, corrupção e carnificina, assassinato e caos. Nesta obra surpreendente, você descobrirá que o mal tem um rosto, o bem tem um Campeão, e o pecado tem um fim. Se você quer se preparar para o fim deste mundo e o glorioso mundo por vir, você deve ler este livro."
+  },
+  "distribution-package-container": {
+    "summary": "O Pacote de Distribuição",
+    "paragraph-1": "Você está pronto para ajudar a compartilhar uma mensagem de esperança? Nesta campanha especial de distribuição para O Grande Conflito, oferecemos um pacote completo de materiais promocionais gratuitos projetados para apoiar o alcance desta poderosa mensagem em sua comunidade.",
+    "paragraph-2": "Baixe o pacote completo agora e faça parte deste movimento que transforma vidas! Seja criativo, envolva sua comunidade e ajude a espalhar a mensagem de O Grande Conflito de forma eficaz."
   },
   "book-language-container": {
     "language": "Idioma:"
@@ -41,16 +89,16 @@
   },
   "receive-at-home-container": {
     "title": "Receber em casa",
-    "subtitle": "Abraça a transformação! Descobre verdades que mudam vidas em O Grande Conflito. Solicita a tua cópia e encontra esperança à porta.",
+    "subtitle": "Abraçe a transformação! Descubra verdades que mudam vidas em O Grande Conflito. Solicite sua cópia e encontre esperança bem na sua porta.",
     "form-errors": {
       "country": "Por favor, selecione seu país",
-      "name": "Por favor, insira seu nome",
-      "email": "Por favor, insira seu e-mail",
-      "valid-email": "Por favor, insira um e-mail válido",
-      "street": "Por favor, insira sua rua",
-      "number": "Por favor, insira seu número e complemento (se houver)",
-      "city": "Por favor, insira sua cidade",
-      "postCode": "Por favor, insira seu código postal"
+      "name": "Por favor, digite seu nome",
+      "email": "Por favor, digite seu email",
+      "valid-email": "Por favor, digite um email válido",
+      "street": "Por favor, digite sua rua",
+      "number": "Por favor, digite seu número e complemento (se houver)",
+      "city": "Por favor, digite sua cidade",
+      "postCode": "Por favor, digite seu código postal"
     },
     "form-placeholders": {
       "name": "Nome",
@@ -59,22 +107,24 @@
       "city": "Cidade",
       "postCode": "Código Postal"
     },
-    "success-message": "Pedido em processamento! Por favor, verifique sua caixa de e-mail.",
-    "error-message": "Ocorreu um erro ao processar seu pedido. Por favor, tente novamente mais tarde.",
+    "success-message": "Pedido em processo! Por favor, verifique sua caixa de e-mail.",
+    "error-message": "Houve um erro ao processar seu pedido. Por favor, tente novamente mais tarde",
     "loading": "Enviando...",
-    "button": "Pedir agora"
+    "button": "Pedir Agora"
   },
   "navbar": {
     "about": "Sobre o livro",
     "download": "Baixar",
-    "contact": "Fale conosco"
+    "contact": "Fale conosco",
+    "participate": "Participe",
+    "publish-houses": "Casas Publicadoras"
   },
   "talk-to-us-container": {
     "title": "Fale conosco",
     "form-errors": {
       "name": "Por favor, digite seu nome",
-      "email": "Por favor, digite seu e-mail",
-      "valid-email": "Por favor, digite um e-mail válido",
+      "email": "Por favor, digite seu email",
+      "valid-email": "Por favor, digite um email válido",
       "message": "Por favor, digite sua mensagem"
     },
     "form-placeholders": {
@@ -89,6 +139,6 @@
   "footer": {
     "policy": "Política de Privacidade",
     "legal": "Aviso Legal",
-    "tradmark": "Uso de Marcas Registradas e Logotipos"
+    "tradmark": "Uso de Marca e Logotipo"
   }
 }
