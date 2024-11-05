@@ -14,6 +14,7 @@ import { scrollToSection } from "@/utils/scroll-to-section";
 // import { TalkToUsContainer } from "./talk-to-us-container";
 import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 import { Footer } from "../molecules/footer";
+import { BookCarousel } from "../molecules/book-carousel";
 
 interface Props {
   receiveAtHomeFunctions: (formData: FormData) => Promise<null>;
@@ -30,7 +31,7 @@ export const HomePageContainer = ({
   return (
     <>
       <div
-        className="relative flex w-full flex-col items-center laptop:justify-around pb-12 mt-[80px]"
+        className="relative flex w-full flex-col items-center laptop:justify-around pb-12 mt-[80px] gap-6"
         style={{
           background:
             "linear-gradient(to top, #3b3b3b, #e8e8e8) bottom/100% 5% no-repeat", // Aplica o gradiente apenas nos últimos 20% da altura do componente
@@ -71,6 +72,7 @@ export const HomePageContainer = ({
         </div>
         <CompaniesContainer />
         <SummaryContainer />
+        <BookCarousel />
       </div>
       <ReceiveAtHomeContainer receiveAtHomeFunctions={receiveAtHomeFunctions} />
       {/* <TalkToUsContainer talkToUsFunctions={talkToUsFunctions} /> */}
