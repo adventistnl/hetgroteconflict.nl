@@ -2,8 +2,11 @@
 
 import { useTranslations } from "next-intl";
 import { StepContainer } from "./step-container";
+import { useState } from "react";
+import { PublishHousesContainer } from "../organisms/publish-houses-container";
 
 export const ParticipateContainer = () => {
+  const [publishHousesIsOpen, setPublishHousesIsOpen] = useState(false);
   const translations = useTranslations(
     "participate-page-container.how-to-participate-container"
   );
@@ -22,6 +25,11 @@ export const ParticipateContainer = () => {
 
   return (
     <div className="flex flex-col gap-10">
+      {publishHousesIsOpen && (
+        <PublishHousesContainer
+          closeHandle={() => setPublishHousesIsOpen(false)}
+        />
+      )}
       <h2 className="text-5xl text-primary text-center">
         {translations("title")}
       </h2>
@@ -33,7 +41,7 @@ export const ParticipateContainer = () => {
           explanation={translationStepOne("explanation")}
           step_count={translationStepOne("step-count")}
           link_sub={translationStepOne("link-sub")}
-          href="http://www.youtube.com.br"
+          href="https://frontend-api.hopeplatform.org/v1/files/648710de30889f2e8a57dae8/tPg1710919333180.docx/Download%20Project%20Proposal.docx"
         />
         <StepContainer
           show_border={true}
@@ -51,7 +59,7 @@ export const ParticipateContainer = () => {
           explanation={translationStepThree("explanation")}
           step_count={translationStepThree("step-count")}
           link_sub={translationStepThree("link-sub")}
-          href="http://www.youtube.com.br"
+          on_press_button={() => setPublishHousesIsOpen(true)}
         />
         <StepContainer
           last_step

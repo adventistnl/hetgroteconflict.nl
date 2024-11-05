@@ -13,6 +13,7 @@ interface Props {
   href?: string;
   last_step?: boolean;
   second_step?: boolean;
+  on_press_button?: VoidFunction;
 }
 export const StepContainer = ({
   explanation,
@@ -23,6 +24,7 @@ export const StepContainer = ({
   href,
   last_step,
   second_step,
+  on_press_button,
 }: Props) => {
   const [isMobile, setIsMoboile] = useState(true);
   const [isMedium, setIsMedium] = useState(true);
@@ -73,16 +75,14 @@ export const StepContainer = ({
       <p>
         <strong>{explanation}</strong>
       </p>
-      {href && (
-        <a
-          className="underline
-        "
-          href={href}
-          target="_blank"
-        >
-          {link_sub}
-        </a>
-      )}
+      <a
+        className="underline-offset-auto hover:cursor-pointer border-b border-b-primary w-max"
+        href={href}
+        onClick={on_press_button}
+        target="_blank"
+      >
+        {link_sub}
+      </a>
     </div>
   );
 };

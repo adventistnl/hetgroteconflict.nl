@@ -9,7 +9,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { scrollToSection } from "@/utils/scroll-to-section";
 import { useRefStore } from "../stores/ref-store";
-import { PublishHousesContainer } from "../organisms/publish-houses-container";
 
 interface Props {
   children: ReactNode;
@@ -23,7 +22,6 @@ export const MainContainer = ({ children }: Props) => {
   const locale = useLocale();
 
   const [openNavbar, setOpenNavbar] = useState(false);
-  const [publishHousesIsOpen, setPublishHousesIsOpen] = useState(false);
   const { ref_AboutSection, ref_DownloadSection } = useRefStore();
 
   //Handlers
@@ -34,11 +32,6 @@ export const MainContainer = ({ children }: Props) => {
   return (
     <div className="relative">
       <header className="flex items-center justify-between bg-secondary px-5 py-3 fixed w-full z-[15] shadow-md shadow-brown">
-        {publishHousesIsOpen && (
-          <PublishHousesContainer
-            closeHandle={() => setPublishHousesIsOpen(false)}
-          />
-        )}
         <Image
           src="/logo.svg"
           alt="logo"
@@ -64,12 +57,6 @@ export const MainContainer = ({ children }: Props) => {
                   onClick={() => scrollToSection(ref_AboutSection)}
                 >
                   {translations("download")}
-                </li>
-                <li
-                  className="cursor-pointer"
-                  onClick={() => setPublishHousesIsOpen(!publishHousesIsOpen)}
-                >
-                  {translations("publish-houses")}
                 </li>
                 {/* <li
                   className="cursor-pointer"
@@ -112,15 +99,6 @@ export const MainContainer = ({ children }: Props) => {
               }}
             >
               {translations("download")}
-            </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => {
-                setPublishHousesIsOpen(!publishHousesIsOpen);
-                setOpenNavbar(false);
-              }}
-            >
-              {translations("publish-houses")}
             </li>
             <li className="mt-12">
               <SelectTranslation />
