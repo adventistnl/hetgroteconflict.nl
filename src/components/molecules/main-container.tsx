@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import { HamburguerIcon } from "../atoms/hamburguer-icon";
 import { useRouter } from "next/navigation";
@@ -22,6 +22,8 @@ export const MainContainer = ({ children }: Props) => {
   const locale = useLocale();
 
   const [openNavbar, setOpenNavbar] = useState(false);
+  const [isVisibleHeader, setIsVisibleHeader] = useState(false);
+
   const { ref_AboutSection, ref_DownloadSection } = useRefStore();
 
   //Handlers
@@ -29,9 +31,27 @@ export const MainContainer = ({ children }: Props) => {
     setOpenNavbar((oldState) => !oldState);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisibleHeader(window.scrollY > 25); // Ajuste o valor 50 conforme necessário
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="relative">
-      <header className="flex items-center justify-between bg-secondary px-5 py-3 fixed w-full z-[15] shadow-md shadow-brown">
+      <header
+        className={`flex items-center justify-between bg-secondary px-5 py-3 fixed w-full z-[15] shadow-md shadow-brown transition-all duration-50 ease-in-out ${!isVisibleHeader ? "shadow-none" : ""}`}
+        style={{
+          boxShadow: isVisibleHeader ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
+        }}
+      >
+        {/* Resto do conteúdo */}
         <Image
           src="/logo.svg"
           alt="logo"
