@@ -114,11 +114,9 @@
     "button": "Nu bestellen"
   },
   "navbar": {
-    "about": "Over het boek",
-    "download": "Downloaden",
     "contact": "Neem contact op",
     "participate": "Deelnemen",
-    "publish-houses": "Uitgeverijen"
+    "home": "Startpagina"
   },
   "talk-to-us-container": {
     "title": "Neem contact op",

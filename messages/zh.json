@@ -114,11 +114,9 @@
     "button": "立即订购"
   },
   "navbar": {
-    "about": "关于这本书",
-    "download": "下载",
     "contact": "联系我们",
     "participate": "参与",
-    "publish-houses": "出版社"
+    "home": "首页"
   },
   "talk-to-us-container": {
     "title": "联系我们",

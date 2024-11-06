@@ -114,11 +114,9 @@
     "button": "Objednat nyní"
   },
   "navbar": {
-    "about": "O knize",
-    "download": "Stáhnout",
     "contact": "Kontaktujte nás",
-    "participate": "Zapojte se",
-    "publish-houses": "Vydavatelství"
+    "participate": "Účastnit se",
+    "home": "Domů"
   },
   "talk-to-us-container": {
     "title": "Kontaktujte nás",

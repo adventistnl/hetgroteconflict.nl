@@ -114,11 +114,9 @@
     "button": "Commander Maintenant"
   },
   "navbar": {
-    "about": "À propos du livre",
-    "download": "Télécharger",
     "contact": "Contactez-nous",
     "participate": "Participer",
-    "publish-houses": "Maisons d'Édition"
+    "home": "Accueil"
   },
   "talk-to-us-container": {
     "title": "Contactez-nous",

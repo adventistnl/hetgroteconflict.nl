@@ -114,11 +114,9 @@
     "button": "Jetzt bestellen"
   },
   "navbar": {
-    "about": "Über das Buch",
-    "download": "Herunterladen",
     "contact": "Kontaktieren Sie uns",
     "participate": "Teilnehmen",
-    "publish-houses": "Verlage"
+    "home": "Startseite"
   },
   "talk-to-us-container": {
     "title": "Kontaktieren Sie uns",

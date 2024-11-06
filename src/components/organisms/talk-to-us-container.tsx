@@ -7,9 +7,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Input } from "../atoms/input";
 import { Button } from "../atoms/button";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Textarea } from "../atoms/textarea";
-// import { useRefStore } from "../stores/ref-store";
+import { useRefStore } from "../stores/ref-store";
 
 interface Props {
   talkToUsFunctions: (formData: TalkToUsFormData) => Promise<null>;
@@ -18,7 +18,7 @@ interface Props {
 export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
   //States and Hooks
   const translations = useTranslations("talk-to-us-container");
-  // const { setRef_TalkToUsSection } = useRefStore();
+  const { setRef_TalkToUsSection } = useRefStore();
   const talkToUsSectionRef = useRef<HTMLDivElement | null>(null);
   // const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -51,9 +51,9 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
   //   setIsClient(true);
   // }, []);
 
-  // useEffect(() => {
-  //   setRef_TalkToUsSection(talkToUsSectionRef);
-  // }, []);
+  useEffect(() => {
+    setRef_TalkToUsSection(talkToUsSectionRef);
+  }, []);
 
   //Handlers
   const handleSendEmail = async (data: TalkToUsFormData) => {
@@ -70,66 +70,67 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
   };
 
   return (
-      <div
-        className="flex w-full items-center justify-center"
-        ref={talkToUsSectionRef}
+    <div
+      className="flex w-full items-center justify-center bg-[#191919]"
+      ref={talkToUsSectionRef}
+    >
+      <form
+        className="flex w-full flex-col items-center justify-center gap-3 p-6 text-primary laptop:w-[450px] text-white"
+        onSubmit={handleSubmit(handleSendEmail)}
       >
-        <form
-          className="flex w-full flex-col items-center justify-center gap-3 p-6 text-primary laptop:w-[450px]"
-          onSubmit={handleSubmit(handleSendEmail)}
-        >
-          <h6 className="py-3 text-center text-3xl">{translations("title")}</h6>
-          <div>
-            <Input
-              className="border-primary"
-              placeholder={translations("form-placeholders.name")}
-              {...register("name")}
-            />
-            <span className="text-xs text-destructive">
-              {errors?.name?.message && errors?.name?.message}
-            </span>
-          </div>
-          <div>
-            <Input
-              className="border-primary"
-              placeholder={"Email"}
-              {...register("email")}
-            />
-            <span className="text-xs text-destructive">
-              {errors?.email?.message && errors?.email?.message}
-            </span>
-          </div>
-          <div>
-            <Textarea
-              placeholder={translations("form-placeholders.message")}
-              {...register("message")}
-            />
+        <h6 className="py-3 text-center text-3xl">{translations("title")}</h6>
+        <div>
+          <Input
+            className="border-primary"
+            placeholder={translations("form-placeholders.name")}
+            {...register("name")}
+          />
+          <span className="text-xs text-destructive">
+            {errors?.name?.message && errors?.name?.message}
+          </span>
+        </div>
+        <div>
+          <Input
+            className="border-primary"
+            placeholder={"Email"}
+            {...register("email")}
+          />
+          <span className="text-xs text-destructive">
+            {errors?.email?.message && errors?.email?.message}
+          </span>
+        </div>
+        <div>
+          <Textarea
+            placeholder={translations("form-placeholders.message")}
+            {...register("message")}
+          />
 
-            <span className="text-xs text-destructive">
-              {errors?.message?.message && errors?.message?.message}
+          <span className="text-xs text-destructive">
+            {errors?.message?.message && errors?.message?.message}
+          </span>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-2">
+          <Button
+            // className="bg-primary text-white hover:bg-slate-700"
+            type="submit"
+            size="md"
+            disabled={isLoading}
+            variant={"default"}
+          >
+            {isLoading ? translations("loading") : translations("button")}
+          </Button>
+          {error && (
+            <span className="text-sm font-medium text-destructive">
+              {error}
             </span>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-2">
-            <Button
-              className="bg-primary text-white hover:bg-slate-700"
-              type="submit"
-              size="md"
-              disabled={isLoading}
-            >
-              {isLoading ? translations("loading") : translations("button")}
-            </Button>
-            {error && (
-              <span className="text-sm font-medium text-destructive">
-                {error}
-              </span>
-            )}
-            {success && (
-              <span className="text-sm font-medium text-green-500">
-                {success}
-              </span>
-            )}
-          </div>
-        </form>
-      </div>
+          )}
+          {success && (
+            <span className="text-sm font-medium text-green-500">
+              {success}
+            </span>
+          )}
+        </div>
+      </form>
+    </div>
   );
 };

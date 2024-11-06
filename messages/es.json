@@ -114,11 +114,9 @@
     "button": "Ordenar Ahora"
   },
   "navbar": {
-    "about": "Sobre el libro",
-    "download": "Descargar",
     "contact": "Contáctenos",
     "participate": "Participar",
-    "publish-houses": "Casas Publicadoras"
+    "home": "Inicio"
   },
   "talk-to-us-container": {
     "title": "Contáctenos",

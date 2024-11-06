@@ -114,11 +114,9 @@
     "button": "Pedir Agora"
   },
   "navbar": {
-    "about": "Sobre o livro",
-    "download": "Baixar",
     "contact": "Fale conosco",
-    "participate": "Participe",
-    "publish-houses": "Casas Publicadoras"
+    "participate": "Participar",
+    "home": "Início"
   },
   "talk-to-us-container": {
     "title": "Fale conosco",

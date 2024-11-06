@@ -114,11 +114,9 @@
     "button": "Заказать сейчас"
   },
   "navbar": {
-    "about": "О книге",
-    "download": "Скачать",
     "contact": "Свяжитесь с нами",
     "participate": "Участвовать",
-    "publish-houses": "Издательства"
+    "home": "Главная"
   },
   "talk-to-us-container": {
     "title": "Свяжитесь с нами",

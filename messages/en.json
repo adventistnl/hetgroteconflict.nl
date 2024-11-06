@@ -114,11 +114,9 @@
     "button": "Order Now"
   },
   "navbar": {
-    "about": "About the book",
-    "download": "Download",
     "contact": "Talk to us",
     "participate": "Participate",
-    "publish-houses": "Publish Houses"
+    "home": "Home"
   },
   "talk-to-us-container": {
     "title": "Talk to us",

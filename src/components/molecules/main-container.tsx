@@ -24,7 +24,7 @@ export const MainContainer = ({ children }: Props) => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const [isVisibleHeader, setIsVisibleHeader] = useState(false);
 
-  const { ref_AboutSection, ref_DownloadSection } = useRefStore();
+  const { ref_TalkToUsSection } = useRefStore();
 
   //Handlers
   const handleOpenNavbar = () => {
@@ -66,24 +66,24 @@ export const MainContainer = ({ children }: Props) => {
               <ul className="flex flex-row gap-16 text-center text-primary">
                 <li
                   className="cursor-pointer"
-                  onClick={() =>
-                    router.push(`/${locale}/${translations("about")}`)
-                  }
+                  onClick={() => router.push(`/${locale}`)}
                 >
-                  {translations("about")}
+                  {translations("home")}
                 </li>
                 <li
                   className="cursor-pointer"
-                  onClick={() => scrollToSection(ref_AboutSection)}
+                  onClick={() =>
+                    router.push(`/${locale}/${translations("participate")}`)
+                  }
                 >
-                  {translations("download")}
+                  {translations("participate")}
                 </li>
-                {/* <li
+                <li
                   className="cursor-pointer"
                   onClick={() => scrollToSection(ref_TalkToUsSection)}
                 >
                   {translations("contact")}
-                </li> */}
+                </li>
               </ul>
             </div>
             <SelectTranslation />
@@ -103,35 +103,31 @@ export const MainContainer = ({ children }: Props) => {
           <ul className="mt-28 flex flex-col gap-5 p-8 text-center text-2xl text-primary laptop:mt-0">
             <li
               className="cursor-pointer"
-              onClick={() => {
-                // scrollToSection(ref_AboutSection);
-                router.push(`/${locale}/${translations("about")}`);
-                setOpenNavbar(false);
-              }}
+              onClick={() => router.push(`/${locale}`)}
             >
-              {translations("about")}
+              {translations("home")}
             </li>
             <li
               className="cursor-pointer"
               onClick={() => {
-                scrollToSection(ref_DownloadSection);
                 setOpenNavbar(false);
+                router.push(`/${locale}/${translations("participate")}`);
               }}
             >
-              {translations("download")}
+              {translations("participate")}
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => {
+                setOpenNavbar(false);
+                scrollToSection(ref_TalkToUsSection);
+              }}
+            >
+              {translations("contact")}
             </li>
             <li className="mt-12">
               <SelectTranslation />
             </li>
-            {/* <li
-              className="cursor-pointer"
-              onClick={() => {
-                scrollToSection(ref_TalkToUsSection);
-                setOpenNavbar(false);
-              }}
-            >
-              {translations("contact")}
-            </li> */}
           </ul>
         </nav>
       )}

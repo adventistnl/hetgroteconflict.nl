@@ -9,10 +9,14 @@ import { useLocale, useTranslations } from "next-intl";
 import { QuoteContainer } from "../molecules/quote-container";
 import { ParticipateContainer } from "../molecules/participate-container";
 import { DistributionContainer } from "../molecules/distribution-container";
+import { TalkToUsContainer } from "./talk-to-us-container";
+import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 
-interface Props {}
+interface Props {
+  talkToUsFunctions: (formData: TalkToUsFormData) => Promise<null>;
+}
 
-export const ParticipatePageContainer = ({}: Props) => {
+export const ParticipatePageContainer = ({ talkToUsFunctions }: Props) => {
   const locale = useLocale();
   const router = useRouter();
   const translations = useTranslations("navbar");
@@ -30,6 +34,7 @@ export const ParticipatePageContainer = ({}: Props) => {
         <QuoteContainer />
         <ParticipateContainer />
         <DistributionContainer />
+        <TalkToUsContainer talkToUsFunctions={talkToUsFunctions} />
       </div>
       <Footer />
     </>

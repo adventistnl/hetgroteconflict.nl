@@ -114,11 +114,9 @@
     "button": "اطلب الآن"
   },
   "navbar": {
-    "about": "حول الكتاب",
-    "download": "تحميل",
     "contact": "تواصل معنا",
     "participate": "شارك",
-    "publish-houses": "دور النشر"
+    "home": "الرئيسية"
   },
   "talk-to-us-container": {
     "title": "تواصل معنا",
