@@ -8,7 +8,8 @@ import { CompaniesContainer } from "@/components/molecules/companies-container";
 import { SummaryContainer } from "@/components/organisms/summary-container";
 import { useTranslations } from "next-intl";
 import { HiOutlineCloudDownload as CloudIcon } from "react-icons/hi";
-import { PiHouse as HouseIcon } from "react-icons/pi";
+import { MdOutlineMail as MailIcon } from "react-icons/md";
+
 import { useRefStore } from "../stores/ref-store";
 import { scrollToSection } from "@/utils/scroll-to-section";
 import { TalkToUsContainer } from "./talk-to-us-container";
@@ -26,7 +27,8 @@ export const HomePageContainer = ({
   talkToUsFunctions,
 }: Props) => {
   const translations = useTranslations("home-page-container");
-  const { ref_DownloadSection, ref_ReceiveAtHomeSection } = useRefStore();
+  const talkToUsTranslations = useTranslations("talk-to-us-container");
+  const { ref_DownloadSection, ref_TalkToUsSection } = useRefStore();
 
   return (
     <>
@@ -53,11 +55,11 @@ export const HomePageContainer = ({
               <Button
                 variant="specialBlue"
                 size="lg"
-                onClick={() => scrollToSection(ref_ReceiveAtHomeSection)}
+                onClick={() => scrollToSection(ref_TalkToUsSection)}
               >
-                {translations("receive-at-home-button")}
+                {talkToUsTranslations("title")}
                 <div className="rounded-full bg-white p-1">
-                  <HouseIcon className="text-2xl text-primary" />
+                  <MailIcon className="text-2xl text-primary" />
                 </div>
               </Button>
             </div>
