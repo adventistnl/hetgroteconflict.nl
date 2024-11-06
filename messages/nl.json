@@ -46,7 +46,9 @@
     "language": "Talen",
     "location": "Locatie",
     "email": "E-mail",
-    "website": "Website"
+    "website": "Website",
+    "title": "Uitgeverijen",
+    "placeholder": "Zoek op taal"
   },
   "book-cover-container": {
     "downloads": "Downloads",

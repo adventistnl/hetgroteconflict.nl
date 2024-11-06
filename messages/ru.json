@@ -46,7 +46,9 @@
     "language": "Языки",
     "location": "Местоположение",
     "email": "Электронная почта",
-    "website": "Веб-сайт"
+    "website": "Веб-сайт",
+    "title": "Издательства",
+    "placeholder": "Поиск по языку"
   },
   "book-cover-container": {
     "downloads": "Загрузки",

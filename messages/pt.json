@@ -46,7 +46,9 @@
     "language": "Idiomas",
     "location": "Localização",
     "email": "Email",
-    "website": "Site"
+    "website": "Site",
+    "title": "Casas Publicadoras",
+    "placeholder": "Buscar por idioma"
   },
   "book-cover-container": {
     "downloads": "Downloads",

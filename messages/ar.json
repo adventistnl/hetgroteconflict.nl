@@ -46,7 +46,9 @@
     "language": "اللغات",
     "location": "الموقع",
     "email": "البريد الإلكتروني",
-    "website": "الموقع الإلكتروني"
+    "website": "الموقع الإلكتروني",
+    "title": "دور النشر",
+    "placeholder": "ابحث حسب اللغة"
   },
   "book-cover-container": {
     "downloads": "التنزيلات",

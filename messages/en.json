@@ -46,7 +46,9 @@
     "language": "Languages",
     "location": "Location",
     "email": "Email",
-    "website": "Website"
+    "website": "Website",
+    "title": "Publishing Houses",
+    "placeholder": "Find by language"
   },
   "book-cover-container": {
     "downloads": "Downloads",

@@ -46,7 +46,9 @@
     "language": "Langues",
     "location": "Emplacement",
     "email": "Email",
-    "website": "Site Web"
+    "website": "Site Web",
+    "title": "Maisons d'Édition",
+    "placeholder": "Rechercher par langue"
   },
   "book-cover-container": {
     "downloads": "Téléchargements",

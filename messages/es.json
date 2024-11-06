@@ -46,7 +46,9 @@
     "language": "Idiomas",
     "location": "Ubicación",
     "email": "Correo Electrónico",
-    "website": "Sitio Web"
+    "website": "Sitio Web",
+    "title": "Casas Editoriales",
+    "placeholder": "Buscar por idioma"
   },
   "book-cover-container": {
     "downloads": "Descargas",

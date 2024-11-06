@@ -46,7 +46,9 @@
     "language": "语言",
     "location": "位置",
     "email": "电子邮件",
-    "website": "网站"
+    "website": "网站",
+    "title": "出版社",
+    "placeholder": "按语言查找"
   },
   "book-cover-container": {
     "downloads": "下载",

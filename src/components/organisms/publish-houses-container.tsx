@@ -141,10 +141,10 @@ export const PublishHousesContainer = ({ closeHandle }: iProps) => {
 
   return (
     <div className="fixed flex flex-col gap-4 p-4 text-primary bg-white w-full max-w-[500px] z-[100] h-screen top-0 right-0">
-      <h2 className="text-xl">Publishing House</h2>
+      <h2 className="text-xl">{translations("title")}</h2>
       <Input
         type="text"
-        placeholder="Find by language"
+        placeholder={translations("placeholder")}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="w-full"
@@ -170,14 +170,15 @@ export const PublishHousesContainer = ({ closeHandle }: iProps) => {
                 <LinkIcon
                   Icon={EmailIcon}
                   href={`mailto:${option.email}`}
-                  text={translations("email")}
+                  text={`${translations("email")}: ${option.email}`}
                 />
               )}
               {option.website && (
                 <LinkIcon
                   Icon={GlobeIcon}
                   href={option.website}
-                  text={translations("website")}
+                  target="_blank"
+                  text={`${translations("website")}: ${option.website}`}
                 />
               )}
             </div>

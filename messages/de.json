@@ -46,7 +46,9 @@
     "language": "Sprachen",
     "location": "Standort",
     "email": "E-Mail",
-    "website": "Webseite"
+    "website": "Webseite",
+    "title": "Verlage",
+    "placeholder": "Nach Sprache suchen"
   },
   "book-cover-container": {
     "downloads": "Downloads",

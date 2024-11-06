@@ -46,7 +46,9 @@
     "language": "Jazyky",
     "location": "Umístění",
     "email": "Email",
-    "website": "Webová stránka"
+    "website": "Webová stránka",
+    "title": "Vydavatelství",
+    "placeholder": "Najít podle jazyka"
   },
   "book-cover-container": {
     "downloads": "Stažení",
