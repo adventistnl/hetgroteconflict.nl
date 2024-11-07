@@ -7,7 +7,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { languagesIsoCodeList } from "@/utils/languages-iso-code-list";
 import { useRefStore } from "../stores/ref-store";
 
-export const SummaryContainer = () => {
+interface iProps {
+  showImage?: boolean;
+}
+export const SummaryContainer = ({ showImage = true }: iProps) => {
   //States and Hooks
   const translations = useTranslations("summary-container");
   const { setRef_AboutSection } = useRefStore();
@@ -20,18 +23,24 @@ export const SummaryContainer = () => {
 
   useEffect(() => {
     setRef_AboutSection(aboutSectionRef);
-  }, []);
+  }, [setRef_AboutSection]);
 
   return (
-    <div className="flex flex-col items-center justify-center laptop:flex-row" >
-      <Image
-        className="relative z-10 m-6 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-all duration-1000 hover:scale-105 hover:drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)] rounded-lg"
-        src={`/book-covers/${imageName}`}
-        alt="book cover"
-        width={400}
-        height={500}
-      />
-      <div className="max-w-[600px] m-6" ref={aboutSectionRef}>
+    <div
+      className="flex flex-col items-center justify-center laptop:flex-row"
+      ref={aboutSectionRef}
+    >
+      {showImage && (
+        <Image
+          className="relative z-10 m-6 rounded-lg drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-all duration-1000 hover:scale-105 hover:drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)]"
+          src={`/book-covers/${imageName}`}
+          alt="book cover"
+          width={400}
+          height={500}
+        />
+      )}
+
+      <div className="m-6 max-w-[600px]">
         <h6 className="text-2xl text-primary">{translations("summary")}</h6>
         <div className="flex flex-col gap-6">
           <p className="text-gray">{translations("paragraph-1")}</p>

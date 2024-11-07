@@ -1,18 +1,69 @@
 {
   "home-page-container": {
-    "title": "Projekt Velký spor věků",
-    "subtitle": "Objevte odpovědi na nejhlubší otázky o osudu lidstva. Stáhněte si nebo obdržíte domů knihu, která odhaluje boj mezi dobrem a zlem a jak se můžete připravit na budoucnost.",
+    "title": "Velký spor",
+    "subtitle": "Objevte odpovědi na nejhlubší otázky o osudu lidstva. Stáhněte si nebo obdržíte doma knihu, která odhaluje bitvu mezi dobrem a zlem a jak se můžete připravit na budoucnost.",
     "download-button": "Stáhnout",
     "receive-at-home-button": "Obdržet doma"
+  },
+  "participate-page-container": {
+    "video-container": {
+      "name": "Ted N. C. Wilson",
+      "role": "Prezident, Církev adventistů sedmého dne",
+      "play-sub-text": "Zapojte se nyní"
+    },
+    "quote-container": {
+      "quote": "Pán mě inspiroval k napsání této knihy, aby *bez prodlení* byla rozšířena do *každé části* světa, protože varování, která obsahuje, jsou nezbytná pro přípravu lidí na den Páně.",
+      "author": "Ellen G. White",
+      "book": "Rukopis 24",
+      "year": "1891"
+    },
+    "how-to-participate-container": {
+      "title": "Jak se zapojit",
+      "step-sub": "krok",
+      "step-one": {
+        "step-count": "01",
+        "explanation": "Představit projekt místnímu církevnímu výboru",
+        "link-sub": "Stáhnout návrh pro výbor"
+      },
+      "step-two": {
+        "step-count": "02",
+        "explanation": "Vybrat území pro evangelizaci",
+        "link-sub": ""
+      },
+      "step-three": {
+        "step-count": "03",
+        "explanation": "Objednat zásoby",
+        "link-sub": "Najít vydavatelství"
+      },
+      "step-four": {
+        "step-count": "04",
+        "explanation": "Distribuovat",
+        "link-sub": ""
+      }
+    }
+  },
+  "publish-houses": {
+    "language": "Jazyky",
+    "location": "Umístění",
+    "email": "Email",
+    "website": "Webová stránka",
+    "title": "Vydavatelství",
+    "placeholder": "Najít podle jazyka"
   },
   "book-cover-container": {
     "downloads": "Stažení",
     "languages": "Jazyky"
   },
   "summary-container": {
+    "most-downloaded-title": "Nejstahovanější",
     "summary": "Shrnutí",
-    "paragraph-1": "Myslíte si, že se svět zlepšuje, nebo zhoršuje? Není překvapením, že velká většina lidí dnes věří, že svět se zhoršuje. Možná je tento globální pesimismus výsledkem kultury nasáklé špatnými zprávami, nebo možná instinktivně víme, že se za srdcem této knihy skrývá otřesná pravda: Na naší planetě je něco hluboce špatně a my jsme bezmocní to napravit.",
-    "paragraph-2": "Velký spor věků nejen odhaluje původ lidské degradace, ale také odkrývá titánský boj, který zuří pod hlukem pandemií a nebezpečí, korupce a masakrů, vražd a chaosu. V tomto úžasném díle zjistíte, že zlo má tvář, dobro má Šampiona a hřích má konec. Pokud se chcete připravit na konec tohoto světa a na příchod slavného světa, musíte si přečíst tuto knihu."
+    "paragraph-1": "Myslíte si, že se svět zlepšuje nebo zhoršuje? Není překvapením, že velká většina lidí dnes věří, že se svět zhoršuje. Možná je tento globální pesimismus výsledkem kultury plné špatných zpráv, nebo možná instinktivně víme otřesnou pravdu prezentovanou v jádru této knihy: Něco je hluboce špatně s naší planetou a jsme bezmocní to napravit.",
+    "paragraph-2": "Velký spor nejen odhaluje původ lidské degradace, ale také odhaluje titánský boj probíhající pod hlukem pandemií a nebezpečí, korupce a masakrů, vražd a chaosu. V tomto úžasném díle objevíte, že zlo má tvář, dobro má Šampiona a hřích má konec. Pokud se chcete připravit na konec tohoto světa a slavný svět, který přijde, musíte si tuto knihu přečíst."
+  },
+  "distribution-package-container": {
+    "summary": "Distribuční balíček",
+    "paragraph-1": "Jste připraveni pomoci sdílet poselství naděje? V této speciální distribuční kampani pro Velký spor nabízíme kompletní balíček bezplatných propagačních materiálů navržených k podpoře šíření tohoto mocného poselství ve vaší komunitě.",
+    "paragraph-2": "Stáhněte si kompletní balíček nyní a staňte se součástí tohoto hnutí, které mění životy! Buďte kreativní, zapojte svou komunitu a pomozte efektivně šířit poselství Velkého sporu."
   },
   "book-language-container": {
     "language": "Jazyk:"
@@ -21,14 +72,14 @@
     "available": "Dostupné:",
     "audio": "Audio",
     "promotional": "Propagační materiály",
-    "reading": "Čtecí plán",
+    "reading": "Plán čtení",
     "study": "Studijní průvodce",
-    "no-options": "Pro tento jazyk zatím nemáme žádné možnosti ke stažení."
+    "no-options": "Pro tento jazyk zatím nemáme žádné možnosti stahování."
   },
   "download-menubar": {
     "download": "Stáhnout",
     "promotional": "Propagační materiály",
-    "reading": "Čtecí plán",
+    "reading": "Plán čtení",
     "study": "Studijní průvodce"
   },
   "select-language": {
@@ -41,54 +92,54 @@
   },
   "receive-at-home-container": {
     "title": "Obdržet doma",
-    "subtitle": "Přijměte transformaci! Objevte život měnící pravdy ve Velkém konfliktu. Požádejte o svou kopii a najděte naději přímo u svého prahu.",
+    "subtitle": "Přijměte transformaci! Objevte život měnící pravdy ve Velkém sporu. Požádejte o svou kopii a najděte naději přímo u vašich dveří.",
     "form-errors": {
-      "country": "Vyberte svou zemi, prosím",
-      "name": "Zadejte své jméno, prosím",
-      "email": "Zadejte svůj e-mail, prosím",
-      "valid-email": "Zadejte platný e-mail, prosím",
-      "street": "Zadejte svou ulici, prosím",
-      "number": "Zadejte své číslo a doplněk (pokud existuje), prosím",
-      "city": "Zadejte své město, prosím",
-      "postCode": "Zadejte své PSČ, prosím"
+      "country": "Vyberte prosím svou zemi",
+      "name": "Zadejte prosím své jméno",
+      "email": "Zadejte prosím svůj email",
+      "valid-email": "Zadejte prosím platný email",
+      "street": "Zadejte prosím svou ulici",
+      "number": "Zadejte prosím své číslo a doplněk (pokud existuje)",
+      "city": "Zadejte prosím své město",
+      "postCode": "Zadejte prosím svůj poštovní kód"
     },
     "form-placeholders": {
       "name": "Jméno",
       "street": "Ulice",
       "number": "Číslo a doplněk",
       "city": "Město",
-      "postCode": "PSČ"
+      "postCode": "Poštovní kód"
     },
-    "success-message": "Objednávka je v procesu! Zkontrolujte prosím svou e-mailovou schránku.",
-    "error-message": "Při zpracování vaší objednávky došlo k chybě. Zkuste to prosím později.",
+    "success-message": "Objednávka je v procesu! Zkontrolujte prosím svou emailovou schránku.",
+    "error-message": "Při zpracování vaší objednávky došlo k chybě. Zkuste to prosím znovu později",
     "loading": "Odesílání...",
     "button": "Objednat nyní"
   },
   "navbar": {
-    "about": "O knize",
-    "download": "Stáhnout",
-    "contact": "Kontaktujte nás"
+    "contact": "Kontaktujte nás",
+    "participate": "Účastnit se",
+    "home": "Domů"
   },
   "talk-to-us-container": {
     "title": "Kontaktujte nás",
     "form-errors": {
-      "name": "Prosím, zadejte své jméno",
-      "email": "Prosím, zadejte svůj e-mail",
-      "valid-email": "Prosím, zadejte platný e-mail",
-      "message": "Prosím, napište svou zprávu"
+      "name": "Zadejte prosím své jméno",
+      "email": "Zadejte prosím svůj email",
+      "valid-email": "Zadejte prosím platný email",
+      "message": "Zadejte prosím svou zprávu"
     },
     "form-placeholders": {
       "name": "Jméno",
       "message": "Zpráva"
     },
     "success-message": "Zpráva byla úspěšně odeslána!",
-    "error-message": "Při odesílání zprávy došlo k chybě. Zkuste to prosím později",
+    "error-message": "Při odesílání vaší zprávy došlo k chybě. Zkuste to prosím znovu později",
     "loading": "Odesílání...",
     "button": "Odeslat"
   },
   "footer": {
     "policy": "Zásady ochrany osobních údajů",
     "legal": "Právní upozornění",
-    "tradmark": "Používání ochranných známek a log"
+    "tradmark": "Použití ochranné známky a loga"
   }
 }

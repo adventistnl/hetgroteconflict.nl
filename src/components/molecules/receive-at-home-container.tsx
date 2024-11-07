@@ -90,7 +90,7 @@ export const ReceiveAtHomeContainer = ({ receiveAtHomeFunctions }: Props) => {
 
   useEffect(() => {
     setRef_ReceiveAtHomeSection(receiveAtHomeSectionRef);
-  }, []);
+  }, [setRef_ReceiveAtHomeSection]);
 
   const handleOrder = async (data: FormData) => {
     setIsLoading(true);

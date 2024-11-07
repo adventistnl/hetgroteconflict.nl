@@ -35,11 +35,11 @@ export const BookDownloadContainer = () => {
 
   useEffect(() => {
     setRef_DownloadSection(downloadSectionRef);
-  }, []);
+  }, [setRef_DownloadSection]);
 
   return (
     <div
-      className="z-10 flex flex-col gap-3 text-primary"
+      className="z-9 flex flex-col gap-3 text-primary"
       ref={downloadSectionRef}
     >
       <BookLanguageContainer
