@@ -24,12 +24,10 @@ export const BookDownloadContainer = () => {
   //Effects
   useEffect(() => {
     const language = languagesIsoCodeList.find(
-      (lang) => lang.code.toLowerCase() === locale,
+      (lang) => lang.code.toLowerCase() === locale
     ) as LanguageISO;
     setSelectedLanguage(
-      languagesList.find(
-        (lang) => lang.value === language.value,
-      ) as LanguageObj,
+      languagesList.find((lang) => lang.value === language.value) as LanguageObj
     );
   }, [locale]);
 
@@ -39,7 +37,7 @@ export const BookDownloadContainer = () => {
 
   return (
     <div
-      className="z-10 flex flex-col gap-3 text-primary"
+      className="z-9 flex flex-col gap-3 text-primary"
       ref={downloadSectionRef}
     >
       <BookLanguageContainer

@@ -1,7 +1,5 @@
 {
-  "polyfillFiles": [
-    "static/chunks/polyfills-42372ed130431b0a.js"
-  ],
+  "polyfillFiles": ["static/chunks/polyfills-42372ed130431b0a.js"],
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
@@ -9,6 +7,8 @@
     "static/S_qmkDJ1Qh_1DoHeYvjw1/_ssgManifest.js"
   ],
   "rootMainFiles": [
+    "static/chunks/webpack.js",
+    "static/chunks/main-app.js",
     "static/chunks/webpack-bd7b644bfdff25e3.js",
     "static/chunks/fd9d1056-501d33919b284804.js",
     "static/chunks/23-e3e69d0b47c7581c.js",
