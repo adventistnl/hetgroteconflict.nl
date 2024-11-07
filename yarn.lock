@@ -2863,6 +2863,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flag-icons@npm:^7.2.3":
+  version: 7.2.3
+  resolution: "flag-icons@npm:7.2.3"
+  checksum: 10c0/370fa3a2ccef574e9d2b17cad513157414bf4de1e8ca4b9f3f1465dddbcd80fce7eea021795f77cafc0814d3909ea273d70b85b0bb82ef7f5efadd77e773e8e5
+  languageName: node
+  linkType: hard
+
 "flat-cache@npm:^3.0.4":
   version: 3.2.0
   resolution: "flat-cache@npm:3.2.0"
@@ -3146,6 +3153,7 @@ __metadata:
     eslint: "npm:^8"
     eslint-config-next: "npm:^14.2.13"
     eslint-config-prettier: "npm:^9.1.0"
+    flag-icons: "npm:^7.2.3"
     lucide-react: "npm:^0.439.0"
     next: "npm:^14.2.3"
     next-intl: "npm:^3.19.4"
