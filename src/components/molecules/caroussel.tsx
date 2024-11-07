@@ -11,25 +11,33 @@ export default function Carousel<T>({
   items,
   ItemComponent,
 }: CarouselProps<T>): JSX.Element {
-  const [visibleItems, setVisibleItems] = useState<number>(4);
+  const checkScreenSize = () => {
+    if (window.innerWidth <= 640) {
+      return 1;
+    } else if (window.innerWidth < 900 && window.innerWidth > 640) {
+      return 2;
+    } else if (window.innerWidth < 1200) {
+      return 3;
+    } else {
+      return 4;
+    }
+  };
+
+  const [visibleItems, setVisibleItems] = useState<number>(checkScreenSize);
   const [currentItems, setCurrentItems] = useState<T[]>(items);
 
   const updateVisibleItems = () => {
-    if (window.innerWidth < 640) {
-      setVisibleItems(1);
-    } else if (window.innerWidth < 900) {
-      setVisibleItems(2);
-    } else if (window.innerWidth < 1200) {
-      setVisibleItems(3);
-    } else {
-      setVisibleItems(4);
-    }
+    const count = checkScreenSize();
+    setVisibleItems(count);
   };
 
   useEffect(() => {
     updateVisibleItems();
     window.addEventListener("resize", updateVisibleItems);
-    return () => window.removeEventListener("resize", updateVisibleItems);
+
+    return () => {
+      window.removeEventListener("resize", updateVisibleItems);
+    };
   }, []);
 
   const prevSlide = (): void => {
@@ -49,20 +57,20 @@ export default function Carousel<T>({
     });
   };
   return (
-    <div className="relative flex flex-row justify-around items-center mx-auto w-full max-w-[1400px] p-10 gap-4">
+    <div className="relative mx-auto flex w-full max-w-[1400px] flex-row items-center justify-around gap-4 p-10">
       <button
-        className="relative right-0 top-[-50px] flex items-center justify-center bg-deep_blue text-white p-2 rounded-full"
+        className="relative right-0 top-[-50px] flex items-center justify-center rounded-full bg-deep_blue p-2 text-white"
         onClick={prevSlide}
       >
         <ChevronLeft className="text-gray-400 group-hover:text-white" />
       </button>
-      <div className="flex justify-evenly w-full gap-12">
+      <div className="flex w-full justify-evenly gap-12">
         {currentItems.slice(0, visibleItems).map((item, index) => (
           <ItemComponent key={index} {...item} />
         ))}
       </div>
       <button
-        className="relative left-0 top-[-50px] flex items-center justify-center bg-deep_blue text-white p-2 rounded-full"
+        className="relative left-0 top-[-50px] flex items-center justify-center rounded-full bg-deep_blue p-2 text-white"
         onClick={nextSlide}
       >
         <ChevronRight className="text-gray-200 group-hover:text-white" />
