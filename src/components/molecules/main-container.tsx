@@ -41,12 +41,12 @@ export const MainContainer = ({ children }: Props) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isVisibleHeader]);
 
   return (
     <div className="relative">
       <header
-        className={`flex items-center justify-between bg-secondary px-5 py-3 fixed w-full z-[15] shadow-md shadow-brown transition-all duration-50 ease-in-out ${!isVisibleHeader ? "shadow-none" : ""}`}
+        className={`duration-50 fixed z-[15] flex w-screen items-center justify-between bg-secondary px-5 py-3 shadow-md transition-all ease-in-out ${!isVisibleHeader ? "shadow-none" : "shadow-brown"}`}
         style={{
           boxShadow: isVisibleHeader ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
         }}
@@ -99,11 +99,15 @@ export const MainContainer = ({ children }: Props) => {
         )}
       </header>
       {openNavbar && (
-        <nav className="fixed top-16 z-[20] flex h-screen w-screen items-start justify-center rounded-lg bg-secondary laptop:bottom-0 laptop:right-0 laptop:mx-3 laptop:h-52 laptop:w-52">
+        <nav className="fixed top-16 z-[20] flex h-full w-full items-start justify-center rounded-lg bg-secondary laptop:bottom-0 laptop:right-0 laptop:mx-3 laptop:h-52 laptop:w-52">
           <ul className="mt-28 flex flex-col gap-5 p-8 text-center text-2xl text-primary laptop:mt-0">
             <li
               className="cursor-pointer"
-              onClick={() => router.push(`/${locale}`)}
+              onClick={() => {
+                setOpenNavbar(false);
+                setIsVisibleHeader(false);
+                router.push(`/${locale}`);
+              }}
             >
               {translations("home")}
             </li>
@@ -111,6 +115,7 @@ export const MainContainer = ({ children }: Props) => {
               className="cursor-pointer"
               onClick={() => {
                 setOpenNavbar(false);
+                setIsVisibleHeader(false);
                 router.push(`/${locale}/${translations("participate")}`);
               }}
             >

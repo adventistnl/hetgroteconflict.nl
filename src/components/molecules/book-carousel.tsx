@@ -19,7 +19,7 @@ export function BookCarousel() {
   };
   const books = languagesIsoCodeList.map((item, index) => {
     return {
-      key: index,
+      keyValue: index,
       bookSrc: `${item.value.toLowerCase()}.${item.code === "EN" || item.code === "ES" || item.code === "DE" ? "avif" : "webp"}`,
       code: stableLanguageFlags[item.code],
       value: item.value,
@@ -28,7 +28,7 @@ export function BookCarousel() {
 
   return (
     <div>
-      <h2 className="text-2xl text-primary pl-24">
+      <h2 className="pl-24 text-2xl text-primary">
         {translations("most-downloaded-title")}
       </h2>
       <Carousel ItemComponent={BookCarouselItem} items={books} />
