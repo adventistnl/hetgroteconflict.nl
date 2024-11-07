@@ -24,16 +24,18 @@ export const BookDownloadContainer = () => {
   //Effects
   useEffect(() => {
     const language = languagesIsoCodeList.find(
-      (lang) => lang.code.toLowerCase() === locale
+      (lang) => lang.code.toLowerCase() === locale,
     ) as LanguageISO;
     setSelectedLanguage(
-      languagesList.find((lang) => lang.value === language.value) as LanguageObj
+      languagesList.find(
+        (lang) => lang.value === language.value,
+      ) as LanguageObj,
     );
   }, [locale]);
 
   useEffect(() => {
     setRef_DownloadSection(downloadSectionRef);
-  }, []);
+  }, [setRef_DownloadSection]);
 
   return (
     <div

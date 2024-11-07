@@ -41,7 +41,7 @@ export function SelectTranslation() {
         (lang) => lang.code.toLowerCase() === locale.toLowerCase(),
       ) as LanguageISO,
     );
-  }, []);
+  }, [locale]);
 
   //Render
   if (isDesktop) {

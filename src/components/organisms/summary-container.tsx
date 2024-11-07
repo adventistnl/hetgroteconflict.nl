@@ -17,13 +17,13 @@ export const SummaryContainer = ({ showImage = true }: iProps) => {
   const locale = useLocale();
   const aboutSectionRef = useRef<HTMLDivElement | null>(null);
   const selectedLanguage = languagesIsoCodeList.find(
-    (lang) => lang.code.toLowerCase() === locale
+    (lang) => lang.code.toLowerCase() === locale,
   );
   const imageName = `${selectedLanguage?.value.toLowerCase()}.${locale === "en" || locale === "es" || locale === "de" ? "avif" : "webp"}`;
 
   useEffect(() => {
     setRef_AboutSection(aboutSectionRef);
-  }, []);
+  }, [setRef_AboutSection]);
 
   return (
     <div
@@ -32,7 +32,7 @@ export const SummaryContainer = ({ showImage = true }: iProps) => {
     >
       {showImage && (
         <Image
-          className="relative z-10 m-6 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-all duration-1000 hover:scale-105 hover:drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)] rounded-lg"
+          className="relative z-10 m-6 rounded-lg drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-all duration-1000 hover:scale-105 hover:drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)]"
           src={`/book-covers/${imageName}`}
           alt="book cover"
           width={400}
@@ -40,7 +40,7 @@ export const SummaryContainer = ({ showImage = true }: iProps) => {
         />
       )}
 
-      <div className="max-w-[600px] m-6">
+      <div className="m-6 max-w-[600px]">
         <h6 className="text-2xl text-primary">{translations("summary")}</h6>
         <div className="flex flex-col gap-6">
           <p className="text-gray">{translations("paragraph-1")}</p>

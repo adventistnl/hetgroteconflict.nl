@@ -53,7 +53,7 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
 
   useEffect(() => {
     setRef_TalkToUsSection(talkToUsSectionRef);
-  }, []);
+  }, [setRef_TalkToUsSection]);
 
   //Handlers
   const handleSendEmail = async (data: TalkToUsFormData) => {
@@ -75,7 +75,7 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
       ref={talkToUsSectionRef}
     >
       <form
-        className="flex w-full flex-col items-center justify-center gap-3 p-6 text-primary laptop:w-[450px] text-white"
+        className="flex w-full flex-col items-center justify-center gap-3 p-6 text-primary text-white laptop:w-[450px]"
         onSubmit={handleSubmit(handleSendEmail)}
       >
         <h6 className="py-3 text-center text-3xl">{translations("title")}</h6>
