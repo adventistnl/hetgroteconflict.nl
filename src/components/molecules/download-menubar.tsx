@@ -21,15 +21,24 @@ import { useTranslations } from "next-intl";
 
 interface Props {
   selectedLanguage: LanguageObj;
+  buttonStyle?: "primary" | "secondary";
 }
 
-export const DownloadMenubar = ({ selectedLanguage }: Props) => {
+export const DownloadMenubar = ({
+  selectedLanguage,
+  buttonStyle = "primary",
+}: Props) => {
   const translations = useTranslations("download-menubar");
-
+  const buttonStyleClass = {
+    primary:
+      "w-[150px] cursor-pointer rounded-full bg-indigo-950 px-5 py-2 text-white",
+    secondary:
+      "w-[150px] cursor-pointer rounded-full bg-none border border-primary px-5 py-2 text-primary",
+  };
   return (
     <Menubar>
       <MenubarMenu>
-        <MenubarTrigger className="w-[150px] cursor-pointer rounded-full bg-indigo-950 px-5 py-2 text-white">
+        <MenubarTrigger className={buttonStyleClass[buttonStyle]}>
           {translations("download")} <ArrowIcon />
         </MenubarTrigger>
         <MenubarContent>

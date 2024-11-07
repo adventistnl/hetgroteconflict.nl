@@ -1,18 +1,69 @@
 {
   "home-page-container": {
-    "title": "Das Große Konflikt-Projekt",
-    "subtitle": "Entdecken Sie die Antworten auf die tiefsten Fragen über das Schicksal der Menschheit. Laden Sie das Buch herunter oder erhalten Sie es nach Hause, das den Kampf zwischen Gut und Böse offenbart und wie Sie sich auf die Zukunft vorbereiten können.",
+    "title": "Der Große Konflikt",
+    "subtitle": "Entdecken Sie die Antworten auf die tiefsten Fragen über das Schicksal der Menschheit. Laden Sie das Buch herunter oder erhalten Sie es zu Hause, das den Kampf zwischen Gut und Böse offenbart und wie Sie sich auf die Zukunft vorbereiten können.",
     "download-button": "Herunterladen",
-    "receive-at-home-button": "Zu Hause empfangen"
+    "receive-at-home-button": "Zu Hause erhalten"
+  },
+  "participate-page-container": {
+    "video-container": {
+      "name": "Ted N. C. Wilson",
+      "role": "Präsident, Kirche der Siebenten-Tags-Adventisten",
+      "play-sub-text": "Jetzt teilnehmen"
+    },
+    "quote-container": {
+      "quote": "Der Herr hat mich inspiriert, dieses Buch zu schreiben, damit es *ohne Verzögerung* in *jeden Teil* der Welt verbreitet wird, weil die Warnungen, die es enthält, notwendig sind, um ein Volk auf den Tag des Herrn vorzubereiten.",
+      "author": "Ellen G. White",
+      "book": "Manuskript 24",
+      "year": "1891"
+    },
+    "how-to-participate-container": {
+      "title": "Wie man teilnimmt",
+      "step-sub": "Schritt",
+      "step-one": {
+        "step-count": "01",
+        "explanation": "Projekt dem Gemeindevorstand vorstellen",
+        "link-sub": "Vorstandsvorschlag herunterladen"
+      },
+      "step-two": {
+        "step-count": "02",
+        "explanation": "Evangelisationsgebiet auswählen",
+        "link-sub": ""
+      },
+      "step-three": {
+        "step-count": "03",
+        "explanation": "Bestellung aufgeben",
+        "link-sub": "Verlagshaus finden"
+      },
+      "step-four": {
+        "step-count": "04",
+        "explanation": "Verteilen",
+        "link-sub": ""
+      }
+    }
+  },
+  "publish-houses": {
+    "language": "Sprachen",
+    "location": "Standort",
+    "email": "E-Mail",
+    "website": "Webseite",
+    "title": "Verlage",
+    "placeholder": "Nach Sprache suchen"
   },
   "book-cover-container": {
     "downloads": "Downloads",
     "languages": "Sprachen"
   },
   "summary-container": {
+    "most-downloaded-title": "Am Meisten Heruntergeladen",
     "summary": "Zusammenfassung",
-    "paragraph-1": "Glauben Sie, dass die Welt besser oder schlechter wird? Nicht überraschend glaubt die große Mehrheit der Menschen heute, dass die Welt schlechter wird. Vielleicht ist dieser globale Pessimismus das Ergebnis einer Kultur, die in schlechten Nachrichten badet, oder vielleicht wissen wir instinktiv die erschütternde Wahrheit, die im Herzen dieses Buches offenbart wird: Etwas stimmt grundlegend nicht mit unserem Planeten, und wir sind machtlos, es zu beheben.",
-    "paragraph-2": "Der Große Konflikt enthüllt nicht nur den Ursprung der menschlichen Dekadenz, sondern offenbart auch den titanischen Kampf, der unter dem Lärm von Pandemien und Gefahren, Korruption und Blutvergießen, Mord und Chaos tobt. In diesem erstaunlichen Werk werden Sie entdecken, dass das Böse ein Gesicht hat, das Gute einen Champion, und die Sünde ein Ende. Wenn Sie sich auf das Ende dieser Welt und die herrliche Welt, die kommen wird, vorbereiten möchten, müssen Sie dieses Buch lesen."
+    "paragraph-1": "Glauben Sie, dass die Welt besser oder schlechter wird? Nicht überraschend glaubt die große Mehrheit der Menschen heute, dass die Welt schlechter wird. Vielleicht ist dieser globale Pessimismus das Ergebnis einer Kultur, die in schlechten Nachrichten gebadet ist, oder vielleicht wissen wir instinktiv die erschütternde Wahrheit, die im Herzen dieses Buches präsentiert wird: Etwas ist zutiefst falsch mit unserem Planeten, und wir sind machtlos, es zu beheben.",
+    "paragraph-2": "Der Große Konflikt enthüllt nicht nur den Ursprung der menschlichen Degradierung, sondern offenbart auch den titanischen Kampf, der unter dem Lärm von Pandemien und Gefahren, Korruption und Gemetzel, Mord und Chaos tobt. In diesem erstaunlichen Werk werden Sie entdecken, dass das Böse ein Gesicht hat, das Gute einen Champion und die Sünde ein Ende. Wenn Sie sich auf das Ende dieser Welt und die glorreiche Welt, die kommen wird, vorbereiten möchten, müssen Sie dieses Buch lesen."
+  },
+  "distribution-package-container": {
+    "summary": "Das Vertriebspaket",
+    "paragraph-1": "Sind Sie bereit, eine Botschaft der Hoffnung zu teilen? In dieser speziellen Vertriebskampagne für Der Große Konflikt bieten wir ein komplettes Paket kostenloser Werbematerialien an, die entwickelt wurden, um die Verbreitung dieser kraftvollen Botschaft in Ihrer Gemeinde zu unterstützen.",
+    "paragraph-2": "Laden Sie das komplette Paket jetzt herunter und werden Sie Teil dieser Bewegung, die Leben verändert! Seien Sie kreativ, engagieren Sie Ihre Gemeinde und helfen Sie, die Botschaft von Der Große Konflikt effektiv zu verbreiten."
   },
   "book-language-container": {
     "language": "Sprache:"
@@ -40,34 +91,34 @@
     "germany": "Deutschland"
   },
   "receive-at-home-container": {
-    "title": "Zu Hause empfangen",
-    "subtitle": "Umarmen Sie die Transformation! Entdecken Sie lebensverändernde Wahrheiten in Der Große Konflikt. Fordern Sie Ihr Exemplar an und finden Sie Hoffnung direkt vor Ihrer Tür.",
+    "title": "Zu Hause erhalten",
+    "subtitle": "Umarmen Sie die Transformation! Entdecken Sie lebensverändernde Wahrheiten in Der Große Konflikt. Fordern Sie Ihr Exemplar an und finden Sie Hoffnung direkt vor Ihrer Haustür.",
     "form-errors": {
-      "country": "Bitte wählen Sie Ihr Land aus",
+      "country": "Bitte wählen Sie Ihr Land",
       "name": "Bitte geben Sie Ihren Namen ein",
       "email": "Bitte geben Sie Ihre E-Mail-Adresse ein",
       "valid-email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
       "street": "Bitte geben Sie Ihre Straße ein",
-      "number": "Bitte geben Sie Ihre Hausnummer und Ergänzung (falls vorhanden) ein",
+      "number": "Bitte geben Sie Ihre Nummer und Ergänzung (falls vorhanden) ein",
       "city": "Bitte geben Sie Ihre Stadt ein",
       "postCode": "Bitte geben Sie Ihre Postleitzahl ein"
     },
     "form-placeholders": {
       "name": "Name",
       "street": "Straße",
-      "number": "Hausnummer und Ergänzung",
+      "number": "Nummer und Ergänzung",
       "city": "Stadt",
       "postCode": "Postleitzahl"
     },
     "success-message": "Bestellung in Bearbeitung! Bitte überprüfen Sie Ihr E-Mail-Postfach.",
-    "error-message": "Bei der Bearbeitung Ihrer Bestellung ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
-    "loading": "Wird übermittelt...",
+    "error-message": "Es gab einen Fehler bei der Verarbeitung Ihrer Bestellung. Bitte versuchen Sie es später erneut",
+    "loading": "Wird gesendet...",
     "button": "Jetzt bestellen"
   },
   "navbar": {
-    "about": "Über das Buch",
-    "download": "Herunterladen",
-    "contact": "Kontaktieren Sie uns"
+    "contact": "Kontaktieren Sie uns",
+    "participate": "Teilnehmen",
+    "home": "Startseite"
   },
   "talk-to-us-container": {
     "title": "Kontaktieren Sie uns",
@@ -82,13 +133,13 @@
       "message": "Nachricht"
     },
     "success-message": "Nachricht erfolgreich gesendet!",
-    "error-message": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal",
+    "error-message": "Es gab einen Fehler beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut",
     "loading": "Wird gesendet...",
     "button": "Senden"
   },
   "footer": {
     "policy": "Datenschutzrichtlinie",
     "legal": "Rechtlicher Hinweis",
-    "tradmark": "Verwendung von Marken und Logos"
+    "tradmark": "Marken- und Logo-Nutzung"
   }
 }
