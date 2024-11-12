@@ -58,7 +58,10 @@ export const DownloadMenubar = ({
             </Link>
           )}
           {downloadList.promotional[selectedLanguage.value] && (
-            <Link href={downloadList.promotional[selectedLanguage.value]}>
+            <Link
+              href={downloadList.promotional[selectedLanguage.value]}
+              target="_blank"
+            >
               <MenubarItem>
                 <SquareIcon className="mr-2 text-2xl" />
                 {translations("promotional")}

@@ -47,25 +47,25 @@ export const downloadList: DownloadObj = {
   },
   promotional: {
     English:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/648710de30889f2e8a57dae8/1Kx1707148975149.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     French:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/kz51708421181090.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     German:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/A3Y1708421530997.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     Portuguese:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/HIt1708421419292.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     Spanish:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/AJ51708421194229.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     Arabic:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/njq1708421257304.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     Dutch:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/jIj1708421550128.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     Russian:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/GCO1708422171417.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     Czech:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/Yu71708421363122.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     Chinese:
-      "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/5oc1708424235519.zip",
+      "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
   },
   studyGuide: {
     English:

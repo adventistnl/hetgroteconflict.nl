@@ -3,20 +3,23 @@ import { DownloadMenubar } from "./download-menubar";
 import { CountryFlag } from "../atoms/country-flag";
 
 interface iProps {
-  key: number;
+  keyValue: number;
   bookSrc: string;
   value: string;
   code: string;
 }
-export function BookCarouselItem({ key, bookSrc, code, value }: iProps) {
+export function BookCarouselItem({ keyValue, bookSrc, code, value }: iProps) {
   return (
-    <div key={key} className="flex flex-col text-primary gap-4">
+    <div
+      key={keyValue}
+      className="flex flex-col gap-4 text-primary transition-all duration-500 hover:scale-105"
+    >
       <Image
         src={`/book-covers/${bookSrc}`}
         alt={`Book of ${value} cover`}
         width={233}
         height={327}
-        className="rounded-xl transition-all duration-500 ease-in-out cursor-pointer"
+        className="cursor-pointer rounded-xl transition-all duration-500 ease-in-out"
       />
       <div className="flex gap-3">
         <p>value:</p>
