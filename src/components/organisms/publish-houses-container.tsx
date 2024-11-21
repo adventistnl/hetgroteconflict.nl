@@ -89,7 +89,8 @@ export const PublishHousesContainer = ({ closeHandle }: iProps) => {
         name: "Netherlands Publishing Service",
         languages: ["Dutch"],
         location: "Netherlands",
-        website: "https://www.adventist.nl/",
+        website:
+          "https://www.bazuintesion-shop-2.nl/search/?search=Het+Grote+conf%C4%BAict",
       },
       {
         name: "Norwegian Publishing House",
@@ -122,7 +123,7 @@ export const PublishHousesContainer = ({ closeHandle }: iProps) => {
         email: "rainer.refsback@adventist.se",
       },
     ],
-    []
+    [],
   );
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -133,14 +134,14 @@ export const PublishHousesContainer = ({ closeHandle }: iProps) => {
     setFilteredPublishHouses(
       publishHouses.filter((option) =>
         option.languages.some((language) =>
-          language.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-      )
+          language.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      ),
     );
   }, [publishHouses, searchTerm]);
 
   return (
-    <div className="fixed flex flex-col gap-4 p-4 text-primary bg-white w-full max-w-[500px] z-[100] h-screen top-0 right-0">
+    <div className="fixed right-0 top-0 z-[100] flex h-screen w-full max-w-[500px] flex-col gap-4 bg-white p-4 text-primary">
       <h2 className="text-xl">{translations("title")}</h2>
       <Input
         type="text"
@@ -156,7 +157,7 @@ export const PublishHousesContainer = ({ closeHandle }: iProps) => {
         {filteredPublishHouses.map((option, index) => (
           <li
             key={index}
-            className="flex flex-col border-b border-gray-500 gap-2 pb-6"
+            className="border-gray-500 flex flex-col gap-2 border-b pb-6"
           >
             <h3 className="font-bold">{option.name}</h3>
             <p className="text-gray">
