@@ -122,7 +122,7 @@ export const languagesList: LanguageObj[] = [
   // { label: "Setswana", value: "Tswana" },
   // { label: "Türkçe", value: "Turkish" },
   // { label: "Turkmen", value: "Turkmen" },
-  // { label: "Twi", value: "Twi" },
+  { label: "Twi", value: "Twi" },
   // { label: "Українська", value: "Ukrainian" },
   // { label: "Umbundu", value: "Umbundu" },
   // { label: "اُردُو", value: "Urdu" },

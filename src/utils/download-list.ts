@@ -26,6 +26,7 @@ export const downloadList: DownloadObj = {
       "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/kCY1708420576021.pdf",
     Chinese:
       "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/pIn1708420846281.pdf",
+    Twi: "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/Mbw1708420873880.pdf",
   },
   epub: {
     English:
@@ -66,6 +67,7 @@ export const downloadList: DownloadObj = {
       "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
     Chinese:
       "https://drive.google.com/drive/folders/16K0cQfK5l1x0acFbU1DwwJ_Kj9ZbgyNt",
+    Twi: "https://zafir-documents.fra1.digitaloceanspaces.com/61ded78a94a88f7631020341/nAw1708423796795.zip",
   },
   studyGuide: {
     English:

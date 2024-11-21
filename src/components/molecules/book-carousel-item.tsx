@@ -9,6 +9,7 @@ interface iProps {
   code: string;
 }
 export function BookCarouselItem({ keyValue, bookSrc, code, value }: iProps) {
+  console.log("bookSrc", bookSrc);
   return (
     <div
       key={keyValue}

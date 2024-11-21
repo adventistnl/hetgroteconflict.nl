@@ -1,0 +1,145 @@
+{
+  "home-page-container": {
+    "title": "Nkyerɛkyerɛ Kɛse",
+    "subtitle": "Bɔ mmɔden na hu nsɛm a ɛyɛ den fa ɔman no ho. Download anaa fa nkɔ fie na kɔfa nwoma a ɛda ɔkɛse ne bɔne ntam a ɛda ho adi, na sɛnea wubetumi ayɛ no yɛ.",
+    "download-button": "Download",
+    "receive-at-home-button": "Fa nkɔ fie"
+  },
+  "participate-page-container": {
+    "video-container": {
+      "name": "Ted N. C. Wilson",
+      "role": "Panyin, Seventh-day Adventist Church",
+      "play-sub-text": "Bɔ mmɔden seesei"
+    },
+    "quote-container": {
+      "quote": "Awurade kyerɛɛ me sɛ menkyerɛw nwoma yi de sɛ *ntɛm* na ɛbɛyɛ a ɛbɛda *nkyɛn* abatoɔ mu, efisɛ nsɛm a ɛwɔ mu no yɛ nokware a ɛho hia ma nkurɔfo a wɔpɛ sɛ wɔda Awurade da no mu.",
+      "author": "Ellen G. White",
+      "book": "Mannuscript 24",
+      "year": "1891"
+    },
+    "how-to-participate-container": {
+      "title": "Sɛnea Wobɛyɛ Nhyiamu",
+      "step-sub": "nkyɛn",
+      "step-one": {
+        "step-count": "01",
+        "explanation": "Da Adwuma no kyerɛ Local Church Board",
+        "link-sub": "Download Board Proposal"
+      },
+      "step-two": {
+        "step-count": "02",
+        "explanation": "Paw Abatoɔ Nkyɛn",
+        "link-sub": ""
+      },
+      "step-three": {
+        "step-count": "03",
+        "explanation": "Paw Nsɛm a Wobɛtɔn",
+        "link-sub": "Hwehwɛ Publishing House"
+      },
+      "step-four": {
+        "step-count": "04",
+        "explanation": "Ma wɔyɛ adwuma no",
+        "link-sub": ""
+      }
+    }
+  },
+  "publish-houses": {
+    "language": "Nkyerɛmu",
+    "location": "Beae",
+    "email": "Email",
+    "website": "Website",
+    "title": "Nwoma Abatoɔ",
+    "placeholder": "Hwehwɛ nkyerɛmu"
+  },
+  "book-cover-container": {
+    "downloads": "Downloads",
+    "languages": "Nkyerɛmu"
+  },
+  "summary-container": {
+    "most-downloaded-title": "Nkyerɛmu a Wodownload Kɛse",
+    "summary": "Nkyerɛmu",
+    "paragraph-1": "'Wopɛ anaa wopɛ sɛ woka sɛ wiase no reyɛ yiye anaa ɛnyɛ yiye? Ɛyɛ nokware sɛ, mpɛn pii nnipa nnansa yi gye di sɛ wiase no reyɛ bɔne. Ebia saa nsɛm bɔne yi fi ɔman a ɛda nsɛm bɔne ho adanse anaa ebia yɛn ho nimdefo yɛ nokware a ɛda nsɛm a ɛyɛ den a edidi so yi: Biribi yɛ bɔne wɔ yɛn asase so, na yɛn ho nyansa nni hɔ sɛ yɛbɛsesa no.",
+    "paragraph-2": "'Nkyerɛkyerɛ Kɛse' no mfa nsɛm a ɛda ɔman no ho nyansa nni ho, na ɛda nsɛm kɛse a ɛda so wɔ ɔman no mu. Wobehui sɛ bɔne wɔ ne nan mu, papa biara wɔ ne Kanyan, na sin biara wɔ ne awiei. Sɛ wopɛ sɛ woyere wo ho ma wiase yi awiei ne ɔman pa a ɛbɛn so no, wopɛ sɛ wokenkan nwoma yi."
+  },
+  "distribution-package-container": {
+    "summary": "Abatoɔ Kɛse",
+    "paragraph-1": "Wopɛ sɛ woboaboa ma nsɛm a ɛyɛ anidaso no? Wɔ abatoɔ kɛse yi a ɛyɛ ɔman no ho, yɛde abatoɔ kɛse a ɛyɛ ɔfɛ ne nsɛm a ɛyɛ mmerɛ ne nkɔsoɔ bɔ mu a yɛda ho adi sɛnea ɛbɛboa ma nsɛm a ɛyɛ den yi atwa mu wɔ wo kurom.",
+    "paragraph-2": "Download abatoɔ kɛse no seesei na yɛka ho bɔ mu! Fa w'adwene yɛ adwuma, fa wo kurom nsa ka ho, na boa ma nsɛm a ɛyɛ den no atwa mu pɔtee."
+  },
+  "book-language-container": {
+    "language": "Nkyerɛmu:"
+  },
+  "book-available-formats-container": {
+    "available": "Wɔ hɔ:",
+    "audio": "Audio",
+    "promotional": "Nsɛm a ɛyɛ mmerɛ",
+    "reading": "Nkyerɛmu Plan",
+    "study": "Nkyerɛmu Kwan",
+    "no-options": "Yɛn nni download options biara mma saa nkyerɛmu yi."
+  },
+  "download-menubar": {
+    "download": "Download",
+    "promotional": "Nsɛm a ɛyɛ mmerɛ",
+    "reading": "Nkyerɛmu Plan",
+    "study": "Nkyerɛmu Kwan"
+  },
+  "select-language": {
+    "no-results": "Nkyerɛmu biara nni hɔ."
+  },
+  "select-country": {
+    "netherlands": "Netherlands",
+    "belgium": "Belgium",
+    "germany": "Germany"
+  },
+  "receive-at-home-container": {
+    "title": "Fa nkɔ fie",
+    "subtitle": "Gye di nsɛm a ɛyɛ anidaso! Hu nokware a ɛbɛsesa nkwa wɔ 'Nkyerɛkyerɛ Kɛse' mu. Bɔ mmɔden na bisa wo dea na hu anidaso pɔtee wɔ wo nan mu.",
+    "form-errors": {
+      "country": "Pleasɛ paw wo ɔman",
+      "name": "Pleasɛ kyerɛ wo din",
+      "email": "Pleasɛ kyerɛ wo email",
+      "valid-email": "Pleasɛ kyerɛ email a ɛyɛ nokware",
+      "street": "Pleasɛ kyerɛ w'anan mu",
+      "number": "Pleasɛ kyerɛ wo namba ne nsɛm a ɛka ho (saa ara)",
+      "city": "Pleasɛ kyerɛ w'kurom",
+      "postCode": "Pleasɛ kyerɛ w'ahorow"
+    },
+    "form-placeholders": {
+      "name": "Din",
+      "street": "Anan mu",
+      "number": "Namba ne nsɛm a ɛka ho",
+      "city": "Kurom",
+      "postCode": "'Ahorow"
+    },
+    "success-message": "'Order' no reko so! Pleasɛ hwehwɛ wo email box.",
+    "error-message": "'Order' no yɛ bɔne. Pleasɛ san mmra bio.",
+    "loading": "'Submitting...' ",
+    "button": "'Order' Seesei"
+  },
+  "navbar": {
+    "contact": "Bɔ mmɔden ne yɛn nkɔmmɔ",
+    "participate": "Bɔ mmɔden",
+    "home": "Fie"
+  },
+  "talk-to-us-container": {
+    "title": "Bɔ mmɔden ne yɛn nkɔmmɔ",
+    "form-errors": {
+      "name": "Pleasɛ kyerɛ wo din",
+      "email": "Pleasɛ kyerɛ wo email",
+      "valid-email": "Pleasɛ kyerɛ email a ɛyɛ nokware",
+      "message": "Pleasɛ kyerɛ w'ankasa nsɛm"
+    },
+    "form-placeholders": {
+      "name": "Din",
+      "message": "Nsɛm"
+    },
+    "success-message": "Nsɛm no akɔ so pɔtee!",
+    "error-message": "'Nsɛm' no yɛ bɔne. Pleasɛ san mmra bio.",
+    "loading": "'Sending...' ",
+    "button": "'Send'"
+  },
+  "footer": {
+    "policy": "Nkyerɛmu Nhyɛmu",
+    "legal": "Abatoɔ Nkyerɛmu",
+    "tradmark": "Abatoɔ ne Logo Nhyɛda"
+  }
+}
