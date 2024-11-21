@@ -24,8 +24,7 @@ export async function sendOrderInfo(data: FormData) {
         </div>
       `,
     });
-    console.log(sendResult);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

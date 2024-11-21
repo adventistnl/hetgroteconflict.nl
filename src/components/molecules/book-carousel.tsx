@@ -19,10 +19,6 @@ export function BookCarousel() {
     TW: "tw",
   };
   const books = languagesIsoCodeList.map((item, index) => {
-    console.log(
-      "languagesIsoCodeList",
-      `${item.value.toLowerCase()}.${item.code === "EN" || item.code === "ES" || item.code === "DE" || item.code === "TW" ? "avif" : "webp"}`,
-    );
     return {
       keyValue: index,
       bookSrc: `${item.value.toLowerCase()}.${item.code === "EN" || item.code === "ES" || item.code === "DE" || item.code === "TW" ? "avif" : "webp"}`,

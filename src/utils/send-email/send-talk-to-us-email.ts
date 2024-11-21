@@ -23,8 +23,7 @@ export async function sendTalkToUsEmail(data: TalkToUsFormData) {
         </div>
         `,
     });
-    console.log(sendResult);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

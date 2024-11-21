@@ -25,8 +25,7 @@ export async function sendTalkToUsConfirmationEmail(data: TalkToUsFormData) {
               </div>
             `,
     });
-    console.log(sendResult);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
