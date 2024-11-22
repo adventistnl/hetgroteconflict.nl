@@ -12,7 +12,7 @@ export async function sendTalkToUsEmail(data: TalkToUsFormData) {
 
   try {
     const sendResult = await transport.sendMail({
-      from: SMTP_EMAIL,
+      from: email,
       to: SMTP_EMAIL,
       subject: `Talk to us`,
       html: `
