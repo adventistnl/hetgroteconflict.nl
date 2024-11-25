@@ -16,11 +16,12 @@ export function BookCarousel() {
     PT: "pt",
     RU: "ru",
     ES: "es",
+    TW: "tw",
   };
   const books = languagesIsoCodeList.map((item, index) => {
     return {
       keyValue: index,
-      bookSrc: `${item.value.toLowerCase()}.${item.code === "EN" || item.code === "ES" || item.code === "DE" ? "avif" : "webp"}`,
+      bookSrc: `${item.value.toLowerCase()}.${item.code === "EN" || item.code === "ES" || item.code === "DE" || item.code === "TW" ? "avif" : "webp"}`,
       code: stableLanguageFlags[item.code],
       value: item.value,
     };

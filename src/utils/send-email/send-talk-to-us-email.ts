@@ -11,8 +11,8 @@ export async function sendTalkToUsEmail(data: TalkToUsFormData) {
   await verifyTransport();
 
   try {
-    const sendResult = await transport.sendMail({
-      from: SMTP_EMAIL,
+    await transport.sendMail({
+      from: email,
       to: SMTP_EMAIL,
       subject: `Talk to us`,
       html: `
@@ -23,8 +23,7 @@ export async function sendTalkToUsEmail(data: TalkToUsFormData) {
         </div>
         `,
     });
-    console.log(sendResult);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

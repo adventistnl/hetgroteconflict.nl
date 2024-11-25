@@ -12,6 +12,7 @@ export enum Locales {
   PT = "pt",
   RU = "ru",
   ZH = "zh",
+  TW = "tw",
 }
 
 export const routing = defineRouting({
@@ -27,6 +28,7 @@ export const routing = defineRouting({
     Locales.PT,
     Locales.RU,
     Locales.ZH,
+    Locales.TW,
   ],
 
   // Used when no locale matches

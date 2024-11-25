@@ -118,7 +118,6 @@ function LanguageList({
 
   //Handlers
   const handleLanguageChange = (value: string) => {
-    console.log(value);
     if (isChangingLanguage) return;
 
     const selectedLang = languagesIsoCodeList.find(

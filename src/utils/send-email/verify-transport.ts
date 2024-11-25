@@ -2,10 +2,9 @@ import { transport } from "./transport";
 
 export async function verifyTransport() {
   try {
-    const testResult = await transport.verify();
-    console.log(testResult);
+    await transport.verify();
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return;
   }
 }

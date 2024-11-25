@@ -11,7 +11,7 @@ export async function sendOrderInfo(data: FormData) {
   await verifyTransport();
 
   try {
-    const sendResult = await transport.sendMail({
+    await transport.sendMail({
       from: SMTP_EMAIL,
       to: SMTP_EMAIL,
       subject: `Book shipment for ${country}`,
@@ -24,8 +24,7 @@ export async function sendOrderInfo(data: FormData) {
         </div>
       `,
     });
-    console.log(sendResult);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

@@ -19,7 +19,7 @@ export const SummaryContainer = ({ showImage = true }: iProps) => {
   const selectedLanguage = languagesIsoCodeList.find(
     (lang) => lang.code.toLowerCase() === locale,
   );
-  const imageName = `${selectedLanguage?.value.toLowerCase()}.${locale === "en" || locale === "es" || locale === "de" ? "avif" : "webp"}`;
+  const imageName = `${selectedLanguage?.value.toLowerCase()}.${locale === "en" || locale === "es" || locale === "de" || locale === "tw" ? "avif" : "webp"}`;
 
   useEffect(() => {
     setRef_AboutSection(aboutSectionRef);

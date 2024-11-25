@@ -1,6 +1,6 @@
 {
   "home-page-container": {
-    "title": "Velký spor",
+    "title": "Velké Drama Věků",
     "subtitle": "Objevte odpovědi na nejhlubší otázky o osudu lidstva. Stáhněte si nebo obdržíte doma knihu, která odhaluje bitvu mezi dobrem a zlem a jak se můžete připravit na budoucnost.",
     "download-button": "Stáhnout",
     "receive-at-home-button": "Obdržet doma"
@@ -58,11 +58,11 @@
     "most-downloaded-title": "Nejstahovanější",
     "summary": "Shrnutí",
     "paragraph-1": "Myslíte si, že se svět zlepšuje nebo zhoršuje? Není překvapením, že velká většina lidí dnes věří, že se svět zhoršuje. Možná je tento globální pesimismus výsledkem kultury plné špatných zpráv, nebo možná instinktivně víme otřesnou pravdu prezentovanou v jádru této knihy: Něco je hluboce špatně s naší planetou a jsme bezmocní to napravit.",
-    "paragraph-2": "Velký spor nejen odhaluje původ lidské degradace, ale také odhaluje titánský boj probíhající pod hlukem pandemií a nebezpečí, korupce a masakrů, vražd a chaosu. V tomto úžasném díle objevíte, že zlo má tvář, dobro má Šampiona a hřích má konec. Pokud se chcete připravit na konec tohoto světa a slavný svět, který přijde, musíte si tuto knihu přečíst."
+    "paragraph-2": "Velké drama věků nejen odhaluje původ lidské degradace, ale také odhaluje titánský boj probíhající pod hlukem pandemií a nebezpečí, korupce a masakrů, vražd a chaosu. V tomto úžasném díle objevíte, že zlo má tvář, dobro má Šampiona a hřích má konec. Pokud se chcete připravit na konec tohoto světa a slavný svět, který přijde, musíte si tuto knihu přečíst."
   },
   "distribution-package-container": {
     "summary": "Distribuční balíček",
-    "paragraph-1": "Jste připraveni pomoci sdílet poselství naděje? V této speciální distribuční kampani pro Velký spor nabízíme kompletní balíček bezplatných propagačních materiálů navržených k podpoře šíření tohoto mocného poselství ve vaší komunitě.",
+    "paragraph-1": "Jste připraveni pomoci sdílet poselství naděje? V této speciální distribuční kampani pro Velké drama věků nabízíme kompletní balíček bezplatných propagačních materiálů navržených k podpoře šíření tohoto mocného poselství ve vaší komunitě.",
     "paragraph-2": "Stáhněte si kompletní balíček nyní a staňte se součástí tohoto hnutí, které mění životy! Buďte kreativní, zapojte svou komunitu a pomozte efektivně šířit poselství Velkého sporu."
   },
   "book-language-container": {
@@ -121,7 +121,7 @@
     "home": "Domů"
   },
   "talk-to-us-container": {
-    "title": "Kontaktujte nás",
+    "title": "Chcete se dozvědět více?",
     "form-errors": {
       "name": "Zadejte prosím své jméno",
       "email": "Zadejte prosím svůj email",

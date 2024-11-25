@@ -1,6 +1,6 @@
 {
   "home-page-container": {
-    "title": "Der Große Konflikt",
+    "title": "Vom Schatten Zum Licht",
     "subtitle": "Entdecken Sie die Antworten auf die tiefsten Fragen über das Schicksal der Menschheit. Laden Sie das Buch herunter oder erhalten Sie es zu Hause, das den Kampf zwischen Gut und Böse offenbart und wie Sie sich auf die Zukunft vorbereiten können.",
     "download-button": "Herunterladen",
     "receive-at-home-button": "Zu Hause erhalten"
@@ -58,12 +58,12 @@
     "most-downloaded-title": "Am Meisten Heruntergeladen",
     "summary": "Zusammenfassung",
     "paragraph-1": "Glauben Sie, dass die Welt besser oder schlechter wird? Nicht überraschend glaubt die große Mehrheit der Menschen heute, dass die Welt schlechter wird. Vielleicht ist dieser globale Pessimismus das Ergebnis einer Kultur, die in schlechten Nachrichten gebadet ist, oder vielleicht wissen wir instinktiv die erschütternde Wahrheit, die im Herzen dieses Buches präsentiert wird: Etwas ist zutiefst falsch mit unserem Planeten, und wir sind machtlos, es zu beheben.",
-    "paragraph-2": "Der Große Konflikt enthüllt nicht nur den Ursprung der menschlichen Degradierung, sondern offenbart auch den titanischen Kampf, der unter dem Lärm von Pandemien und Gefahren, Korruption und Gemetzel, Mord und Chaos tobt. In diesem erstaunlichen Werk werden Sie entdecken, dass das Böse ein Gesicht hat, das Gute einen Champion und die Sünde ein Ende. Wenn Sie sich auf das Ende dieser Welt und die glorreiche Welt, die kommen wird, vorbereiten möchten, müssen Sie dieses Buch lesen."
+    "paragraph-2": "Vom schatten zum licht enthüllt nicht nur den Ursprung der menschlichen Degradierung, sondern offenbart auch den titanischen Kampf, der unter dem Lärm von Pandemien und Gefahren, Korruption und Gemetzel, Mord und Chaos tobt. In diesem erstaunlichen Werk werden Sie entdecken, dass das Böse ein Gesicht hat, das Gute einen Champion und die Sünde ein Ende. Wenn Sie sich auf das Ende dieser Welt und die glorreiche Welt, die kommen wird, vorbereiten möchten, müssen Sie dieses Buch lesen."
   },
   "distribution-package-container": {
     "summary": "Das Vertriebspaket",
-    "paragraph-1": "Sind Sie bereit, eine Botschaft der Hoffnung zu teilen? In dieser speziellen Vertriebskampagne für Der Große Konflikt bieten wir ein komplettes Paket kostenloser Werbematerialien an, die entwickelt wurden, um die Verbreitung dieser kraftvollen Botschaft in Ihrer Gemeinde zu unterstützen.",
-    "paragraph-2": "Laden Sie das komplette Paket jetzt herunter und werden Sie Teil dieser Bewegung, die Leben verändert! Seien Sie kreativ, engagieren Sie Ihre Gemeinde und helfen Sie, die Botschaft von Der Große Konflikt effektiv zu verbreiten."
+    "paragraph-1": "Sind Sie bereit, eine Botschaft der Hoffnung zu teilen? In dieser speziellen Vertriebskampagne für Vom schatten zum licht bieten wir ein komplettes Paket kostenloser Werbematerialien an, die entwickelt wurden, um die Verbreitung dieser kraftvollen Botschaft in Ihrer Gemeinde zu unterstützen.",
+    "paragraph-2": "Laden Sie das komplette Paket jetzt herunter und werden Sie Teil dieser Bewegung, die Leben verändert! Seien Sie kreativ, engagieren Sie Ihre Gemeinde und helfen Sie, die Botschaft von Vom schatten zum licht effektiv zu verbreiten."
   },
   "book-language-container": {
     "language": "Sprache:"
@@ -92,7 +92,7 @@
   },
   "receive-at-home-container": {
     "title": "Zu Hause erhalten",
-    "subtitle": "Umarmen Sie die Transformation! Entdecken Sie lebensverändernde Wahrheiten in Der Große Konflikt. Fordern Sie Ihr Exemplar an und finden Sie Hoffnung direkt vor Ihrer Haustür.",
+    "subtitle": "Umarmen Sie die Transformation! Entdecken Sie lebensverändernde Wahrheiten in Vom schatten zum licht. Fordern Sie Ihr Exemplar an und finden Sie Hoffnung direkt vor Ihrer Haustür.",
     "form-errors": {
       "country": "Bitte wählen Sie Ihr Land",
       "name": "Bitte geben Sie Ihren Namen ein",
@@ -121,7 +121,7 @@
     "home": "Startseite"
   },
   "talk-to-us-container": {
-    "title": "Kontaktieren Sie uns",
+    "title": "Möchten Sie mehr erfahren?",
     "form-errors": {
       "name": "Bitte geben Sie Ihren Namen ein",
       "email": "Bitte geben Sie Ihre E-Mail-Adresse ein",

@@ -14,4 +14,5 @@ export const languagesIsoCodeList = [
   { code: "PT", value: "Portuguese" },
   { code: "RU", value: "Russian" },
   { code: "ES", value: "Spanish" },
+  { code: "TW", value: "Twi" },
 ];

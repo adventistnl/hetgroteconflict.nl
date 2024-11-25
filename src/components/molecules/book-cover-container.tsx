@@ -11,7 +11,7 @@ export const BookCoverContainer = () => {
   const selectedLanguage = languagesIsoCodeList.find(
     (lang) => lang.code.toLowerCase() === locale,
   );
-  const imageName = `${selectedLanguage?.value.toLowerCase()}.${locale === "en" || locale === "es" || locale === "de" ? "avif" : "webp"}`;
+  const imageName = `${selectedLanguage?.value.toLowerCase()}.${locale === "en" || locale === "es" || locale === "de" || locale === "tw" ? "avif" : "webp"}`;
 
   return (
     <div className="flex flex-col items-center justify-center laptop:w-1/3">
