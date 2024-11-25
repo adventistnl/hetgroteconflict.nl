@@ -11,7 +11,7 @@ export async function sendTalkToUsEmail(data: TalkToUsFormData) {
   await verifyTransport();
 
   try {
-    const sendResult = await transport.sendMail({
+    await transport.sendMail({
       from: email,
       to: SMTP_EMAIL,
       subject: `Talk to us`,
