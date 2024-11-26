@@ -1,19 +1,21 @@
 "use server";
+import dotenv from "dotenv";
+dotenv.config();
 
 import FormData from "@/app/interfaces/form-data";
 import { transport } from "./transport";
 import { verifyTransport } from "./verify-transport";
 
 export async function sendOrderInfo(data: FormData) {
-  const { SMTP_EMAIL } = process.env;
+  const { NEXT_PUBLIC_SMTP_EMAIL } = process.env;
   const { country, name, email, street, number, city, postCode } = data;
 
   await verifyTransport();
 
   try {
     await transport.sendMail({
-      from: SMTP_EMAIL,
-      to: SMTP_EMAIL,
+      from: NEXT_PUBLIC_SMTP_EMAIL,
+      to: NEXT_PUBLIC_SMTP_EMAIL,
       subject: `Book shipment for ${country}`,
       html: `
         <div>

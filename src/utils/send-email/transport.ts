@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config();
 
-const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
+const { NEXT_PUBLIC_SMTP_EMAIL, NEXT_PUBLIC_SMTP_PASSWORD } = process.env;
 
 //Gmail:
 export const transport = nodemailer.createTransport({
@@ -9,8 +11,8 @@ export const transport = nodemailer.createTransport({
   port: 465,
   secure: false,
   auth: {
-    user: SMTP_EMAIL,
-    pass: SMTP_PASSWORD,
+    user: NEXT_PUBLIC_SMTP_EMAIL,
+    pass: NEXT_PUBLIC_SMTP_PASSWORD,
   },
   tls: {
     rejectUnauthorized: false, // Ignorar erros de certificado autoassinado
@@ -23,8 +25,8 @@ export const transport = nodemailer.createTransport({
 //   port: 587,
 //   secure: false,
 //   auth: {
-//     user: SMTP_EMAIL,
-//     pass: SMTP_PASSWORD,
+//     user: NEXT_PUBLIC_SMTP_EMAIL,
+//     pass: NEXT_PUBLIC_SMTP_PASSWORD,
 //   },
 //   tls: {
 //     ciphers: "SSLv3",

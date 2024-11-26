@@ -1,18 +1,20 @@
 "use server";
+import dotenv from "dotenv";
+dotenv.config();
 
 import { transport } from "./transport";
 import { verifyTransport } from "./verify-transport";
 import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 
 export async function sendTalkToUsConfirmationEmail(data: TalkToUsFormData) {
-  const { SMTP_EMAIL } = process.env;
+  const { NEXT_PUBLIC_SMTP_EMAIL } = process.env;
   const { name, email } = data;
 
   await verifyTransport();
 
   try {
     await transport.sendMail({
-      from: SMTP_EMAIL,
+      from: NEXT_PUBLIC_SMTP_EMAIL,
       to: email,
       subject: "The Great Controversy Project - Talk to us",
       html: `

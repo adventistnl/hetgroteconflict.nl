@@ -3,9 +3,11 @@
 import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 import { transport } from "./transport";
 import { verifyTransport } from "./verify-transport";
+import dotenv from "dotenv";
+dotenv.config();
 
 export async function sendTalkToUsEmail(data: TalkToUsFormData) {
-  const { SMTP_EMAIL } = process.env;
+  const { NEXT_PUBLIC_SMTP_EMAIL } = process.env;
   const { email, name, message } = data;
 
   await verifyTransport();
@@ -13,7 +15,7 @@ export async function sendTalkToUsEmail(data: TalkToUsFormData) {
   try {
     await transport.sendMail({
       from: email,
-      to: SMTP_EMAIL,
+      to: NEXT_PUBLIC_SMTP_EMAIL,
       subject: `Talk to us`,
       html: `
         <div>
