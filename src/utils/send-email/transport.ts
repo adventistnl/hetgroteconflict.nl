@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config();
 
 const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
 

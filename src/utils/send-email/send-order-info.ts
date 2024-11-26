@@ -1,4 +1,6 @@
 "use server";
+import dotenv from "dotenv";
+dotenv.config();
 
 import FormData from "@/app/interfaces/form-data";
 import { transport } from "./transport";

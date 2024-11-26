@@ -1,4 +1,6 @@
 "use server";
+import dotenv from "dotenv";
+dotenv.config();
 
 import { transport } from "./transport";
 import { verifyTransport } from "./verify-transport";
