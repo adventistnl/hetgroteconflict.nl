@@ -32,7 +32,7 @@ export const routing = defineRouting({
   ],
 
   // Used when no locale matches
-  defaultLocale: Locales.EN,
+  defaultLocale: Locales.NL,
 });
 
 // Lightweight wrappers around Next.js' navigation APIs
