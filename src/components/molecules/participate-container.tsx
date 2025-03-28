@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { StepContainer } from "./step-container";
 import { useState } from "react";
-import { PublishHousesContainer } from "../organisms/publish-houses-container";
 import { ChurchsList } from "../organisms/churchs-list-container";
 
 export const ParticipateContainer = () => {
