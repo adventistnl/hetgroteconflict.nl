@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { StepContainer } from "./step-container";
 import { useState } from "react";
-import { ChurchsList } from "../organisms/churchs-list-container";
+import { PublishHousesContainer } from "../organisms/publish-houses-container";
 
 export const ParticipateContainer = () => {
   const [publishHousesIsOpen, setPublishHousesIsOpen] = useState(false);
@@ -26,14 +26,9 @@ export const ParticipateContainer = () => {
   return (
     <div className="flex flex-col gap-10">
       {publishHousesIsOpen && (
-        // <        <PublishHousesContainer
-          // closeHandle={() => setPublishHousesIsOpen(false)}
-          // />
-        //   closeHandle={() => setPublishHousesIsOpen(false)}
-        // />
-        <ChurchsList
-        closeHandle={() => setPublishHousesIsOpen(false)}
-      />
+        <PublishHousesContainer
+          closeHandle={() => setPublishHousesIsOpen(false)}
+        />
       )}
       <h2 className="text-5xl text-primary text-center">
         {translations("title")}
