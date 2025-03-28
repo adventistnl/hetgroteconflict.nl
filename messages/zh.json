@@ -50,6 +50,25 @@
     "title": "出版社",
     "placeholder": "按语言查找"
   },
+  "churchs-list": {
+    "name": "名称",
+    "address": "地址",
+    "phoneNumber": "电话号码",
+    "email": "电子邮件",
+    "days": "天数",
+    "website": "网站",
+    "title": "教会位置",
+    "placeholder": "按名称或地址查找",
+    "daysOfWeek": {
+      "Mon": "周一",
+      "Tues": "周二",
+      "Wed": "周三",
+      "Thur": "周四",
+      "Fri": "周五",
+      "Sat": "周六",
+      "Sun": "周日"
+    }
+  },
   "book-cover-container": {
     "downloads": "下载",
     "languages": "语言"
@@ -118,7 +137,8 @@
   "navbar": {
     "contact": "联系我们",
     "participate": "参与",
-    "home": "首页"
+    "home": "首页",
+    "findChurch": "寻找教堂"
   },
   "talk-to-us-container": {
     "title": "想知道更多吗",

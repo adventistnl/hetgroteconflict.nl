@@ -9,6 +9,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { scrollToSection } from "@/utils/scroll-to-section";
 import { useRefStore } from "../stores/ref-store";
+import { ChurchsList } from "../organisms/churchs-list-container";
 
 interface Props {
   children: ReactNode;
@@ -22,6 +23,7 @@ export const MainContainer = ({ children }: Props) => {
   const locale = useLocale();
 
   const [openNavbar, setOpenNavbar] = useState(false);
+  const [openChurchList, setOpenChurchList] = useState(false);
   const [isVisibleHeader, setIsVisibleHeader] = useState(false);
 
   const { ref_TalkToUsSection } = useRefStore();
@@ -84,6 +86,15 @@ export const MainContainer = ({ children }: Props) => {
                 >
                   {translations("contact")}
                 </li>
+                <li
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setOpenNavbar(false);
+                    setOpenChurchList(!openChurchList);
+                  }}
+                >
+                  {translations("findChurch")}
+                </li>
               </ul>
             </div>
             <SelectTranslation />
@@ -130,6 +141,15 @@ export const MainContainer = ({ children }: Props) => {
             >
               {translations("contact")}
             </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => {
+                setOpenNavbar(false);
+                setOpenChurchList(true);
+              }}
+            >
+              {translations("findChurch")}
+            </li>
             <li className="mt-12">
               <SelectTranslation />
             </li>
@@ -138,6 +158,7 @@ export const MainContainer = ({ children }: Props) => {
       )}
 
       <main>{children}</main>
+      {openChurchList && <ChurchsList closeHandle={() => setOpenChurchList(false)} />}
     </div>
   );
 };

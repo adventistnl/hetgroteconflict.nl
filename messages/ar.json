@@ -50,6 +50,25 @@
     "title": "دور النشر",
     "placeholder": "ابحث حسب اللغة"
   },
+  "churchs-list": {
+    "name": "اسم الكنيسة",
+    "address": "عنوان",
+    "phoneNumber": "رقم الهاتف",
+    "email": "بريد الإلكتروني",
+    "days": "الأسابيع",
+    "website": "الموقع الإلكتروني",
+    "title": "موقع الكنائس",
+    "placeholder": "البحث عن اسم أو عنوان",
+    "daysOfWeek": {
+      "Mon": "الاثنين",
+      "Tues": "الثلاثاء",
+      "Wed": "الأربعاء",
+      "Thur": "الخميس",
+      "Fri": "الجمعة",
+      "Sat": "السبت",
+      "Sun": "الأحد"
+    }
+  },
   "book-cover-container": {
     "downloads": "التنزيلات",
     "languages": "اللغات"
@@ -118,7 +137,8 @@
   "navbar": {
     "contact": "تواصل معنا",
     "participate": "شارك",
-    "home": "الرئيسية"
+    "home": "الرئيسية",
+    "findChurch": "إيجاد كنيسة"
   },
   "talk-to-us-container": {
     "title": "هل تريد أن تعرف المزيد؟",
