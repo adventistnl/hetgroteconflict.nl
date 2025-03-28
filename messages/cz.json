@@ -50,6 +50,25 @@
     "title": "Vydavatelství",
     "placeholder": "Najít podle jazyka"
   },
+  "churchs-list": {
+    "name": "Jméno",
+    "address": "Adresa",
+    "phoneNumber": "Telefonní číslo",
+    "email": "E-mail",
+    "days": "Dny",
+    "website": "Webové stránky",
+    "title": "Umístění kostelů",
+    "placeholder": "Hledat podle jména nebo adresy",
+    "daysOfWeek": {
+      "Mon": "Po",
+      "Tues": "Út",
+      "Wed": "St",
+      "Thur": "Čt",
+      "Fri": "Pá",
+      "Sat": "So",
+      "Sun": "Ne"
+    }
+  },
   "book-cover-container": {
     "downloads": "Stažení",
     "languages": "Jazyky"
@@ -118,7 +137,8 @@
   "navbar": {
     "contact": "Kontaktujte nás",
     "participate": "Účastnit se",
-    "home": "Domů"
+    "home": "Domů",
+    "findChurch": "Najít kostel"
   },
   "talk-to-us-container": {
     "title": "Chcete se dozvědět více?",

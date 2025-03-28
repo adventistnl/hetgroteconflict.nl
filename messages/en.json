@@ -50,6 +50,25 @@
     "title": "Publishing Houses",
     "placeholder": "Find by language"
   },
+  "churchs-list": {
+    "name": "Name",
+    "address": "Address",
+    "phoneNumber": "Phone number",
+    "email": "Email",
+    "days": "Days",
+    "website": "Website",
+    "title": "Churchs Location",
+    "placeholder": "Find by name or address",
+    "daysOfWeek": {
+      "Mon": "Mon",
+      "Tues": "Tues",
+      "Wed": "Wed",
+      "Thur": "Thur",
+      "Fri": "Fri",
+      "Sat": "Sat",
+      "Sun": "Sun"
+    }
+  },
   "book-cover-container": {
     "downloads": "Downloads",
     "languages": "Languages"
@@ -118,7 +137,8 @@
   "navbar": {
     "contact": "Talk to us",
     "participate": "Participate",
-    "home": "Home"
+    "home": "Home",
+    "findChurch": "Find a Church"
   },
   "talk-to-us-container": {
     "title": " Want to know more?",

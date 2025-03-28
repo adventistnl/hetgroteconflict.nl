@@ -5,7 +5,7 @@ export interface iChurchs {
   phoneNumber?: string;
   email?: string;
   days?: string[];
-  webSite?: string;
+  website?: string;
 }
 
 export const churchsDatabase: iChurchs[] = [
@@ -17,7 +17,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-aliviodelft/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-aliviodelft/"
   },
   {
       "id": "29",
@@ -27,7 +27,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Fri"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-alkmaar/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-alkmaar/"
   },
   {
       "id": "30",
@@ -37,7 +37,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-almelo/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-almelo/"
   },
   {
       "id": "89",
@@ -47,7 +47,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.alphen-dc.nl/"
+      "website": "https://www.alphen-dc.nl/"
   },
   {
       "id": "33",
@@ -57,7 +57,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventistenamersfoort.nl/"
+      "website": "https://www.adventistenamersfoort.nl/"
   },
   {
       "id": "35",
@@ -66,7 +66,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-amsterdamghana/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-amsterdamghana/"
   },
   {
       "id": "91",
@@ -76,7 +76,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.zda-amsterdam-noord.nl/"
+      "website": "https://www.zda-amsterdam-noord.nl/"
   },
   {
       "id": "82",
@@ -87,7 +87,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/amsterdam-portugees/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/amsterdam-portugees/"
   },
   {
       "id": "36",
@@ -97,7 +97,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-amsterdamzuid/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-amsterdamzuid/"
   },
   {
       "id": "37",
@@ -107,7 +107,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-amsterdamzuidoost/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-amsterdamzuidoost/"
   },
   {
       "id": "38",
@@ -117,7 +117,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventkerkapeldoorn.nl/"
+      "website": "https://www.adventkerkapeldoorn.nl/"
   },
   {
       "id": "78",
@@ -126,7 +126,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/churchplant-ark/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/churchplant-ark/"
   },
   {
       "id": "39",
@@ -136,7 +136,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventkerkarnhem.nl/"
+      "website": "https://www.adventkerkarnhem.nl/"
   },
   {
       "id": "40",
@@ -146,7 +146,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-assen/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-assen/"
   },
   {
       "id": "34",
@@ -156,7 +156,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/churchplant-bonnotisia/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/churchplant-bonnotisia/"
   },
   {
       "id": "41",
@@ -166,7 +166,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-breda/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-breda/"
   },
   {
       "id": "86",
@@ -193,7 +193,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-denhaag/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-denhaag/"
   },
   {
       "id": "96",
@@ -203,7 +203,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Mon, Tues, Wed, Thur, Fri, Sat, Sun"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgmeente-deventer/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgmeente-deventer/"
   },
   {
       "id": "44",
@@ -213,7 +213,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-doetinchem/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-doetinchem/"
   },
   {
       "id": "45",
@@ -223,7 +223,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-dordrecht/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-dordrecht/"
   },
   {
       "id": "46",
@@ -233,7 +233,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://adventist-eindhoven.nl/"
+      "website": "https://adventist-eindhoven.nl/"
   },
   {
       "id": "47",
@@ -243,7 +243,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist-emmen.nl/"
+      "website": "https://www.adventist-emmen.nl/"
   },
   {
       "id": "48",
@@ -253,7 +253,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Mon, Tues, Wed, Thur, Fri, Sat, Sun"
       ],
-      "webSite": "https://www.zda-enschede.nl/"
+      "website": "https://www.zda-enschede.nl/"
   },
   {
       "id": "49",
@@ -263,7 +263,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://adventkerkgorinchem.nl/"
+      "website": "https://adventkerkgorinchem.nl/"
   },
   {
       "id": "50",
@@ -274,7 +274,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.zdagouda.nl/"
+      "website": "http://www.zdagouda.nl/"
   },
   {
       "id": "51",
@@ -284,7 +284,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventkerkgroningen.nl/"
+      "website": "https://www.adventkerkgroningen.nl/"
   },
   {
       "id": "52",
@@ -294,7 +294,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.adventist-haarlem.nl/"
+      "website": "http://www.adventist-haarlem.nl/"
   },
   {
       "id": "53",
@@ -304,7 +304,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.adventkerkharderwijk.nl/"
+      "website": "http://www.adventkerkharderwijk.nl/"
   },
   {
       "id": "54",
@@ -314,7 +314,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://heerlen.www.adventist.nl/"
+      "website": "http://heerlen.www.adventist.nl/"
   },
   {
       "id": "67",
@@ -323,7 +323,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-hetkompas/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-hetkompas/"
   },
   {
       "id": "55",
@@ -333,7 +333,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist-hilversum.nl/"
+      "website": "https://www.adventist-hilversum.nl/"
   },
   {
       "id": "97",
@@ -343,7 +343,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-hoogeveen/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-hoogeveen/"
   },
   {
       "id": "57",
@@ -354,7 +354,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.adventkapelhth.com/"
+      "website": "http://www.adventkapelhth.com/"
   },
   {
       "id": "58",
@@ -364,7 +364,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-huizen/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-huizen/"
   },
   {
       "id": "90",
@@ -382,7 +382,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.adventkerkleeuwarden.nl/"
+      "website": "http://www.adventkerkleeuwarden.nl/"
   },
   {
       "id": "60",
@@ -392,7 +392,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://adventkerkleiden.nl/"
+      "website": "http://adventkerkleiden.nl/"
   },
   {
       "id": "61",
@@ -402,7 +402,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.adventkerklelystad.nl/"
+      "website": "http://www.adventkerklelystad.nl/"
   },
   {
       "id": "81",
@@ -412,7 +412,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/churchplant-speranza/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/churchplant-speranza/"
   },
   {
       "id": "62",
@@ -422,7 +422,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://adventkerkmeppel.nl/"
+      "website": "https://adventkerkmeppel.nl/"
   },
   {
       "id": "63",
@@ -432,7 +432,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventkerk-nijmegen.nl/"
+      "website": "https://www.adventkerk-nijmegen.nl/"
   },
   {
       "id": "94",
@@ -442,7 +442,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-rotterdaminternational/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-rotterdaminternational/"
   },
   {
       "id": "65",
@@ -452,7 +452,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.adventist-rotterdamnoord.nl/"
+      "website": "http://www.adventist-rotterdamnoord.nl/"
   },
   {
       "id": "93",
@@ -462,7 +462,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-rotterdamnoord/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-rotterdamnoord/"
   },
   {
       "id": "66",
@@ -471,7 +471,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.zdarotterdamzuid.nl/"
+      "website": "http://www.zdarotterdamzuid.nl/"
   },
   {
       "id": "32",
@@ -499,7 +499,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.eoasis.nl/"
+      "website": "https://www.eoasis.nl/"
   },
   {
       "id": "70",
@@ -509,7 +509,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-spijkenisse/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-spijkenisse/"
   },
   {
       "id": "87",
@@ -519,7 +519,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/gemeente-tempupadios/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/gemeente-tempupadios/"
   },
   {
       "id": "71",
@@ -529,7 +529,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Mon, Tues, Wed, Thur, Fri, Sat, Sun"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-terneuzen/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-terneuzen/"
   },
   {
       "id": "72",
@@ -539,7 +539,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-tilburg/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-tilburg/"
   },
   {
       "id": "74",
@@ -549,7 +549,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.uniek-utrecht.nl/"
+      "website": "http://www.uniek-utrecht.nl/"
   },
   {
       "id": "73",
@@ -559,7 +559,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-utrecht/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-utrecht/"
   },
   {
       "id": "85",
@@ -570,7 +570,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-voorburginternational/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-voorburginternational/"
   },
   {
       "id": "75",
@@ -589,7 +589,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-winschoten/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-winschoten/"
   },
   {
       "id": "68",
@@ -598,7 +598,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-x-preszo/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-x-preszo/"
   },
   {
       "id": "77",
@@ -608,7 +608,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-zeeland/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-zeeland/"
   },
   {
       "id": "88",
@@ -618,7 +618,7 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-zoetermeer/"
+      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-zoetermeer/"
   },
   {
       "id": "56",
@@ -637,6 +637,6 @@ export const churchsDatabase: iChurchs[] = [
       "days": [
           "Sat"
       ],
-      "webSite": "http://www.zdagemeentezwolle.nl/"
+      "website": "http://www.zdagemeentezwolle.nl/"
   }
 ]

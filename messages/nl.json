@@ -50,6 +50,25 @@
     "title": "Uitgeverijen",
     "placeholder": "Zoek op taal"
   },
+  "churchs-list": {
+    "name": "Naam",
+    "address": "Adres",
+    "phoneNumber": "Telefoonnummer",
+    "email": "E-mail",
+    "days": "Dagen",
+    "website": "Website",
+    "title": "Kerkenlocaties",
+    "placeholder": "Zoek naar naam of adres",
+    "daysOfWeek": {
+      "Mon": "Ma",
+      "Tues": "Di",
+      "Wed": "Wo",
+      "Thur": "Do",
+      "Fri": "Vr",
+      "Sat": "Za",
+      "Sun": "Zo"
+    }
+  },
   "book-cover-container": {
     "downloads": "Downloads",
     "languages": "Talen"
@@ -118,7 +137,8 @@
   "navbar": {
     "contact": "Neem contact op",
     "participate": "Deelnemen",
-    "home": "Startpagina"
+    "home": "Startpagina",
+    "findChurch": "Vind een Kerk"
   },
   "talk-to-us-container": {
     "title": "Wil je meer weten?",

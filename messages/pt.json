@@ -50,6 +50,25 @@
     "title": "Casas Publicadoras",
     "placeholder": "Buscar por idioma"
   },
+  "churchs-list": {
+    "name": "Nome",
+    "address": "Endereço",
+    "phoneNumber": "Número de telefone",
+    "email": "E-mail",
+    "days": "Dias",
+    "website": "Site",
+    "title": "Local das Igrejas",
+    "placeholder": "Encontre por nome ou endereço",
+    "daysOfWeek": {
+      "Mon": "Seg",
+      "Tues": "Ter",
+      "Wed": "Qua",
+      "Thur": "Qui",
+      "Fri": "Sex",
+      "Sat": "Sáb",
+      "Sun": "Dom"
+    }
+  },
   "book-cover-container": {
     "downloads": "Downloads",
     "languages": "Idiomas"
@@ -118,7 +137,8 @@
   "navbar": {
     "contact": "Fale conosco",
     "participate": "Participar",
-    "home": "Início"
+    "home": "Início",
+    "findChurch": "Encontre uma Igreja"
   },
   "talk-to-us-container": {
     "title": "Quer saber mais?",

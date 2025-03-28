@@ -50,6 +50,25 @@
     "title": "Издательства",
     "placeholder": "Поиск по языку"
   },
+  "churchs-list": {
+    "name": "Имя",
+    "address": "Адрес",
+    "phoneNumber": "Номер телефона",
+    "email": "Электронная почта",
+    "days": "Дни",
+    "website": "Веб-сайт",
+    "title": "Местоположение церквей",
+    "placeholder": "Найти по имени или адресу",
+    "daysOfWeek": {
+      "Mon": "Пн",
+      "Tues": "Вт",
+      "Wed": "Ср",
+      "Thur": "Чт",
+      "Fri": "Пт",
+      "Sat": "Сб",
+      "Sun": "Вс"
+    }
+  },
   "book-cover-container": {
     "downloads": "Загрузки",
     "languages": "Языки"
@@ -118,7 +137,8 @@
   "navbar": {
     "contact": "Свяжитесь с нами",
     "participate": "Участвовать",
-    "home": "Главная"
+    "home": "Главная",
+    "findChurch": "Найти церковь"
   },
   "talk-to-us-container": {
     "title": "Хотите узнать больше?",

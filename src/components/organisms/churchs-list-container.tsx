@@ -43,41 +43,50 @@ export const ChurchsList = ({ closeHandle }: ChurchsListProps) => {
       <button onClick={closeHandle} className="absolute right-6 text-2xl">
         X
       </button>
-      <ul className="flex flex-col gap-4 overflow-y-auto">
-        {filteredChurchs.map((option) => (
+      <ul className="flex flex-col gap-4 overflow-y-auto overflow-x-hidden">
+        {filteredChurchs.map((option) => {
+          console.log(option.days)
+          return (
           <li
             key={option.id}
-            className="border-gray-500 flex flex-col gap-2 border-b pb-6"
+            className="border-gray-500 flex w-full flex-col gap-2 border-b pb-6"
           >
-            {option.name && <h3 className="font-bold">{option.name}</h3>}
-            {option.address && <p className="text-gray">
-              {translations("location")}: {option.address}
+            {option.name && <h3 className="font-bold break-words break-normal">{option.name}</h3>}
+            {option.address && <p className="text-gray break-words break-normal">
+              <b>{translations("address")}: </b>
+               {option.address}
             </p>}
-            {option.phoneNumber && <p className="text-gray">
-              {translations("language")}: {option.phoneNumber}
+            {option.phoneNumber && <p className="text-gray break-words break-normal">
+              <b>{translations("phoneNumber")}: </b>
+              {option.phoneNumber}
             </p>}
-            {option.days && <p className="text-gray">
-              {translations("language")}: {option.days}
+            {option.days && <p className="text-gray break-words break-normal">
+              <b>{translations("days")}: </b>
+              {option.days[0].split(", ").map((day) => translations(`daysOfWeek.${day}`)).join(", ")}
             </p>}
-            <div className="flex space-x-4 text-gray">
+            {/* <div className="flex w-full flex-col text-gray"> */}
               {option.email && (
                 <LinkIcon
                   Icon={EmailIcon}
                   href={`mailto:${option.email}`}
-                  text={`${translations("email")}: ${option.email}`}
+                  text={option.email}
+                  span={`${translations("email")}: `}
+                  color="gray"
                 />
               )}
-              {option.webSite && (
+              {option.website && (
                 <LinkIcon
                   Icon={GlobeIcon}
-                  href={option.webSite}
+                  href={option.website}
                   target="_blank"
-                  text={`${translations(".webSite")}: ${option.webSite}`}
+                  text={option.website}
+                  span={`${translations("website")}: `}
+                  color="gray"
                 />
               )}
-            </div>
+            {/* </div> */}
           </li>
-        ))}
+        )})}
       </ul>
     </div>
   );

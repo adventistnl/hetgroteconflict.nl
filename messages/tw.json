@@ -50,6 +50,25 @@
     "title": "Nwoma Abatoɔ",
     "placeholder": "Hwehwɛ nkyerɛmu"
   },
+  "churchs-list": {
+    "name": "Din",
+    "address": "Beae",
+    "phoneNumber": "Nkrataa nombua",
+    "email": "Email",
+    "days": "Da",
+    "website": "Website",
+    "title": "Kurom a Wodwane",
+    "placeholder": "Hwehwɛ din anaa beae",
+    "daysOfWeek": {
+      "Mon": "Dwoda",
+      "Tues": "Benada",
+      "Wed": "Wukuda",
+      "Thur": "Yawda",
+      "Fri": "Efua",
+      "Sat": "Memeneda",
+      "Sun": "Kwasiada"
+    }
+  },
   "book-cover-container": {
     "downloads": "Downloads",
     "languages": "Nkyerɛmu"
@@ -118,7 +137,8 @@
   "navbar": {
     "contact": "Bɔ mmɔden ne yɛn nkɔmmɔ",
     "participate": "Bɔ mmɔden",
-    "home": "Fie"
+    "home": "Fie",
+    "findChurch": "Hwɛ Kurom Bi"
   },
   "talk-to-us-container": {
     "title": "Pɛ sɛ wuhu nsɛm pii anaa?",
