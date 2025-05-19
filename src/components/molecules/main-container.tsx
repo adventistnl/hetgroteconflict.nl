@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
+import { track } from '@vercel/analytics';
 import Image from "next/image";
 import { HamburguerIcon } from "../atoms/hamburguer-icon";
 import { useRouter } from "next/navigation";
@@ -68,21 +69,28 @@ export const MainContainer = ({ children }: Props) => {
               <ul className="flex flex-row gap-16 text-center text-primary">
                 <li
                   className="cursor-pointer"
-                  onClick={() => router.push(`/${locale}`)}
+                  onClick={() => {
+                    router.push(`/${locale}`);
+                    track("sectionSelect", {section: "home"});
+                  }}
                 >
                   {translations("home")}
                 </li>
                 <li
                   className="cursor-pointer"
-                  onClick={() =>
+                  onClick={() => {
                     router.push(`/${locale}/${translations("participate")}`)
-                  }
+                    track("sectionSelect", {section: "participate"});
+                  }}
                 >
                   {translations("participate")}
                 </li>
                 <li
                   className="cursor-pointer"
-                  onClick={() => scrollToSection(ref_TalkToUsSection)}
+                  onClick={() => { 
+                    scrollToSection(ref_TalkToUsSection)
+                    track("sectionSelect", {section: "contact"});
+                  }}
                 >
                   {translations("contact")}
                 </li>
@@ -91,6 +99,7 @@ export const MainContainer = ({ children }: Props) => {
                   onClick={() => {
                     setOpenNavbar(false);
                     setOpenChurchList(!openChurchList);
+                    track("sectionSelect", {section: "findChurch"});
                   }}
                 >
                   {translations("findChurch")}
@@ -118,6 +127,7 @@ export const MainContainer = ({ children }: Props) => {
                 setOpenNavbar(false);
                 setIsVisibleHeader(false);
                 router.push(`/${locale}`);
+                track("sectionSelect", {section: "home"});
               }}
             >
               {translations("home")}
@@ -128,6 +138,7 @@ export const MainContainer = ({ children }: Props) => {
                 setOpenNavbar(false);
                 setIsVisibleHeader(false);
                 router.push(`/${locale}/${translations("participate")}`);
+                track("sectionSelect", {section: "participate"});
               }}
             >
               {translations("participate")}
@@ -137,6 +148,7 @@ export const MainContainer = ({ children }: Props) => {
               onClick={() => {
                 setOpenNavbar(false);
                 scrollToSection(ref_TalkToUsSection);
+                track("sectionSelect", {section: "contact"});
               }}
             >
               {translations("contact")}
@@ -146,6 +158,7 @@ export const MainContainer = ({ children }: Props) => {
               onClick={() => {
                 setOpenNavbar(false);
                 setOpenChurchList(true);
+                track("sectionSelect", {section: "findChurch"});
               }}
             >
               {translations("findChurch")}

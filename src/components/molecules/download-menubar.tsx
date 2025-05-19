@@ -38,8 +38,8 @@ export const DownloadMenubar = ({
     secondary:
       "w-[150px] cursor-pointer rounded-full bg-none border border-primary px-5 py-2 text-primary",
   };
-  const handleOnClick = (material: materialType, language: string) => {
-     track('download', {material, language});
+  const handleOnClick = (material: materialType) => {
+     track('download', {material, language: selectedLanguage.label });
   }
   return (
     <Menubar>
@@ -50,7 +50,7 @@ export const DownloadMenubar = ({
         <MenubarContent>
           {downloadList.pdf[selectedLanguage.value] && (
             <Link href={downloadList.pdf[selectedLanguage.value]}
-              onClick={() => handleOnClick("pdf", selectedLanguage.value)}
+              onClick={() => handleOnClick("pdf")}
             >
               <MenubarItem>
                 <PdfIcon className="mr-2 text-2xl" /> PDF
@@ -59,7 +59,7 @@ export const DownloadMenubar = ({
           )}
           {downloadList.epub[selectedLanguage.value] && (
             <Link href={downloadList.epub[selectedLanguage.value]}
-              onClick={() => handleOnClick("epub", selectedLanguage.value)}
+              onClick={() => handleOnClick("epub")}
             >
               <MenubarItem>
                 <EpubIcon className="mr-2 text-2xl" />
@@ -71,7 +71,7 @@ export const DownloadMenubar = ({
             <Link
               href={downloadList.promotional[selectedLanguage.value]}
               target="_blank"
-              onClick={() => handleOnClick("promotional", selectedLanguage.value)}
+              onClick={() => handleOnClick("promotional")}
             >
               <MenubarItem>
                 <SquareIcon className="mr-2 text-2xl" />
@@ -81,7 +81,7 @@ export const DownloadMenubar = ({
           )}
           {downloadList.studyGuide[selectedLanguage.value] && (
             <Link href={downloadList.studyGuide[selectedLanguage.value]}
-              onClick={() => handleOnClick("studyGuide", selectedLanguage.value)}
+              onClick={() => handleOnClick("studyGuide")}
             >
               <MenubarItem>
                 <OpenBookIcon className="mr-2 text-2xl" />
@@ -91,7 +91,7 @@ export const DownloadMenubar = ({
           )}
           {downloadList.readingPlan[selectedLanguage.value] && (
             <Link href={downloadList.readingPlan[selectedLanguage.value]}
-              onClick={() => handleOnClick("readingPlan", selectedLanguage.value)}
+              onClick={() => handleOnClick("readingPlan")}
             >
               <MenubarItem>
                 <ClosedBookIcon className="mr-2 text-2xl" />
@@ -101,7 +101,7 @@ export const DownloadMenubar = ({
           )}
           {downloadList.audio[selectedLanguage.value] && (
             <Link href={downloadList.audio[selectedLanguage.value]}
-              onClick={() => handleOnClick("audio", selectedLanguage.value)}
+              onClick={() => handleOnClick("audio")}
             >
               <MenubarItem>
                 <EarphoneIcon className="mr-2 text-2xl" />

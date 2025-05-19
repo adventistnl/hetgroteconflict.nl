@@ -2,6 +2,7 @@
 
 import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { track } from '@vercel/analytics';
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -61,6 +62,7 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
 
     try {
       await talkToUsFunctions(data);
+      track("sendContactEmail", data)
       setIsLoading(false);
       setSuccess(translations("success-message"));
     } catch (error) {
