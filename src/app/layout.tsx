@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Rubik } from "next/font/google";
 import "./styles/globals.css";
 import "flag-icons/css/flag-icons.min.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const rubik = Rubik({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${rubik.variable} ${plusJakartaSans.variable} bg-secondary antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
