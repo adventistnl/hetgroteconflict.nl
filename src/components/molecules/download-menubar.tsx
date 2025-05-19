@@ -7,6 +7,7 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from "../atoms/menubar";
+import { track } from '@vercel/analytics';
 import { MdKeyboardArrowDown as ArrowIcon } from "react-icons/md";
 import { FaRegFilePdf as PdfIcon } from "react-icons/fa6";
 import { AiOutlineBook as EpubIcon } from "react-icons/ai";
@@ -24,6 +25,8 @@ interface Props {
   buttonStyle?: "primary" | "secondary";
 }
 
+type materialType = "epub" | "pdf" | "promotional" | "studyGuide" | "readingPlan" | "audio"
+
 export const DownloadMenubar = ({
   selectedLanguage,
   buttonStyle = "primary",
@@ -35,6 +38,9 @@ export const DownloadMenubar = ({
     secondary:
       "w-[150px] cursor-pointer rounded-full bg-none border border-primary px-5 py-2 text-primary",
   };
+  const handleOnClick = (material: materialType, language: string) => {
+     track('download', {material, language});
+  }
   return (
     <Menubar>
       <MenubarMenu>
@@ -43,14 +49,18 @@ export const DownloadMenubar = ({
         </MenubarTrigger>
         <MenubarContent>
           {downloadList.pdf[selectedLanguage.value] && (
-            <Link href={downloadList.pdf[selectedLanguage.value]}>
+            <Link href={downloadList.pdf[selectedLanguage.value]}
+              onClick={() => handleOnClick("pdf", selectedLanguage.value)}
+            >
               <MenubarItem>
                 <PdfIcon className="mr-2 text-2xl" /> PDF
               </MenubarItem>
             </Link>
           )}
           {downloadList.epub[selectedLanguage.value] && (
-            <Link href={downloadList.epub[selectedLanguage.value]}>
+            <Link href={downloadList.epub[selectedLanguage.value]}
+              onClick={() => handleOnClick("epub", selectedLanguage.value)}
+            >
               <MenubarItem>
                 <EpubIcon className="mr-2 text-2xl" />
                 EPUB
@@ -61,6 +71,7 @@ export const DownloadMenubar = ({
             <Link
               href={downloadList.promotional[selectedLanguage.value]}
               target="_blank"
+              onClick={() => handleOnClick("promotional", selectedLanguage.value)}
             >
               <MenubarItem>
                 <SquareIcon className="mr-2 text-2xl" />
@@ -69,7 +80,9 @@ export const DownloadMenubar = ({
             </Link>
           )}
           {downloadList.studyGuide[selectedLanguage.value] && (
-            <Link href={downloadList.studyGuide[selectedLanguage.value]}>
+            <Link href={downloadList.studyGuide[selectedLanguage.value]}
+              onClick={() => handleOnClick("studyGuide", selectedLanguage.value)}
+            >
               <MenubarItem>
                 <OpenBookIcon className="mr-2 text-2xl" />
                 {translations("study")}
@@ -77,7 +90,9 @@ export const DownloadMenubar = ({
             </Link>
           )}
           {downloadList.readingPlan[selectedLanguage.value] && (
-            <Link href={downloadList.readingPlan[selectedLanguage.value]}>
+            <Link href={downloadList.readingPlan[selectedLanguage.value]}
+              onClick={() => handleOnClick("readingPlan", selectedLanguage.value)}
+            >
               <MenubarItem>
                 <ClosedBookIcon className="mr-2 text-2xl" />
                 {translations("reading")}
@@ -85,7 +100,9 @@ export const DownloadMenubar = ({
             </Link>
           )}
           {downloadList.audio[selectedLanguage.value] && (
-            <Link href={downloadList.audio[selectedLanguage.value]}>
+            <Link href={downloadList.audio[selectedLanguage.value]}
+              onClick={() => handleOnClick("audio", selectedLanguage.value)}
+            >
               <MenubarItem>
                 <EarphoneIcon className="mr-2 text-2xl" />
                 MP3
