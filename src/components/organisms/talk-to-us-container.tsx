@@ -62,7 +62,7 @@ export const TalkToUsContainer = ({ talkToUsFunctions }: Props) => {
 
     try {
       await talkToUsFunctions(data);
-      track("sendContactEmail", data)
+      track("sendContactEmail", {...data})
       setIsLoading(false);
       setSuccess(translations("success-message"));
     } catch (error) {
