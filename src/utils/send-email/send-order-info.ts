@@ -7,15 +7,15 @@ import { transport } from "./transport";
 import { verifyTransport } from "./verify-transport";
 
 export async function sendOrderInfo(data: FormData) {
-  const { NEXT_PUBLIC_SMTP_EMAIL } = process.env;
+  const { NEXT_PUBLIC_SMTP_TARGET_EMAIL } = process.env;
   const { country, name, email, street, number, city, postCode } = data;
 
   await verifyTransport();
 
   try {
     await transport.sendMail({
-      from: NEXT_PUBLIC_SMTP_EMAIL,
-      to: NEXT_PUBLIC_SMTP_EMAIL,
+      from: email,
+      to: NEXT_PUBLIC_SMTP_TARGET_EMAIL,
       subject: `Book shipment for ${country}`,
       html: `
         <div>
