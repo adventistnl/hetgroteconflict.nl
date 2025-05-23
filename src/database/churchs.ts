@@ -1,6 +1,6 @@
 export interface iChurchs {
   id: string;
-  name?: string;
+  name: string;
   address?: string;
   phoneNumber?: string;
   email?: string;
@@ -121,7 +121,7 @@ export const churchsDatabase: iChurchs[] = [
   },
   {
       "id": "78",
-      "name": "ARK Zoetermeer",
+      "name": "Wateringen ARK Zoetermeer",
       "address": "Pieter van der Plasstraat 22 Wateringen, Zuid-Holland, 2291 SE",
       "days": [
           "Sat"
@@ -406,7 +406,7 @@ export const churchsDatabase: iChurchs[] = [
   },
   {
       "id": "81",
-      "name": "Lelystad",
+      "name": "Lelystad Speranza",
       "address": "Voorstraat 313 Lelystad, Flevoland, 8226KB",
       "phoneNumber": "0320-256111",
       "days": [
@@ -453,16 +453,6 @@ export const churchsDatabase: iChurchs[] = [
           "Sat"
       ],
       "website": "http://www.adventist-rotterdamnoord.nl/"
-  },
-  {
-      "id": "93",
-      "name": "Rotterdam Noord",
-      "address": "Minstreelstraat 9 Rotterdam, 3051 PH",
-      "phoneNumber": "030 6939375",
-      "days": [
-          "Sat"
-      ],
-      "website": "https://www.adventist.nl/anbi/gemeenten/adventgemeente-rotterdamnoord/"
   },
   {
       "id": "66",
@@ -543,7 +533,7 @@ export const churchsDatabase: iChurchs[] = [
   },
   {
       "id": "74",
-      "name": "Uniek (De Klepel)",
+      "name": "Utrecht Uniek (De Klepel)",
       "address": "Zandweg 126 De Meern, Utrecht, 3454 JZ",
       "phoneNumber": "030 - 6939375",
       "days": [
@@ -593,7 +583,7 @@ export const churchsDatabase: iChurchs[] = [
   },
   {
       "id": "68",
-      "name": "X-preszo",
+      "name": "Rotterdam X-preszo",
       "address": "Cornelis Danckertsstraat 36 Rotterdam, Zuid-Holland, 3067 XG",
       "days": [
           "Sat"
@@ -638,5 +628,112 @@ export const churchsDatabase: iChurchs[] = [
           "Sat"
       ],
       "website": "http://www.zdagemeentezwolle.nl/"
-  }
+  },
+  {
+    "id": "101",
+    "name": "Almere Bethanië",
+    "address": "Parkwijklaan 5 1326 AX Almere-Stad",
+    "days": [
+      "Sat"
+  ],
+  },
+  {
+    "id": "102",
+    "name": "Almere Ghana",
+    "address": "Musicalstraat 1 1323 VR Almere",
+    "website": "https://www.almereghanasda.nl/",
+    "days": [
+      "Sat"
+  ],
+  },
+  {
+    "id": "103",
+    "name": "Almere SAmen",
+    "address": "J.G. Suurhoffstraat 45 1314 NR Almere-Stad",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "104",
+    "name": "Amsterdam Filadelfia",
+    "address": "Johan Braakensiekhof 1 1068 KK Amsterdam",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "105",
+    "name": "Amsterdam: Spaans",
+    "address": "Groenhoven 650 1103 LT Amsterdam",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "106",
+    "name": "Arnhem Zuid",
+    "address": "Groenhoven 650 1103 LT Amsterdam",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "107",
+    "name": "Lelystad Gods Huis",
+    "address": "Jol 37 15 8243 HP Lelystad",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "108",
+    "name": "Uniegemeente",
+    "address": "Amersfoortseweg 18 3712 BC Huis ter Heide",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "120",
+    "name": "Roermond: Aan het Roer",
+    "address": "Minderbroederssingel 15F 6041 KZ Roermond",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "121",
+    "name": "Delft Alivio",
+    "address": "Hermesstraat 65 2624 BG Delft",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "122",
+    "name": "Den Bosch",
+    "address": "Woudseweg 29 5275 JH Den Dungen",
+    website: "https://www.bssdenbosch.nl",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "123",
+    "name": "Rotterdam Portugees",
+    "address": "Proveniersstraat 52B 3033 CL Rotterdam",
+    website: "https://www.facebook.com/AdventistasRotterdam",
+    "days": [
+      "Sat"
+    ],
+  },
+  {
+    "id": "124",
+    "name": "Terneuzen New Life",
+    "address": "Schuberthof 31a 4536 AL Terneuzen",
+    "days": [
+      "Sat"
+    ],
+  },
 ]
