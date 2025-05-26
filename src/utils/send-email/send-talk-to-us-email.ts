@@ -7,16 +7,16 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export async function sendTalkToUsEmail(data: TalkToUsFormData) {
-  const { NEXT_PUBLIC_SMTP_EMAIL } = process.env;
+  const { NEXT_PUBLIC_SMTP_TARGET_EMAIL } = process.env;
   const { email, name, message } = data;
 
   await verifyTransport();
 
   try {
     await transport.sendMail({
-      from: email,
-      to: NEXT_PUBLIC_SMTP_EMAIL,
-      subject: `Talk to us`,
+      replyTo: email,
+      to: NEXT_PUBLIC_SMTP_TARGET_EMAIL,
+      subject: `Talk to us contact by ${name}`,
       html: `
         <div>
           <p>Name: ${name}</p>
