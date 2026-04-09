@@ -3,16 +3,13 @@ import { getTranslations } from "next-intl/server";
 type Props = {
   params: {
     locale: string;
-    book: string;
     chapter_number: string;
   };
 };
 
 export default async function ChapterPage({ params }: Props) {
-  const { locale, book, chapter_number } = params;
+  const { locale, chapter_number } = params;
   const t = await getTranslations({ locale, namespace: "chapter-page" });
-
-  const bookLabel = book.replace(/-/g, " ");
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-secondary">
@@ -76,7 +73,7 @@ export default async function ChapterPage({ params }: Props) {
           className="text-base leading-relaxed"
           style={{ fontFamily: "var(--font-rubik)", color: "rgba(59,59,59,0.55)" }}
         >
-          {t("description", { book: bookLabel })}
+          {t("description")}
         </p>
 
         {/* CTA button */}

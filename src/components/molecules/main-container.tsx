@@ -28,6 +28,7 @@ export const MainContainer = ({ children }: Props) => {
   const [isVisibleHeader, setIsVisibleHeader] = useState(false);
 
   const { ref_TalkToUsSection } = useRefStore();
+  const { setPendingScroll } = useRefStore();
 
   //Handlers
   const handleOpenNavbar = () => {
@@ -87,9 +88,14 @@ export const MainContainer = ({ children }: Props) => {
                 </li>
                 <li
                   className="cursor-pointer"
-                  onClick={() => { 
-                    scrollToSection(ref_TalkToUsSection)
+                  onClick={() => {
                     track("sectionSelect", {section: "contact"});
+                    if (ref_TalkToUsSection?.current) {
+                      scrollToSection(ref_TalkToUsSection);
+                    } else {
+                      setPendingScroll("talk-to-us");
+                      router.push(`/${locale}`);
+                    }
                   }}
                 >
                   {translations("contact")}
@@ -147,8 +153,13 @@ export const MainContainer = ({ children }: Props) => {
               className="cursor-pointer"
               onClick={() => {
                 setOpenNavbar(false);
-                scrollToSection(ref_TalkToUsSection);
                 track("sectionSelect", {section: "contact"});
+                if (ref_TalkToUsSection?.current) {
+                  scrollToSection(ref_TalkToUsSection);
+                } else {
+                  setPendingScroll("talk-to-us");
+                  router.push(`/${locale}`);
+                }
               }}
             >
               {translations("contact")}

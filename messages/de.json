@@ -165,7 +165,7 @@
   "chapter-page": {
     "chapter": "Kapitel",
     "coming-soon": "Demnächst verfügbar",
-    "description": "Dieses Kapitel von {book} wird sorgfältig vorbereitet. Schauen Sie bald wieder vorbei.",
+    "description": "Dieses Kapitel wird sorgfältig vorbereitet. Schauen Sie bald wieder vorbei.",
     "go-back-home": "Zurück zur Startseite"
   }
 }

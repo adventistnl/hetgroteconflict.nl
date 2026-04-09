@@ -165,7 +165,7 @@
   "chapter-page": {
     "chapter": "Chapitre",
     "coming-soon": "Bientôt disponible",
-    "description": "Ce chapitre de {book} est en cours de préparation. Revenez bientôt.",
+    "description": "Ce chapitre est en cours de préparation. Revenez bientôt.",
     "go-back-home": "Retour à l'accueil"
   }
 }

@@ -165,7 +165,7 @@
   "chapter-page": {
     "chapter": "Chapter",
     "coming-soon": "Coming Soon",
-    "description": "This chapter of {book} is being carefully prepared. Check back soon.",
+    "description": "This chapter is being carefully prepared. Check back soon.",
     "go-back-home": "Go back home"
   }
 }

@@ -6,6 +6,7 @@ export interface RefState {
   ref_DownloadSection: MutableRefObject<HTMLDivElement | null> | null;
   ref_ReceiveAtHomeSection: MutableRefObject<HTMLDivElement | null> | null;
   ref_TalkToUsSection: MutableRefObject<HTMLDivElement | null> | null;
+  pendingScroll: "talk-to-us" | null;
 
   setRef_AboutSection: (
     ref: MutableRefObject<HTMLDivElement | null> | null,
@@ -19,6 +20,7 @@ export interface RefState {
   setRef_TalkToUsSection: (
     ref: MutableRefObject<HTMLDivElement | null> | null,
   ) => void;
+  setPendingScroll: (target: "talk-to-us" | null) => void;
 }
 
 const initialState = {
@@ -26,6 +28,7 @@ const initialState = {
   ref_DownloadSection: null,
   ref_ReceiveAtHomeSection: null,
   ref_TalkToUsSection: null,
+  pendingScroll: null,
 };
 
 export const useRefStore = create<RefState>()((set) => ({
@@ -41,4 +44,6 @@ export const useRefStore = create<RefState>()((set) => ({
   setRef_TalkToUsSection: (
     ref: MutableRefObject<HTMLDivElement | null> | null,
   ) => set(() => ({ ref_TalkToUsSection: ref })),
+  setPendingScroll: (target: "talk-to-us" | null) =>
+    set(() => ({ pendingScroll: target })),
 }));

@@ -7,6 +7,7 @@ import { CompaniesContainer } from "@/components/molecules/companies-container";
 // import { ReceiveAtHomeContainer } from "@/components/molecules/receive-at-home-container";
 import { SummaryContainer } from "@/components/organisms/summary-container";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 import { HiOutlineCloudDownload as CloudIcon } from "react-icons/hi";
 import { MdOutlineMail as MailIcon } from "react-icons/md";
 
@@ -28,7 +29,14 @@ export const HomePageContainer = ({
 }: Props) => {
   const translations = useTranslations("home-page-container");
   const talkToUsTranslations = useTranslations("talk-to-us-container");
-  const { ref_DownloadSection, ref_TalkToUsSection } = useRefStore();
+  const { ref_DownloadSection, ref_TalkToUsSection, pendingScroll, setPendingScroll } = useRefStore();
+
+  useEffect(() => {
+    if (pendingScroll === "talk-to-us" && ref_TalkToUsSection?.current) {
+      scrollToSection(ref_TalkToUsSection);
+      setPendingScroll(null);
+    }
+  }, [pendingScroll, ref_TalkToUsSection, setPendingScroll]);
 
   return (
     <>
@@ -71,7 +79,9 @@ export const HomePageContainer = ({
         <BookCarousel />
       </div>
       {/* <ReceiveAtHomeContainer receiveAtHomeFunctions={receiveAtHomeFunctions} /> */}
-      <TalkToUsContainer talkToUsFunctions={talkToUsFunctions} />
+      <div id="talk-to-us" className="w-full">
+        <TalkToUsContainer talkToUsFunctions={talkToUsFunctions} />
+      </div>
       <Footer />
     </>
   );

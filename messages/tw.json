@@ -165,7 +165,7 @@
   "chapter-page": {
     "chapter": "第",
     "coming-soon": "即將推出",
-    "description": "{book} 的這一章正在精心準備中，請稍後再來。",
+    "description": "這一章正在精心準備中，請稍後再來。",
     "go-back-home": "返回首頁"
   }
 }
