@@ -161,5 +161,11 @@
     "policy": "Zásady ochrany osobních údajů",
     "legal": "Právní upozornění",
     "tradmark": "Použití ochranné známky a loga"
+  },
+  "chapter-page": {
+    "chapter": "Kapitola",
+    "coming-soon": "Již brzy",
+    "description": "Tato kapitola z {book} je pečlivě připravována. Vraťte se brzy.",
+    "go-back-home": "Zpět na domovskou stránku"
   }
 }

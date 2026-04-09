@@ -161,5 +161,11 @@
     "policy": "Politique de Confidentialité",
     "legal": "Mentions Légales",
     "tradmark": "Utilisation de la Marque et du Logo"
+  },
+  "chapter-page": {
+    "chapter": "Chapitre",
+    "coming-soon": "Bientôt disponible",
+    "description": "Ce chapitre de {book} est en cours de préparation. Revenez bientôt.",
+    "go-back-home": "Retour à l'accueil"
   }
 }

@@ -161,5 +161,11 @@
     "policy": "Privacybeleid",
     "legal": "Juridische kennisgeving",
     "tradmark": "Gebruik van handelsmerk en logo"
+  },
+  "chapter-page": {
+    "chapter": "Hoofdstuk",
+    "coming-soon": "Binnenkort beschikbaar",
+    "description": "Dit hoofdstuk van {book} wordt zorgvuldig voorbereid. Kom binnenkort terug.",
+    "go-back-home": "Terug naar huis"
   }
 }

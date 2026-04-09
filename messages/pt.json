@@ -162,5 +162,11 @@
     "policy": "Política de Privacidade",
     "legal": "Aviso Legal",
     "tradmark": "Uso de Marca e Logotipo"
+  },
+  "chapter-page": {
+    "chapter": "Capítulo",
+    "coming-soon": "Em breve",
+    "description": "Este capítulo de {book} está sendo cuidadosamente preparado. Volte em breve.",
+    "go-back-home": "Voltar para o início"
   }
 }
