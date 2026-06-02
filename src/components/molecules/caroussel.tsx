@@ -12,6 +12,9 @@ export default function Carousel<T>({
   ItemComponent,
 }: CarouselProps<T>): JSX.Element {
   const checkScreenSize = () => {
+    if (typeof window === "undefined") {
+      return 4;
+    }
     if (window.innerWidth <= 640) {
       return 1;
     } else if (window.innerWidth < 900 && window.innerWidth > 640) {
@@ -23,7 +26,7 @@ export default function Carousel<T>({
     }
   };
 
-  const [visibleItems, setVisibleItems] = useState<number>(checkScreenSize);
+  const [visibleItems, setVisibleItems] = useState<number>(4);
   const [currentItems, setCurrentItems] = useState<T[]>(items);
 
   const updateVisibleItems = () => {
