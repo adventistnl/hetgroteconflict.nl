@@ -81,7 +81,7 @@ export const StudyGuidePageContainer = ({ chapters }: Props) => {
       {/* ── Chapters grid ── */}
       <section ref={gridRef} className="mx-auto w-full max-w-6xl px-4 py-12">
         {/* Mobile: horizontal scroll-snap carousel (1 chapter at a time) */}
-        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:hidden">
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-24 sm:hidden">
           {chapters.map((chapter) => (
             <div
               key={chapter.chapterNumber}

@@ -37,19 +37,28 @@ export function ChapterCarousel({ currentChapterNumber, locale }: Props) {
 
   return (
     <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-10">
-      {/* Header alinhado ao container interno do carrossel */}
-      <div className="flex items-center gap-3 px-0 sm:px-0 pb-4">
+      {/* Divider */}
+      <div className="flex items-center gap-3 pb-4">
         <div className="h-px flex-1 bg-primary/10" />
-        {/* <h2
-          className="shrink-0 text-lg font-bold uppercase tracking-widest text-primary/60"
-          style={{ fontFamily: "var(--font-rubik)" }}
-        >
-          {t("upNext")}
-        </h2> */}
         <div className="h-px flex-1 bg-primary/10" />
       </div>
 
-      <Carousel ItemComponent={StudyGuideChapterCard} items={items} />
+      {/* Mobile: native horizontal scroll-snap */}
+      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:hidden">
+        {items.map((item) => (
+          <div
+            key={item.chapterNumber}
+            className="w-[calc(100vw-2.5rem)] shrink-0 snap-start"
+          >
+            <StudyGuideChapterCard {...item} />
+          </div>
+        ))}
+      </div>
+
+      {/* Tablet / Desktop: arrow carousel */}
+      <div className="hidden sm:block">
+        <Carousel ItemComponent={StudyGuideChapterCard} items={items} />
+      </div>
     </div>
   );
 }

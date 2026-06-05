@@ -12,7 +12,7 @@ export const EsdaCoursesContainer = () => {
   return (
     <div className="flex flex-wrap items-start justify-between gap-6">
       {/* Left: text content */}
-      <div className="flex max-w-[600px] flex-col gap-6 p-8">
+      <div className="flex max-w-[600px] flex-col gap-6">
         <h6 className="text-2xl text-primary">{t("title")}</h6>
         <div className="flex flex-col gap-4">
           <p className="text-gray">{t("summary")}</p>
@@ -30,7 +30,7 @@ export const EsdaCoursesContainer = () => {
       </div>
 
       {/* Right: course covers */}
-      <div className="flex items-center p-8">
+      <div className="flex flex-1 items-center pb-8">
         <EsdaCourseCovers />
       </div>
     </div>
