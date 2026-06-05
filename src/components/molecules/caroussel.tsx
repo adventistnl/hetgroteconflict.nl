@@ -1,13 +1,13 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface CarouselProps<T> {
+interface CarouselProps<T extends object> {
   items: T[];
   ItemComponent: React.ComponentType<T>;
 }
 
-export default function Carousel<T>({
+export default function Carousel<T extends object>({
   items,
   ItemComponent,
 }: CarouselProps<T>): JSX.Element {
@@ -29,10 +29,10 @@ export default function Carousel<T>({
   const [visibleItems, setVisibleItems] = useState<number>(4);
   const [currentItems, setCurrentItems] = useState<T[]>(items);
 
-  const updateVisibleItems = () => {
+  const updateVisibleItems = useCallback(() => {
     const count = checkScreenSize();
     setVisibleItems(count);
-  };
+  }, []);
 
   useEffect(() => {
     updateVisibleItems();
@@ -41,13 +41,13 @@ export default function Carousel<T>({
     return () => {
       window.removeEventListener("resize", updateVisibleItems);
     };
-  }, []);
+  }, [updateVisibleItems]);
 
   const prevSlide = (): void => {
     setCurrentItems((prevItems) => {
-      const lastItem = prevItems.pop();
+      const lastItem = prevItems[prevItems.length - 1];
       if (lastItem) {
-        return [lastItem, ...prevItems];
+        return [lastItem, ...prevItems.slice(0, -1)];
       }
       return prevItems;
     });
@@ -59,6 +59,7 @@ export default function Carousel<T>({
       return [...rest, firstItem];
     });
   };
+
   return (
     <div className="relative mx-auto flex w-full max-w-[1400px] flex-row items-center justify-around gap-4 p-10">
       <button
@@ -67,9 +68,11 @@ export default function Carousel<T>({
       >
         <ChevronLeft className="text-gray-400 group-hover:text-white" />
       </button>
-      <div className="flex w-full justify-evenly gap-12">
+      <div className="flex w-full items-start gap-6">
         {currentItems.slice(0, visibleItems).map((item, index) => (
-          <ItemComponent key={index} {...item} />
+          <div key={index} className="min-w-0 flex-1">
+            <ItemComponent {...(item as T & JSX.IntrinsicAttributes)} />
+          </div>
         ))}
       </div>
       <button

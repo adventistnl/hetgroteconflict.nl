@@ -1,42 +1,192 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import Link from "next/link";
+import {
+  FaFacebook,
+  FaYoutube,
+  FaChurch,
+} from "react-icons/fa";
+import {
+  MdEmail,
+  MdPhone,
+  MdLocationOn,
+} from "react-icons/md";
+
+const SOCIAL = [
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/zevendedagsadventisten/?locale=nl_NL",
+    icon: FaFacebook,
+    color: "hover:text-blue-400",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@zdanederlandonline9582",
+    icon: FaYoutube,
+    color: "hover:text-red-500",
+  },
+];
+
+const INSTITUTIONAL = [
+  { key: "about",   url: "https://www.adventist.nl/over-ons/" },
+  { key: "contact-link", url: "https://www.adventist.nl/contact/" },
+  { key: "news",    url: "https://www.adventist.nl/category/nieuws/" },
+  { key: "agenda",  url: "https://www.adventist.nl/agenda/" },
+  { key: "sermon",  url: "https://preekrooster.adventist.nl" },
+  { key: "esda",    url: "https://www.adventist.nl/esda-instituut/" },
+  { key: "adra",    url: "https://www.adventist.nl/adra/" },
+  { key: "webshop", url: "http://servicecentrum-adventist.nl" },
+];
+
+const LEGAL = [
+  { key: "policy",   url: "https://www.adventist.nl/privacy" },
+  { key: "legal",    url: "https://www.adventist.nl/" },
+  { key: "tradmark", url: "https://www.adventist.nl/" },
+];
 
 export const Footer = () => {
-  const translations = useTranslations("footer");
+  const t = useTranslations("footer");
 
   return (
-    <footer className="flex w-full flex-col items-center md:flex-row md:justify-around md:items-start gap-3 py-9 pt-12 text-white ">
-      <div>
-        <Link
-          href="https://www.facebook.com/thegreatcontroversyproject/"
-          target="_blank"
-        >
-          <Image
-            className="cursor-pointer"
-            src="/facebook-icon.svg"
-            alt="facebook icon"
-            width={30}
-            height={30}
-          />
-        </Link>
+    <footer className="w-full border-t border-white/10 bg-[#111118] text-white">
+      {/* ── Main grid ── */}
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
+
+        {/* Col 1 — Brand + social */}
+        <div className="flex flex-col gap-5">
+          <Link
+            href="https://www.adventist.nl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-3"
+            aria-label={t("official-site")}
+          >
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-[#4fa6c2]/30">
+              <FaChurch className="h-5 w-5 text-[#4fa6c2]" />
+            </span>
+            <span
+              className="text-sm font-semibold leading-tight text-white/80 transition-colors group-hover:text-white"
+              style={{ fontFamily: "var(--font-rubik)" }}
+            >
+              {t("official-site")}
+            </span>
+          </Link>
+
+          <div>
+            <p
+              className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/40"
+              style={{ fontFamily: "var(--font-rubik)" }}
+            >
+              {t("follow")}
+            </p>
+            <div className="flex gap-4">
+              {SOCIAL.map(({ name, url, icon: Icon, color }) => (
+                <Link
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className={`text-white/50 transition-colors ${color}`}
+                >
+                  <Icon className="h-6 w-6" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Col 2 — Institutional links */}
+        <div className="flex flex-col gap-3">
+          <p
+            className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/40"
+            style={{ fontFamily: "var(--font-rubik)" }}
+          >
+            {t("links-title")}
+          </p>
+          {INSTITUTIONAL.map(({ key, url }) => (
+            <Link
+              key={key}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/60 transition-colors hover:text-white"
+              style={{ fontFamily: "var(--font-rubik)" }}
+            >
+              {t(key as Parameters<typeof t>[0])}
+            </Link>
+          ))}
+        </div>
+
+        {/* Col 3 — Contact info */}
+        <div className="flex flex-col gap-4">
+          <p
+            className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/40"
+            style={{ fontFamily: "var(--font-rubik)" }}
+          >
+            {t("contact-title")}
+          </p>
+          <div className="flex items-start gap-2 text-sm text-white/60">
+            <MdLocationOn className="mt-0.5 h-4 w-4 shrink-0 text-[#4fa6c2]" />
+            <span style={{ fontFamily: "var(--font-rubik)" }}>
+              Amersfoortseweg 18,<br />3712 BC Huis ter Heide,<br />Nederland
+            </span>
+          </div>
+          <Link
+            href="tel:+31306939375"
+            className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
+          >
+            <MdPhone className="h-4 w-4 shrink-0 text-[#4fa6c2]" />
+            <span style={{ fontFamily: "var(--font-rubik)" }}>030 – 693 93 75</span>
+          </Link>
+          <Link
+            href="mailto:info@adventist.nl"
+            className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
+          >
+            <MdEmail className="h-4 w-4 shrink-0 text-[#4fa6c2]" />
+            <span style={{ fontFamily: "var(--font-rubik)" }}>info@adventist.nl</span>
+          </Link>
+          <Link
+            href="mailto:ict@adventist.nl"
+            className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
+          >
+            <MdEmail className="h-4 w-4 shrink-0 text-white/30" />
+            <span style={{ fontFamily: "var(--font-rubik)" }}>ict@adventist.nl</span>
+          </Link>
+        </div>
+
+        {/* Col 4 — Legal */}
+        <div className="flex flex-col gap-3">
+          <p
+            className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/40"
+            style={{ fontFamily: "var(--font-rubik)" }}
+          >
+            Legal
+          </p>
+          {LEGAL.map(({ key, url }) => (
+            <Link
+              key={key}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/60 transition-colors hover:text-white"
+              style={{ fontFamily: "var(--font-rubik)" }}
+            >
+              {t(key as Parameters<typeof t>[0])}
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className="flex flex-col gap-5">
-        <div className="flex flex-col items-center md:flex-row md:justify-end gap-6 px-3 text-xs desktop:text-sm">
-          <p className="text-gray cursor-pointer">{translations("policy")}</p>
-          <p className="text-gray cursor-pointer">{translations("legal")}</p>
-          <p className="text-gray cursor-pointer">{translations("tradmark")}</p>
-        </div>
-        <div className="flex flex-col items-center md:items-end p-2 text-end text-[10px] desktop:text-xs">
-          <p className="text-gray">
-            Copyright 2024 Kerkgenootschap der Zevende-dags Adventisten
-          </p>
-          <p className="text-gray">
-            Utrecht, Amersfoortseweg 18, 3712 BC Huis Ter Heide
-          </p>
-        </div>
+
+      {/* ── Bottom bar ── */}
+      <div className="border-t border-white/5 px-6 py-4">
+        <p
+          className="text-center text-[11px] text-white/30"
+          style={{ fontFamily: "var(--font-rubik)" }}
+        >
+          {t("copyright")}
+        </p>
       </div>
     </footer>
   );

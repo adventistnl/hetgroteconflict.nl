@@ -138,7 +138,8 @@
     "contact": "Talk to us",
     "participate": "Participate",
     "home": "Home",
-    "findChurch": "Find a Church"
+    "findChurch": "Find a Church",
+    "studyGuide": "Study Guide"
   },
   "talk-to-us-container": {
     "title": " Want to know more?",
@@ -160,12 +161,72 @@
   "footer": {
     "policy": "Privacy Policy",
     "legal": "Legal Notice",
-    "tradmark": "Tradmark and Logo Usage"
+    "tradmark": "Tradmark and Logo Usage",
+    "follow": "Follow us",
+    "links-title": "More information",
+    "contact-title": "Contact",
+    "about": "About us",
+    "sermon": "Sermon schedule",
+    "news": "News",
+    "agenda": "Agenda",
+    "webshop": "Webshop",
+    "esda": "ESDA Institute",
+    "adra": "ADRA",
+    "contact-link": "Contact",
+    "official-site": "Official website",
+    "copyright": "Copyright 2024 Seventh-day Adventist Church"
   },
   "chapter-page": {
     "chapter": "Chapter",
     "coming-soon": "Coming Soon",
     "description": "This chapter is being carefully prepared. Check back soon.",
-    "go-back-home": "Go back home"
+    "go-back-home": "Go back home",
+    "language": "Language:",
+    "available": "Available:",
+    "no-files": "No files available",
+    "download": "Download",
+    "download-pdf": "Download PDF",
+    "download-epub": "Download ePub",
+    "download-audio": "Download Audio",
+    "watch-now": "Watch now",
+    "watch-youtube": "Watch on YouTube Playlist",
+    "watch-vimeo": "Watch on Vimeo"
+  },
+  "study-guide": {
+    "badge": "Study Guide",
+    "title": "The Great Controversy — Chapter by Chapter",
+    "subtitle": "Follow each chapter at your own pace. Your progress is saved automatically.",
+    "chapter": "Chapter",
+    "watched": "Watched",
+    "lastWatched": "Last watched",
+    "continueLabel": "Continue where you left off",
+    "continueButton": "Continue",
+    "dismissButton": "Dismiss",
+    "resetProgress": "Reset my progress",
+    "watchButton": "Watch",
+    "startButton": "Start watching"
+  },
+  "esda-courses": {
+    "title": "ESDA Instituut Courses",
+    "summary": "ESDA Instituut offers online and written courses on various topics such as health, theology and biblical studies, aiming to promote Bible knowledge in the Netherlands in an accessible and free way.",
+    "viewAll": "View all courses →",
+    "course-gezondheid": "Health",
+    "course-koningschap": "The Kingdom of God",
+    "course-archeologie": "Archaeology"
+  },
+  "exit-intent": {
+    "badge": "Before you go",
+    "title": "Want to receive this book for free?",
+    "body": "Leave your email and we'll send you materials about The Great Controversy — a book that reveals the epic conflict between good and evil and where humanity is headed.",
+    "placeholder": "Your email address",
+    "consent": "I agree to receive emails with materials and updates about The Great Controversy. I can unsubscribe at any time.",
+    "submit": "Send me the materials",
+    "skip": "No thanks, I'll continue without",
+    "success-title": "You're on the list!",
+    "success-body": "Thank you! We'll send you updates and materials about The Great Controversy directly to your inbox.",
+    "success-button": "Continue watching",
+    "error-email": "Please enter a valid email address.",
+    "error-consent": "Please confirm your consent to continue.",
+    "error-generic": "Something went wrong. Please try again."
   }
 }

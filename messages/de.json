@@ -138,7 +138,8 @@
     "contact": "Kontaktieren Sie uns",
     "participate": "Teilnehmen",
     "home": "Startseite",
-    "findChurch": "Eine Kirche finden"
+    "findChurch": "Eine Kirche finden",
+    "studyGuide": "Studienführer"
   },
   "talk-to-us-container": {
     "title": "Möchten Sie mehr erfahren?",
@@ -160,12 +161,72 @@
   "footer": {
     "policy": "Datenschutzrichtlinie",
     "legal": "Rechtlicher Hinweis",
-    "tradmark": "Marken- und Logo-Nutzung"
+    "tradmark": "Marken- und Logo-Nutzung",
+    "follow": "Folge uns",
+    "links-title": "Mehr Informationen",
+    "contact-title": "Kontakt",
+    "about": "Über uns",
+    "sermon": "Predigtplan",
+    "news": "Nachrichten",
+    "agenda": "Agenda",
+    "webshop": "Webshop",
+    "esda": "ESDA Institut",
+    "adra": "ADRA",
+    "contact-link": "Kontakt",
+    "official-site": "Offizielle Website",
+    "copyright": "Copyright 2024 Freikirche der Siebenten-Tags-Adventisten"
   },
   "chapter-page": {
     "chapter": "Kapitel",
     "coming-soon": "Demnächst verfügbar",
     "description": "Dieses Kapitel wird sorgfältig vorbereitet. Schauen Sie bald wieder vorbei.",
-    "go-back-home": "Zurück zur Startseite"
+    "go-back-home": "Zurück zur Startseite",
+    "language": "Sprache:",
+    "available": "Verfügbar:",
+    "no-files": "Keine Dateien verfügbar",
+    "download": "Herunterladen",
+    "download-pdf": "PDF herunterladen",
+    "download-epub": "ePub herunterladen",
+    "download-audio": "Audio herunterladen",
+    "watch-now": "Jetzt ansehen",
+    "watch-youtube": "Auf YouTube-Playlist ansehen",
+    "watch-vimeo": "Auf Vimeo ansehen"
+  },
+  "study-guide": {
+    "badge": "Studienführer",
+    "title": "Der Große Kampf — Kapitel für Kapitel",
+    "subtitle": "Folgen Sie jedem Kapitel in Ihrem eigenen Tempo. Ihr Fortschritt wird automatisch gespeichert.",
+    "chapter": "Kapitel",
+    "watched": "Angesehen",
+    "lastWatched": "Zuletzt angesehen",
+    "continueLabel": "Weitermachen, wo Sie aufgehört haben",
+    "continueButton": "Weitermachen",
+    "dismissButton": "Schließen",
+    "resetProgress": "Fortschritt zurücksetzen",
+    "watchButton": "Ansehen",
+    "startButton": "Jetzt ansehen"
+  },
+  "esda-courses": {
+    "title": "ESDA Instituut Kurse",
+    "summary": "Das ESDA Instituut bietet Online- und schriftliche Kurse zu verschiedenen Themen wie Gesundheit, Theologie und Bibelstudien an, um das Bibelwissen in den Niederlanden auf zugängliche und kostenlose Weise zu fördern.",
+    "viewAll": "Alle Kurse ansehen →",
+    "course-gezondheid": "Gesundheit",
+    "course-koningschap": "Das Königreich Gottes",
+    "course-archeologie": "Archäologie"
+  },
+  "exit-intent": {
+    "badge": "Bevor du gehst",
+    "title": "Möchtest du dieses Buch kostenlos erhalten?",
+    "body": "Hinterlasse deine E-Mail und wir schicken dir Materialien über Den Großen Kampf — ein Buch, das den Konflikt zwischen Gut und Böse enthüllt.",
+    "placeholder": "Deine E-Mail-Adresse",
+    "consent": "Ich stimme zu, E-Mails mit Materialien über Den Großen Kampf zu erhalten. Ich kann mich jederzeit abmelden.",
+    "submit": "Materialien zusenden",
+    "skip": "Nein danke, weiter ohne",
+    "success-title": "Du stehst auf der Liste!",
+    "success-body": "Danke! Wir schicken dir Updates über Den Großen Kampf direkt in dein Postfach.",
+    "success-button": "Weiter ansehen",
+    "error-email": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "error-consent": "Bitte bestätige deine Zustimmung, um fortzufahren.",
+    "error-generic": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
   }
 }

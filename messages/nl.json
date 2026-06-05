@@ -138,7 +138,8 @@
     "contact": "Neem contact op",
     "participate": "Deelnemen",
     "home": "Startpagina",
-    "findChurch": "Vind een Kerk"
+    "findChurch": "Vind een Kerk",
+    "studyGuide": "Studiegids"
   },
   "talk-to-us-container": {
     "title": "Wil je meer weten?",
@@ -160,12 +161,72 @@
   "footer": {
     "policy": "Privacybeleid",
     "legal": "Juridische kennisgeving",
-    "tradmark": "Gebruik van handelsmerk en logo"
+    "tradmark": "Gebruik van handelsmerk en logo",
+    "follow": "Volg ons",
+    "links-title": "Meer informatie",
+    "contact-title": "Contact",
+    "about": "Over ons",
+    "sermon": "Preekrooster",
+    "news": "Nieuws",
+    "agenda": "Agenda",
+    "webshop": "Webshop",
+    "esda": "ESDA Instituut",
+    "adra": "ADRA",
+    "contact-link": "Contact",
+    "official-site": "Officiële website",
+    "copyright": "Copyright 2024 Kerkgenootschap der Zevende-dags Adventisten"
   },
   "chapter-page": {
     "chapter": "Hoofdstuk",
     "coming-soon": "Binnenkort beschikbaar",
     "description": "Dit hoofdstuk wordt zorgvuldig voorbereid. Kom binnenkort terug.",
-    "go-back-home": "Terug naar huis"
+    "go-back-home": "Terug naar huis",
+    "language": "Taal:",
+    "available": "Beschikbaar:",
+    "no-files": "Geen bestanden beschikbaar",
+    "download": "Downloaden",
+    "download-pdf": "PDF downloaden",
+    "download-epub": "ePub downloaden",
+    "download-audio": "Audio downloaden",
+    "watch-now": "Nu kijken",
+    "watch-youtube": "Bekijken op YouTube Playlist",
+    "watch-vimeo": "Bekijken op Vimeo"
+  },
+  "study-guide": {
+    "badge": "Studiegids",
+    "title": "De Grote Strijd — Hoofdstuk voor Hoofdstuk",
+    "subtitle": "Volg elk hoofdstuk in uw eigen tempo. Uw voortgang wordt automatisch opgeslagen.",
+    "chapter": "Hoofdstuk",
+    "watched": "Bekeken",
+    "lastWatched": "Laatst bekeken",
+    "continueLabel": "Doorgaan waar u gebleven was",
+    "continueButton": "Doorgaan",
+    "dismissButton": "Sluiten",
+    "resetProgress": "Voortgang resetten",
+    "watchButton": "Bekijken",
+    "startButton": "Beginnen"
+  },
+  "esda-courses": {
+    "title": "ESDA Instituut Cursussen",
+    "summary": "Het ESDA Instituut biedt online en schriftelijke cursussen aan over diverse onderwerpen zoals gezondheid, theologie en bijbelstudies, met als doel de kennis van de Bijbel in Nederland op een toegankelijke en gratis manier te bevorderen.",
+    "viewAll": "Alle cursussen bekijken →",
+    "course-gezondheid": "Gezondheid",
+    "course-koningschap": "Het Koningschap van God",
+    "course-archeologie": "Archeologie"
+  },
+  "exit-intent": {
+    "badge": "Voordat je gaat",
+    "title": "Wil je dit boek gratis ontvangen?",
+    "body": "Laat je e-mailadres achter en we sturen je materialen over Het Grote Conflict — een boek dat het conflict tussen goed en kwaad onthult.",
+    "placeholder": "Jouw e-mailadres",
+    "consent": "Ik ga akkoord met het ontvangen van e-mails met materialen over Het Grote Conflict. Ik kan mij op elk moment afmelden.",
+    "submit": "Stuur mij de materialen",
+    "skip": "Nee bedankt, ik ga verder",
+    "success-title": "Je staat op de lijst!",
+    "success-body": "Bedankt! We sturen je updates en materialen over Het Grote Conflict naar je inbox.",
+    "success-button": "Doorgaan met kijken",
+    "error-email": "Voer een geldig e-mailadres in.",
+    "error-consent": "Bevestig je toestemming om door te gaan.",
+    "error-generic": "Er is iets misgegaan. Probeer het opnieuw."
   }
 }

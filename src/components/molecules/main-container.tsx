@@ -69,25 +69,37 @@ export const MainContainer = ({ children }: Props) => {
             <div className="z-10 flex flex-row items-center">
               <ul className="flex flex-row gap-16 text-center text-primary">
                 <li
-                  className="cursor-pointer"
+                  className="group relative cursor-pointer"
                   onClick={() => {
                     router.push(`/${locale}`);
                     track("sectionSelect", {section: "home"});
                   }}
                 >
                   {translations("home")}
+                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
                 </li>
                 <li
-                  className="cursor-pointer"
+                  className="group relative cursor-pointer"
+                  onClick={() => {
+                    router.push(`/${locale}/guide`);
+                    track("sectionSelect", {section: "studyGuide"});
+                  }}
+                >
+                  {translations("studyGuide")}
+                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+                </li>
+                <li
+                  className="group relative cursor-pointer"
                   onClick={() => {
                     router.push(`/${locale}/${translations("participate")}`)
                     track("sectionSelect", {section: "participate"});
                   }}
                 >
                   {translations("participate")}
+                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
                 </li>
                 <li
-                  className="cursor-pointer"
+                  className="group relative cursor-pointer"
                   onClick={() => {
                     track("sectionSelect", {section: "contact"});
                     if (ref_TalkToUsSection?.current) {
@@ -99,9 +111,10 @@ export const MainContainer = ({ children }: Props) => {
                   }}
                 >
                   {translations("contact")}
+                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
                 </li>
                 <li
-                  className="cursor-pointer"
+                  className="group relative cursor-pointer"
                   onClick={() => {
                     setOpenNavbar(false);
                     setOpenChurchList(!openChurchList);
@@ -109,6 +122,7 @@ export const MainContainer = ({ children }: Props) => {
                   }}
                 >
                   {translations("findChurch")}
+                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
                 </li>
               </ul>
             </div>
@@ -137,6 +151,17 @@ export const MainContainer = ({ children }: Props) => {
               }}
             >
               {translations("home")}
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => {
+                setOpenNavbar(false);
+                setIsVisibleHeader(false);
+                router.push(`/${locale}/guide`);
+                track("sectionSelect", {section: "studyGuide"});
+              }}
+            >
+              {translations("studyGuide")}
             </li>
             <li
               className="cursor-pointer"

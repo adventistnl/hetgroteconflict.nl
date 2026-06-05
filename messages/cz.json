@@ -138,7 +138,8 @@
     "contact": "Kontaktujte nás",
     "participate": "Účastnit se",
     "home": "Domů",
-    "findChurch": "Najít kostel"
+    "findChurch": "Najít kostel",
+    "studyGuide": "Studijní průvodce"
   },
   "talk-to-us-container": {
     "title": "Chcete se dozvědět více?",
@@ -160,12 +161,72 @@
   "footer": {
     "policy": "Zásady ochrany osobních údajů",
     "legal": "Právní upozornění",
-    "tradmark": "Použití ochranné známky a loga"
+    "tradmark": "Použití ochranné známky a loga",
+    "follow": "Sledujte nás",
+    "links-title": "Více informací",
+    "contact-title": "Kontakt",
+    "about": "O nás",
+    "sermon": "Plán kázání",
+    "news": "Zprávy",
+    "agenda": "Program",
+    "webshop": "E-shop",
+    "esda": "Institut ESDA",
+    "adra": "ADRA",
+    "contact-link": "Kontakt",
+    "official-site": "Oficiální web",
+    "copyright": "Copyright 2024 Církev adventistů sedmého dne"
   },
   "chapter-page": {
     "chapter": "Kapitola",
     "coming-soon": "Již brzy",
     "description": "Tato kapitola je pečlivě připravována. Vraťte se brzy.",
-    "go-back-home": "Zpět na domovskou stránku"
+    "go-back-home": "Zpět na domovskou stránku",
+    "language": "Jazyk:",
+    "available": "Dostupné:",
+    "no-files": "Žádné soubory k dispozici",
+    "download": "Stáhnout",
+    "download-pdf": "Stáhnout PDF",
+    "download-epub": "Stáhnout ePub",
+    "download-audio": "Stáhnout audio",
+    "watch-now": "Sledovat nyní",
+    "watch-youtube": "Sledovat na YouTube Playlist",
+    "watch-vimeo": "Sledovat na Vimeo"
+  },
+  "study-guide": {
+    "badge": "Studijní průvodce",
+    "title": "Velký spor — Kapitola po kapitole",
+    "subtitle": "Sledujte každou kapitolu vlastním tempem. Váš pokrok je automaticky ukládán.",
+    "chapter": "Kapitola",
+    "watched": "Zhlédnuto",
+    "lastWatched": "Naposledy zhlédnuto",
+    "continueLabel": "Pokračovat tam, kde jste skončili",
+    "continueButton": "Pokračovat",
+    "dismissButton": "Zavřít",
+    "resetProgress": "Resetovat můj pokrok",
+    "watchButton": "Sledovat",
+    "startButton": "Začít sledovat"
+  },
+  "esda-courses": {
+    "title": "Kurzy ESDA Instituut",
+    "summary": "ESDA Instituut nabízí online a písemné kurzy na různá témata jako zdraví, teologie a biblické studie, s cílem podporovat znalost Bible v Nizozemsku dostupným a bezplatným způsobem.",
+    "viewAll": "Zobrazit všechny kurzy →",
+    "course-gezondheid": "Zdraví",
+    "course-koningschap": "Království Boží",
+    "course-archeologie": "Archeologie"
+  },
+  "exit-intent": {
+    "badge": "Než odejdeš",
+    "title": "Chceš dostat tuto knihu zdarma?",
+    "body": "Zanech svůj e-mail a pošleme ti materiály o Velkém Sporu — knize, která odhaluje konflikt mezi dobrem a zlem.",
+    "placeholder": "Tvoje e-mailová adresa",
+    "consent": "Souhlasím se zasíláním e-mailů s materiály o Velkém Sporu. Odhlásit se mohu kdykoliv.",
+    "submit": "Pošlete mi materiály",
+    "skip": "Ne děkuji, pokračovat bez",
+    "success-title": "Jsi na seznamu!",
+    "success-body": "Děkujeme! Pošleme ti aktualizace o Velkém Sporu přímo do tvé schránky.",
+    "success-button": "Pokračovat ve sledování",
+    "error-email": "Prosím zadej platnou e-mailovou adresu.",
+    "error-consent": "Prosím potvrď svůj souhlas pro pokračování.",
+    "error-generic": "Něco se pokazilo. Zkus to prosím znovu."
   }
 }
