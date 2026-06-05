@@ -55,7 +55,7 @@ async function ensureSheetExists(sheets: ReturnType<typeof google.sheets>) {
  */
 export async function appendLeadToSheet(
   email: string,
-  source: "exit-intent" | "1min-trigger" | "form",
+  source: "exit-intent" | "1min-trigger" | "video-play-trigger" | "form",
   locale: string = "unknown"
 ) {
   const auth = getAuth();

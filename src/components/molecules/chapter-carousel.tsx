@@ -4,7 +4,6 @@ import Carousel from "./caroussel";
 import { StudyGuideChapterCard } from "./study-guide-chapter-card";
 import { useChapterProgress } from "@/hooks/use-chapter-progress";
 import { getLocalizedChapters } from "@/utils/get-chapters";
-import { useTranslations } from "next-intl";
 
 interface Props {
   currentChapterNumber: string;
@@ -13,7 +12,6 @@ interface Props {
 
 export function ChapterCarousel({ currentChapterNumber, locale }: Props) {
   const { progress } = useChapterProgress();
-  const t = useTranslations("study-guide");
   const chaptersData = getLocalizedChapters(locale);
 
   const currentIndex = chaptersData.findIndex(

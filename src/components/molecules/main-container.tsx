@@ -3,7 +3,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import { track } from '@vercel/analytics';
 import Image from "next/image";
-import { HamburguerIcon } from "../atoms/hamburguer-icon";
 import { useRouter } from "next/navigation";
 import { SelectTranslation } from "./select-translation";
 import { useLocale, useTranslations } from "next-intl";
@@ -11,6 +10,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { scrollToSection } from "@/utils/scroll-to-section";
 import { useRefStore } from "../stores/ref-store";
 import { ChurchsList } from "../organisms/churchs-list-container";
+import { MobileBottomNav } from "./mobile-bottom-nav";
 
 interface Props {
   children: ReactNode;
@@ -23,17 +23,11 @@ export const MainContainer = ({ children }: Props) => {
   const router = useRouter();
   const locale = useLocale();
 
-  const [openNavbar, setOpenNavbar] = useState(false);
   const [openChurchList, setOpenChurchList] = useState(false);
   const [isVisibleHeader, setIsVisibleHeader] = useState(false);
 
   const { ref_TalkToUsSection } = useRefStore();
   const { setPendingScroll } = useRefStore();
-
-  //Handlers
-  const handleOpenNavbar = () => {
-    setOpenNavbar((oldState) => !oldState);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,7 +110,6 @@ export const MainContainer = ({ children }: Props) => {
                 <li
                   className="group relative cursor-pointer"
                   onClick={() => {
-                    setOpenNavbar(false);
                     setOpenChurchList(!openChurchList);
                     track("sectionSelect", {section: "findChurch"});
                   }}
@@ -130,84 +123,15 @@ export const MainContainer = ({ children }: Props) => {
           </>
         ) : (
           <div className="flex flex-row items-center">
-            {/* <SelectTranslation /> */}
-            <HamburguerIcon
-              openNavbar={openNavbar}
-              handleOpenNavbar={handleOpenNavbar}
-            />
+            <SelectTranslation />
           </div>
         )}
       </header>
-      {openNavbar && (
-        <nav className="fixed top-16 z-[20] flex h-full w-full items-start justify-center rounded-lg bg-secondary laptop:bottom-0 laptop:right-0 laptop:mx-3 laptop:h-52 laptop:w-52">
-          <ul className="mt-28 flex flex-col gap-5 p-8 text-center text-2xl text-primary laptop:mt-0">
-            <li
-              className="cursor-pointer"
-              onClick={() => {
-                setOpenNavbar(false);
-                setIsVisibleHeader(false);
-                router.push(`/${locale}`);
-                track("sectionSelect", {section: "home"});
-              }}
-            >
-              {translations("home")}
-            </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => {
-                setOpenNavbar(false);
-                setIsVisibleHeader(false);
-                router.push(`/${locale}/guide`);
-                track("sectionSelect", {section: "studyGuide"});
-              }}
-            >
-              {translations("studyGuide")}
-            </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => {
-                setOpenNavbar(false);
-                setIsVisibleHeader(false);
-                router.push(`/${locale}/${translations("participate")}`);
-                track("sectionSelect", {section: "participate"});
-              }}
-            >
-              {translations("participate")}
-            </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => {
-                setOpenNavbar(false);
-                track("sectionSelect", {section: "contact"});
-                if (ref_TalkToUsSection?.current) {
-                  scrollToSection(ref_TalkToUsSection);
-                } else {
-                  setPendingScroll("talk-to-us");
-                  router.push(`/${locale}`);
-                }
-              }}
-            >
-              {translations("contact")}
-            </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => {
-                setOpenNavbar(false);
-                setOpenChurchList(true);
-                track("sectionSelect", {section: "findChurch"});
-              }}
-            >
-              {translations("findChurch")}
-            </li>
-            <li className="mt-12">
-              <SelectTranslation />
-            </li>
-          </ul>
-        </nav>
-      )}
 
       <main>{children}</main>
       {openChurchList && <ChurchsList closeHandle={() => setOpenChurchList(false)} />}
+
+      <MobileBottomNav onOpenChurchList={() => setOpenChurchList(true)} />
     </div>
   );
 };

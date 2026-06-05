@@ -9,9 +9,6 @@ const ExitIntentModal = dynamic(
   { ssr: false }
 );
 
-const DevTestModalButton = process.env.NODE_ENV === "development"
-  ? dynamic(() => import("@/components/molecules/dev-test-modal-button").then((m) => m.DevTestModalButton), { ssr: false })
-  : null;
 
 export default async function LocaleLayout({
   children,
@@ -29,7 +26,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <MainContainer>{children}</MainContainer>
       <ExitIntentModal />
-      {DevTestModalButton && <DevTestModalButton />}
+      {/* {DevTestModalButton && <DevTestModalButton />} */}
     </NextIntlClientProvider>
   );
 }
