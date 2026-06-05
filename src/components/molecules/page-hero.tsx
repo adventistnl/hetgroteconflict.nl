@@ -110,7 +110,7 @@ export function PageHero({
 
   return (
     <>
-      <section className="relative flex min-h-[520px] w-full items-center overflow-hidden bg-[#1e1e2e] lg:min-h-[600px]">
+      <section className="relative flex min-h-[520px] w-full items-center bg-[#1e1e2e] lg:min-h-[600px]">
         {/* ── Background ── */}
         {bgVideoUrl ? (
           <>
@@ -230,7 +230,7 @@ export function PageHero({
                     <ArrowIcon className="text-lg text-white" />
                   </button>
                   {openLangDropdown && (
-                    <div className="absolute left-[85px] top-11 z-20 flex max-h-[220px] w-[180px] flex-col gap-1 overflow-y-auto rounded-xl border border-white/10 bg-[#2a2a38] p-1.5 shadow-2xl">
+                    <div className="absolute left-[85px] top-11 z-[60] flex max-h-[220px] w-[180px] flex-col gap-1 overflow-y-auto rounded-xl border border-white/10 bg-[#2a2a38] p-1.5 shadow-2xl">
                       {globalLanguages.map((lang, idx) => (
                         <button
                           key={idx}
@@ -304,7 +304,7 @@ export function PageHero({
                       <ArrowIcon className="text-xl" />
                     </button>
                     {openFormatDropdown && (
-                      <div className="absolute left-0 top-12 z-20 flex w-[200px] flex-col gap-1 rounded-xl border border-gray-200 bg-white p-1.5 shadow-2xl">
+                      <div className="absolute left-0 top-12 z-[60] flex w-[200px] flex-col gap-1 rounded-xl border border-gray-200 bg-white p-1.5 shadow-2xl">
                         {heroLanguage.pdfUrl && (
                           <Link
                             href={heroLanguage.pdfUrl}
@@ -377,20 +377,6 @@ export function PageHero({
             onClick={(e) => e.stopPropagation()}
             className="relative flex w-full max-w-[850px] flex-col overflow-hidden rounded-2xl border border-gray-800 bg-[#1e1e24] shadow-2xl"
           >
-            <button
-              onClick={() => setShowVideo(false)}
-              className="absolute right-3 top-3 z-30 rounded-full bg-black/60 p-2 text-white transition-all hover:scale-105 hover:bg-black/85"
-              aria-label="Close"
-            >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
             <div className="aspect-video w-full">
               <iframe
                 key={isChapter ? heroLanguage.code : locale}
