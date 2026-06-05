@@ -49,7 +49,7 @@ export const Footer = () => {
   const t = useTranslations("footer");
 
   return (
-    <footer className="w-full border-t border-white/10 bg-[#111118] text-white">
+    <footer className="w-full border-t border-primary/10 bg-secondary text-primary">
       {/* ── Main grid ── */}
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -62,11 +62,11 @@ export const Footer = () => {
             className="group flex items-center gap-3"
             aria-label={t("official-site")}
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-[#4fa6c2]/30">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-[#4fa6c2]/20">
               <FaChurch className="h-5 w-5 text-[#4fa6c2]" />
             </span>
             <span
-              className="text-sm font-semibold leading-tight text-white/80 transition-colors group-hover:text-white"
+              className="text-sm font-semibold leading-tight text-primary/80 transition-colors group-hover:text-primary"
               style={{ fontFamily: "var(--font-rubik)" }}
             >
               {t("official-site")}
@@ -75,7 +75,7 @@ export const Footer = () => {
 
           <div>
             <p
-              className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/40"
+              className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary/40"
               style={{ fontFamily: "var(--font-rubik)" }}
             >
               {t("follow")}
@@ -88,7 +88,7 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={name}
-                  className={`text-white/50 transition-colors ${color}`}
+                  className={`text-primary/40 transition-colors ${color}`}
                 >
                   <Icon className="h-6 w-6" />
                 </Link>
@@ -100,7 +100,7 @@ export const Footer = () => {
         {/* Col 2 — Institutional links */}
         <div className="flex flex-col gap-3">
           <p
-            className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/40"
+            className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary/40"
             style={{ fontFamily: "var(--font-rubik)" }}
           >
             {t("links-title")}
@@ -111,7 +111,7 @@ export const Footer = () => {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-white/60 transition-colors hover:text-white"
+              className="text-sm text-primary/60 transition-colors hover:text-primary"
               style={{ fontFamily: "var(--font-rubik)" }}
             >
               {t(key as Parameters<typeof t>[0])}
@@ -122,12 +122,12 @@ export const Footer = () => {
         {/* Col 3 — Contact info */}
         <div className="flex flex-col gap-4">
           <p
-            className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/40"
+            className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary/40"
             style={{ fontFamily: "var(--font-rubik)" }}
           >
             {t("contact-title")}
           </p>
-          <div className="flex items-start gap-2 text-sm text-white/60">
+          <div className="flex items-start gap-2 text-sm text-primary/60">
             <MdLocationOn className="mt-0.5 h-4 w-4 shrink-0 text-[#4fa6c2]" />
             <span style={{ fontFamily: "var(--font-rubik)" }}>
               Amersfoortseweg 18,<br />3712 BC Huis ter Heide,<br />Nederland
@@ -135,23 +135,23 @@ export const Footer = () => {
           </div>
           <Link
             href="tel:+31306939375"
-            className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
+            className="flex items-center gap-2 text-sm text-primary/60 transition-colors hover:text-primary"
           >
             <MdPhone className="h-4 w-4 shrink-0 text-[#4fa6c2]" />
             <span style={{ fontFamily: "var(--font-rubik)" }}>030 – 693 93 75</span>
           </Link>
           <Link
             href="mailto:info@adventist.nl"
-            className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
+            className="flex items-center gap-2 text-sm text-primary/60 transition-colors hover:text-primary"
           >
             <MdEmail className="h-4 w-4 shrink-0 text-[#4fa6c2]" />
             <span style={{ fontFamily: "var(--font-rubik)" }}>info@adventist.nl</span>
           </Link>
           <Link
             href="mailto:ict@adventist.nl"
-            className="flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
+            className="flex items-center gap-2 text-sm text-primary/60 transition-colors hover:text-primary"
           >
-            <MdEmail className="h-4 w-4 shrink-0 text-white/30" />
+            <MdEmail className="h-4 w-4 shrink-0 text-primary/30" />
             <span style={{ fontFamily: "var(--font-rubik)" }}>ict@adventist.nl</span>
           </Link>
         </div>
@@ -159,7 +159,7 @@ export const Footer = () => {
         {/* Col 4 — Legal */}
         <div className="flex flex-col gap-3">
           <p
-            className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/40"
+            className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary/40"
             style={{ fontFamily: "var(--font-rubik)" }}
           >
             Legal
@@ -170,7 +170,7 @@ export const Footer = () => {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-white/60 transition-colors hover:text-white"
+              className="text-sm text-primary/60 transition-colors hover:text-primary"
               style={{ fontFamily: "var(--font-rubik)" }}
             >
               {t(key as Parameters<typeof t>[0])}
@@ -180,9 +180,9 @@ export const Footer = () => {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="border-t border-white/5 px-6 py-4">
+      <div className="border-t border-primary/10 px-6 py-4">
         <p
-          className="text-center text-[11px] text-white/30"
+          className="text-center text-[11px] text-primary/40"
           style={{ fontFamily: "var(--font-rubik)" }}
         >
           {t("copyright")}

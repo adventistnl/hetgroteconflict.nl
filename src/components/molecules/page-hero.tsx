@@ -15,6 +15,7 @@ import {
 import { getVideoEmbedUrl } from "@/utils/get-video-embed-url";
 import { downloadList } from "@/utils/download-list";
 import { track } from "@vercel/analytics";
+import { dispatchVideoPlay } from "@/utils/video-play-event";
 
 export interface ChapterData {
   chapterNumber: string;
@@ -100,6 +101,14 @@ export function PageHero({
   }, []);
 
   const isChapter = variant === "chapter";
+
+  // Auto-open video when arriving with ?autoplay=1 (chapter variant only)
+  useEffect(() => {
+    if (isChapter && typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("autoplay") === "1") setShowVideo(true);
+    }
+  }, [isChapter]);
   const hasFormats = (lang: LanguageInfo) =>
     !!(lang.pdfUrl || lang.epubUrl || lang.audioUrl);
   const videoLink =
@@ -143,8 +152,8 @@ export function PageHero({
                 priority
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#262633]/90 via-[#1a1a2e]/75 to-[#262633]/60" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-black/65" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10" />
           </>
         )}
 
@@ -215,7 +224,7 @@ export function PageHero({
 
             {/* Chapter: download controls */}
             {isChapter && (
-              <div className="flex flex-col gap-4 mt-2 max-w-[500px]">
+              <div className="flex w-full flex-col gap-3 mt-2">
                 {/* Language selector */}
                 <div className="relative flex flex-row items-center gap-3" ref={langRef}>
                   <span className="min-w-[75px] text-sm text-gray-300 font-rubik">
@@ -293,12 +302,12 @@ export function PageHero({
                   </div>
                 </div>
 
-                {/* Download dropdown */}
+                {/* Download button — full width, bottom of controls */}
                 {hasFormats(heroLanguage) && (
-                  <div className="relative" ref={formatRef}>
+                  <div className="relative mt-1" ref={formatRef}>
                     <button
                       onClick={() => setOpenFormatDropdown(!openFormatDropdown)}
-                      className="flex w-full max-w-[200px] flex-row items-center justify-between gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-bold text-white transition-all hover:bg-white/20"
+                      className="flex w-full sm:w-auto flex-row items-center justify-between gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-bold text-white transition-all hover:bg-white/20"
                     >
                       {tChapter("download")}
                       <ArrowIcon className="text-xl" />
@@ -345,30 +354,40 @@ export function PageHero({
 
           {/* Right column: animated play button — both variants */}
           <div className="flex flex-shrink-0 items-center justify-center">
-            <button
-              onClick={() => {
-                setShowVideo(true);
-                track(isChapter ? "chapter_heroPlay" : "studyGuide_heroPlay", {
-                  chapter: chapter.chapterNumber,
-                });
-              }}
-              className="group relative flex h-24 w-24 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[#4fa6c2] hover:bg-[#4fa6c2]/20 lg:h-28 lg:w-28"
-              aria-label={isChapter ? tChapter("watch-now") : tStudy("watchButton")}
-            >
-              <span className="absolute inset-0 animate-ping rounded-full bg-white/10" />
-              <svg
-                className="relative ml-1 h-10 w-10 fill-current text-white lg:h-12 lg:w-12"
-                viewBox="0 0 24 24"
+            {isChapter ? (
+              <button
+                onClick={() => {
+                  setShowVideo(true);
+                  dispatchVideoPlay();
+                  track("chapter_heroPlay", { chapter: chapter.chapterNumber });
+                }}
+                className="group relative flex h-24 w-24 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[#4fa6c2] hover:bg-[#4fa6c2]/20 lg:h-28 lg:w-28"
+                aria-label={tChapter("watch-now")}
               >
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </button>
+                <span className="absolute inset-0 animate-ping rounded-full bg-white/10" />
+                <svg className="relative ml-1 h-10 w-10 fill-current text-white lg:h-12 lg:w-12" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            ) : (
+              <Link
+                href={`/${locale}/guide/chapter/${chapter.chapterNumber}?autoplay=1`}
+                onClick={() => track("studyGuide_heroPlay", { chapter: chapter.chapterNumber })}
+                className="group relative flex h-24 w-24 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[#4fa6c2] hover:bg-[#4fa6c2]/20 lg:h-28 lg:w-28"
+                aria-label={tStudy("watchButton")}
+              >
+                <span className="absolute inset-0 animate-ping rounded-full bg-white/10" />
+                <svg className="relative ml-1 h-10 w-10 fill-current text-white lg:h-12 lg:w-12" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </Link>
+            )}
           </div>
         </div>
       </section>
 
-      {/* ── Video Modal ── */}
-      {showVideo && (
+      {/* ── Video Modal (chapter only) ── */}
+      {showVideo && isChapter && (
         <div
           onClick={() => setShowVideo(false)}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
@@ -377,6 +396,15 @@ export function PageHero({
             onClick={(e) => e.stopPropagation()}
             className="relative flex w-full max-w-[850px] flex-col overflow-hidden rounded-2xl border border-gray-800 bg-[#1e1e24] shadow-2xl"
           >
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute right-3 top-3 z-30 rounded-full bg-black/60 p-2 text-white transition-all hover:scale-105 hover:bg-black/85"
+              aria-label="Close"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
             <div className="aspect-video w-full">
               <iframe
                 key={isChapter ? heroLanguage.code : locale}

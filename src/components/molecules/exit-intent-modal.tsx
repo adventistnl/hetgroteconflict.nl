@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { languages, routeLocaleToFlagCode } from "@/config/languages";
 import { captureLeadAction } from "@/app/actions";
+import { VIDEO_PLAY_EVENT } from "@/utils/video-play-event";
 
 const BOOK_COVER_MAP: Record<string, string> = {
   english: "/book-covers/english.avif",
@@ -12,6 +13,10 @@ const BOOK_COVER_MAP: Record<string, string> = {
   spanish: "/book-covers/spanish.avif",
   twi: "/book-covers/twi.avif",
 };
+
+/** localStorage keys */
+const LEAD_CAPTURED_KEY = "lead-captured";
+const VIDEO_PLAY_COUNT_KEY = "video-play-count";
 
 export function ExitIntentModal({ forceOpen = false }: { forceOpen?: boolean } = {}) {
   const locale = useLocale();
@@ -22,8 +27,9 @@ export function ExitIntentModal({ forceOpen = false }: { forceOpen?: boolean } =
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [source, setSource] = useState<"exit-intent" | "1min-trigger">("exit-intent");
-  const hasShown = useRef(false);
+  const [source, setSource] = useState<"exit-intent" | "1min-trigger" | "video-play-trigger">("exit-intent");
+  /** Prevents exit-intent / 1min triggers from showing more than once per session */
+  const shownByPassiveTrigger = useRef(false);
 
   // Determine book cover — use locale-specific if available, else English
   const flagCode = routeLocaleToFlagCode[locale.toLowerCase()] || locale.toLowerCase();
@@ -31,21 +37,33 @@ export function ExitIntentModal({ forceOpen = false }: { forceOpen?: boolean } =
   const langName = lang?.name?.toLowerCase() ?? "english";
   const bookCover = BOOK_COVER_MAP[langName] ?? BOOK_COVER_MAP["english"];
 
-  const trigger = (triggerSource: "exit-intent" | "1min-trigger") => {
-    if (hasShown.current) return;
+  const trigger = useCallback((triggerSource: "exit-intent" | "1min-trigger" | "video-play-trigger") => {
+    if (typeof window === "undefined") return;
+    // Never show if user already submitted their email
+    if (localStorage.getItem(LEAD_CAPTURED_KEY) === "1") return;
+
+    if (triggerSource === "video-play-trigger") {
+      // Video trigger can reopen the modal on every qualifying event
+      setSource("video-play-trigger");
+      setIsVisible(true);
+      return;
+    }
+
+    // Passive triggers (exit-intent, 1min): only once per session
+    if (shownByPassiveTrigger.current) return;
     if (sessionStorage.getItem("exit-intent-shown")) return;
-    hasShown.current = true;
+    shownByPassiveTrigger.current = true;
     sessionStorage.setItem("exit-intent-shown", "1");
     setSource(triggerSource);
     setIsVisible(true);
-  };
+  }, []);
 
+  // Passive triggers: mouse-leave, rapid-scroll-up, 1-minute timer
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY < 20) trigger("exit-intent");
     };
 
-    // Mobile fallback: rapid scroll up
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
       const delta = lastScrollY - window.scrollY;
@@ -53,7 +71,6 @@ export function ExitIntentModal({ forceOpen = false }: { forceOpen?: boolean } =
       lastScrollY = window.scrollY;
     };
 
-    // 1-minute time-on-page trigger
     const timer = setTimeout(() => trigger("1min-trigger"), 60_000);
 
     document.addEventListener("mouseleave", handleMouseLeave);
@@ -63,8 +80,23 @@ export function ExitIntentModal({ forceOpen = false }: { forceOpen?: boolean } =
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(timer);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [trigger]);
+
+  // Video-play trigger: fires modal every 2nd video click (if not captured)
+  useEffect(() => {
+    const handleVideoPlay = () => {
+      if (localStorage.getItem(LEAD_CAPTURED_KEY) === "1") return;
+      const prev = parseInt(localStorage.getItem(VIDEO_PLAY_COUNT_KEY) ?? "0", 10);
+      const next = prev + 1;
+      localStorage.setItem(VIDEO_PLAY_COUNT_KEY, String(next));
+      if (next % 2 === 0) {
+        trigger("video-play-trigger");
+      }
+    };
+
+    window.addEventListener(VIDEO_PLAY_EVENT, handleVideoPlay);
+    return () => window.removeEventListener(VIDEO_PLAY_EVENT, handleVideoPlay);
+  }, [trigger]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,6 +114,8 @@ export function ExitIntentModal({ forceOpen = false }: { forceOpen?: boolean } =
     setLoading(true);
     try {
       await captureLeadAction(email, source, locale);
+      // Permanently suppress modal for this browser after successful submission
+      localStorage.setItem(LEAD_CAPTURED_KEY, "1");
       setSubmitted(true);
     } catch {
       setError(t("error-generic"));

@@ -4,6 +4,7 @@ import Carousel from "./caroussel";
 import { StudyGuideChapterCard } from "./study-guide-chapter-card";
 import { useChapterProgress } from "@/hooks/use-chapter-progress";
 import { getLocalizedChapters } from "@/utils/get-chapters";
+import { useTranslations } from "next-intl";
 
 interface Props {
   currentChapterNumber: string;
@@ -12,6 +13,7 @@ interface Props {
 
 export function ChapterCarousel({ currentChapterNumber, locale }: Props) {
   const { progress } = useChapterProgress();
+  const t = useTranslations("study-guide");
   const chaptersData = getLocalizedChapters(locale);
 
   const currentIndex = chaptersData.findIndex(
@@ -24,7 +26,7 @@ export function ChapterCarousel({ currentChapterNumber, locale }: Props) {
     ...chaptersData.slice(0, currentIndex),
   ];
 
-  const items = orderedChapters.map((chapter) => ({
+  const items = orderedChapters.map((chapter, i) => ({
     chapterNumber: chapter.chapterNumber,
     title: chapter.title,
     description: chapter.description,
@@ -32,12 +34,25 @@ export function ChapterCarousel({ currentChapterNumber, locale }: Props) {
     locale,
     isVisited: progress.visitedChapters.has(chapter.chapterNumber),
     isLast: progress.lastChapter === chapter.chapterNumber,
+    isNext: i === 0,
   }));
 
   return (
-    <div>
-      <h2 className="pl-24 text-2xl text-primary">Up Next</h2>
+    <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-10">
+      {/* Header alinhado ao container interno do carrossel */}
+      <div className="flex items-center gap-3 px-0 sm:px-0 pb-4">
+        <div className="h-px flex-1 bg-primary/10" />
+        {/* <h2
+          className="shrink-0 text-lg font-bold uppercase tracking-widest text-primary/60"
+          style={{ fontFamily: "var(--font-rubik)" }}
+        >
+          {t("upNext")}
+        </h2> */}
+        <div className="h-px flex-1 bg-primary/10" />
+      </div>
+
       <Carousel ItemComponent={StudyGuideChapterCard} items={items} />
     </div>
   );
 }
+

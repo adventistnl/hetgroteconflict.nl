@@ -13,6 +13,7 @@ interface Props {
   locale: string;
   isVisited: boolean;
   isLast: boolean;
+  isNext?: boolean;
 }
 
 export function StudyGuideChapterCard({
@@ -23,6 +24,7 @@ export function StudyGuideChapterCard({
   locale,
   isVisited,
   isLast,
+  isNext = false,
 }: Props) {
   const t = useTranslations("study-guide");
 
@@ -52,6 +54,12 @@ export function StudyGuideChapterCard({
         </div>
 
         {/* Progress badges */}
+        {isNext && !isLast && (
+          <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-[#4fa6c2] px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg">
+            <svg className="h-3 w-3 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            {t("upNext")}
+          </span>
+        )}
         {isLast && (
           <span className="absolute left-3 top-3 rounded-full bg-[#4fa6c2] px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white">
             {t("lastWatched")}
