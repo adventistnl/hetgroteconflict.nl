@@ -90,7 +90,7 @@ export function MobileBottomNav({ onOpenChurchList }: Props) {
   return (
     <nav
       className="fixed left-0 right-0 z-[20] flex justify-center md:hidden"
-      style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
+      style={{ bottom: "calc(0.8rem + env(safe-area-inset-bottom, 0px))" }}
     >
       <div className="flex w-[80vw] items-center justify-between rounded-full border border-primary/10 bg-secondary px-3 py-2 shadow-lg">
         {navItems.map(({ key, icon: Icon, accent, onClick, activePath }) => {
