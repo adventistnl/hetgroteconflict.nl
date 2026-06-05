@@ -29,6 +29,33 @@ h1 {
   }
 }
 
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Used by CompaniesContainer: 3 copies, shift by 1/3 */
+@keyframes marquee-third {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-third {
+  animation: marquee-third 18s linear infinite;
+}
+
+.animate-marquee-third:hover {
+  animation-play-state: paused;
+}
+
 @layer base {
   :root {
     --gray: 0 0% 54%;

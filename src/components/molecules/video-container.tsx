@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { dispatchVideoPlay } from "@/utils/video-play-event";
 
 export const VideoContainer = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -67,7 +68,7 @@ export const VideoContainer = () => {
           />
 
           <button
-            onClick={() => setShowVideo(true)}
+            onClick={() => { setShowVideo(true); dispatchVideoPlay(); }}
             className="absolute flex items-center justify-center flex-col gap-4 "
           >
             <Image

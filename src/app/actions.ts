@@ -13,7 +13,7 @@ export const sendMailAction = async (
 
 export async function captureLeadAction(
   email: string,
-  source: "exit-intent" | "1min-trigger" | "form" = "exit-intent",
+  source: "exit-intent" | "1min-trigger" | "video-play-trigger" | "form" = "exit-intent",
   locale: string = "unknown"
 ): Promise<void> {
   await sendLeadCaptureEmail(email);

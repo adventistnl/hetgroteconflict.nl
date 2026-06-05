@@ -61,9 +61,9 @@ export default function Carousel<T extends object>({
   };
 
   return (
-    <div className="relative mx-auto flex w-full max-w-[1400px] flex-row items-center justify-around gap-4 p-10">
+    <div className="relative mx-auto flex w-full max-w-[1400px] flex-row items-center justify-around gap-4">
       <button
-        className="relative right-0 top-[-50px] flex items-center justify-center rounded-full bg-deep_blue p-2 text-white"
+        className="relative right-0 top-[-50px] hidden sm:flex items-center justify-center rounded-full bg-deep_blue p-2 text-white"
         onClick={prevSlide}
       >
         <ChevronLeft className="text-gray-400 group-hover:text-white" />
@@ -76,7 +76,7 @@ export default function Carousel<T extends object>({
         ))}
       </div>
       <button
-        className="relative left-0 top-[-50px] flex items-center justify-center rounded-full bg-deep_blue p-2 text-white"
+        className="relative left-0 top-[-50px] hidden sm:flex items-center justify-center rounded-full bg-deep_blue p-2 text-white"
         onClick={nextSlide}
       >
         <ChevronRight className="text-gray-200 group-hover:text-white" />

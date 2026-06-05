@@ -10,7 +10,7 @@ export const EsdaCoursesContainer = () => {
   const t = useTranslations("esda-courses");
 
   return (
-    <div className="flex flex-wrap items-start justify-center gap-6">
+    <div className="flex flex-wrap items-start justify-between gap-6">
       {/* Left: text content */}
       <div className="flex max-w-[600px] flex-col gap-6 p-8">
         <h6 className="text-2xl text-primary">{t("title")}</h6>

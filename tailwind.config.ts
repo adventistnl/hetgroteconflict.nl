@@ -70,20 +70,6 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      keyframes: {
-        "progress-bar": {
-          from: { width: "0%" },
-          to: { width: "100%" },
-        },
-        "fade-in": {
-          from: { opacity: "0", transform: "translateY(6px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-      },
-      animation: {
-        "progress-bar": "progress-bar linear forwards",
-        "fade-in": "fade-in 0.35s ease both",
-      },
     },
   },
   plugins: [require("tailwindcss-animate")],

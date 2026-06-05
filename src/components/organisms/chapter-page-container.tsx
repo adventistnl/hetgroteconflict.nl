@@ -8,7 +8,6 @@ import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 import { CompaniesContainer } from "../molecules/companies-container";
 import { ChapterCarousel } from "../molecules/chapter-carousel";
 import { EsdaCoursesContainer } from "../molecules/esda-courses-container";
-import { ExitIntentModal } from "../molecules/exit-intent-modal";
 import { PageHero, ChapterData } from "../molecules/page-hero";
 import { useLocale } from "next-intl";
 
@@ -29,7 +28,6 @@ export const ChapterPageContainer = ({ chapter, talkToUsFunctions }: Props) => {
 
   return (
     <div className="flex w-full flex-col items-center">
-      <ExitIntentModal />
       <PageHero variant="chapter" chapter={chapter} locale={locale} />
       {/* Sponsor/Partner logos */}
       <section className="flex w-full flex-col items-center justify-center bg-transparent py-6 opacity-80">
@@ -46,7 +44,7 @@ export const ChapterPageContainer = ({ chapter, talkToUsFunctions }: Props) => {
       </section>
 
       {/* 5. ESDA Courses */}
-      <section className="w-full bg-secondary py-10 border-t border-primary/10">
+      <section className="mx-auto w-full max-w-[1400px] px-4 sm:px-10">
         <EsdaCoursesContainer />
       </section>
 
