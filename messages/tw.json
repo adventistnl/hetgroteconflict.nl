@@ -138,7 +138,8 @@
     "contact": "Bɔ mmɔden ne yɛn nkɔmmɔ",
     "participate": "Bɔ mmɔden",
     "home": "Fie",
-    "findChurch": "Hwɛ Kurom Bi"
+    "findChurch": "Hwɛ Kurom Bi",
+    "studyGuide": "Adesua Nkurofoɔ"
   },
   "talk-to-us-container": {
     "title": "Pɛ sɛ wuhu nsɛm pii anaa?",
@@ -160,12 +161,72 @@
   "footer": {
     "policy": "Nkyerɛmu Nhyɛmu",
     "legal": "Abatoɔ Nkyerɛmu",
-    "tradmark": "Abatoɔ ne Logo Nhyɛda"
+    "tradmark": "Abatoɔ ne Logo Nhyɛda",
+    "follow": "Di yɛn akyi",
+    "links-title": "Nsɛm Pii",
+    "contact-title": "Kɔkɔ Yɛn Ho",
+    "about": "Yɛn Ho Asɛm",
+    "sermon": "Asɛnka Nhyehyɛe",
+    "news": "Nsɛm Foforo",
+    "agenda": "Sɛnkyerɛ",
+    "webshop": "Dwetire",
+    "esda": "ESDA Sukuu",
+    "adra": "ADRA",
+    "contact-link": "Kɔkɔ Yɛn Ho",
+    "official-site": "Oficial Webi",
+    "copyright": "Copyright 2024 Seventh-day Adventist Church"
   },
   "chapter-page": {
     "chapter": "第",
     "coming-soon": "即將推出",
     "description": "這一章正在精心準備中，請稍後再來。",
-    "go-back-home": "返回首頁"
+    "go-back-home": "返回首頁",
+    "language": "Kasa:",
+    "available": "Woada wɔ ho:",
+    "no-files": "Fael biara nni ho",
+    "download": "Ɔhyɛfo",
+    "download-pdf": "Ɔhyɛfo PDF",
+    "download-epub": "Ɔhyɛfo ePub",
+    "download-audio": "Ɔhyɛfo Nnwom",
+    "watch-now": "Hwɛ seesei",
+    "watch-youtube": "Hwɛ wɔ YouTube Playlist",
+    "watch-vimeo": "Hwɛ wɔ Vimeo"
+  },
+  "study-guide": {
+    "badge": "Adesua Nkurofoɔ",
+    "title": "Obra Tenten no — Nkyeakyea bi bi",
+    "subtitle": "Di nkyeakyea biara akyi wo ankasa w'ahorowɔ so. W'akyi ahorowɔ wo sie krɔn krɔn.",
+    "chapter": "Nkyeakyea",
+    "watched": "Hwɛ adi",
+    "lastWatched": "Nkyeakyea a woehwɛ",
+    "continueLabel": "Di w'akyi akyi",
+    "continueButton": "Di akyi",
+    "dismissButton": "Potee",
+    "resetProgress": "San w'akyi ahorowɔ",
+    "watchButton": "H wɛ",
+    "startButton": "開始觀看"
+  },
+  "esda-courses": {
+    "title": "ESDA Instituut Nkyerɛkyerɛ",
+    "summary": "ESDA Instituut de nkyerɛkyerɛ wɔ intanɛt so ne nwoma mu fa nsɛm pii ho, te sɛ apɔmuden, agyindii, ne Baebel adesua, sɛ wɔbɛboa Baebel ho nimdeɛ wɔ Netherlands mu kwa.",
+    "viewAll": "Hwɛ nkyerɛkyerɛ nyinaa →",
+    "course-gezondheid": "Apɔmuden",
+    "course-koningschap": "Onyankopɔn Ahennie",
+    "course-archeologie": "Akwankyerɛ"
+  },
+  "exit-intent": {
+    "badge": "在您離開之前",
+    "title": "想免費獲得這本書嗎？",
+    "body": "留下您的電子郵件，我們將向您發送關於大爭戰的材料——一本揭示善惡史詩衝突的書。",
+    "placeholder": "您的電子郵件地址",
+    "consent": "我同意接收有關大爭戰的電子郵件材料。我可以隨時取消訂閱。",
+    "submit": "給我發送材料",
+    "skip": "不，謝謝，繼續瀏覽",
+    "success-title": "您已加入列表！",
+    "success-body": "謝謝！我們將直接向您的收件箱發送有關大爭戰的更新。",
+    "success-button": "繼續觀看",
+    "error-email": "請輸入有效的電子郵件地址。",
+    "error-consent": "請確認您的同意以繼續。",
+    "error-generic": "出了點問題，請重試。"
   }
 }

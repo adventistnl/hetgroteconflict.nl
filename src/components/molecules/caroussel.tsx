@@ -67,9 +67,11 @@ export default function Carousel<T>({
       >
         <ChevronLeft className="text-gray-400 group-hover:text-white" />
       </button>
-      <div className="flex w-full justify-evenly gap-12">
+      <div className="flex w-full items-start gap-6">
         {currentItems.slice(0, visibleItems).map((item, index) => (
-          <ItemComponent key={index} {...item} />
+          <div key={index} className="min-w-0 flex-1">
+            <ItemComponent {...item} />
+          </div>
         ))}
       </div>
       <button

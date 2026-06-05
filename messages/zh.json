@@ -138,7 +138,8 @@
     "contact": "联系我们",
     "participate": "参与",
     "home": "首页",
-    "findChurch": "寻找教堂"
+    "findChurch": "寻找教堂",
+    "studyGuide": "学习指南"
   },
   "talk-to-us-container": {
     "title": "想知道更多吗",
@@ -160,12 +161,72 @@
   "footer": {
     "policy": "隐私政策",
     "legal": "法律声明",
-    "tradmark": "商标和标志使用"
+    "tradmark": "商标和标志使用",
+    "follow": "关注我们",
+    "links-title": "更多信息",
+    "contact-title": "联系我们",
+    "about": "关于我们",
+    "sermon": "讲道时间表",
+    "news": "新闻",
+    "agenda": "议程",
+    "webshop": "网店",
+    "esda": "ESDA学院",
+    "adra": "ADRA",
+    "contact-link": "联系我们",
+    "official-site": "官方网站",
+    "copyright": "Copyright 2024 基督复临安息日会"
   },
   "chapter-page": {
     "chapter": "第",
     "coming-soon": "即将推出",
     "description": "这一章正在精心准备中，请稍后再来。",
-    "go-back-home": "返回首页"
+    "go-back-home": "返回首页",
+    "language": "语言：",
+    "available": "可用：",
+    "no-files": "没有可用文件",
+    "download": "下载",
+    "download-pdf": "下载 PDF",
+    "download-epub": "下载 ePub",
+    "download-audio": "下载音频",
+    "watch-now": "立即观看",
+    "watch-youtube": "在 YouTube 播放列表观看",
+    "watch-vimeo": "在 Vimeo 观看"
+  },
+  "study-guide": {
+    "badge": "学习指南",
+    "title": "大争论 — 逐章阅读",
+    "subtitle": "按自己的节奏学习每一章。您的进度会自动保存。",
+    "chapter": "第",
+    "watched": "已观看",
+    "lastWatched": "最近观看",
+    "continueLabel": "从上次停止的地方继续",
+    "continueButton": "继续",
+    "dismissButton": "关闭",
+    "resetProgress": "重置进度",
+    "watchButton": "观看",
+    "startButton": "开始观看"
+  },
+  "esda-courses": {
+    "title": "ESDA研究所课程",
+    "summary": "ESDA研究所提供有关健康、神学和圣经研究等各种主题的在线和书面课程，旨在以可及且免费的方式在荷兰推广圣经知识。",
+    "viewAll": "查看所有课程 →",
+    "course-gezondheid": "健康",
+    "course-koningschap": "神的国度",
+    "course-archeologie": "考古学"
+  },
+  "exit-intent": {
+    "badge": "在您离开之前",
+    "title": "想免费获得这本书吗？",
+    "body": "留下您的电子邮件，我们将向您发送关于大争战的材料——一本揭示善恶史诗冲突的书。",
+    "placeholder": "您的电子邮件地址",
+    "consent": "我同意接收有关大争战的电子邮件材料。我可以随时取消订阅。",
+    "submit": "给我发送材料",
+    "skip": "不，谢谢，继续浏览",
+    "success-title": "您已加入列表！",
+    "success-body": "谢谢！我们将直接向您的收件箱发送有关大争战的更新。",
+    "success-button": "继续观看",
+    "error-email": "请输入有效的电子邮件地址。",
+    "error-consent": "请确认您的同意以继续。",
+    "error-generic": "出了点问题，请重试。"
   }
 }

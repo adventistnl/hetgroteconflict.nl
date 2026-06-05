@@ -138,7 +138,8 @@
     "contact": "Fale conosco",
     "participate": "Participar",
     "home": "Início",
-    "findChurch": "Encontre uma Igreja"
+    "findChurch": "Encontre uma Igreja",
+    "studyGuide": "Guia de Estudo"
   },
   "talk-to-us-container": {
     "title": "Quer saber mais?",
@@ -161,12 +162,72 @@
   "footer": {
     "policy": "Política de Privacidade",
     "legal": "Aviso Legal",
-    "tradmark": "Uso de Marca e Logotipo"
+    "tradmark": "Uso de Marca e Logotipo",
+    "follow": "Siga-nos",
+    "links-title": "Mais informações",
+    "contact-title": "Contato",
+    "about": "Sobre nós",
+    "sermon": "Programação de sermões",
+    "news": "Notícias",
+    "agenda": "Agenda",
+    "webshop": "Loja",
+    "esda": "Instituto ESDA",
+    "adra": "ADRA",
+    "contact-link": "Contato",
+    "official-site": "Site oficial",
+    "copyright": "Copyright 2024 Igreja Adventista do Sétimo Dia"
   },
   "chapter-page": {
     "chapter": "Capítulo",
     "coming-soon": "Em breve",
     "description": "Este capítulo está sendo cuidadosamente preparado. Volte em breve.",
-    "go-back-home": "Voltar para o início"
+    "go-back-home": "Voltar para o início",
+    "language": "Idioma:",
+    "available": "Disponível:",
+    "no-files": "Nenhum arquivo disponível",
+    "download": "Baixar",
+    "download-pdf": "Baixar PDF",
+    "download-epub": "Baixar ePub",
+    "download-audio": "Baixar Áudio",
+    "watch-now": "Assistir agora",
+    "watch-youtube": "Assistir na Playlist do YouTube",
+    "watch-vimeo": "Assistir no Vimeo"
+  },
+  "study-guide": {
+    "badge": "Guia de Estudo",
+    "title": "O Grande Conflito — Capítulo por Capítulo",
+    "subtitle": "Siga cada capítulo no seu próprio ritmo. Seu progresso é salvo automaticamente.",
+    "chapter": "Capítulo",
+    "watched": "Assistido",
+    "lastWatched": "Último assistido",
+    "continueLabel": "Continuar de onde parou",
+    "continueButton": "Continuar",
+    "dismissButton": "Dispensar",
+    "resetProgress": "Resetar meu progresso",
+    "watchButton": "Assistir",
+    "startButton": "Começar"
+  },
+  "esda-courses": {
+    "title": "Cursos ESDA Instituut",
+    "summary": "O ESDA Instituut oferece cursos online e escritos sobre diversos temas como saúde, teologia e estudos bíblicos, com o objetivo de promover o conhecimento da Bíblia na Holanda de forma acessível e gratuita.",
+    "viewAll": "Ver todos os cursos →",
+    "course-gezondheid": "Saúde",
+    "course-koningschap": "O Reino de Deus",
+    "course-archeologie": "Arqueologia"
+  },
+  "exit-intent": {
+    "badge": "Antes de sair",
+    "title": "Quer receber este livro gratuitamente?",
+    "body": "Deixe seu e-mail e enviaremos materiais sobre O Grande Conflito — um livro que revela o conflito épico entre o bem e o mal.",
+    "placeholder": "Seu endereço de e-mail",
+    "consent": "Concordo em receber e-mails com materiais sobre O Grande Conflito. Posso cancelar a inscrição a qualquer momento.",
+    "submit": "Enviar os materiais",
+    "skip": "Não obrigado, continuar sem",
+    "success-title": "Você está na lista!",
+    "success-body": "Obrigado! Enviaremos atualizações sobre O Grande Conflito diretamente para sua caixa de entrada.",
+    "success-button": "Continuar assistindo",
+    "error-email": "Por favor, insira um endereço de e-mail válido.",
+    "error-consent": "Por favor, confirme seu consentimento para continuar.",
+    "error-generic": "Algo deu errado. Por favor, tente novamente."
   }
 }

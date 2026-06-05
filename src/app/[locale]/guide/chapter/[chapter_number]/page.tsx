@@ -1,9 +1,11 @@
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { ChapterPageContainer } from "@/components/organisms/chapter-page-container";
 import chaptersData from "@/database/chapters.json";
+import { getLocalizedChapter } from "@/utils/get-chapters";
 import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 import { sendTalkToUsEmail } from "@/utils/send-email/send-talk-to-us-email";
 import { sendTalkToUsConfirmationEmail } from "@/utils/send-email/send-talk-to-us-confirmation-email";
+import { routing } from "@/i18n/routing";
 
 type Props = {
   params: {
@@ -12,14 +14,24 @@ type Props = {
   };
 };
 
+export function generateStaticParams() {
+  const locales = routing.locales;
+  return chaptersData.flatMap((chapter) =>
+    locales.map((locale) => ({
+      locale,
+      chapter_number: chapter.chapterNumber,
+    }))
+  );
+}
+
 export default async function ChapterPage({ params }: Props) {
   const { locale, chapter_number } = params;
 
   // Set the request locale for static generation / internationalization
   unstable_setRequestLocale(locale);
 
-  // Find the chapter in the mock database
-  const chapter = chaptersData.find((c) => c.chapterNumber === chapter_number);
+  // Find the localized chapter
+  const chapter = getLocalizedChapter(locale, chapter_number);
 
   // Server action for the TalkToUs contact form
   async function talkToUsFunction(formData: TalkToUsFormData) {

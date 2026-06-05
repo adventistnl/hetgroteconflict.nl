@@ -2,6 +2,11 @@ import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { MainContainer } from "@/components/molecules/main-container";
+import dynamic from "next/dynamic";
+
+const DevTestModalButton = process.env.NODE_ENV === "development"
+  ? dynamic(() => import("@/components/molecules/dev-test-modal-button").then((m) => m.DevTestModalButton), { ssr: false })
+  : null;
 
 export default async function LocaleLayout({
   children,
@@ -18,6 +23,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <MainContainer>{children}</MainContainer>
+      {DevTestModalButton && <DevTestModalButton />}
     </NextIntlClientProvider>
   );
 }

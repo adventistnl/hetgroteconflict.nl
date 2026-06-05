@@ -138,7 +138,8 @@
     "contact": "Contactez-nous",
     "participate": "Participer",
     "home": "Accueil",
-    "findChurch": "Trouver une église"
+    "findChurch": "Trouver une église",
+    "studyGuide": "Guide d'étude"
   },
   "talk-to-us-container": {
     "title": "Voulez-vous en savoir plus ?",
@@ -160,12 +161,72 @@
   "footer": {
     "policy": "Politique de Confidentialité",
     "legal": "Mentions Légales",
-    "tradmark": "Utilisation de la Marque et du Logo"
+    "tradmark": "Utilisation de la Marque et du Logo",
+    "follow": "Suivez-nous",
+    "links-title": "Plus d'informations",
+    "contact-title": "Contact",
+    "about": "À propos",
+    "sermon": "Programme des cultes",
+    "news": "Actualités",
+    "agenda": "Agenda",
+    "webshop": "Boutique",
+    "esda": "Institut ESDA",
+    "adra": "ADRA",
+    "contact-link": "Contact",
+    "official-site": "Site officiel",
+    "copyright": "Copyright 2024 Église Adventiste du Septième Jour"
   },
   "chapter-page": {
     "chapter": "Chapitre",
     "coming-soon": "Bientôt disponible",
     "description": "Ce chapitre est en cours de préparation. Revenez bientôt.",
-    "go-back-home": "Retour à l'accueil"
+    "go-back-home": "Retour à l'accueil",
+    "language": "Langue :",
+    "available": "Disponible :",
+    "no-files": "Aucun fichier disponible",
+    "download": "Télécharger",
+    "download-pdf": "Télécharger PDF",
+    "download-epub": "Télécharger ePub",
+    "download-audio": "Télécharger Audio",
+    "watch-now": "Regarder maintenant",
+    "watch-youtube": "Voir sur la playlist YouTube",
+    "watch-vimeo": "Voir sur Vimeo"
+  },
+  "study-guide": {
+    "badge": "Guide d'étude",
+    "title": "La Grande Controverse — Chapitre par Chapitre",
+    "subtitle": "Suivez chaque chapitre à votre propre rythme. Votre progression est sauvegardée automatiquement.",
+    "chapter": "Chapitre",
+    "watched": "Vu",
+    "lastWatched": "Dernier vu",
+    "continueLabel": "Reprendre où vous en étiez",
+    "continueButton": "Reprendre",
+    "dismissButton": "Fermer",
+    "resetProgress": "Réinitialiser ma progression",
+    "watchButton": "Regarder",
+    "startButton": "Commencer"
+  },
+  "esda-courses": {
+    "title": "Cours ESDA Instituut",
+    "summary": "L'ESDA Instituut propose des cours en ligne et écrits sur divers sujets tels que la santé, la théologie et les études bibliques, dans le but de promouvoir la connaissance de la Bible aux Pays-Bas de manière accessible et gratuite.",
+    "viewAll": "Voir tous les cours →",
+    "course-gezondheid": "Santé",
+    "course-koningschap": "Le Royaume de Dieu",
+    "course-archeologie": "Archéologie"
+  },
+  "exit-intent": {
+    "badge": "Avant de partir",
+    "title": "Voulez-vous recevoir ce livre gratuitement ?",
+    "body": "Laissez votre e-mail et nous vous enverrons des matériaux sur La Grande Controverse — un livre qui révèle le conflit épique entre le bien et le mal.",
+    "placeholder": "Votre adresse e-mail",
+    "consent": "J'accepte de recevoir des e-mails avec des matériaux sur La Grande Controverse. Je peux me désabonner à tout moment.",
+    "submit": "Envoyez-moi les matériaux",
+    "skip": "Non merci, continuer sans",
+    "success-title": "Vous êtes sur la liste !",
+    "success-body": "Merci ! Nous vous enverrons des mises à jour sur La Grande Controverse directement dans votre boîte de réception.",
+    "success-button": "Continuer à regarder",
+    "error-email": "Veuillez entrer une adresse e-mail valide.",
+    "error-consent": "Veuillez confirmer votre consentement pour continuer.",
+    "error-generic": "Quelque chose s'est mal passé. Veuillez réessayer."
   }
 }
