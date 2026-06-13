@@ -44,8 +44,10 @@ export const ChapterPageContainer = ({ chapter, talkToUsFunctions }: Props) => {
       </section>
 
       {/* 5. ESDA Courses */}
-      <section className="mx-auto w-full max-w-[1400px] px-4 sm:px-10">
-        <EsdaCoursesContainer />
+      <section className="w-full py-0">
+        <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-10">
+          <EsdaCoursesContainer />
+        </div>
       </section>
 
       {/* 6. Contact/Talk to Us Section */}
