@@ -1,12 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { BookOpen, Clock, ChevronRight, CheckCircle2, PlayCircle } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, PlayCircle, ChevronRight } from "lucide-react";
 import { Plan } from "@/database/plans";
 import { usePlanProgress } from "@/hooks/use-plan-progress";
+import { languages } from "@/config/languages";
 import { track } from "@vercel/analytics";
 
-// ── PlanCard ─────────────────────────────────────────────
+// ── Book cover map: locale → /book-covers/{name}.{ext} ───────────────────────
+
+const LOCALE_TO_COVER: Record<string, string> = Object.fromEntries(
+  languages.map((l) => [
+    l.routeLocale,
+    `/book-covers/${l.name.toLowerCase()}.${l.bookCoverExtension}`,
+  ])
+);
+
+function getBookCover(locale: string): string {
+  return LOCALE_TO_COVER[locale] ?? "/book-covers/english.avif";
+}
+
+// ── PlanCard — mirrors StudyGuideChapterCard exactly ─────────────────────────
 
 interface PlanCardProps {
   plan: Plan;
@@ -17,12 +32,13 @@ function PlanCard({ plan, locale }: PlanCardProps) {
   const { getPlanEntry, startPlan } = usePlanProgress();
   const entry = getPlanEntry(plan.plan);
 
-  const totalDays = plan.daily_breakdown_standard.length;
-  const completedDays = entry?.completedDays.length ?? 0;
   const isStarted = !!entry;
   const isCompleted = !!entry?.completedAt;
+  const totalDays = plan.daily_breakdown_standard.length;
+  const completedDays = entry?.completedDays.length ?? 0;
   const progressPct = totalDays > 0 ? Math.round((completedDays / totalDays) * 100) : 0;
 
+  const bookCover = getBookCover(locale);
   const href = `/${locale}/guide/plan/${plan.plan}`;
 
   return (
@@ -32,69 +48,78 @@ function PlanCard({ plan, locale }: PlanCardProps) {
         if (!isStarted) startPlan(plan.plan);
         track("readingPlan_click", { planId: plan.plan });
       }}
-      className="group relative flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:border-[#4fa6c2]/50 hover:bg-white/8 hover:shadow-lg hover:shadow-[#4fa6c2]/10"
-      style={{ minWidth: 260 }}
+      className="group flex flex-col gap-4 text-primary transition-all duration-500 hover:scale-105"
     >
-      {/* Badge */}
-      <span className="text-2xl">{plan.badge.split(" ")[0]}</span>
+      {/* Book cover thumbnail */}
+      <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+        <Image
+          src={bookCover}
+          alt={`${plan.title} — book cover`}
+          fill
+          className="cursor-pointer object-cover transition-all duration-500 ease-in-out"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        />
 
-      {/* Title */}
-      <div className="flex flex-col gap-1">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-[#4fa6c2]">
-          Plan {plan.order}
-        </p>
-        <h3 className="font-plus-jakarta text-base font-bold leading-snug text-white group-hover:text-[#4fa6c2] transition-colors duration-200">
-          {plan.title}
-        </h3>
-        <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-white/50">
-          {plan.description}
-        </p>
-      </div>
-
-      {/* Stats */}
-      <div className="flex flex-wrap gap-3 text-[11px] text-white/40">
-        <span className="flex items-center gap-1">
-          <BookOpen className="h-3 w-3" />
-          {plan.total_chapters} {plan.total_chapters === 1 ? "chapter" : "chapters"}
-        </span>
-        <span className="flex items-center gap-1">
-          <Clock className="h-3 w-3" />
-          ~{plan.total_time_minutes_estimate} min
-        </span>
-      </div>
-
-      {/* Progress bar / status */}
-      {isCompleted ? (
-        <div className="flex items-center gap-2 rounded-lg bg-[#4fa6c2]/10 px-3 py-2">
-          <CheckCircle2 className="h-4 w-4 shrink-0 text-[#4fa6c2]" />
-          <span className="text-xs font-medium text-[#4fa6c2]">{plan.badge}</span>
-        </div>
-      ) : isStarted ? (
-        <div className="flex flex-col gap-1.5">
-          <div className="flex justify-between text-[11px] text-white/40">
-            <span className="flex items-center gap-1">
-              <PlayCircle className="h-3 w-3 text-[#4fa6c2]" />
-              In progress
-            </span>
-            <span>{progressPct}%</span>
+        {/* Hover overlay */}
+        <div className="absolute inset-0 flex items-center justify-center rounded-xl bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4fa6c2]">
+            <svg className="ml-0.5 h-4 w-4 fill-current text-white" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
           </div>
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+        </div>
+
+        {/* Status badges — same pattern as chapter card */}
+        {isCompleted && (
+          <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-[#4fa6c2] px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg">
+            <CheckCircle2 className="h-3 w-3" />
+            Completed
+          </span>
+        )}
+        {isStarted && !isCompleted && (
+          <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-black/50 px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+            <PlayCircle className="h-3 w-3 text-[#4fa6c2]" />
+            {progressPct}% done
+          </span>
+        )}
+
+        {/* Progress bar overlay at bottom */}
+        {isStarted && !isCompleted && (
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/40">
             <div
-              className="h-full rounded-full bg-[#4fa6c2] transition-all duration-500"
+              className="h-full bg-[#4fa6c2] transition-all duration-500"
               style={{ width: `${progressPct}%` }}
             />
           </div>
-        </div>
-      ) : (
-        <div className="flex items-center gap-1 text-xs font-medium text-[#4fa6c2] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-          Start plan <ChevronRight className="h-3.5 w-3.5" />
-        </div>
-      )}
+        )}
+      </div>
+
+      {/* Info — identical layout to chapter card */}
+      <div className="flex flex-col gap-1.5">
+        <span
+          className="text-xs font-semibold uppercase tracking-widest text-[#4fa6c2]"
+          style={{ fontFamily: "var(--font-rubik)" }}
+        >
+          Plan {plan.order}
+        </span>
+        <p className="line-clamp-2 text-sm font-semibold leading-snug">{plan.title}</p>
+        <p
+          className="mt-0.5 line-clamp-2 text-xs text-primary/50"
+          style={{ fontFamily: "var(--font-rubik)" }}
+        >
+          {plan.card_subtitle}
+        </p>
+      </div>
+
+      {/* CTA button — mirrors "Watch →" */}
+      <span className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-xs font-semibold transition-colors group-hover:bg-primary/15">
+        {isStarted && !isCompleted ? "Continue →" : isCompleted ? "Review →" : "Start plan →"}
+      </span>
     </Link>
   );
 }
 
-// ── PlansSection ─────────────────────────────────────────
+// ── PlansSection ─────────────────────────────────────────────────────────────
 
 interface PlansSectionProps {
   plans: Plan[];
@@ -105,22 +130,25 @@ export function PlansSection({ plans, locale }: PlansSectionProps) {
   const sorted = [...plans].sort((a, b) => a.order - b.order);
 
   return (
-    <section className="flex flex-col gap-6">
-      {/* Heading */}
-      <div className="flex flex-col gap-1">
-        <h2 className="font-plus-jakarta text-xl font-bold text-white sm:text-2xl">
+    <section className="flex flex-col gap-4">
+      {/* Heading — style matches reference "Psalm ›" row */}
+      <div className="flex items-center gap-1.5">
+        <h2
+          className="text-base font-bold text-primary sm:text-lg"
+          style={{ fontFamily: "var(--font-rubik)" }}
+        >
           Reading Plans
         </h2>
-        <p className="text-sm text-white/50">
-          Guided journeys through The Great Controversy — one plan at a time.
-        </p>
+        <ChevronRight className="h-4 w-4 text-primary/40" />
       </div>
 
-      {/* Horizontal scroll on mobile, wrap on desktop */}
+      {/* Horizontal scroll — same negative-margin trick as mobile chapter carousel */}
       <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:overflow-visible sm:px-0">
         <div className="flex gap-4 pb-2 sm:grid sm:grid-cols-2 sm:pb-0 lg:grid-cols-3 xl:grid-cols-4">
           {sorted.map((plan) => (
-            <PlanCard key={plan.plan} plan={plan} locale={locale} />
+            <div key={plan.plan} className="w-[calc(100vw-5rem)] shrink-0 sm:w-auto">
+              <PlanCard plan={plan} locale={locale} />
+            </div>
           ))}
         </div>
       </div>
