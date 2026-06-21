@@ -5,8 +5,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { track } from "@vercel/analytics";
 import { useChapterProgress } from "@/hooks/use-chapter-progress";
 import { StudyGuideChapterCard } from "../molecules/study-guide-chapter-card";
+import { PlansSection } from "../molecules/plans-section";
 import { Footer } from "../molecules/footer";
 import { PageHero } from "../molecules/page-hero";
+import { plansDatabase } from "@/database/plans";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -78,6 +80,10 @@ export const StudyGuidePageContainer = ({ chapters }: Props) => {
         hasProgress={hasProgress}
         bgVideoUrl={bgVideoUrl}
       />
+      {/* ── Reading Plans ── */}
+      <section className="mx-auto w-full max-w-6xl px-4 pt-12">
+        <PlansSection plans={plansDatabase} locale={locale} />
+      </section>
       {/* ── Chapters grid ── */}
       <section ref={gridRef} className="mx-auto w-full max-w-6xl px-4 py-12">
         {/* Mobile: horizontal scroll-snap carousel (1 chapter at a time) */}
