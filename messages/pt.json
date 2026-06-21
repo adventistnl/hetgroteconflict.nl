@@ -230,5 +230,63 @@
     "error-email": "Por favor, insira um endereço de e-mail válido.",
     "error-consent": "Por favor, confirme seu consentimento para continuar.",
     "error-generic": "Algo deu errado. Por favor, tente novamente."
+  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "Encontre uma Igreja Perto de Voc\u00ea",
+      "badge": "Adventista do S\u00e9timo Dia",
+      "title": "Encontre a Igreja Mais Pr\u00f3xima",
+      "subtitle": "Descubra comunidades Adventistas do S\u00e9timo Dia nos Pa\u00edses Baixos — permita o acesso \u00e0 localiza\u00e7\u00e3o para encontrar a mais pr\u00f3xima ou explore todas as igrejas no mapa.",
+      "exploreMap": "Explorar Mapa",
+      "studyGuide": "Guia de Estudo"
+    },
+    "map": {
+      "communities": "{count} comunidades",
+      "heading": "Igrejas nos Pa\u00edses Baixos",
+      "subtitle": "Permita o acesso \u00e0 localiza\u00e7\u00e3o para encontrar a igreja mais perto de voc\u00ea — ou explore todas as comunidades no mapa.",
+      "loading": "Carregando mapa\u2026",
+      "geoNotSupported": "Geolocali\u00e7\u00e3o n\u00e3o \u00e9 suportada pelo seu navegador.",
+      "geoError": "Acesso \u00e0 localiza\u00e7\u00e3o negado — explore todas as igrejas no mapa abaixo."
+    },
+    "region": {
+      "label": "Igrejas na sua regi\u00e3o",
+      "nearest": "Mais Pr\u00f3xima",
+      "website": "Website",
+      "call": "Ligar",
+      "getDirections": "Como Chegar"
+    },
+    "directory": {
+      "label": "Diret\u00f3rio de Igrejas",
+      "heading": "Todas as Comunidades",
+      "subtitleWithLocation": "Igrejas ordenadas por proximidade \u00e0 sua localiza\u00e7\u00e3o. As destacadas est\u00e3o mais perto de voc\u00ea.",
+      "subtitleNoLocation": "Encontre uma comunidade Adventista do S\u00e9timo Dia nos Pa\u00edses Baixos.",
+      "searchPlaceholder": "Buscar por nome ou cidade\u2026",
+      "sortProximity": "Proximidade",
+      "sortAZ": "A\u2013Z",
+      "results": "{count} resultado",
+      "resultsPlural": "{count} resultados",
+      "resultsFor": "para \"{query}\"",
+      "page": "P\u00e1gina {current} de {total}",
+      "prev": "\u2190 Anterior",
+      "next": "Pr\u00f3xima \u2192",
+      "nearest": "Mais Pr\u00f3xima",
+      "nearby": "Na regi\u00e3o",
+      "getDirections": "Como Chegar",
+      "maps": "Maps",
+      "waze": "Waze",
+      "website": "Website",
+      "call": "Ligar",
+      "noResults": "Nenhuma igreja encontrada para \"{query}\".",
+      "clearSearch": "Limpar busca",
+      "locationTooltip": "Ative a localiza\u00e7\u00e3o para ordenar por proximidade"    },
+    "locationPrompt": {
+      "title": "Encontre a Igreja Mais Próxima",
+      "subtitle": "Permita o acesso à localização para descobrir a comunidade Adventista mais perto de você.",
+      "allowButton": "Permitir Localização",
+      "requesting": "Detectando sua localização…",
+      "deniedTitle": "Acesso à Localização Bloqueado",
+      "deniedMessage": "Seu navegador está bloqueando o acesso à localização. Clique no ícone de cadeado na barra de endereços, defina Localização como Permitir e recarregue a página.",
+      "retryButton": "Tentar Novamente",
+      "reloadButton": "Recarregar Página"    }
   }
 }

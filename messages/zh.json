@@ -229,5 +229,65 @@
     "error-email": "请输入有效的电子邮件地址。",
     "error-consent": "请确认您的同意以继续。",
     "error-generic": "出了点问题，请重试。"
+  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "在您附近找一个教会",
+      "badge": "基督复临安息日会",
+      "title": "找到您最近的教会",
+      "subtitle": "探索荷兰各地的基督复临安息日会社区——允许位置访问以找到最近的一个，或在地图上探索所有教会。",
+      "exploreMap": "探索地图",
+      "studyGuide": "学习指南"
+    },
+    "map": {
+      "communities": "{count}个社区",
+      "heading": "荷兰各地的教会",
+      "subtitle": "允许位置访问以找到离您最近的教会——或在地图上探索所有社区。",
+      "loading": "正在加载地图…",
+      "geoNotSupported": "您的浏览器不支持地理定位。",
+      "geoError": "位置访问被拒绝——请在下方地图上探索所有教会。"
+    },
+    "region": {
+      "label": "您所在地区的教会",
+      "nearest": "最近",
+      "website": "网站",
+      "call": "致电",
+      "getDirections": "获取路线"
+    },
+    "directory": {
+      "label": "教会目录",
+      "heading": "所有社区",
+      "subtitleWithLocation": "按距您位置的远近排列的教会。突出显示的是离您最近的。",
+      "subtitleNoLocation": "在荷兰寻找基督复临安息日会社区。",
+      "searchPlaceholder": "按名称或城市搜索…",
+      "sortProximity": "按距离",
+      "sortAZ": "A–Z",
+      "results": "{count}个结果",
+      "resultsPlural": "{count}个结果",
+      "resultsFor": "关于“{query}”",
+      "page": "第{current}页，共{total}页",
+      "prev": "← 上一页",
+      "next": "下一页 →",
+      "nearest": "最近",
+      "nearby": "附近",
+      "getDirections": "获取路线",
+      "maps": "地图",
+      "waze": "Waze",
+      "website": "网站",
+      "call": "致电",
+      "noResults": "未找到“{query}”的教会。",
+      "clearSearch": "清除搜索",
+      "locationTooltip": "启用位置以按距离排序"
+    },
+    "locationPrompt": {
+      "title": "找到您最近的教会",
+      "subtitle": "允许位置访问，以发现您附近最近的复临信徒社区。",
+      "allowButton": "允许位置访问",
+      "requesting": "正在检测您的位置…",
+      "deniedTitle": "位置访问被阻止",
+      "deniedMessage": "您的浏览器正在阻止位置访问。请点击地址栏中的锁形图标，将位置设置为允许，然后重新加载页面。",
+      "retryButton": "重试",
+      "reloadButton": "重新加载页面"
+    }
   }
 }

@@ -3,6 +3,8 @@ import { ParticipatePageContainer } from "@/components/organisms/participate-pag
 import { sendTalkToUsConfirmationEmail } from "@/utils/send-email/send-talk-to-us-confirmation-email";
 import { sendTalkToUsEmail } from "@/utils/send-email/send-talk-to-us-email";
 
+export const dynamic = "force-dynamic";
+
 export default function ParticipatePage() {
   async function talkToUsFunction(formData: TalkToUsFormData) {
     "use server";

@@ -228,6 +228,65 @@
     "success-button": "Doorgaan met kijken",
     "error-email": "Voer een geldig e-mailadres in.",
     "error-consent": "Bevestig je toestemming om door te gaan.",
-    "error-generic": "Er is iets misgegaan. Probeer het opnieuw."
+    "error-generic": "Er is iets misgegaan. Probeer het opnieuw."  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "Vind een kerk bij jou in de buurt",
+      "badge": "Zevende-dags Adventist",
+      "title": "Vind je dichtstbijzijnde kerk",
+      "subtitle": "Ontdek Zevende-dags Adventistengemeenschappen in Nederland — geef locatietoegang om de dichtstbijzijnde te vinden, of verken alle kerken op de kaart.",
+      "exploreMap": "Verken kaart",
+      "studyGuide": "Studiegids"
+    },
+    "map": {
+      "communities": "{count} gemeenschappen",
+      "heading": "Kerken in Nederland",
+      "subtitle": "Geef locatietoegang om de kerk het dichtst bij jou te vinden — of verken alle gemeenschappen op de kaart.",
+      "loading": "Kaart laden\u2026",
+      "geoNotSupported": "Geolocatie wordt niet ondersteund door uw browser.",
+      "geoError": "Locatietoegang geweigerd — verken alle kerken op de onderstaande kaart."
+    },
+    "region": {
+      "label": "Kerken in jouw regio",
+      "nearest": "Dichtstbij",
+      "website": "Website",
+      "call": "Bellen",
+      "getDirections": "Route"
+    },
+    "directory": {
+      "label": "Kerkengids",
+      "heading": "Alle gemeenschappen",
+      "subtitleWithLocation": "Kerken gesorteerd op nabijheid tot uw locatie. Gemarkeerde kerken zijn het dichtst bij u.",
+      "subtitleNoLocation": "Vind een Zevende-dags Adventistengemeenschap in Nederland.",
+      "searchPlaceholder": "Zoek op naam of stad\u2026",
+      "sortProximity": "Nabijheid",
+      "sortAZ": "A\u2013Z",
+      "results": "{count} resultaat",
+      "resultsPlural": "{count} resultaten",
+      "resultsFor": "voor \"{query}\"",
+      "page": "Pagina {current} van {total}",
+      "prev": "\u2190 Vorige",
+      "next": "Volgende \u2192",
+      "nearest": "Dichtstbij",
+      "nearby": "In de buurt",
+      "getDirections": "Route",
+      "maps": "Kaarten",
+      "waze": "Waze",
+      "website": "Website",
+      "call": "Bellen",
+      "noResults": "Geen kerk gevonden voor \"{query}\".",
+      "clearSearch": "Zoekopdracht wissen",
+      "locationTooltip": "Schakel locatie in om op nabijheid te sorteren"
+    },
+    "locationPrompt": {
+      "title": "Vind Uw Dichtstbijzijnde Kerk",
+      "subtitle": "Sta locatietoegang toe om de dichtstbijzijnde Adventistengemeenschap bij u te ontdekken.",
+      "allowButton": "Locatie Toestaan",
+      "requesting": "Uw locatie detecteren…",
+      "deniedTitle": "Locatietoegang Geblokkeerd",
+      "deniedMessage": "Uw browser blokkeert de locatietoegang. Klik op het slotpictogram in de adresbalk, stel Locatie in op Toestaan en laad de pagina opnieuw.",
+      "retryButton": "Opnieuw Proberen",
+      "reloadButton": "Pagina Herladen"
+    }
   }
 }

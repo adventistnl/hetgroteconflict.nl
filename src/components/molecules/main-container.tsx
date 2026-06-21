@@ -9,7 +9,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { scrollToSection } from "@/utils/scroll-to-section";
 import { useRefStore } from "../stores/ref-store";
-import { ChurchsList } from "../organisms/churchs-list-container";
 import { MobileBottomNav } from "./mobile-bottom-nav";
 
 interface Props {
@@ -23,7 +22,6 @@ export const MainContainer = ({ children }: Props) => {
   const router = useRouter();
   const locale = useLocale();
 
-  const [openChurchList, setOpenChurchList] = useState(false);
   const [isVisibleHeader, setIsVisibleHeader] = useState(false);
 
   const { ref_TalkToUsSection } = useRefStore();
@@ -110,7 +108,7 @@ export const MainContainer = ({ children }: Props) => {
                 <li
                   className="group relative cursor-pointer"
                   onClick={() => {
-                    setOpenChurchList(!openChurchList);
+                    router.push(`/${locale}/find-church`);
                     track("sectionSelect", {section: "findChurch"});
                   }}
                 >
@@ -129,9 +127,8 @@ export const MainContainer = ({ children }: Props) => {
       </header>
 
       <main>{children}</main>
-      {openChurchList && <ChurchsList closeHandle={() => setOpenChurchList(false)} />}
 
-      <MobileBottomNav onOpenChurchList={() => setOpenChurchList(true)} />
+      <MobileBottomNav />
     </div>
   );
 };

@@ -229,5 +229,65 @@
     "error-email": "Please enter a valid email address.",
     "error-consent": "Please confirm your consent to continue.",
     "error-generic": "Something went wrong. Please try again."
+  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "Find a Church Near You",
+      "badge": "Seventh-day Adventist",
+      "title": "Find Your Nearest Church",
+      "subtitle": "Discover Seventh-day Adventist communities across the Netherlands — allow location access to find the closest one, or explore all churches on the map.",
+      "exploreMap": "Explore Map",
+      "studyGuide": "Study Guide"
+    },
+    "map": {
+      "communities": "{count} communities",
+      "heading": "Churches Across the Netherlands",
+      "subtitle": "Allow location access to find the church nearest to you — or explore all communities on the map.",
+      "loading": "Loading map\u2026",
+      "geoNotSupported": "Geolocation is not supported by your browser.",
+      "geoError": "Location access denied — explore all churches on the map below."
+    },
+    "region": {
+      "label": "Churches in your region",
+      "nearest": "Nearest",
+      "website": "Website",
+      "call": "Call",
+      "getDirections": "Get Directions"
+    },
+    "directory": {
+      "label": "Church Directory",
+      "heading": "All Communities",
+      "subtitleWithLocation": "Churches sorted by proximity to your location. Highlighted ones are closest to you.",
+      "subtitleNoLocation": "Find a Seventh-day Adventist community in the Netherlands.",
+      "searchPlaceholder": "Search by name or city\u2026",
+      "sortProximity": "Proximity",
+      "sortAZ": "A\u2013Z",
+      "results": "{count} result",
+      "resultsPlural": "{count} results",
+      "resultsFor": "for \"{query}\"",
+      "page": "Page {current} of {total}",
+      "prev": "\u2190 Previous",
+      "next": "Next \u2192",
+      "nearest": "Nearest",
+      "nearby": "Nearby",
+      "getDirections": "Get Directions",
+      "maps": "Maps",
+      "waze": "Waze",
+      "website": "Website",
+      "call": "Call",
+      "noResults": "No church found for \"{query}\".",
+      "clearSearch": "Clear search",
+      "locationTooltip": "Enable location to sort by proximity"
+    },
+    "locationPrompt": {
+      "title": "Find Your Nearest Church",
+      "subtitle": "Allow location access to discover the closest Adventist community near you.",
+      "allowButton": "Allow Location Access",
+      "requesting": "Detecting your location…",
+      "deniedTitle": "Location Access Blocked",
+      "deniedMessage": "Your browser is blocking location access. Click the lock icon in your address bar, set Location to Allow, then reload the page.",
+      "retryButton": "Try Again",
+      "reloadButton": "Reload Page"
+    }
   }
 }

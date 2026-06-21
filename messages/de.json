@@ -229,5 +229,63 @@
     "error-email": "Bitte gib eine gültige E-Mail-Adresse ein.",
     "error-consent": "Bitte bestätige deine Zustimmung, um fortzufahren.",
     "error-generic": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "Finde eine Kirche in deiner N\u00e4he",
+      "badge": "Siebenten-Tags-Adventist",
+      "title": "Finde deine n\u00e4chste Kirche",
+      "subtitle": "Entdecke Siebenten-Tags-Adventistengemeinden in den Niederlanden — erlaube den Standortzugriff, um die n\u00e4chste zu finden, oder erkunde alle Kirchen auf der Karte.",
+      "exploreMap": "Karte erkunden",
+      "studyGuide": "Studienf\u00fchrer"
+    },
+    "map": {
+      "communities": "{count} Gemeinden",
+      "heading": "Kirchen in den Niederlanden",
+      "subtitle": "Erlaube den Standortzugriff, um die n\u00e4chste Kirche zu finden — oder erkunde alle Gemeinden auf der Karte.",
+      "loading": "Karte wird geladen\u2026",
+      "geoNotSupported": "Geolokalisierung wird von Ihrem Browser nicht unterst\u00fctzt.",
+      "geoError": "Standortzugriff verweigert — erkunde alle Kirchen auf der untenstehenden Karte."
+    },
+    "region": {
+      "label": "Kirchen in deiner Region",
+      "nearest": "N\u00e4chste",
+      "website": "Website",
+      "call": "Anrufen",
+      "getDirections": "Route"
+    },
+    "directory": {
+      "label": "Kirchenverzeichnis",
+      "heading": "Alle Gemeinden",
+      "subtitleWithLocation": "Kirchen nach N\u00e4he zu deinem Standort sortiert. Hervorgehobene sind am n\u00e4chsten.",
+      "subtitleNoLocation": "Finde eine Siebenten-Tags-Adventistengemeinde in den Niederlanden.",
+      "searchPlaceholder": "Nach Name oder Stadt suchen\u2026",
+      "sortProximity": "N\u00e4he",
+      "sortAZ": "A\u2013Z",
+      "results": "{count} Ergebnis",
+      "resultsPlural": "{count} Ergebnisse",
+      "resultsFor": "f\u00fcr \"{query}\"",
+      "page": "Seite {current} von {total}",
+      "prev": "\u2190 Zur\u00fcck",
+      "next": "Weiter \u2192",
+      "nearest": "N\u00e4chste",
+      "nearby": "In der N\u00e4he",
+      "getDirections": "Route",
+      "maps": "Maps",
+      "waze": "Waze",
+      "website": "Website",
+      "call": "Anrufen",
+      "noResults": "Keine Kirche gefunden f\u00fcr \"{query}\".",
+      "clearSearch": "Suche zur\u00fccksetzen",
+      "locationTooltip": "Standort aktivieren, um nach N\u00e4he zu sortieren"    },
+    "locationPrompt": {
+      "title": "Finde deine nächste Kirche",
+      "subtitle": "Erlaube den Standortzugriff, um die nächste Adventistengemeinde in deiner Nähe zu entdecken.",
+      "allowButton": "Standort erlauben",
+      "requesting": "Standort wird ermittelt…",
+      "deniedTitle": "Standortzugriff blockiert",
+      "deniedMessage": "Dein Browser blockiert den Standortzugriff. Klicke auf das Schloss-Symbol in der Adressleiste, setze Standort auf Erlauben und lade die Seite neu.",
+      "retryButton": "Erneut versuchen",
+      "reloadButton": "Seite neu laden"    }
   }
 }

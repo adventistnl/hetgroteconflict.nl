@@ -229,5 +229,65 @@
     "error-email": "Prosím zadej platnou e-mailovou adresu.",
     "error-consent": "Prosím potvrď svůj souhlas pro pokračování.",
     "error-generic": "Něco se pokazilo. Zkus to prosím znovu."
+  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "Najděte kostel poblíž vás",
+      "badge": "Adventisté sedmého dne",
+      "title": "Najděte nejbližší kostel",
+      "subtitle": "Objevte komunity Adventistů sedmého dne po celém Nizozemsku — povolte přístup k poloze, abyste našli nejbližší, nebo prozkoumejte všechny kostely na mapě.",
+      "exploreMap": "Prozkoumat mapu",
+      "studyGuide": "Studijní průvodce"
+    },
+    "map": {
+      "communities": "{count} komunit",
+      "heading": "Kostely po celém Nizozemsku",
+      "subtitle": "Povolte přístup k poloze, abyste našli nejbližší kostel — nebo prozkoumejte všechny komunity na mapě.",
+      "loading": "Načítání mapy…",
+      "geoNotSupported": "Váš prohlížeč nepodporuje geolokaci.",
+      "geoError": "Přístup k poloze odepřen — prozkoumejte všechny kostely na mapě níže."
+    },
+    "region": {
+      "label": "Kostely ve vaší oblasti",
+      "nearest": "Nejbližší",
+      "website": "Web",
+      "call": "Zavolat",
+      "getDirections": "Trasa"
+    },
+    "directory": {
+      "label": "Adresář kostelů",
+      "heading": "Všechny komunity",
+      "subtitleWithLocation": "Kostely seřazené podle vzdálenosti od vaší polohy. Zvýrazněné jsou vám nejblíže.",
+      "subtitleNoLocation": "Najděte komunitu Adventistů sedmého dne v Nizozemsku.",
+      "searchPlaceholder": "Hledat podle názvu nebo města…",
+      "sortProximity": "Vzdálenost",
+      "sortAZ": "A–Z",
+      "results": "{count} výsledek",
+      "resultsPlural": "{count} výsledků",
+      "resultsFor": "pro „{query}“",
+      "page": "Stránka {current} z {total}",
+      "prev": "← Předchozí",
+      "next": "Další →",
+      "nearest": "Nejbližší",
+      "nearby": "V okolí",
+      "getDirections": "Trasa",
+      "maps": "Mapy",
+      "waze": "Waze",
+      "website": "Web",
+      "call": "Zavolat",
+      "noResults": "Žádný kostel nenalezen pro „{query}“.",
+      "clearSearch": "Vymazat hledání",
+      "locationTooltip": "Povolte polohu pro řazení podle vzdálenosti"
+    },
+    "locationPrompt": {
+      "title": "Najděte nejbližší sbor",
+      "subtitle": "Povolte přístup k poloze, abyste objevili nejbližší adventistické společenství.",
+      "allowButton": "Povolit přístup k poloze",
+      "requesting": "Zjišťování vaší polohy…",
+      "deniedTitle": "Přístup k poloze zablokován",
+      "deniedMessage": "Váš prohlížeč blokuje přístup k poloze. Klikněte na ikonu zámku v adresním řádku, nastavte Polohu na Povolit a znovu načtěte stránku.",
+      "retryButton": "Zkusit znovu",
+      "reloadButton": "Znovu načíst stránku"
+    }
   }
 }

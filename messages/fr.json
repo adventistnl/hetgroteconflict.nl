@@ -228,6 +228,65 @@
     "success-button": "Continuer à regarder",
     "error-email": "Veuillez entrer une adresse e-mail valide.",
     "error-consent": "Veuillez confirmer votre consentement pour continuer.",
-    "error-generic": "Quelque chose s'est mal passé. Veuillez réessayer."
+    "error-generic": "Quelque chose s'est mal passé. Veuillez réessayer."  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "Trouvez une \u00e9glise pr\u00e8s de chez vous",
+      "badge": "Adventiste du Septi\u00e8me Jour",
+      "title": "Trouvez votre \u00e9glise la plus proche",
+      "subtitle": "D\u00e9couvrez les communaut\u00e9s Adventistes du Septi\u00e8me Jour aux Pays-Bas — autorisez l'acc\u00e8s \u00e0 la localisation pour trouver la plus proche ou explorez toutes les \u00e9glises sur la carte.",
+      "exploreMap": "Explorer la carte",
+      "studyGuide": "Guide d'\u00e9tude"
+    },
+    "map": {
+      "communities": "{count} communaut\u00e9s",
+      "heading": "\u00c9glises aux Pays-Bas",
+      "subtitle": "Autorisez l'acc\u00e8s \u00e0 la localisation pour trouver l'\u00e9glise la plus proche — ou explorez toutes les communaut\u00e9s sur la carte.",
+      "loading": "Chargement de la carte\u2026",
+      "geoNotSupported": "La g\u00e9olocalisation n'est pas prise en charge par votre navigateur.",
+      "geoError": "Acc\u00e8s \u00e0 la localisation refus\u00e9 — explorez toutes les \u00e9glises sur la carte ci-dessous."
+    },
+    "region": {
+      "label": "\u00c9glises dans votre r\u00e9gion",
+      "nearest": "La plus proche",
+      "website": "Site web",
+      "call": "Appeler",
+      "getDirections": "Itin\u00e9raire"
+    },
+    "directory": {
+      "label": "Annuaire des \u00e9glises",
+      "heading": "Toutes les communaut\u00e9s",
+      "subtitleWithLocation": "\u00c9glises tri\u00e9es par proximit\u00e9 de votre emplacement. Les surlign\u00e9es sont les plus proches.",
+      "subtitleNoLocation": "Trouvez une communaut\u00e9 Adventiste du Septi\u00e8me Jour aux Pays-Bas.",
+      "searchPlaceholder": "Rechercher par nom ou ville\u2026",
+      "sortProximity": "Proximit\u00e9",
+      "sortAZ": "A\u2013Z",
+      "results": "{count} r\u00e9sultat",
+      "resultsPlural": "{count} r\u00e9sultats",
+      "resultsFor": "pour \"{query}\"",
+      "page": "Page {current} sur {total}",
+      "prev": "\u2190 Pr\u00e9c\u00e9dent",
+      "next": "Suivant \u2192",
+      "nearest": "La plus proche",
+      "nearby": "\u00c0 proximit\u00e9",
+      "getDirections": "Itin\u00e9raire",
+      "maps": "Maps",
+      "waze": "Waze",
+      "website": "Site web",
+      "call": "Appeler",
+      "noResults": "Aucune \u00e9glise trouv\u00e9e pour \"{query}\".",
+      "clearSearch": "Effacer la recherche",
+      "locationTooltip": "Activez la localisation pour trier par proximit\u00e9"
+    },
+    "locationPrompt": {
+      "title": "Trouvez l’Église la Plus Proche",
+      "subtitle": "Autorisez l’accès à la localisation pour découvrir la communauté Adventiste la plus proche de vous.",
+      "allowButton": "Autoriser la Localisation",
+      "requesting": "Détection de votre position…",
+      "deniedTitle": "Accès à la Localisation Bloqué",
+      "deniedMessage": "Votre navigateur bloque l’accès à la localisation. Cliquez sur l’icône de cadenas dans la barre d’adresse, définissez Localisation sur Autoriser et rechargez la page.",
+      "retryButton": "Réessayer",
+      "reloadButton": "Recharger la Page"
+    }
   }
 }

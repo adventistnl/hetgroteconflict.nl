@@ -229,5 +229,65 @@
     "error-email": "請輸入有效的電子郵件地址。",
     "error-consent": "請確認您的同意以繼續。",
     "error-generic": "出了點問題，請重試。"
+  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "Hwɛ Asɔre a Ɛwɔ Wo Nkyɛn",
+      "badge": "Ɛda Ason Adventist",
+      "title": "Hwɛ Wo Asɔre a Ɛbɛn Wo",
+      "subtitle": "Hunu Ɛda Ason Adventist ahyiamu wɔ Netherlands nyinaa — ma wo baabiara ho nhintaw sɛ woahunu deɛ ɛbɛn wo, anaasɛ hwɛ asɔre nyinaa wɔ map no so.",
+      "exploreMap": "Hwɛ Map",
+      "studyGuide": "Adesua Nhyehyɛe"
+    },
+    "map": {
+      "communities": "Ahyiamu {count}",
+      "heading": "Asɔre wɔ Netherlands nyinaa",
+      "subtitle": "Ma wo baabiara ho nhintaw sɛ woahu asɔre a ɛbɛn wo — anaasɛ hwɛ ahyiamu nyinaa wɔ map no so.",
+      "loading": "Ɛreload map…",
+      "geoNotSupported": "Wo browser no ntumi nkyekyere wo baabiara.",
+      "geoError": "Wonii wo baabiara ho — hwɛ asɔre nyinaa wɔ map no so."
+    },
+    "region": {
+      "label": "Asɔre wɔ wo mfimfini hɔ",
+      "nearest": "Ɛbɛn Biara",
+      "website": "Wibesite",
+      "call": "Frɛ",
+      "getDirections": "Hwɛ Kwan"
+    },
+    "directory": {
+      "label": "Asɔre Nhyehyɛe",
+      "heading": "Ahyiamu nyinaa",
+      "subtitleWithLocation": "Asɔre a wɔde wo baabiara ho asekyerɛ. Deɛ wɔhyehyɛe no wɔ wo nkyɛn.",
+      "subtitleNoLocation": "Hunu Ɛda Ason Adventist ahyiamu wɔ Netherlands.",
+      "searchPlaceholder": "Hwɛ din anaasɛ kurow…",
+      "sortProximity": "Baabiara",
+      "sortAZ": "A–Z",
+      "results": "Nsusuanso {count}",
+      "resultsPlural": "Nsusuanso {count}",
+      "resultsFor": "maa \"{query}\"",
+      "page": "Kratafa {current} wɔ {total} mu",
+      "prev": "← Kan",
+      "next": "Akyire →",
+      "nearest": "Ɛbɛn Biara",
+      "nearby": "Mfimfini hɔ",
+      "getDirections": "Hwɛ Kwan",
+      "maps": "Map",
+      "waze": "Waze",
+      "website": "Wibesite",
+      "call": "Frɛ",
+      "noResults": "Asɔre biara nnhu maa \"{query}\".",
+      "clearSearch": "Popa hwehwɛ",
+      "locationTooltip": "Ma baabiara ho nhintaw sɛ wode baabiara asekyerɛ ahyehyɛ"
+    },
+    "locationPrompt": {
+      "title": "Hunu Wo Asɔre a Ɛbɛn Wo",
+      "subtitle": "Ma wo baabiara ho nhintaw sɛ wohunu Adventist ahyiamu a ɛbɛn wo.",
+      "allowButton": "Ma Baabiara Ho Nhintaw",
+      "requesting": "Ɛrekyekyere wo baabiara…",
+      "deniedTitle": "Baabiara Ho Nhintaw Ato Mu",
+      "deniedMessage": "Wo browser no atoo baabiara ho nhintaw mu. Klik nkyene a ɛhyɛ wo address bar no mu, si baabiara ho nhintaw no wɔ Sɛ Yɛ Ma no so, na load kratafa no bio.",
+      "retryButton": "Sɔ Bio",
+      "reloadButton": "Load Kratafa Bio"
+    }
   }
 }

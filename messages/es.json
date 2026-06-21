@@ -229,5 +229,65 @@
     "error-email": "Por favor, ingresa una dirección de correo válida.",
     "error-consent": "Por favor, confirma tu consentimiento para continuar.",
     "error-generic": "Algo salió mal. Por favor, inténtalo de nuevo."
+  },
+  "find-church": {
+    "hero": {
+      "eyebrow": "Encuentra una iglesia cerca de ti",
+      "badge": "Adventista del Séptimo Día",
+      "title": "Encuentra tu iglesia más cercana",
+      "subtitle": "Descubre comunidades Adventistas del Séptimo Día en los Países Bajos — permite el acceso a la ubicación para encontrar la más cercana o explora todas las iglesias en el mapa.",
+      "exploreMap": "Explorar mapa",
+      "studyGuide": "Guía de estudio"
+    },
+    "map": {
+      "communities": "{count} comunidades",
+      "heading": "Iglesias en los Países Bajos",
+      "subtitle": "Permite el acceso a la ubicación para encontrar la iglesia más cercana — o explora todas las comunidades en el mapa.",
+      "loading": "Cargando mapa…",
+      "geoNotSupported": "La geolocalización no es compatible con tu navegador.",
+      "geoError": "Acceso a la ubicación denegado — explora todas las iglesias en el mapa a continuación."
+    },
+    "region": {
+      "label": "Iglesias en tu región",
+      "nearest": "Más cercana",
+      "website": "Sitio web",
+      "call": "Llamar",
+      "getDirections": "Cómo llegar"
+    },
+    "directory": {
+      "label": "Directorio de iglesias",
+      "heading": "Todas las comunidades",
+      "subtitleWithLocation": "Iglesias ordenadas por proximidad a tu ubicación. Las destacadas son las más cercanas.",
+      "subtitleNoLocation": "Encuentra una comunidad Adventista del Séptimo Día en los Países Bajos.",
+      "searchPlaceholder": "Buscar por nombre o ciudad…",
+      "sortProximity": "Proximidad",
+      "sortAZ": "A–Z",
+      "results": "{count} resultado",
+      "resultsPlural": "{count} resultados",
+      "resultsFor": "para \"{query}\"",
+      "page": "Página {current} de {total}",
+      "prev": "← Anterior",
+      "next": "Siguiente →",
+      "nearest": "Más cercana",
+      "nearby": "En la región",
+      "getDirections": "Cómo llegar",
+      "maps": "Maps",
+      "waze": "Waze",
+      "website": "Sitio web",
+      "call": "Llamar",
+      "noResults": "No se encontró ninguna iglesia para \"{query}\".",
+      "clearSearch": "Borrar búsqueda",
+      "locationTooltip": "Activa la ubicación para ordenar por proximidad"
+    },
+    "locationPrompt": {
+      "title": "Encuentra la Iglesia Más Cercana",
+      "subtitle": "Permite el acceso a la ubicación para descubrir la comunidad Adventista más cercana.",
+      "allowButton": "Permitir Ubicación",
+      "requesting": "Detectando tu ubicación…",
+      "deniedTitle": "Acceso a Ubicación Bloqueado",
+      "deniedMessage": "Tu navegador está bloqueando el acceso a la ubicación. Haz clic en el icono del candado en la barra de direcciones, establece Ubicación en Permitir y recarga la página.",
+      "retryButton": "Intentar de Nuevo",
+      "reloadButton": "Recargar Página"
+    }
   }
 }

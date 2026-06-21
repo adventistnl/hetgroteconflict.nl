@@ -17,11 +17,7 @@ interface NavItem {
   onClick: () => void;
 }
 
-interface Props {
-  onOpenChurchList: () => void;
-}
-
-export function MobileBottomNav({ onOpenChurchList }: Props) {
+export function MobileBottomNav() {
   const t = useTranslations("navbar");
   const router = useRouter();
   const locale = useLocale();
@@ -83,7 +79,8 @@ export function MobileBottomNav({ onOpenChurchList }: Props) {
     {
       key: "findChurch",
       icon: MapPin,
-      onClick: () => { onOpenChurchList(); track("sectionSelect", { section: "findChurch" }); },
+      activePath: "/find-church",
+      onClick: () => { router.push("/find-church" as never); track("sectionSelect", { section: "findChurch" }); },
     },
   ];
 

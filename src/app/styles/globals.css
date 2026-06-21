@@ -48,6 +48,31 @@ h1 {
   animation-play-state: paused;
 }
 
+/* Used by ChurchMap: pulsing glow on the nearest-church pin */
+@keyframes pulse-blue {
+  0%, 100% { box-shadow: 0 0 16px rgba(79, 166, 194, 0.9); }
+  50%       { box-shadow: 0 0 28px rgba(79, 166, 194, 1), 0 0 40px rgba(79, 166, 194, 0.4); }
+}
+
+/* Used by ChurchMarqueeCTA — forward, reverse, and slow rows */
+@keyframes marquee-cta {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-cta-rev {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee-cta {
+  animation: marquee-cta 55s linear infinite;
+}
+.animate-marquee-rev {
+  animation: marquee-cta-rev 45s linear infinite;
+}
+.animate-marquee-cta-slow {
+  animation: marquee-cta 70s linear infinite;
+}
+
 .animate-marquee-third {
   animation: marquee-third 18s linear infinite;
 }
