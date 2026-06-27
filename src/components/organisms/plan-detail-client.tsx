@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import {
   BookOpen, Clock, CheckCircle2, PlayCircle, ArrowLeft, ArrowRight,
-  Lock, ChevronDown, ChevronUp, Bookmark, ExternalLink, X,
+  Lock, ChevronDown, ChevronUp, Bookmark, X,
 } from "lucide-react";
 import { plansDatabase, PlanDay } from "@/database/plans";
 import { usePlanProgress } from "@/hooks/use-plan-progress";
@@ -17,6 +17,7 @@ import { AuthModal } from "@/components/atoms/auth-modal";
 import { ReadAloudPlayer } from "@/components/atoms/read-aloud-player";
 import { HighlightedText } from "@/components/molecules/highlighted-text";
 import { languages } from "@/config/languages";
+import { getVideoEmbedUrl } from "@/utils/get-video-embed-url";
 import { track } from "@vercel/analytics";
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -154,6 +155,79 @@ function InlineChapterReader({
   );
 }
 
+// ── Video Modal ───────────────────────────────────────────────────────────────
+
+function VideoModal({
+  videoUrl, locale, title, onClose, onComplete, isCompleted,
+}: {
+  videoUrl: string;
+  locale: string;
+  title: string;
+  onClose: () => void;
+  onComplete: () => void;
+  isCompleted: boolean;
+}) {
+  const embedUrl = getVideoEmbedUrl(videoUrl, locale);
+  const autoplayUrl = embedUrl + (embedUrl.includes("?") ? "&" : "?") + "autoplay=1";
+
+  // Close on backdrop click or Escape
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) { if (e.key === "Escape") onClose(); }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="flex w-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-[#0f0f0f] shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+          <div className="flex items-center gap-2">
+            <PlayCircle className="h-4 w-4 text-[#4fa6c2]" />
+            <span className="text-xs font-semibold text-white/70">{title}</span>
+          </div>
+          <button
+            onClick={onClose}
+            aria-label="Close video"
+            className="rounded-full p-1 text-white/40 transition hover:bg-white/10 hover:text-white"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+
+        {/* Video */}
+        <div className="relative aspect-video w-full bg-black">
+          <iframe
+            src={autoplayUrl}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+            className="h-full w-full"
+          />
+        </div>
+
+        {/* Complete footer */}
+        {!isCompleted && (
+          <div className="border-t border-white/10 px-4 py-4">
+            <button
+              onClick={() => { onComplete(); onClose(); }}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#4fa6c2] py-3 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]"
+            >
+              <CheckCircle2 className="h-4 w-4" /> Mark as complete
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ── Journey Map ───────────────────────────────────────────────────────────────
 
 function JourneyMap({
@@ -213,6 +287,8 @@ function DayCard({
 }) {
   const [expanded, setExpanded] = useState(autoOpen ?? false);
   const [readerOpen, setReaderOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [videoTitle, setVideoTitle] = useState("");
   const isCompleted = state === "completed";
   const isLocked    = state === "locked";
 
@@ -269,9 +345,14 @@ function DayCard({
             <div key={step.step}>
               {/* Watch step */}
               {step.action === "watch" && step.videoUrl && step.videoCover ? (
-                <a href={step.videoUrl} target="_blank" rel="noopener noreferrer"
-                   className="flex items-center gap-4 rounded-xl border border-primary/15 bg-primary/5 p-4 transition hover:border-[#4fa6c2]/50"
-                   onClick={() => track("readingPlan_watchVideo", { planId, day: day.day })}>
+                <button
+                  className="flex w-full items-center gap-4 rounded-xl border border-primary/15 bg-primary/5 p-4 text-left transition hover:border-[#4fa6c2]/50"
+                  onClick={() => {
+                    setVideoUrl(step.videoUrl!);
+                    setVideoTitle(step.label ?? day.title);
+                    track("readingPlan_watchVideo", { planId, day: day.day });
+                  }}
+                >
                   <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg">
                     <Image src={step.videoCover} alt="thumbnail" fill className="object-cover" sizes="96px" unoptimized />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/30">
@@ -280,9 +361,10 @@ function DayCard({
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-semibold text-primary">{step.label}</p>
-                    <p className="mt-1 text-[11px] text-primary/50">{step.duration_minutes} min · YouTube <ExternalLink className="inline h-2.5 w-2.5 ml-0.5" /></p>
+                    <p className="mt-1 text-[11px] text-primary/50">{step.duration_minutes} min · Clique para assistir</p>
                   </div>
-                </a>
+                  <PlayCircle className="h-5 w-5 shrink-0 text-[#4fa6c2]" />
+                </button>
 
               /* Read step — inline reader */
               ) : step.action === "read" ? (
@@ -338,6 +420,18 @@ function DayCard({
             </button>
           )}
         </div>
+      )}
+
+      {/* Video modal */}
+      {videoUrl && (
+        <VideoModal
+          videoUrl={videoUrl}
+          locale={locale}
+          title={videoTitle}
+          onClose={() => setVideoUrl(null)}
+          onComplete={handleMarkComplete}
+          isCompleted={isCompleted}
+        />
       )}
     </div>
   );
