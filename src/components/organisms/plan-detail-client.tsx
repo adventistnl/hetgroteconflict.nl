@@ -158,14 +158,14 @@ function JourneyMap({
               className={`relative flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all ${
                 done   ? "bg-[#4fa6c2] text-white shadow-md shadow-[#4fa6c2]/30"
                 : isNext ? "bg-[#4fa6c2]/20 text-[#4fa6c2] ring-2 ring-[#4fa6c2] ring-offset-2 ring-offset-secondary"
-                : locked ? "bg-primary/10 text-primary/30"
-                         : "bg-primary/15 text-primary/60"
+                : locked ? "bg-primary/10 text-primary/50"
+                         : "bg-primary/15 text-primary"
               }`}
             >
               {done ? <CheckCircle2 className="h-4 w-4" /> : locked ? <Lock className="h-3 w-3" /> : day}
             </button>
             {idx < totalDays - 1 && (
-              <div className={`h-px w-4 shrink-0 ${done ? "bg-[#4fa6c2]/50" : "bg-primary/15"}`} />
+              <div className={`h-px w-4 shrink-0 ${done ? "bg-[#4fa6c2]/60" : "bg-primary/25"}`} />
             )}
           </div>
         );
