@@ -10,6 +10,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { scrollToSection } from "@/utils/scroll-to-section";
 import { useRefStore } from "../stores/ref-store";
 import { MobileBottomNav } from "./mobile-bottom-nav";
+import { UserAvatar } from "@/components/atoms/user-avatar";
 
 interface Props {
   children: ReactNode;
@@ -117,7 +118,10 @@ export const MainContainer = ({ children }: Props) => {
                 </li>
               </ul>
             </div>
-            <SelectTranslation />
+            <div className="flex items-center gap-3">
+              <UserAvatar />
+              <SelectTranslation />
+            </div>
           </>
         ) : (
           <div className="flex flex-row items-center">

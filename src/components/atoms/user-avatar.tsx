@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { User, LogOut } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
-import { AuthModal } from "./auth-modal";
+import { useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export function UserAvatar() {
   const { user, loading, signOut } = useAuth();
-  const [showModal, setShowModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const locale = useLocale();
+  const router = useRouter();
 
   if (loading) {
     return (
@@ -20,17 +22,13 @@ export function UserAvatar() {
 
   if (!user) {
     return (
-      <>
-        <button
-          onClick={() => setShowModal(true)}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary/60 transition hover:border-[#4fa6c2]/50 hover:text-[#4fa6c2]"
-          aria-label="Sign in"
-        >
-          <User className="h-4 w-4" />
-        </button>
-
-        {showModal && <AuthModal onClose={() => setShowModal(false)} />}
-      </>
+      <button
+        onClick={() => router.push(`/${locale}/auth`)}
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary/60 transition hover:border-[#4fa6c2]/50 hover:text-[#4fa6c2]"
+        aria-label="Sign in"
+      >
+        <User className="h-4 w-4" />
+      </button>
     );
   }
 
