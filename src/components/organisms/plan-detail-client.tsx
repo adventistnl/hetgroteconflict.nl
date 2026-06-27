@@ -13,6 +13,7 @@ import { usePlanProgress } from "@/hooks/use-plan-progress";
 import { useAuth } from "@/hooks/use-auth";
 import { usePlanEnrollment } from "@/hooks/use-plan-enrollment";
 import { useReadAloud } from "@/hooks/use-read-aloud";
+import { useXp, xpForPlan } from "@/hooks/use-xp";
 import { AuthModal } from "@/components/atoms/auth-modal";
 import { ReadAloudPlayer } from "@/components/atoms/read-aloud-player";
 import { HighlightedText } from "@/components/molecules/highlighted-text";
@@ -633,6 +634,7 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
   const { getEnrollment, startPlan: dbStartPlan, markDayComplete: dbMarkDay, savePlan } = usePlanEnrollment(user?.id ?? null);
   const dbEnrollment = getEnrollment(planId);
 
+  const { addSkill } = useXp();
   const { progress, getPlanEntry, startPlan: lsStartPlan, markDayComplete: lsMarkDay } = usePlanProgress();
   const [lsEntry, setLsEntry] = useState<ReturnType<typeof getPlanEntry>>(null);
   useEffect(() => { setLsEntry(getPlanEntry(planId)); }, [getPlanEntry, planId, progress]);
@@ -657,7 +659,18 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
   }
 
   function handleMarkComplete(day: number) {
+    // Check before mutating state whether this completion finishes the whole plan
+    const willFinishPlan =
+      !completedDays.includes(day) &&
+      completedDays.length + 1 >= totalDays &&
+      !isCompleted;
+
     if (user) dbMarkDay(planId, day, totalDays); else lsMarkDay(planId, day, totalDays);
+
+    if (willFinishPlan && plan) {
+      addSkill(planId, plan.badge, plan.title, xpForPlan(plan.total_pages));
+    }
+
     setFocusDay(null);
   }
 
