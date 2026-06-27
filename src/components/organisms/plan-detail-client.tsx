@@ -12,7 +12,10 @@ import { plansDatabase, PlanDay } from "@/database/plans";
 import { usePlanProgress } from "@/hooks/use-plan-progress";
 import { useAuth } from "@/hooks/use-auth";
 import { usePlanEnrollment } from "@/hooks/use-plan-enrollment";
+import { useReadAloud } from "@/hooks/use-read-aloud";
 import { AuthModal } from "@/components/atoms/auth-modal";
+import { ReadAloudPlayer } from "@/components/atoms/read-aloud-player";
+import { HighlightedText } from "@/components/molecules/highlighted-text";
 import { languages } from "@/config/languages";
 import { track } from "@vercel/analytics";
 
@@ -67,6 +70,10 @@ function InlineChapterReader({
   const [paragraphs, setParagraphs] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const endRef = useRef<HTMLDivElement>(null);
+  const readAloud = useReadAloud();
+
+  // Full text for TTS (paragraphs joined with double newline to match chunk offsets)
+  const fullText = paragraphs.join("\n\n");
 
   useEffect(() => {
     let cancelled = false;
@@ -82,6 +89,11 @@ function InlineChapterReader({
     return () => { cancelled = true; };
   }, [chapterNumber, chapterTitle]);
 
+  // Compute each paragraph's start offset in the full text
+  const paraOffsets = paragraphs.map((_, i) =>
+    paragraphs.slice(0, i).reduce((sum, p) => sum + p.length + 2, 0) // +2 for "\n\n"
+  );
+
   return (
     <div className="mt-3 overflow-hidden rounded-xl border border-primary/15 bg-secondary">
       {/* Reader header */}
@@ -90,10 +102,17 @@ function InlineChapterReader({
           <BookOpen className="h-4 w-4 text-[#4fa6c2]" />
           <span className="text-xs font-semibold text-primary">{chapterTitle}</span>
         </div>
-        <button onClick={onClose} className="rounded-full p-1 text-primary/40 transition hover:bg-primary/10 hover:text-primary">
+        <button onClick={() => { readAloud.stop(); onClose(); }} className="rounded-full p-1 text-primary/40 transition hover:bg-primary/10 hover:text-primary">
           <X className="h-4 w-4" />
         </button>
       </div>
+
+      {/* Read-aloud player */}
+      {!loading && (
+        <div className="border-b border-primary/10 px-4 py-3">
+          <ReadAloudPlayer text={fullText} lang="en" readAloud={readAloud} />
+        </div>
+      )}
 
       {/* Content */}
       <div className="max-h-[70vh] overflow-y-auto px-5 py-4 sm:max-h-[60vh]">
@@ -103,11 +122,18 @@ function InlineChapterReader({
           </div>
         ) : (
           <div className="flex flex-col gap-4">
-            {paragraphs.map((para, i) => (
-              <p key={i} className="text-sm leading-7 text-primary/80" style={{ fontFamily: "var(--font-rubik)" }}>
-                {para}
-              </p>
-            ))}
+            {paragraphs.map((para, i) => {
+              const paraStart = paraOffsets[i];
+              const relativeIdx =
+                readAloud.currentCharIndex >= paraStart
+                  ? readAloud.currentCharIndex - paraStart
+                  : -1;
+              return (
+                <p key={i} className="text-sm leading-7 text-primary/80" style={{ fontFamily: "var(--font-rubik)" }}>
+                  <HighlightedText text={para} currentCharIndex={relativeIdx} />
+                </p>
+              );
+            })}
             <div ref={endRef} />
           </div>
         )}
@@ -145,7 +171,7 @@ function JourneyMap({
   }, [upNextDay]);
 
   return (
-    <div ref={scrollRef} className="flex items-center overflow-x-auto pb-1 scrollbar-none">
+    <div ref={scrollRef} className="flex items-center overflow-x-auto px-1 py-2 scrollbar-none">
       {Array.from({ length: totalDays }, (_, i) => i + 1).map((day, idx) => {
         const done   = completedDays.includes(day);
         const isNext = day === upNextDay;
@@ -155,7 +181,7 @@ function JourneyMap({
             <button
               data-day={day}
               onClick={() => onDayClick(day)}
-              className={`relative flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all ${
+              className={`relative flex h-9 w-9 items-center justify-center rounded-full text-xs font-bold transition-all ${
                 done   ? "bg-[#4fa6c2] text-white shadow-md shadow-[#4fa6c2]/30"
                 : isNext ? "bg-[#4fa6c2]/20 text-[#4fa6c2] ring-2 ring-[#4fa6c2] ring-offset-2 ring-offset-secondary"
                 : locked ? "bg-primary/10 text-primary/50"
@@ -165,7 +191,7 @@ function JourneyMap({
               {done ? <CheckCircle2 className="h-4 w-4" /> : locked ? <Lock className="h-3 w-3" /> : day}
             </button>
             {idx < totalDays - 1 && (
-              <div className={`h-px w-4 shrink-0 ${done ? "bg-[#4fa6c2]/60" : "bg-primary/25"}`} />
+              <div className={`h-px w-6 shrink-0 ${done ? "bg-[#4fa6c2]/60" : "bg-primary/25"}`} />
             )}
           </div>
         );
@@ -238,23 +264,23 @@ function DayCard({
 
       {/* Expanded body */}
       {expanded && !isLocked && (
-        <div className="flex flex-col gap-3 border-t border-primary/10 px-4 pb-4 pt-3">
+        <div className="flex flex-col gap-4 border-t border-primary/10 px-4 pb-5 pt-4">
           {day.steps.map((step) => (
             <div key={step.step}>
               {/* Watch step */}
               {step.action === "watch" && step.videoUrl && step.videoCover ? (
                 <a href={step.videoUrl} target="_blank" rel="noopener noreferrer"
-                   className="flex items-center gap-3 rounded-xl border border-primary/15 bg-primary/5 p-3 transition hover:border-[#4fa6c2]/50"
+                   className="flex items-center gap-4 rounded-xl border border-primary/15 bg-primary/5 p-4 transition hover:border-[#4fa6c2]/50"
                    onClick={() => track("readingPlan_watchVideo", { planId, day: day.day })}>
-                  <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-lg">
-                    <Image src={step.videoCover} alt="thumbnail" fill className="object-cover" sizes="80px" unoptimized />
+                  <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg">
+                    <Image src={step.videoCover} alt="thumbnail" fill className="object-cover" sizes="96px" unoptimized />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                       <PlayCircle className="h-6 w-6 text-white" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-semibold text-primary">{step.label}</p>
-                    <p className="mt-0.5 text-[11px] text-primary/50">{step.duration_minutes} min · YouTube <ExternalLink className="inline h-2.5 w-2.5 ml-0.5" /></p>
+                    <p className="mt-1 text-[11px] text-primary/50">{step.duration_minutes} min · YouTube <ExternalLink className="inline h-2.5 w-2.5 ml-0.5" /></p>
                   </div>
                 </a>
 
@@ -263,7 +289,7 @@ function DayCard({
                 <div className="flex flex-col gap-2">
                   {/* Read CTA button */}
                   <button
-                    className={`flex w-full items-center gap-3 rounded-xl border p-3 text-left transition ${
+                    className={`flex w-full items-center gap-4 rounded-xl border p-4 text-left transition ${
                       readerOpen
                         ? "border-[#4fa6c2]/50 bg-[#4fa6c2]/5"
                         : "border-primary/15 bg-primary/5 hover:border-[#4fa6c2]/40"
@@ -273,12 +299,12 @@ function DayCard({
                       if (!readerOpen) track("readingPlan_readChapter", { planId, day: day.day });
                     }}
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#4fa6c2]/10">
-                      <BookOpen className="h-4 w-4 text-[#4fa6c2]" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#4fa6c2]/10">
+                      <BookOpen className="h-5 w-5 text-[#4fa6c2]" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-semibold text-primary">{step.label}</p>
-                      <p className="mt-0.5 text-[11px] text-primary/50">
+                      <p className="mt-1 text-[11px] text-primary/50">
                         <Clock className="mr-0.5 inline h-2.5 w-2.5" />
                         {step.duration_minutes} min · {step.pages} pages
                       </p>
@@ -305,7 +331,7 @@ function DayCard({
           {/* Mark complete button (when reader is not open) */}
           {!isCompleted && !readerOpen && (
             <button
-              className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl border border-[#4fa6c2]/50 bg-[#4fa6c2]/10 py-3 text-sm font-semibold text-[#4fa6c2] transition hover:bg-[#4fa6c2]/20 active:scale-[0.98]"
+              className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-[#4fa6c2]/50 bg-[#4fa6c2]/10 py-4 text-sm font-semibold text-[#4fa6c2] transition hover:bg-[#4fa6c2]/20 active:scale-[0.98]"
               onClick={handleMarkComplete}
             >
               <CheckCircle2 className="h-4 w-4" /> Mark day {day.day} as complete

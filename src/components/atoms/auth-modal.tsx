@@ -40,7 +40,8 @@ export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
 
   async function handleGoogle() {
     setError(null);
-    await signInWithGoogle();
+    const { error } = await signInWithGoogle();
+    if (error) setError(error.message);
   }
 
   return (
