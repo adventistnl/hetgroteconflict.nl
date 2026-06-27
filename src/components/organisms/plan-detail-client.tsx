@@ -60,14 +60,14 @@ function JourneyMap({
               className={`relative flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all ${
                 done   ? "bg-[#4fa6c2] text-white shadow-md shadow-[#4fa6c2]/30"
                 : isNext ? "bg-[#4fa6c2]/20 text-[#4fa6c2] ring-2 ring-[#4fa6c2] ring-offset-2 ring-offset-secondary"
-                : locked ? "bg-white/5 text-white/20"
-                         : "bg-white/10 text-white/60"
+                : locked ? "bg-primary/5 text-primary/20"
+                         : "bg-primary/10 text-primary/60"
               }`}
             >
               {done ? <CheckCircle2 className="h-4 w-4" /> : locked ? <Lock className="h-3 w-3" /> : day}
             </button>
             {idx < totalDays - 1 && (
-              <div className={`h-px w-4 shrink-0 ${done ? "bg-[#4fa6c2]/50" : "bg-white/10"}`} />
+              <div className={`h-px w-4 shrink-0 ${done ? "bg-[#4fa6c2]/50" : "bg-primary/10"}`} />
             )}
           </div>
         );
@@ -96,9 +96,9 @@ function DayCard({
   return (
     <div className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
       isCompleted   ? "border-[#4fa6c2]/30 bg-[#4fa6c2]/5"
-      : state === "up-next" ? "border-[#4fa6c2]/50 bg-white/5 shadow-lg shadow-[#4fa6c2]/10"
-      : isLocked    ? "border-white/5 bg-white/[0.02] opacity-50"
-                    : "border-white/10 bg-white/5"
+      : state === "up-next" ? "border-[#4fa6c2]/50 bg-primary/5 shadow-lg shadow-[#4fa6c2]/10"
+      : isLocked    ? "border-primary/5 bg-primary/[0.02] opacity-50"
+                    : "border-primary/10 bg-primary/5"
     }`}>
       <button
         className="flex w-full items-center gap-4 p-4 text-left disabled:cursor-not-allowed"
@@ -108,8 +108,8 @@ function DayCard({
         <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
           isCompleted   ? "bg-[#4fa6c2] text-white"
           : state === "up-next" ? "bg-[#4fa6c2]/20 text-[#4fa6c2] ring-2 ring-[#4fa6c2]"
-          : isLocked    ? "bg-white/5 text-white/20"
-                        : "bg-white/10 text-white"
+          : isLocked    ? "bg-primary/5 text-primary/20"
+                        : "bg-primary/10 text-primary"
         }`}>
           {isCompleted ? <CheckCircle2 className="h-5 w-5" /> : isLocked ? <Lock className="h-4 w-4" /> : day.day}
         </div>
@@ -120,23 +120,23 @@ function DayCard({
               <PlayCircle className="h-2.5 w-2.5" /> Up Next
             </span>
           )}
-          <p className={`truncate text-sm font-semibold ${isLocked ? "text-white/30" : "text-white"}`}>{day.title}</p>
-          <p className="text-[11px] text-white/30">{day.pages} pages · {formatMinutes(day.total_minutes_estimate)}</p>
+          <p className={`truncate text-sm font-semibold ${isLocked ? "text-primary/30" : "text-primary"}`}>{day.title}</p>
+          <p className="text-[11px] text-primary/30">{day.pages} pages · {formatMinutes(day.total_minutes_estimate)}</p>
         </div>
 
         {!isLocked && !isCompleted && (
-          expanded ? <ChevronUp className="h-4 w-4 shrink-0 text-white/30" />
-                   : <ChevronDown className="h-4 w-4 shrink-0 text-white/30" />
+          expanded ? <ChevronUp className="h-4 w-4 shrink-0 text-primary/30" />
+                   : <ChevronDown className="h-4 w-4 shrink-0 text-primary/30" />
         )}
       </button>
 
       {expanded && !isLocked && (
-        <div className="flex flex-col gap-3 border-t border-white/10 px-4 pb-4 pt-3">
+        <div className="flex flex-col gap-3 border-t border-primary/10 px-4 pb-4 pt-3">
           {day.steps.map((step) => (
             <div key={step.step}>
               {step.action === "watch" && step.videoUrl && step.videoCover ? (
                 <a href={step.videoUrl} target="_blank" rel="noopener noreferrer"
-                   className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 transition hover:border-[#4fa6c2]/50"
+                   className="flex items-center gap-3 rounded-xl border border-primary/10 bg-primary/5 p-3 transition hover:border-[#4fa6c2]/50"
                    onClick={() => track("readingPlan_watchVideo", { planId, day: day.day })}>
                   <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-lg">
                     <Image src={step.videoCover} alt="thumbnail" fill className="object-cover" sizes="80px" unoptimized />
@@ -145,31 +145,31 @@ function DayCard({
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold text-white">{step.label}</p>
-                    <p className="mt-0.5 text-[11px] text-white/40">{step.duration_minutes} min · YouTube <ExternalLink className="inline h-2.5 w-2.5 ml-0.5" /></p>
+                    <p className="text-xs font-semibold text-primary">{step.label}</p>
+                    <p className="mt-0.5 text-[11px] text-primary/40">{step.duration_minutes} min · YouTube <ExternalLink className="inline h-2.5 w-2.5 ml-0.5" /></p>
                   </div>
                 </a>
               ) : step.action === "read" && day.chapter_number != null ? (
                 <Link href={`/${locale}/guide/chapter/${day.chapter_number}`}
-                      className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 transition hover:border-[#4fa6c2]/50"
+                      className="group flex items-center gap-3 rounded-xl border border-primary/10 bg-primary/5 p-3 transition hover:border-[#4fa6c2]/50"
                       onClick={() => track("readingPlan_readChapter", { planId, day: day.day })}>
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#4fa6c2]/10">
                     <BookOpen className="h-4 w-4 text-[#4fa6c2]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold text-white">{step.label}</p>
-                    <p className="mt-0.5 text-[11px] text-white/40"><Clock className="mr-0.5 inline h-2.5 w-2.5" />{step.duration_minutes} min · {step.pages} pages</p>
+                    <p className="text-xs font-semibold text-primary">{step.label}</p>
+                    <p className="mt-0.5 text-[11px] text-primary/40"><Clock className="mr-0.5 inline h-2.5 w-2.5" />{step.duration_minutes} min · {step.pages} pages</p>
                   </div>
-                  <ArrowRight className="h-4 w-4 shrink-0 text-white/20 transition group-hover:text-[#4fa6c2]" />
+                  <ArrowRight className="h-4 w-4 shrink-0 text-primary/20 transition group-hover:text-[#4fa6c2]" />
                 </Link>
               ) : step.action === "read" ? (
-                <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
+                <div className="flex items-center gap-3 rounded-xl border border-primary/10 bg-primary/5 p-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#4fa6c2]/10">
                     <BookOpen className="h-4 w-4 text-[#4fa6c2]" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-white">{step.label}</p>
-                    <p className="mt-0.5 text-[11px] text-white/40">{step.duration_minutes} min · {step.pages} pages</p>
+                    <p className="text-xs font-semibold text-primary">{step.label}</p>
+                    <p className="mt-0.5 text-[11px] text-primary/40">{step.duration_minutes} min · {step.pages} pages</p>
                   </div>
                 </div>
               ) : null}
@@ -271,17 +271,17 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
 
         {isStarted && (
           <div className="pt-5">
-            <div className="mb-1.5 flex justify-between text-xs text-white/40">
+            <div className="mb-1.5 flex justify-between text-xs text-primary/40">
               <span>{completedDays.length}/{totalDays} days complete</span>
               <span>{progressPct}%</span>
             </div>
-            <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
+            <div className="h-1.5 overflow-hidden rounded-full bg-primary/10">
               <div className="h-full rounded-full bg-[#4fa6c2] transition-all duration-700" style={{ width: `${progressPct}%` }} />
             </div>
           </div>
         )}
 
-        <p className="mt-5 text-sm leading-relaxed text-white/50">{plan.description}</p>
+        <p className="mt-5 text-sm leading-relaxed text-primary/50">{plan.description}</p>
 
         {!isStarted && (
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
@@ -291,7 +291,7 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
             </button>
             {!user && (
               <button onClick={() => setShowAuth(true)}
-                      className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/10 py-3.5 text-sm font-semibold text-white/60 transition hover:border-white/30 hover:text-white">
+                      className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-primary/10 py-3.5 text-sm font-semibold text-primary/60 transition hover:border-primary/30 hover:text-primary">
                 Sign in to save progress
               </button>
             )}
@@ -301,7 +301,7 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
         {/* Journey Map */}
         <div className="mt-8">
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-white/40">Journey Map · {totalDays} days</h2>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary/40">Journey Map · {totalDays} days</h2>
             {upNextDay && <span className="text-xs text-[#4fa6c2]">Day {upNextDay} up next</span>}
           </div>
           <JourneyMap totalDays={totalDays} completedDays={completedDays} upNextDay={upNextDay}
@@ -327,7 +327,7 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
             <span className="text-4xl">{plan.badge.split(" ")[0]}</span>
             <div>
               <p className="text-lg font-bold text-[#4fa6c2]">{plan.badge.split(" ").slice(1).join(" ")}</p>
-              <p className="mt-1 text-sm text-white/60">{plan.completion_message}</p>
+              <p className="mt-1 text-sm text-primary/60">{plan.completion_message}</p>
             </div>
             {nextPlan ? (
               <Link href={`/${locale}/guide/plan/${nextPlan.plan}`}
@@ -335,13 +335,13 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
                 Next: {nextPlan.title} <ArrowRight className="h-4 w-4" />
               </Link>
             ) : (
-              <p className="text-sm font-semibold text-white">{plan.next_plan_cta}</p>
+              <p className="text-sm font-semibold text-primary">{plan.next_plan_cta}</p>
             )}
           </div>
         )}
 
         {!isCompleted && plan.next_plan && (
-          <p className="mt-8 text-center text-xs text-white/20">{plan.next_plan_cta}</p>
+          <p className="mt-8 text-center text-xs text-primary/20">{plan.next_plan_cta}</p>
         )}
       </div>
 
