@@ -68,7 +68,7 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
 
   async function handleGoogle() {
     setError(null);
-    await signInWithGoogle(`${window.location.origin}/${locale}/guide`);
+    await signInWithGoogle(`/${locale}/guide`);
   }
 
   return (

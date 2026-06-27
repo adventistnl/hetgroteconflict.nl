@@ -54,10 +54,11 @@ export function useAuth() {
   );
 
   const signInWithGoogle = useCallback(
-    async (redirectTo?: string) => {
+    async (next?: string) => {
+      const callbackUrl = `${window.location.origin}/api/auth/callback${next ? `?next=${encodeURIComponent(next)}` : ""}`;
       return supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: redirectTo ?? window.location.origin },
+        options: { redirectTo: callbackUrl },
       });
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
