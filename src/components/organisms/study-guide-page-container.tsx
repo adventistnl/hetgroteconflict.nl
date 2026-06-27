@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { track } from "@vercel/analytics";
 import { useChapterProgress } from "@/hooks/use-chapter-progress";
 import { StudyGuideChapterCard } from "../molecules/study-guide-chapter-card";
-import { PlansSection } from "../molecules/plans-section";
+import { PlansSection } from "../molecules/plans";
 import { Footer } from "../molecules/footer";
 import { PageHero } from "../molecules/page-hero";
 import { plansDatabase } from "@/database/plans";
