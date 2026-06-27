@@ -3,7 +3,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import {
   BookOpen, Clock, CheckCircle2, PlayCircle, ArrowLeft, ArrowRight,
   Lock, ChevronDown, ChevronUp, Bookmark, X,
@@ -58,9 +58,47 @@ function parseContent(raw: string): string[] {
   ).filter((p) => p.length > 0);
 }
 
-// ── Inline Chapter Reader ─────────────────────────────────────────────────────
+// ── Paged reader helpers ──────────────────────────────────────────────────────
 
-function InlineChapterReader({
+const TARGET_PAGE_CHARS = 1100;
+
+function buildPages(paragraphs: string[]): string[][] {
+  const pages: string[][] = [];
+  let current: string[] = [];
+  let len = 0;
+  for (const para of paragraphs) {
+    if (len > 0 && len + para.length > TARGET_PAGE_CHARS) {
+      pages.push(current);
+      current = [para];
+      len = para.length;
+    } else {
+      current.push(para);
+      len += para.length;
+    }
+  }
+  if (current.length) pages.push(current);
+  return pages.length ? pages : [[]];
+}
+
+function readerProgressKey(chapterNumber: number | null, chapterTitle: string) {
+  return `gc_rp_${chapterNumber ?? chapterTitle.replace(/\W+/g, "_").slice(0, 25)}`;
+}
+
+function loadReaderPage(key: string): number {
+  if (typeof window === "undefined") return 0;
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? ((JSON.parse(raw) as { page?: number }).page ?? 0) : 0;
+  } catch { return 0; }
+}
+
+function saveReaderPage(key: string, page: number) {
+  try { localStorage.setItem(key, JSON.stringify({ page, ts: Date.now() })); } catch { /* noop */ }
+}
+
+// ── Immersive Reader ──────────────────────────────────────────────────────────
+
+function ImmersiveReader({
   chapterNumber, chapterTitle, onClose, onComplete,
 }: {
   chapterNumber: number | null;
@@ -70,12 +108,23 @@ function InlineChapterReader({
 }) {
   const [paragraphs, setParagraphs] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
-  const endRef = useRef<HTMLDivElement>(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [resumedFrom, setResumedFrom] = useState<number | null>(null);
   const readAloud = useReadAloud();
+  const contentRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef(0);
 
-  // Full text for TTS (paragraphs joined with double newline to match chunk offsets)
-  const fullText = paragraphs.join("\n\n");
+  const progressKey = readerProgressKey(chapterNumber, chapterTitle);
+  const pages = useMemo(() => buildPages(paragraphs), [paragraphs]);
+  const safePage = Math.min(currentPage, Math.max(0, pages.length - 1));
+  const isLastPage = safePage === pages.length - 1 && pages.length > 0;
+  const currentPageParas = pages[safePage] ?? [];
+  const currentPageText = useMemo(() => currentPageParas.join("\n\n"), [currentPageParas]);
+  const paraOffsets = currentPageParas.map((_, i) =>
+    currentPageParas.slice(0, i).reduce((sum, p) => sum + p.length + 2, 0)
+  );
 
+  // Load chapter + restore saved page
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
@@ -84,71 +133,208 @@ function InlineChapterReader({
       const ch = chapterNumber !== null
         ? data.chapters.find((c) => c.chapter_number === chapterNumber)
         : data.chapters.find((c) => c.title === chapterTitle);
-      if (ch) setParagraphs(parseContent(ch.content));
+      if (ch) {
+        setParagraphs(parseContent(ch.content));
+        const saved = loadReaderPage(progressKey);
+        if (saved > 0) {
+          setCurrentPage(saved);
+          setResumedFrom(saved);
+        }
+      }
       setLoading(false);
     });
     return () => { cancelled = true; };
-  }, [chapterNumber, chapterTitle]);
+  }, [chapterNumber, chapterTitle, progressKey]);
 
-  // Compute each paragraph's start offset in the full text
-  const paraOffsets = paragraphs.map((_, i) =>
-    paragraphs.slice(0, i).reduce((sum, p) => sum + p.length + 2, 0) // +2 for "\n\n"
-  );
+  // Save progress on page change
+  useEffect(() => {
+    if (!loading && pages.length > 0) saveReaderPage(progressKey, safePage);
+  }, [safePage, loading, pages.length, progressKey]);
+
+  // Scroll content to top on page change
+  useEffect(() => {
+    contentRef.current?.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  }, [safePage]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "ArrowRight" || e.key === "PageDown") gotoNext();
+      if (e.key === "ArrowLeft"  || e.key === "PageUp")   gotoPrev();
+      if (e.key === "Escape") { readAloud.stop(); onClose(); }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [safePage, pages.length]);
+
+  function gotoNext() {
+    if (safePage < pages.length - 1) {
+      readAloud.stop();
+      setCurrentPage((p) => p + 1);
+      setResumedFrom(null);
+    }
+  }
+
+  function gotoPrev() {
+    if (safePage > 0) {
+      readAloud.stop();
+      setCurrentPage((p) => p - 1);
+      setResumedFrom(null);
+    }
+  }
+
+  function gotoPage(p: number) {
+    readAloud.stop();
+    setCurrentPage(p);
+    setResumedFrom(null);
+  }
+
+  function handleComplete() {
+    saveReaderPage(progressKey, 0);
+    readAloud.stop();
+    onComplete();
+    onClose();
+  }
 
   return (
-    <div className="mt-3 overflow-hidden rounded-xl border border-primary/15 bg-secondary">
-      {/* Reader header */}
-      <div className="flex items-center justify-between border-b border-primary/10 px-4 py-3">
-        <div className="flex items-center gap-2">
-          <BookOpen className="h-4 w-4 text-[#4fa6c2]" />
-          <span className="text-xs font-semibold text-primary">{chapterTitle}</span>
+    <div className="fixed inset-0 z-50 flex flex-col bg-[#F6F2EB]">
+
+      {/* Header */}
+      <div className="flex shrink-0 items-center justify-between border-b border-black/10 bg-[#F6F2EB] px-5 py-3">
+        <div className="min-w-0">
+          <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-black/30">The Great Controversy</p>
+          <p className="mt-0.5 max-w-[220px] truncate text-xs font-semibold text-black/55 sm:max-w-sm">{chapterTitle}</p>
         </div>
-        <button onClick={() => { readAloud.stop(); onClose(); }} className="rounded-full p-1 text-primary/40 transition hover:bg-primary/10 hover:text-primary">
-          <X className="h-4 w-4" />
-        </button>
+        <div className="flex items-center gap-4">
+          {!loading && pages.length > 0 && (
+            <span className="text-[10px] tabular-nums text-black/35">{safePage + 1}&nbsp;/&nbsp;{pages.length}</span>
+          )}
+          <button
+            onClick={() => { readAloud.stop(); onClose(); }}
+            aria-label="Close reader"
+            className="rounded-full p-1.5 text-black/40 transition hover:bg-black/10 hover:text-black/70"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
       </div>
 
-      {/* Read-aloud player */}
-      {!loading && (
-        <div className="border-b border-primary/10 px-4 py-3">
-          <ReadAloudPlayer text={fullText} lang="en" readAloud={readAloud} />
+      {/* Resume banner */}
+      {resumedFrom !== null && (
+        <div className="flex shrink-0 items-center justify-between border-b border-amber-200 bg-amber-50 px-5 py-2.5">
+          <p className="text-xs text-amber-700">
+            Continuing from <span className="font-bold">page {resumedFrom + 1}</span>
+          </p>
+          <button
+            onClick={() => { setResumedFrom(null); gotoPage(0); }}
+            className="text-[11px] font-semibold text-amber-600 hover:underline"
+          >
+            Start from beginning
+          </button>
+        </div>
+      )}
+
+      {/* TTS player */}
+      {!loading && pages.length > 0 && (
+        <div className="shrink-0 border-b border-black/[0.08] bg-[#F6F2EB] px-5 py-2.5">
+          <ReadAloudPlayer text={currentPageText} lang="en" readAloud={readAloud} />
         </div>
       )}
 
       {/* Content */}
-      <div className="max-h-[70vh] overflow-y-auto px-5 py-4 sm:max-h-[60vh]">
+      <div
+        ref={contentRef}
+        className="flex-1 overflow-y-auto"
+        onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+        onTouchEnd={(e) => {
+          const delta = touchStartX.current - e.changedTouches[0].clientX;
+          if (Math.abs(delta) > 50) delta > 0 ? gotoNext() : gotoPrev();
+        }}
+      >
         {loading ? (
-          <div className="flex items-center justify-center py-12">
-            <div className="h-6 w-6 animate-spin rounded-full border-2 border-primary/20 border-t-[#4fa6c2]" />
+          <div className="flex h-full items-center justify-center">
+            <div className="h-6 w-6 animate-spin rounded-full border-2 border-black/10 border-t-[#4fa6c2]" />
           </div>
         ) : (
-          <div className="flex flex-col gap-4">
-            {paragraphs.map((para, i) => {
-              const paraStart = paraOffsets[i];
-              const relativeIdx =
-                readAloud.currentCharIndex >= paraStart
-                  ? readAloud.currentCharIndex - paraStart
+          <div className="mx-auto max-w-[62ch] px-6 py-10 sm:py-14">
+            {currentPageParas.map((para, i) => {
+              const relIdx =
+                readAloud.currentCharIndex >= paraOffsets[i]
+                  ? readAloud.currentCharIndex - paraOffsets[i]
                   : -1;
               return (
-                <p key={i} className="text-sm leading-7 text-primary/80" style={{ fontFamily: "var(--font-rubik)" }}>
-                  <HighlightedText text={para} currentCharIndex={relativeIdx} />
+                <p
+                  key={i}
+                  className="mb-6 text-[17px] leading-[1.9] text-[#1C1C1C]"
+                  style={{ fontFamily: "var(--font-rubik)", fontWeight: 400 }}
+                >
+                  <HighlightedText text={para} currentCharIndex={relIdx} />
                 </p>
               );
             })}
-            <div ref={endRef} />
           </div>
         )}
       </div>
 
-      {/* Completion footer */}
-      {!loading && (
-        <div className="border-t border-primary/10 px-4 py-4">
-          <button
-            onClick={onComplete}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#4fa6c2] py-3 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]"
-          >
-            <CheckCircle2 className="h-4 w-4" /> Mark as complete
-          </button>
+      {/* Bottom nav */}
+      {!loading && pages.length > 0 && (
+        <div className="shrink-0 border-t border-black/10 bg-[#F6F2EB] px-5 pb-6 pt-4">
+          {/* Progress bar */}
+          <div className="mb-4 h-0.5 overflow-hidden rounded-full bg-black/10">
+            <div
+              className="h-full rounded-full bg-[#4fa6c2] transition-all duration-500"
+              style={{ width: `${((safePage + 1) / pages.length) * 100}%` }}
+            />
+          </div>
+
+          <div className="flex items-center justify-between">
+            {/* Prev */}
+            <button
+              onClick={gotoPrev}
+              disabled={safePage === 0}
+              aria-label="Previous page"
+              className="flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold text-black/45 transition hover:bg-black/[0.08] hover:text-black/70 disabled:opacity-25"
+            >
+              <ArrowLeft className="h-4 w-4" /> Previous
+            </button>
+
+            {/* Page dots (≤ 9 pages) or counter */}
+            {pages.length <= 9 ? (
+              <div className="flex items-center gap-1.5">
+                {pages.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => gotoPage(i)}
+                    aria-label={`Page ${i + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      i === safePage ? "w-4 bg-[#4fa6c2]" : "w-1.5 bg-black/20 hover:bg-black/40"
+                    }`}
+                  />
+                ))}
+              </div>
+            ) : (
+              <span className="text-xs tabular-nums text-black/35">{safePage + 1}&nbsp;/&nbsp;{pages.length}</span>
+            )}
+
+            {/* Next or Complete */}
+            {isLastPage ? (
+              <button
+                onClick={handleComplete}
+                className="flex items-center gap-1.5 rounded-xl bg-[#4fa6c2] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]"
+              >
+                <CheckCircle2 className="h-4 w-4" /> Complete
+              </button>
+            ) : (
+              <button
+                onClick={gotoNext}
+                aria-label="Next page"
+                className="flex items-center gap-1.5 rounded-xl bg-[#4fa6c2] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]"
+              >
+                Next <ArrowRight className="h-4 w-4" />
+              </button>
+            )}
+          </div>
         </div>
       )}
     </div>
@@ -398,7 +584,7 @@ function DayCard({
 
                   {/* Inline reader panel */}
                   {readerOpen && (
-                    <InlineChapterReader
+                    <ImmersiveReader
                       chapterNumber={day.chapter_number}
                       chapterTitle={day.title}
                       onClose={() => setReaderOpen(false)}
