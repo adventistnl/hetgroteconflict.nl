@@ -8,6 +8,7 @@ import { track } from "@vercel/analytics";
 import { scrollToSection } from "@/utils/scroll-to-section";
 import { useRefStore } from "../stores/ref-store";
 import { Home, BookOpen, Users, MessageSquare, MapPin, LucideIcon } from "lucide-react";
+import { UserAvatar } from "@/components/atoms/user-avatar";
 
 interface NavItem {
   key: string;
@@ -89,7 +90,7 @@ export function MobileBottomNav() {
       className="fixed left-0 right-0 z-[20] flex justify-center md:hidden"
       style={{ bottom: "calc(0.8rem + env(safe-area-inset-bottom, 0px))" }}
     >
-      <div className="flex w-[80vw] items-center justify-between rounded-full border border-primary/10 bg-secondary px-3 py-2 shadow-lg">
+      <div className="flex w-[92vw] items-center justify-between rounded-full border border-primary/10 bg-secondary px-3 py-2 shadow-lg">
         {navItems.map(({ key, icon: Icon, accent, onClick, activePath }) => {
           const active = isActive(activePath);
 
@@ -123,6 +124,11 @@ export function MobileBottomNav() {
             </button>
           );
         })}
+
+        {/* User avatar — always last */}
+        <div className="flex items-center justify-center px-1">
+          <UserAvatar />
+        </div>
       </div>
     </nav>
   );
