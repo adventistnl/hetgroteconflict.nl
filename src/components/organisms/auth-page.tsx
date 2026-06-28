@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { Eye, EyeOff, Mail, Lock, User, ArrowLeft } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
@@ -39,6 +39,7 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
   const { signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
   const router = useRouter();
   const locale = useLocale();
+  const t = useTranslations("auth");
 
   const [mode, setMode] = useState<Mode>(defaultMode);
   const [email, setEmail]       = useState("");
@@ -61,7 +62,7 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
     } else {
       const { error } = await signUpWithEmail(email, password, fullName);
       if (error) setError(error.message);
-      else setSuccess("Check your email to confirm your account.");
+      else setSuccess(t("success-verify"));
     }
     setLoading(false);
   }
@@ -83,18 +84,16 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
           <Link href={`/${locale}/guide`}
                 className="mb-8 inline-flex items-center gap-1.5 text-xs font-semibold text-primary/50 transition hover:text-primary">
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to Study Guide
+            {t("back-to-guide")}
           </Link>
 
           {/* Heading */}
           <h1 className="mb-1 text-3xl font-bold leading-tight text-primary md:text-4xl"
               style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}>
-            {mode === "sign-in" ? "Welcome back" : "Create account"}
+            {mode === "sign-in" ? t("sign-in-title") : t("sign-up-title")}
           </h1>
           <p className="mb-8 text-sm text-primary/55">
-            {mode === "sign-in"
-              ? "Sign in to save your reading plan progress"
-              : "Join to track your journey through the Great Controversy"}
+            {mode === "sign-in" ? t("sign-in-subtitle") : t("sign-up-subtitle")}
           </p>
 
           {/* Form */}
@@ -102,14 +101,14 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
 
             {mode === "sign-up" && (
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-primary/60">Full name</label>
+                <label className="mb-1.5 block text-xs font-semibold text-primary/60">{t("field-name")}</label>
                 <Field>
                   <div className="flex items-center">
                     <User className="ml-4 h-4 w-4 shrink-0 text-primary/30" />
                     <input
                       type="text" value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      placeholder="Your name"
+                      placeholder={t("field-name-placeholder")}
                       className="flex-1 bg-transparent px-3 py-3.5 text-sm text-primary placeholder:text-primary/30 focus:outline-none"
                     />
                   </div>
@@ -118,7 +117,7 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
             )}
 
             <div>
-              <label className="mb-1.5 block text-xs font-semibold text-primary/60">Email address</label>
+              <label className="mb-1.5 block text-xs font-semibold text-primary/60">{t("field-email")}</label>
               <Field>
                 <div className="flex items-center">
                   <Mail className="ml-4 h-4 w-4 shrink-0 text-primary/30" />
@@ -133,7 +132,7 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
             </div>
 
             <div>
-              <label className="mb-1.5 block text-xs font-semibold text-primary/60">Password</label>
+              <label className="mb-1.5 block text-xs font-semibold text-primary/60">{t("field-password")}</label>
               <Field>
                 <div className="flex items-center">
                   <Lock className="ml-4 h-4 w-4 shrink-0 text-primary/30" />
@@ -161,14 +160,14 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
             >
               {loading ? (
                 <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
-              ) : mode === "sign-in" ? "Sign in" : "Create account"}
+              ) : mode === "sign-in" ? t("btn-sign-in") : t("btn-create-account")}
             </button>
           </form>
 
           {/* Divider */}
           <div className="relative my-5 flex items-center">
             <div className="flex-1 border-t border-primary/10" />
-            <span className="mx-4 text-xs text-primary/40">or continue with</span>
+            <span className="mx-4 text-xs text-primary/40">{t("divider")}</span>
             <div className="flex-1 border-t border-primary/10" />
           </div>
 
@@ -178,17 +177,17 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
             className="flex w-full items-center justify-center gap-3 rounded-xl border border-primary/15 bg-primary/5 py-3.5 text-sm font-semibold text-primary transition hover:border-[#4fa6c2]/40 hover:bg-[#4fa6c2]/5"
           >
             <GoogleIcon />
-            Continue with Google
+            {t("btn-google")}
           </button>
 
           {/* Toggle mode */}
           <p className="mt-6 text-center text-sm text-primary/50">
-            {mode === "sign-in" ? "Don't have an account?" : "Already have an account?"}{" "}
+            {mode === "sign-in" ? t("no-account") : t("have-account")}{" "}
             <button
               onClick={() => { setMode(mode === "sign-in" ? "sign-up" : "sign-in"); setError(null); setSuccess(null); }}
               className="font-semibold text-[#4fa6c2] hover:underline"
             >
-              {mode === "sign-in" ? "Create account" : "Sign in"}
+              {mode === "sign-in" ? t("btn-create-account") : t("btn-sign-in")}
             </button>
           </p>
         </div>
@@ -210,22 +209,22 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
 
         {/* Quote overlay */}
         <div className="absolute bottom-0 left-0 max-w-sm p-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#4fa6c2]">Reading Plans</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#4fa6c2]">{t("hero-eyebrow")}</p>
           <h2 className="mt-2 text-2xl font-bold leading-snug text-white"
               style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}>
-            Track your journey through the Great Controversy
+            {t("hero-title")}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-white/60">
-            Sign in to save your progress, bookmark plans, and pick up exactly where you left off — on any device.
+            {t("hero-subtitle")}
           </p>
           <div className="mt-6 flex gap-6 text-center">
             <div>
               <p className="text-2xl font-bold text-white">14</p>
-              <p className="text-xs text-white/50">Reading plans</p>
+              <p className="text-xs text-white/50">{t("hero-reading-plans")}</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-white">42</p>
-              <p className="text-xs text-white/50">Chapters</p>
+              <p className="text-xs text-white/50">{t("hero-chapters")}</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-white">11</p>

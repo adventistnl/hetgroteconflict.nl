@@ -14,6 +14,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { usePlanEnrollment } from "@/hooks/use-plan-enrollment";
 import { useReadAloud } from "@/hooks/use-read-aloud";
 import { useXp, xpForPlan } from "@/hooks/use-xp";
+import { useTranslations } from "next-intl";
 import { AuthModal } from "@/components/atoms/auth-modal";
 import { ReadAloudPlayer } from "@/components/atoms/read-aloud-player";
 import { HighlightedText } from "@/components/molecules/highlighted-text";
@@ -35,16 +36,23 @@ function formatMinutes(min: number) {
   return m > 0 ? `${h}h ${m}min` : `${h}h`;
 }
 
-// ── Book data cache ───────────────────────────────────────────────────────────
+// ── Book data cache (locale-aware, falls back to English) ────────────────────
 
 interface BookChapter { chapter_number: number | null; title: string; content: string; }
 interface BookData { chapters: BookChapter[]; }
-let _bookCache: BookData | null = null;
-async function getBookData(): Promise<BookData> {
-  if (_bookCache) return _bookCache;
-  const res = await fetch("/book/en.the-great-controversy-chapters.json");
-  _bookCache = await res.json() as BookData;
-  return _bookCache;
+const _bookCache: Record<string, BookData> = {};
+async function getBookData(locale = "en"): Promise<BookData> {
+  if (_bookCache[locale]) return _bookCache[locale];
+  // Try locale-specific file first, fall back to English
+  try {
+    const res = await fetch(`/book/${locale}.the-great-controversy-chapters.json`);
+    if (res.ok) { _bookCache[locale] = await res.json() as BookData; return _bookCache[locale]; }
+  } catch { /* fall through */ }
+  if (!_bookCache["en"]) {
+    const res = await fetch("/book/en.the-great-controversy-chapters.json");
+    _bookCache["en"] = await res.json() as BookData;
+  }
+  return _bookCache["en"];
 }
 
 function parseContent(raw: string): string[] {
@@ -100,13 +108,15 @@ function saveReaderPage(key: string, page: number) {
 // ── Immersive Reader ──────────────────────────────────────────────────────────
 
 function ImmersiveReader({
-  chapterNumber, chapterTitle, onClose, onComplete,
+  chapterNumber, chapterTitle, locale, onClose, onComplete,
 }: {
   chapterNumber: number | null;
   chapterTitle: string;
+  locale: string;
   onClose: () => void;
   onComplete: () => void;
 }) {
+  const t = useTranslations("reading-plan");
   const [paragraphs, setParagraphs] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
@@ -129,7 +139,7 @@ function ImmersiveReader({
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    getBookData().then((data) => {
+    getBookData(locale).then((data) => {
       if (cancelled) return;
       const ch = chapterNumber !== null
         ? data.chapters.find((c) => c.chapter_number === chapterNumber)
@@ -204,7 +214,7 @@ function ImmersiveReader({
       {/* Header */}
       <div className="flex shrink-0 items-center justify-between border-b border-black/10 bg-[#F6F2EB] px-5 py-3">
         <div className="min-w-0">
-          <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-black/30">The Great Controversy</p>
+          <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-black/30">{t("book-label")}</p>
           <p className="mt-0.5 max-w-[220px] truncate text-xs font-semibold text-black/55 sm:max-w-sm">{chapterTitle}</p>
         </div>
         <div className="flex items-center gap-4">
@@ -225,13 +235,13 @@ function ImmersiveReader({
       {resumedFrom !== null && (
         <div className="flex shrink-0 items-center justify-between border-b border-amber-200 bg-amber-50 px-5 py-2.5">
           <p className="text-xs text-amber-700">
-            Continuing from <span className="font-bold">page {resumedFrom + 1}</span>
+          {t("continuing-from", { page: resumedFrom + 1 })}
           </p>
           <button
             onClick={() => { setResumedFrom(null); gotoPage(0); }}
             className="text-[11px] font-semibold text-amber-600 hover:underline"
           >
-            Start from beginning
+            {t("start-from-beginning")}
           </button>
         </div>
       )}
@@ -297,7 +307,7 @@ function ImmersiveReader({
               aria-label="Previous page"
               className="flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold text-black/45 transition hover:bg-black/[0.08] hover:text-black/70 disabled:opacity-25"
             >
-              <ArrowLeft className="h-4 w-4" /> Previous
+              <ArrowLeft className="h-4 w-4" /> {t("previous")}
             </button>
 
             {/* Page dots (≤ 9 pages) or counter */}
@@ -324,7 +334,7 @@ function ImmersiveReader({
                 onClick={handleComplete}
                 className="flex items-center gap-1.5 rounded-xl bg-[#4fa6c2] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]"
               >
-                <CheckCircle2 className="h-4 w-4" /> Complete
+                <CheckCircle2 className="h-4 w-4" /> {t("complete")}
               </button>
             ) : (
               <button
@@ -332,7 +342,7 @@ function ImmersiveReader({
                 aria-label="Next page"
                 className="flex items-center gap-1.5 rounded-xl bg-[#4fa6c2] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]"
               >
-                Next <ArrowRight className="h-4 w-4" />
+                {t("next")} <ArrowRight className="h-4 w-4" />
               </button>
             )}
           </div>
@@ -354,6 +364,7 @@ function VideoModal({
   onComplete: () => void;
   isCompleted: boolean;
 }) {
+  const t = useTranslations("reading-plan");
   const embedUrl = getVideoEmbedUrl(videoUrl, locale);
   const autoplayUrl = embedUrl + (embedUrl.includes("?") ? "&" : "?") + "autoplay=1";
 
@@ -406,7 +417,7 @@ function VideoModal({
               onClick={() => { onComplete(); onClose(); }}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#4fa6c2] py-3 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]"
             >
-              <CheckCircle2 className="h-4 w-4" /> Mark as complete
+              <CheckCircle2 className="h-4 w-4" /> {t("mark-complete")}
             </button>
           </div>
         )}
@@ -478,6 +489,7 @@ function DayCard({
   const [videoTitle, setVideoTitle] = useState("");
   const isCompleted = state === "completed";
   const isLocked    = state === "locked";
+  const t = useTranslations("reading-plan");
 
   useEffect(() => { if (autoOpen) setExpanded(true); }, [autoOpen]);
 
@@ -512,7 +524,7 @@ function DayCard({
         <div className="flex flex-1 flex-col gap-0.5 min-w-0">
           {state === "up-next" && (
             <span className="mb-0.5 flex w-fit items-center gap-1 rounded-full bg-[#4fa6c2] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white">
-              <PlayCircle className="h-2.5 w-2.5" /> Up Next
+              <PlayCircle className="h-2.5 w-2.5" /> {t("up-next")}
             </span>
           )}
           <p className={`truncate text-sm font-semibold ${isLocked ? "text-primary/40" : "text-primary"}`}>{day.title}</p>
@@ -548,7 +560,7 @@ function DayCard({
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-semibold text-primary">{step.label}</p>
-                    <p className="mt-1 text-[11px] text-primary/50">{step.duration_minutes} min · Clique para assistir</p>
+                    <p className="mt-1 text-[11px] text-primary/50">{step.duration_minutes} min · {t("watch-cta")}</p>
                   </div>
                   <PlayCircle className="h-5 w-5 shrink-0 text-[#4fa6c2]" />
                 </button>
@@ -579,7 +591,7 @@ function DayCard({
                       </p>
                     </div>
                     <span className={`shrink-0 text-[10px] font-semibold uppercase tracking-wide ${readerOpen ? "text-[#4fa6c2]" : "text-primary/40"}`}>
-                      {readerOpen ? "Close" : "Read"}
+                      {readerOpen ? t("close") : t("read")}
                     </span>
                   </button>
 
@@ -588,6 +600,7 @@ function DayCard({
                     <ImmersiveReader
                       chapterNumber={day.chapter_number}
                       chapterTitle={day.title}
+                      locale={locale}
                       onClose={() => setReaderOpen(false)}
                       onComplete={handleMarkComplete}
                     />
@@ -603,7 +616,7 @@ function DayCard({
               className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-[#4fa6c2]/50 bg-[#4fa6c2]/10 py-4 text-sm font-semibold text-[#4fa6c2] transition hover:bg-[#4fa6c2]/20 active:scale-[0.98]"
               onClick={handleMarkComplete}
             >
-              <CheckCircle2 className="h-4 w-4" /> Mark day {day.day} as complete
+              <CheckCircle2 className="h-4 w-4" /> {t("mark-day-complete", { day: day.day })}
             </button>
           )}
         </div>
@@ -651,6 +664,7 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
   const progressPct = totalDays > 0 ? Math.round((completedDays.length / totalDays) * 100) : 0;
   const upNextDay   = completedDays.length < totalDays ? completedDays.length + 1 : null;
   const nextPlan    = plan.next_plan ? plansDatabase.find((p) => p.plan === plan.next_plan) : null;
+  const t = useTranslations("reading-plan");
 
   function handleStart() {
     if (user) dbStartPlan(planId); else lsStartPlan(planId);
@@ -692,14 +706,14 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
 
         <Link href={`/${locale}/guide`}
               className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-black/60 sm:left-6 sm:top-6">
-          <ArrowLeft className="h-3.5 w-3.5" /> Plans
+          <ArrowLeft className="h-3.5 w-3.5" /> {t("back-to-plans")}
         </Link>
 
         <div className="absolute bottom-0 left-0 p-5 sm:p-8">
-          <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-[#4fa6c2]">Plan {plan.order} of {plansDatabase.length}</p>
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-[#4fa6c2]">{t("plan-count", { order: plan.order, total: plansDatabase.length })}</p>
           <h1 className="text-xl font-bold leading-tight text-white sm:text-3xl" style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}>{plan.title}</h1>
           <div className="mt-2 flex flex-wrap gap-3 text-xs text-white/50">
-            <span className="flex items-center gap-1"><BookOpen className="h-3 w-3" />{plan.total_chapters} chapters</span>
+            <span className="flex items-center gap-1"><BookOpen className="h-3 w-3" />{t("chapters", { count: plan.total_chapters })}</span>
             <span className="flex items-center gap-1"><Clock className="h-3 w-3" />~{formatMinutes(plan.total_time_minutes_estimate)}</span>
           </div>
         </div>
@@ -719,7 +733,7 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
         {isStarted && (
           <div className="pt-5">
             <div className="mb-1.5 flex justify-between text-xs text-primary/60">
-              <span>{completedDays.length}/{totalDays} days complete</span>
+              <span>{t("progress", { done: completedDays.length, total: totalDays })}</span>
               <span>{progressPct}%</span>
             </div>
             <div className="h-1.5 overflow-hidden rounded-full bg-primary/15">
@@ -735,12 +749,12 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <button onClick={handleStart}
                     className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#4fa6c2] py-3.5 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]">
-              <PlayCircle className="h-4 w-4" /> Start this plan
+              <PlayCircle className="h-4 w-4" /> {t("start")}
             </button>
             {!user && (
               <button onClick={() => setShowAuth(true)}
                       className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-primary/15 py-3.5 text-sm font-semibold text-primary/65 transition hover:border-primary/40 hover:text-primary">
-                Sign in to save progress
+                {t("sign-in-save")}
               </button>
             )}
           </div>
@@ -749,8 +763,8 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
         {/* Journey Map */}
         <div className="mt-8">
           <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary/55">Journey Map · {totalDays} days</h2>
-            {upNextDay && <span className="text-xs font-medium text-[#4fa6c2]">Day {upNextDay} up next</span>}
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary/55">{t("journey-map", { total: totalDays })}</h2>
+            {upNextDay && <span className="text-xs font-medium text-[#4fa6c2]">{t("day-up-next", { day: upNextDay })}</span>}
           </div>
           <JourneyMap totalDays={totalDays} completedDays={completedDays} upNextDay={upNextDay}
                       onDayClick={(d) => setFocusDay(focusDay === d ? null : d)} />
@@ -780,7 +794,7 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
             {nextPlan ? (
               <Link href={`/${locale}/guide/plan/${nextPlan.plan}`}
                     className="flex items-center gap-2 rounded-xl bg-[#4fa6c2] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#3d91ad]">
-                Next: {nextPlan.title} <ArrowRight className="h-4 w-4" />
+                {t("next-plan", { title: nextPlan.title })} <ArrowRight className="h-4 w-4" />
               </Link>
             ) : (
               <p className="text-sm font-semibold text-primary">{plan.next_plan_cta}</p>

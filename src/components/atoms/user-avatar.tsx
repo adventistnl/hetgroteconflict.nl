@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { User, LogOut, Star, Trophy } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useXp } from "@/hooks/use-xp";
 
@@ -13,6 +13,7 @@ export function UserAvatar() {
   const locale = useLocale();
   const router = useRouter();
   const { totalXp, skills, levelInfo } = useXp();
+  const t = useTranslations("xp");
 
   if (loading) {
     return (
@@ -93,10 +94,10 @@ export function UserAvatar() {
                 <div className="flex items-center gap-1.5">
                   <Star className="h-3.5 w-3.5 text-[#4fa6c2]" fill="currentColor" />
                   <span className="text-xs font-bold text-primary">
-                    Level {levelInfo.level} · {levelInfo.label}
+                    {t("level-label", { level: levelInfo.level, label: t(`level-${levelInfo.level}` as `level-${1|2|3|4|5|6|7}`) })}
                   </span>
                 </div>
-                <span className="text-xs font-bold text-[#4fa6c2]">{totalXp} XP</span>
+                <span className="text-xs font-bold text-[#4fa6c2]">{t("xp-count", { xp: totalXp })}</span>
               </div>
               {/* Progress bar */}
               <div className="h-1.5 overflow-hidden rounded-full bg-primary/10">
@@ -107,10 +108,10 @@ export function UserAvatar() {
               </div>
               {levelInfo.xpForNext !== null ? (
                 <p className="mt-1.5 text-[10px] text-primary/35">
-                  {levelInfo.xpInLevel} / {levelInfo.xpForNext} XP → Level {levelInfo.level + 1}
+                  {t("xp-to-next", { current: levelInfo.xpInLevel, total: levelInfo.xpForNext, next: levelInfo.level + 1 })}
                 </p>
               ) : (
-                <p className="mt-1.5 text-[10px] font-semibold text-[#4fa6c2]">Max level reached 🏆</p>
+                <p className="mt-1.5 text-[10px] font-semibold text-[#4fa6c2]">{t("max-level")}</p>
               )}
             </div>
 
@@ -119,12 +120,12 @@ export function UserAvatar() {
               <div className="mb-2 flex items-center gap-1.5">
                 <Trophy className="h-3 w-3 text-primary/40" />
                 <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40">
-                  Skills Earned ({skills.length})
+                  {t("skills-title", { count: skills.length })}
                 </p>
               </div>
               {skills.length === 0 ? (
                 <p className="text-[11px] italic text-primary/30">
-                  Complete a plan to earn your first skill!
+                  {t("no-skills")}
                 </p>
               ) : (
                 <div className="flex max-h-[140px] flex-col gap-1 overflow-y-auto">
@@ -147,7 +148,7 @@ export function UserAvatar() {
               className="flex w-full items-center gap-2 px-4 py-3 text-sm text-primary transition hover:bg-primary/10"
             >
               <LogOut className="h-3.5 w-3.5" />
-              Sign out
+              {t("sign-out")}
             </button>
           </div>
         </>
