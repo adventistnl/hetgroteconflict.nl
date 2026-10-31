@@ -5,6 +5,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* ── Typography tokens ──────────────────────────────────────────────
+     Primary: Inter — the site's UI/content typeface (body, nav, buttons,
+     forms). Display accent: Fraunces — the global title/heading typeface,
+     loaded via next/font/google in src/app/layout.tsx as --font-fraunces. */
+  --font-primary: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display-accent: var(--font-fraunces), "Fraunces", serif;
+  --font-secondary: var(--font-display-accent);
+
+  /* Every existing component already threads its type through these two
+     variable names (headings via --font-plus-jakarta-sans, everything else
+     via --font-rubik) — repointing them here is what makes the new system
+     apply site-wide without touching each call site. */
+  --font-rubik: var(--font-primary);
+  --font-plus-jakarta-sans: var(--font-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,11 +31,22 @@
 
 body {
   color: var(--foreground);
-  font-family: var(--font-rubik);
+  font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display-accent);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 h1 {
-  font-family: var(--font-plus-jakarta-sans);
+  letter-spacing: -0.04em;
+}
+
+p {
+  line-height: 1.6;
 }
 
 @layer utilities {
@@ -81,6 +107,28 @@ h1 {
   animation-play-state: paused;
 }
 
+/* Used by ScrollGlobe (components/ui/landing-page.tsx): the active nav-dot
+   label appears immediately, holds, then fades and drifts out to make room
+   for the next one as the user scrolls past that section. */
+@keyframes fadeOutLabel {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0.5rem) scale(0.95);
+  }
+}
+
+.animate-fadeOut {
+  animation: fadeOutLabel 2.5s ease forwards;
+}
+
 @layer base {
   :root {
     --gray: 0 0% 54%;
@@ -95,7 +143,7 @@ h1 {
     --popover-foreground: 240 10% 3.9%;
     --primary: 0 0% 15%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 120 1% 91%;
+    --secondary: 0, 0%, 87%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;

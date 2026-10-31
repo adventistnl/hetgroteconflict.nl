@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "善恶之争",
     "subtitle": "发现关于人类命运的最深刻问题的答案。下载或在家接收揭示善恶之战的书籍，以及如何为未来做好准备。",
-    "download-button": "下载",
+    "quote": "这大骗局中最惊人的一幕乃是撒但亲自化装为基督。",
+    "quote-citation": "善恶之争，第三十九章",
     "receive-at-home-button": "在家接收"
   },
   "participate-page-container": {
@@ -307,6 +308,8 @@
     "no-account": "没有账户？",
     "have-account": "已有账户？",
     "success-verify": "请检查您的电子邮件以确认您的账户。",
+    "error-oauth": "Google 登录失败，请重试。",
+    "save-progress-banner": "你刚刚完成了一个计划！登录以保存你的进度，方便你以后找到它，并可以在任何设备上继续。",
     "hero-eyebrow": "阅读计划",
     "hero-title": "追踪您的《善恶之争》阅读旅程",
     "hero-subtitle": "登录以保存您的进度，收藏计划，并在任何设备上从您离开的地方继续阅读。",
@@ -339,7 +342,24 @@
     "next-plan": "下一个：{title}",
     "reading-plans-label": "阅读计划",
     "chapters-label": "章节",
-    "days-label": "完成所需天数"
+    "days-label": "完成所需天数",
+    "plan-order": "计划 {order}",
+    "card-review": "复习 →",
+    "card-continue": "继续 →",
+    "card-start": "开始计划 →",
+    "plans-title": "阅读计划",
+    "tab-all": "所有计划",
+    "tab-in-progress": "进行中",
+    "tab-completed": "已完成",
+    "empty-in-progress": "暂无进行中的计划，在上方开始一个吧！",
+    "empty-completed": "暂无已完成的计划，继续阅读吧！",
+    "next-plan-teaser": "准备好迎接下一步了吗？继续阅读《{title}》",
+    "all-plans-completed": "你已完成《{book}》的整个旅程！🎉",
+    "chapter-unavailable-offline": "该章节尚未下载——请连接网络后阅读。",
+    "retry": "重试",
+    "chapter-english-fallback": "该部分尚未翻译成您的语言——显示英文原文。",
+    "watch-chapter-preview": "观看章节预告视频",
+    "read-the-chapter": "阅读本章"
   },
   "xp": {
     "level-label": "等级 {level} · {label}",
@@ -355,6 +375,23 @@
     "level-4": "历史学家",
     "level-5": "神学家",
     "level-6": "先知",
-    "level-7": "得胜者"
+    "level-7": "得胜者",
+    "tier-bronze": "青铜",
+    "tier-silver": "白银",
+    "tier-gold": "黄金"
+  },
+  "world-age-section": {
+    "eyebrow": "根据圣经年代学",
+    "hook": "这个世界的日子屈指可数",
+    "days-label": "善恶相争的日子",
+    "caption": "自创造以来的六千多年里，地球一直是善恶之争的舞台——正是这本书所揭示的故事。",
+    "mute-trailer": "静音预告片",
+    "unmute-trailer": "开启预告片声音",
+    "days": "天",
+    "hours": "时",
+    "minutes": "分",
+    "seconds": "秒",
+    "years": "年",
+    "months": "月"
   }
 }

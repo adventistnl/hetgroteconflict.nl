@@ -36,6 +36,7 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  // If something went wrong, redirect to auth page with error indicator
-  return NextResponse.redirect(`${origin}/en/auth?error=oauth`);
+  // Extract locale from `next` (e.g. "/en/guide" → "en") for the error redirect
+  const localeSegment = next.split("/").filter(Boolean)[0] ?? "en";
+  return NextResponse.redirect(`${origin}/${localeSegment}/auth?error=oauth`);
 }

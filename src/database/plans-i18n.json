@@ -1,0 +1,1179 @@
+{
+  "pt": {
+    "Introduction": {
+      "title": "Por Que Esta Batalha Importa Para Você",
+      "description": "Textos introdutórios que apresentam o propósito e a base do livro.",
+      "badge": "Buscador da Verdade",
+      "completion_message": "Você deu o primeiro passo na maior história já contada.",
+      "card_subtitle": "2 capítulos · 8 páginas · ~24 min no total",
+      "nullChapterTitles": [
+        "Prefácio",
+        "Introdução"
+      ]
+    },
+    "Decline": {
+      "title": "Quando a Luz se Apaga: A Queda de Uma Cidade Santa",
+      "description": "O declínio espiritual de Israel e da igreja cristã primitiva, culminando na apostasia medieval.",
+      "badge": "Testemunha da Queda",
+      "completion_message": "Você testemunhou como as trevas podem se infiltrar sem serem percebidas — fique alerta para o que vem a seguir.",
+      "card_subtitle": "3 capítulos · 31 páginas · ~112 min no total"
+    },
+    "Forerunners": {
+      "title": "Vozes no Deserto",
+      "description": "Movimentos e indivíduos que abriram caminho para a Reforma Protestante.",
+      "badge": "Portador da Tocha",
+      "completion_message": "Você conheceu as vozes corajosas que se recusaram a ficar em silêncio.",
+      "card_subtitle": "3 capítulos · 42 páginas · ~148 min no total"
+    },
+    "Reformation": {
+      "title": "Um Homem Contra um Império",
+      "description": "O núcleo do movimento da Reforma liderado por Lutero e seus contemporâneos na Alemanha e na Suíça.",
+      "badge": "Coração de Reformador",
+      "completion_message": "Você esteve ao lado dos reformadores que abalaram um império.",
+      "card_subtitle": "5 capítulos · 65 páginas · ~229 min no total"
+    },
+    "Europe": {
+      "title": "O Fogo se Espalha",
+      "description": "A expansão e os desafios da Reforma em outras nações europeias.",
+      "badge": "Propagador da Chama",
+      "completion_message": "Você viu a verdade se espalhar como fogo por um continente.",
+      "card_subtitle": "4 capítulos · 56 páginas · ~197 min no total"
+    },
+    "America": {
+      "title": "Um Novo Mundo, Uma Esperança Final",
+      "description": "A migração religiosa para o Novo Mundo e o surgimento de novos líderes espirituais.",
+      "badge": "Pioneiro do Novo Mundo",
+      "completion_message": "Você atravessou o oceano rumo a um novo capítulo de esperança.",
+      "card_subtitle": "3 capítulos · 40 páginas · ~141 min no total"
+    },
+    "Prophecy": {
+      "title": "O Relógio Está Correndo",
+      "description": "O movimento adventista do século 19, o estudo profético e a expectativa da volta de Cristo.",
+      "badge": "Vigia do Tempo",
+      "completion_message": "Você contou os dias junto com aqueles que vigiavam os céus.",
+      "card_subtitle": "4 capítulos · 48 páginas · ~171 min no total"
+    },
+    "Sanctuary": {
+      "title": "Por Trás do Véu",
+      "description": "A doutrina do santuário celestial e o ministério de Cristo no juízo.",
+      "badge": "Andarilho do Véu",
+      "completion_message": "Você entrou por trás do véu rumo à mais sagrada de todas as verdades.",
+      "card_subtitle": "3 capítulos · 30 páginas · ~109 min no total"
+    },
+    "Revival": {
+      "title": "O Espelho da Alma",
+      "description": "Um chamado à reforma pessoal, ao avivamento espiritual e à preparação para o juízo.",
+      "badge": "Buscador do Espelho",
+      "completion_message": "Você se olhou no espelho — agora é hora de realmente se reformar.",
+      "card_subtitle": "3 capítulos · 29 páginas · ~106 min no total"
+    },
+    "Origin-of-Evil": {
+      "title": "O Inimigo Desmascarado",
+      "description": "A origem do pecado, a queda de Satanás e suas ações contra a humanidade.",
+      "badge": "Revelador da Verdade",
+      "completion_message": "Você desmascarou o mais antigo engano do universo.",
+      "card_subtitle": "5 capítulos · 42 páginas · ~157 min no total"
+    },
+    "Spiritualism": {
+      "title": "Sussurros do Túmulo",
+      "description": "Crenças sobre a morte, a imortalidade da alma e a comunicação com os mortos.",
+      "badge": "Mente Discernidora",
+      "completion_message": "Você aprendeu a distinguir a verdade dos sussurros na escuridão.",
+      "card_subtitle": "1 capítulo · 8 páginas · ~30 min no total"
+    },
+    "Liberty": {
+      "title": "A Última Liberdade",
+      "description": "Liberdade religiosa, perseguição por questões de consciência e a união entre igreja e estado.",
+      "badge": "Defensor da Liberdade",
+      "completion_message": "Você descobriu o que realmente está em jogo quando a liberdade é ameaçada.",
+      "card_subtitle": "1 capítulo · 14 páginas · ~49 min no total"
+    },
+    "Final-Conflict": {
+      "title": "A Contagem Regressiva Final",
+      "description": "Os eventos escatológicos finais: o conflito mundial, o tempo de angústia e o encerramento do grande conflito.",
+      "badge": "Vencedor",
+      "completion_message": "Você chegou ao fim da história — e ao início da eternidade.",
+      "card_subtitle": "7 capítulos · 69 páginas · ~252 min no total"
+    },
+    "Appendix": {
+      "title": "Bastidores",
+      "description": "Notas, referências e revisões complementares ao texto principal.",
+      "badge": "Erudito",
+      "completion_message": "Você foi mais fundo do que a maioria jamais vai. Verdadeira erudição.",
+      "card_subtitle": "1 capítulo · 20 páginas · ~60 min no total",
+      "nullChapterTitles": [
+        "Apêndice"
+      ]
+    }
+  },
+  "es": {
+    "Introduction": {
+      "title": "Por Qué Esta Batalla Te Importa",
+      "description": "Textos introductorios que presentan el propósito y el fundamento del libro.",
+      "badge": "Buscador de la Verdad",
+      "completion_message": "Has dado el primer paso hacia la historia más grande jamás contada.",
+      "card_subtitle": "2 capítulos · 8 páginas · ~24 min en total",
+      "nullChapterTitles": [
+        "Prefacio",
+        "Introducción"
+      ]
+    },
+    "Decline": {
+      "title": "Cuando la Luz se Apaga: La Caída de una Ciudad Santa",
+      "description": "El declive espiritual de Israel y de la iglesia cristiana primitiva, que culmina en la apostasía medieval.",
+      "badge": "Testigo de la Caída",
+      "completion_message": "Has sido testigo de cómo la oscuridad puede infiltrarse sin ser notada — mantente alerta para lo que viene.",
+      "card_subtitle": "3 capítulos · 31 páginas · ~112 min en total"
+    },
+    "Forerunners": {
+      "title": "Voces en el Desierto",
+      "description": "Movimientos e individuos que allanaron el camino para la Reforma Protestante.",
+      "badge": "Portador de la Antorcha",
+      "completion_message": "Has conocido a las voces valientes que se negaron a guardar silencio.",
+      "card_subtitle": "3 capítulos · 42 páginas · ~148 min en total"
+    },
+    "Reformation": {
+      "title": "Un Hombre Contra un Imperio",
+      "description": "El núcleo del movimiento de la Reforma liderado por Lutero y sus contemporáneos en Alemania y Suiza.",
+      "badge": "Corazón de Reformador",
+      "completion_message": "Has estado junto a los reformadores que sacudieron un imperio.",
+      "card_subtitle": "5 capítulos · 65 páginas · ~229 min en total"
+    },
+    "Europe": {
+      "title": "El Fuego se Extiende",
+      "description": "La expansión y los desafíos de la Reforma en otras naciones europeas.",
+      "badge": "Propagador de la Llama",
+      "completion_message": "Has visto la verdad extenderse como fuego por un continente.",
+      "card_subtitle": "4 capítulos · 56 páginas · ~197 min en total"
+    },
+    "America": {
+      "title": "Un Nuevo Mundo, Una Última Esperanza",
+      "description": "La migración religiosa al Nuevo Mundo y el surgimiento de nuevos líderes espirituales.",
+      "badge": "Pionero del Nuevo Mundo",
+      "completion_message": "Has cruzado el océano hacia un nuevo capítulo de esperanza.",
+      "card_subtitle": "3 capítulos · 40 páginas · ~141 min en total"
+    },
+    "Prophecy": {
+      "title": "El Reloj Sigue Corriendo",
+      "description": "El movimiento adventista del siglo XIX, el estudio profético y la expectativa del regreso de Cristo.",
+      "badge": "Vigía del Tiempo",
+      "completion_message": "Has contado los días junto a quienes vigilaban los cielos.",
+      "card_subtitle": "4 capítulos · 48 páginas · ~171 min en total"
+    },
+    "Sanctuary": {
+      "title": "Detrás del Velo",
+      "description": "La doctrina del santuario celestial y el ministerio de Cristo en el juicio.",
+      "badge": "Caminante del Velo",
+      "completion_message": "Has entrado detrás del velo hacia la más sagrada de todas las verdades.",
+      "card_subtitle": "3 capítulos · 30 páginas · ~109 min en total"
+    },
+    "Revival": {
+      "title": "El Espejo del Alma",
+      "description": "Un llamado a la reforma personal, al avivamiento espiritual y a la preparación para el juicio.",
+      "badge": "Buscador del Espejo",
+      "completion_message": "Te has mirado en el espejo — ahora es momento de reformarte de verdad.",
+      "card_subtitle": "3 capítulos · 29 páginas · ~106 min en total"
+    },
+    "Origin-of-Evil": {
+      "title": "El Enemigo Desenmascarado",
+      "description": "El origen del pecado, la caída de Satanás y sus acciones contra la humanidad.",
+      "badge": "Revelador de la Verdad",
+      "completion_message": "Has desenmascarado el engaño más antiguo del universo.",
+      "card_subtitle": "5 capítulos · 42 páginas · ~157 min en total"
+    },
+    "Spiritualism": {
+      "title": "Susurros Desde la Tumba",
+      "description": "Creencias sobre la muerte, la inmortalidad del alma y la comunicación con los muertos.",
+      "badge": "Mente Discernidora",
+      "completion_message": "Has aprendido a distinguir la verdad entre los susurros en la oscuridad.",
+      "card_subtitle": "1 capítulo · 8 páginas · ~30 min en total"
+    },
+    "Liberty": {
+      "title": "La Última Libertad",
+      "description": "La libertad religiosa, la persecución por motivos de conciencia y la unión entre iglesia y estado.",
+      "badge": "Defensor de la Libertad",
+      "completion_message": "Has descubierto lo que realmente está en juego cuando la libertad está amenazada.",
+      "card_subtitle": "1 capítulo · 14 páginas · ~49 min en total"
+    },
+    "Final-Conflict": {
+      "title": "La Cuenta Regresiva Final",
+      "description": "Los eventos escatológicos finales: el conflicto mundial, el tiempo de angustia y el fin del gran conflicto.",
+      "badge": "Vencedor",
+      "completion_message": "Has llegado al final de la historia — y al comienzo de la eternidad.",
+      "card_subtitle": "7 capítulos · 69 páginas · ~252 min en total"
+    },
+    "Appendix": {
+      "title": "Detrás de Escena",
+      "description": "Notas, referencias y revisiones complementarias al texto principal.",
+      "badge": "Erudito Consumado",
+      "completion_message": "Has profundizado más de lo que la mayoría jamás hace. Verdadera erudición.",
+      "card_subtitle": "1 capítulo · 20 páginas · ~60 min en total",
+      "nullChapterTitles": [
+        "Apéndice"
+      ]
+    }
+  },
+  "fr": {
+    "Introduction": {
+      "title": "Pourquoi Ce Combat Vous Concerne",
+      "description": "Textes d'introduction présentant le but et les fondements du livre.",
+      "badge": "Chercheur de Vérité",
+      "completion_message": "Vous avez fait le premier pas dans la plus grande histoire jamais racontée.",
+      "card_subtitle": "2 chapitres · 8 pages · ~24 min au total",
+      "nullChapterTitles": [
+        "Préface",
+        "Introduction"
+      ]
+    },
+    "Decline": {
+      "title": "Quand la Lumière s'Éteint : La Chute d'une Ville Sainte",
+      "description": "Le déclin spirituel d'Israël et de l'Église chrétienne primitive, culminant dans l'apostasie médiévale.",
+      "badge": "Témoin de la Chute",
+      "completion_message": "Vous avez vu comment les ténèbres peuvent s'infiltrer sans être remarquées — restez vigilant pour la suite.",
+      "card_subtitle": "3 chapitres · 31 pages · ~112 min au total"
+    },
+    "Forerunners": {
+      "title": "Voix dans le Désert",
+      "description": "Mouvements et individus qui ont ouvert la voie à la Réforme protestante.",
+      "badge": "Porteur de Flambeau",
+      "completion_message": "Vous avez rencontré les voix courageuses qui ont refusé de se taire.",
+      "card_subtitle": "3 chapitres · 42 pages · ~148 min au total"
+    },
+    "Reformation": {
+      "title": "Un Homme Contre un Empire",
+      "description": "Le cœur du mouvement de la Réforme mené par Luther et ses contemporains en Allemagne et en Suisse.",
+      "badge": "Cœur de Réformateur",
+      "completion_message": "Vous vous êtes tenu aux côtés des réformateurs qui ont ébranlé un empire.",
+      "card_subtitle": "5 chapitres · 65 pages · ~229 min au total"
+    },
+    "Europe": {
+      "title": "Le Feu se Propage",
+      "description": "L'expansion et les défis de la Réforme dans d'autres nations européennes.",
+      "badge": "Propagateur de Flamme",
+      "completion_message": "Vous avez vu la vérité se répandre comme un feu de forêt à travers un continent.",
+      "card_subtitle": "4 chapitres · 56 pages · ~197 min au total"
+    },
+    "America": {
+      "title": "Un Nouveau Monde, un Dernier Espoir",
+      "description": "La migration religieuse vers le Nouveau Monde et l'émergence de nouveaux dirigeants spirituels.",
+      "badge": "Pionnier du Nouveau Monde",
+      "completion_message": "Vous avez traversé l'océan vers un nouveau chapitre d'espoir.",
+      "card_subtitle": "3 chapitres · 40 pages · ~141 min au total"
+    },
+    "Prophecy": {
+      "title": "Le Compte à Rebours a Commencé",
+      "description": "Le mouvement adventiste du 19e siècle, l'étude prophétique et l'attente du retour du Christ.",
+      "badge": "Veilleur du Temps",
+      "completion_message": "Vous avez compté les jours avec ceux qui scrutaient les cieux.",
+      "card_subtitle": "4 chapitres · 48 pages · ~171 min au total"
+    },
+    "Sanctuary": {
+      "title": "Derrière le Voile",
+      "description": "La doctrine du sanctuaire céleste et le ministère du Christ dans le jugement.",
+      "badge": "Marcheur du Voile",
+      "completion_message": "Vous êtes entré derrière le voile, vers la plus sacrée de toutes les vérités.",
+      "card_subtitle": "3 chapitres · 30 pages · ~109 min au total"
+    },
+    "Revival": {
+      "title": "Le Miroir de l'Âme",
+      "description": "Un appel à la réforme personnelle, au réveil spirituel et à la préparation pour le jugement.",
+      "badge": "Chercheur du Miroir",
+      "completion_message": "Vous vous êtes regardé dans le miroir — il est temps de vraiment vous réformer.",
+      "card_subtitle": "3 chapitres · 29 pages · ~106 min au total"
+    },
+    "Origin-of-Evil": {
+      "title": "L'Ennemi Démasqué",
+      "description": "L'origine du péché, la chute de Satan et ses actions contre l'humanité.",
+      "badge": "Révélateur de Vérité",
+      "completion_message": "Vous avez démasqué la plus ancienne tromperie de l'univers.",
+      "card_subtitle": "5 chapitres · 42 pages · ~157 min au total"
+    },
+    "Spiritualism": {
+      "title": "Murmures de la Tombe",
+      "description": "Croyances sur la mort, l'immortalité de l'âme et la communication avec les morts.",
+      "badge": "Esprit Discernant",
+      "completion_message": "Vous avez appris à distinguer la vérité des murmures dans l'obscurité.",
+      "card_subtitle": "1 chapitre · 8 pages · ~30 min au total"
+    },
+    "Liberty": {
+      "title": "La Dernière Liberté",
+      "description": "La liberté religieuse, la persécution pour motif de conscience et l'union de l'Église et de l'État.",
+      "badge": "Défenseur de la Liberté",
+      "completion_message": "Vous avez découvert ce qui est vraiment en jeu quand la liberté est menacée.",
+      "card_subtitle": "1 chapitre · 14 pages · ~49 min au total"
+    },
+    "Final-Conflict": {
+      "title": "Le Compte à Rebours Final",
+      "description": "Les derniers événements eschatologiques : conflit mondial, temps de détresse et fin du grand conflit.",
+      "badge": "Vainqueur",
+      "completion_message": "Vous êtes arrivé à la fin de l'histoire — et au commencement de l'éternité.",
+      "card_subtitle": "7 chapitres · 69 pages · ~252 min au total"
+    },
+    "Appendix": {
+      "title": "Dans les Coulisses",
+      "description": "Notes, références et révisions complémentaires au texte principal.",
+      "badge": "Érudit Accompli",
+      "completion_message": "Vous êtes allé plus loin que la plupart ne le font jamais. Une véritable érudition.",
+      "card_subtitle": "1 chapitre · 20 pages · ~60 min au total",
+      "nullChapterTitles": [
+        "Annexe"
+      ]
+    }
+  },
+  "de": {
+    "Introduction": {
+      "title": "Warum Dieser Kampf für Dich Wichtig Ist",
+      "description": "Einführende Texte, die Zweck und Grundlage des Buches darstellen.",
+      "badge": "Wahrheitssucher",
+      "completion_message": "Du hast den ersten Schritt in die größte je erzählte Geschichte gemacht.",
+      "card_subtitle": "2 Kapitel · 8 Seiten · ~24 Min. insgesamt",
+      "nullChapterTitles": [
+        "Vorwort",
+        "Einleitung"
+      ]
+    },
+    "Decline": {
+      "title": "Wenn das Licht Erlischt: Der Fall einer Heiligen Stadt",
+      "description": "Der geistliche Niedergang Israels und der frühen christlichen Kirche, der im mittelalterlichen Abfall gipfelt.",
+      "badge": "Zeuge des Falls",
+      "completion_message": "Du hast miterlebt, wie sich Finsternis unbemerkt einschleichen kann — bleib wachsam für das, was kommt.",
+      "card_subtitle": "3 Kapitel · 31 Seiten · ~112 Min. insgesamt"
+    },
+    "Forerunners": {
+      "title": "Stimmen in der Wüste",
+      "description": "Bewegungen und Persönlichkeiten, die den Weg für die protestantische Reformation ebneten.",
+      "badge": "Fackelträger",
+      "completion_message": "Du hast die mutigen Stimmen kennengelernt, die sich weigerten zu schweigen.",
+      "card_subtitle": "3 Kapitel · 42 Seiten · ~148 Min. insgesamt"
+    },
+    "Reformation": {
+      "title": "Ein Mann Gegen ein Imperium",
+      "description": "Der Kern der Reformationsbewegung, angeführt von Luther und seinen Zeitgenossen in Deutschland und der Schweiz.",
+      "badge": "Herz eines Reformators",
+      "completion_message": "Du hast an der Seite der Reformatoren gestanden, die ein Imperium erschütterten.",
+      "card_subtitle": "5 Kapitel · 65 Seiten · ~229 Min. insgesamt"
+    },
+    "Europe": {
+      "title": "Das Feuer Breitet Sich Aus",
+      "description": "Die Ausbreitung und die Herausforderungen der Reformation in anderen europäischen Ländern.",
+      "badge": "Flammenträger",
+      "completion_message": "Du hast gesehen, wie sich die Wahrheit wie ein Lauffeuer über einen Kontinent ausbreitete.",
+      "card_subtitle": "4 Kapitel · 56 Seiten · ~197 Min. insgesamt"
+    },
+    "America": {
+      "title": "Eine Neue Welt, Eine Letzte Hoffnung",
+      "description": "Die religiöse Migration in die Neue Welt und der Aufstieg neuer geistlicher Führer.",
+      "badge": "Pionier der Neuen Welt",
+      "completion_message": "Du hast den Ozean überquert, hinein in ein neues Kapitel der Hoffnung.",
+      "card_subtitle": "3 Kapitel · 40 Seiten · ~141 Min. insgesamt"
+    },
+    "Prophecy": {
+      "title": "Die Uhr Tickt",
+      "description": "Die adventistische Bewegung des 19. Jahrhunderts, prophetisches Studium und die Erwartung der Wiederkunft Christi.",
+      "badge": "Zeitwächter",
+      "completion_message": "Du hast die Tage gezählt mit denen, die den Himmel beobachteten.",
+      "card_subtitle": "4 Kapitel · 48 Seiten · ~171 Min. insgesamt"
+    },
+    "Sanctuary": {
+      "title": "Hinter dem Vorhang",
+      "description": "Die Lehre vom himmlischen Heiligtum und Christi Dienst im Gericht.",
+      "badge": "Wanderer hinter dem Vorhang",
+      "completion_message": "Du bist hinter den Vorhang getreten, zur heiligsten aller Wahrheiten.",
+      "card_subtitle": "3 Kapitel · 30 Seiten · ~109 Min. insgesamt"
+    },
+    "Revival": {
+      "title": "Der Spiegel der Seele",
+      "description": "Ein Aufruf zu persönlicher Reform, geistlicher Erweckung und Vorbereitung auf das Gericht.",
+      "badge": "Spiegelsucher",
+      "completion_message": "Du hast in den Spiegel geschaut — jetzt ist es Zeit, dich wirklich zu reformieren.",
+      "card_subtitle": "3 Kapitel · 29 Seiten · ~106 Min. insgesamt"
+    },
+    "Origin-of-Evil": {
+      "title": "Der Feind Entlarvt",
+      "description": "Der Ursprung der Sünde, der Fall Satans und sein Wirken gegen die Menschheit.",
+      "badge": "Enthüller der Wahrheit",
+      "completion_message": "Du hast die älteste Täuschung des Universums entlarvt.",
+      "card_subtitle": "5 Kapitel · 42 Seiten · ~157 Min. insgesamt"
+    },
+    "Spiritualism": {
+      "title": "Flüstern aus dem Grab",
+      "description": "Vorstellungen über den Tod, die Unsterblichkeit der Seele und die Kommunikation mit den Toten.",
+      "badge": "Unterscheidender Geist",
+      "completion_message": "Du hast gelernt, Wahrheit von Flüstern in der Dunkelheit zu unterscheiden.",
+      "card_subtitle": "1 Kapitel · 8 Seiten · ~30 Min. insgesamt"
+    },
+    "Liberty": {
+      "title": "Die Letzte Freiheit",
+      "description": "Religionsfreiheit, Verfolgung aus Gewissensgründen und die Verbindung von Kirche und Staat.",
+      "badge": "Verteidiger der Freiheit",
+      "completion_message": "Du hast entdeckt, was wirklich auf dem Spiel steht, wenn die Freiheit bedroht ist.",
+      "card_subtitle": "1 Kapitel · 14 Seiten · ~49 Min. insgesamt"
+    },
+    "Final-Conflict": {
+      "title": "Der Finale Countdown",
+      "description": "Die letzten endzeitlichen Ereignisse: weltweiter Konflikt, Zeit der Trübsal und das Ende des großen Kampfes.",
+      "badge": "Überwinder",
+      "completion_message": "Du hast das Ende der Geschichte erreicht — und den Anfang der Ewigkeit.",
+      "card_subtitle": "7 Kapitel · 69 Seiten · ~252 Min. insgesamt"
+    },
+    "Appendix": {
+      "title": "Hinter den Kulissen",
+      "description": "Anmerkungen, Verweise und ergänzende Überarbeitungen zum Haupttext.",
+      "badge": "Meistergelehrter",
+      "completion_message": "Du bist tiefer gegangen, als es die meisten je tun. Wahre Gelehrsamkeit.",
+      "card_subtitle": "1 Kapitel · 20 Seiten · ~60 Min. insgesamt",
+      "nullChapterTitles": [
+        "Anhang"
+      ]
+    }
+  },
+  "nl": {
+    "Introduction": {
+      "title": "Waarom Deze Strijd Voor Jou Belangrijk Is",
+      "description": "Inleidende teksten die het doel en de basis van het boek presenteren.",
+      "badge": "Zoeker van Waarheid",
+      "completion_message": "Je hebt de eerste stap gezet in het grootste verhaal ooit verteld.",
+      "card_subtitle": "2 hoofdstukken · 8 pagina's · ~24 min totaal",
+      "nullChapterTitles": [
+        "Voorwoord",
+        "Inleiding"
+      ]
+    },
+    "Decline": {
+      "title": "Als het Licht Vervaagt: De Val van een Heilige Stad",
+      "description": "De geestelijke neergang van Israël en de vroege christelijke kerk, culminerend in de middeleeuwse afval.",
+      "badge": "Getuige van de Val",
+      "completion_message": "Je hebt gezien hoe duisternis ongemerkt kan binnensluipen — blijf alert op wat komt.",
+      "card_subtitle": "3 hoofdstukken · 31 pagina's · ~112 min totaal"
+    },
+    "Forerunners": {
+      "title": "Stemmen in de Woestijn",
+      "description": "Bewegingen en personen die de weg baanden voor de protestantse Reformatie.",
+      "badge": "Fakkeldrager",
+      "completion_message": "Je hebt de moedige stemmen ontmoet die weigerden te zwijgen.",
+      "card_subtitle": "3 hoofdstukken · 42 pagina's · ~148 min totaal"
+    },
+    "Reformation": {
+      "title": "Eén Man Tegen een Rijk",
+      "description": "De kern van de Reformatiebeweging geleid door Luther en zijn tijdgenoten in Duitsland en Zwitserland.",
+      "badge": "Hart van een Hervormer",
+      "completion_message": "Je hebt naast de hervormers gestaan die een rijk deden schudden.",
+      "card_subtitle": "5 hoofdstukken · 65 pagina's · ~229 min totaal"
+    },
+    "Europe": {
+      "title": "Het Vuur Verspreidt Zich",
+      "description": "De uitbreiding en uitdagingen van de Reformatie in andere Europese landen.",
+      "badge": "Vlamverspreider",
+      "completion_message": "Je hebt gezien hoe de waarheid zich als een lopend vuurtje over een continent verspreidde.",
+      "card_subtitle": "4 hoofdstukken · 56 pagina's · ~197 min totaal"
+    },
+    "America": {
+      "title": "Een Nieuwe Wereld, Een Laatste Hoop",
+      "description": "De religieuze migratie naar de Nieuwe Wereld en de opkomst van nieuwe geestelijke leiders.",
+      "badge": "Pionier van de Nieuwe Wereld",
+      "completion_message": "Je hebt de oceaan overgestoken naar een nieuw hoofdstuk van hoop.",
+      "card_subtitle": "3 hoofdstukken · 40 pagina's · ~141 min totaal"
+    },
+    "Prophecy": {
+      "title": "De Klok Tikt Door",
+      "description": "De adventbeweging van de 19e eeuw, profetische studie en de verwachting van Christus' wederkomst.",
+      "badge": "Tijdwachter",
+      "completion_message": "Je hebt de dagen afgeteld met hen die de hemel in de gaten hielden.",
+      "card_subtitle": "4 hoofdstukken · 48 pagina's · ~171 min totaal"
+    },
+    "Sanctuary": {
+      "title": "Achter de Sluier",
+      "description": "De leer van het hemels heiligdom en Christus' bediening in het oordeel.",
+      "badge": "Wandelaar achter de Sluier",
+      "completion_message": "Je bent achter de sluier gestapt, naar de heiligste van alle waarheden.",
+      "card_subtitle": "3 hoofdstukken · 30 pagina's · ~109 min totaal"
+    },
+    "Revival": {
+      "title": "De Spiegel van de Ziel",
+      "description": "Een oproep tot persoonlijke hervorming, geestelijke opwekking en voorbereiding op het oordeel.",
+      "badge": "Zoeker van de Spiegel",
+      "completion_message": "Je hebt in de spiegel gekeken — nu is het tijd om écht te hervormen.",
+      "card_subtitle": "3 hoofdstukken · 29 pagina's · ~106 min totaal"
+    },
+    "Origin-of-Evil": {
+      "title": "De Vijand Ontmaskerd",
+      "description": "De oorsprong van zonde, de val van Satan en zijn daden tegen de mensheid.",
+      "badge": "Onthuller van Waarheid",
+      "completion_message": "Je hebt het oudste bedrog van het universum ontmaskerd.",
+      "card_subtitle": "5 hoofdstukken · 42 pagina's · ~157 min totaal"
+    },
+    "Spiritualism": {
+      "title": "Fluisteringen uit het Graf",
+      "description": "Opvattingen over de dood, de onsterfelijkheid van de ziel en communicatie met de doden.",
+      "badge": "Onderscheidende Geest",
+      "completion_message": "Je hebt geleerd waarheid te onderscheiden van fluisteringen in het duister.",
+      "card_subtitle": "1 hoofdstuk · 8 pagina's · ~30 min totaal"
+    },
+    "Liberty": {
+      "title": "De Laatste Vrijheid",
+      "description": "Godsdienstvrijheid, vervolging om gewetenskwesties en de vereniging van kerk en staat.",
+      "badge": "Verdediger van Vrijheid",
+      "completion_message": "Je hebt ontdekt wat er werkelijk op het spel staat wanneer vrijheid wordt bedreigd.",
+      "card_subtitle": "1 hoofdstuk · 14 pagina's · ~49 min totaal"
+    },
+    "Final-Conflict": {
+      "title": "Het Laatste Aftellen",
+      "description": "De laatste eindtijdgebeurtenissen: wereldwijd conflict, de tijd van benauwdheid en het einde van de grote strijd.",
+      "badge": "Overwinnaar",
+      "completion_message": "Je hebt het einde van het verhaal bereikt — en het begin van de eeuwigheid.",
+      "card_subtitle": "7 hoofdstukken · 69 pagina's · ~252 min totaal"
+    },
+    "Appendix": {
+      "title": "Achter de Schermen",
+      "description": "Aantekeningen, verwijzingen en aanvullende herzieningen van de hoofdtekst.",
+      "badge": "Meestergeleerde",
+      "completion_message": "Je bent dieper gegaan dan de meesten ooit doen. Ware geleerdheid.",
+      "card_subtitle": "1 hoofdstuk · 20 pagina's · ~60 min totaal",
+      "nullChapterTitles": [
+        "Appendix"
+      ]
+    }
+  },
+  "ru": {
+    "Introduction": {
+      "title": "Почему Эта Битва Важна для Тебя",
+      "description": "Вступительные тексты, раскрывающие цель и основу книги.",
+      "badge": "Искатель Истины",
+      "completion_message": "Ты сделал первый шаг в величайшей из когда-либо рассказанных историй.",
+      "card_subtitle": "2 главы · 8 страниц · ~24 мин всего",
+      "nullChapterTitles": [
+        "Предисловие",
+        "Введение"
+      ]
+    },
+    "Decline": {
+      "title": "Когда Свет Угасает: Падение Святого Города",
+      "description": "Духовный упадок Израиля и раннехристианской церкви, завершившийся средневековым отступничеством.",
+      "badge": "Свидетель Падения",
+      "completion_message": "Ты стал свидетелем того, как тьма может подкрасться незаметно — будь бдителен к тому, что впереди.",
+      "card_subtitle": "3 главы · 31 страница · ~112 мин всего"
+    },
+    "Forerunners": {
+      "title": "Голоса в Пустыне",
+      "description": "Движения и личности, проложившие путь протестантской Реформации.",
+      "badge": "Носитель Факела",
+      "completion_message": "Ты встретил смелые голоса, отказавшиеся молчать.",
+      "card_subtitle": "3 главы · 42 страницы · ~148 мин всего"
+    },
+    "Reformation": {
+      "title": "Один Человек Против Империи",
+      "description": "Ядро движения Реформации во главе с Лютером и его современниками в Германии и Швейцарии.",
+      "badge": "Сердце Реформатора",
+      "completion_message": "Ты стоял рядом с реформаторами, потрясшими империю.",
+      "card_subtitle": "5 глав · 65 страниц · ~229 мин всего"
+    },
+    "Europe": {
+      "title": "Огонь Распространяется",
+      "description": "Расширение и вызовы Реформации в других европейских странах.",
+      "badge": "Разносчик Пламени",
+      "completion_message": "Ты видел, как истина распространялась подобно лесному пожару по целому континенту.",
+      "card_subtitle": "4 главы · 56 страниц · ~197 мин всего"
+    },
+    "America": {
+      "title": "Новый Мир, Последняя Надежда",
+      "description": "Религиозная миграция в Новый Свет и появление новых духовных лидеров.",
+      "badge": "Первопроходец Нового Мира",
+      "completion_message": "Ты пересек океан к новой главе надежды.",
+      "card_subtitle": "3 главы · 40 страниц · ~141 мин всего"
+    },
+    "Prophecy": {
+      "title": "Часы Тикают",
+      "description": "Адвентистское движение 19 века, изучение пророчеств и ожидание возвращения Христа.",
+      "badge": "Страж Времени",
+      "completion_message": "Ты считал дни вместе с теми, кто наблюдал за небесами.",
+      "card_subtitle": "4 главы · 48 страниц · ~171 мин всего"
+    },
+    "Sanctuary": {
+      "title": "За Завесой",
+      "description": "Учение о небесном святилище и служении Христа в суде.",
+      "badge": "Странник за Завесой",
+      "completion_message": "Ты вошел за завесу, к самой святой из всех истин.",
+      "card_subtitle": "3 главы · 30 страниц · ~109 мин всего"
+    },
+    "Revival": {
+      "title": "Зеркало Души",
+      "description": "Призыв к личной реформе, духовному пробуждению и подготовке к суду.",
+      "badge": "Искатель Зеркала",
+      "completion_message": "Ты посмотрел в зеркало — теперь пришло время по-настоящему измениться.",
+      "card_subtitle": "3 главы · 29 страниц · ~106 мин всего"
+    },
+    "Origin-of-Evil": {
+      "title": "Враг Разоблачен",
+      "description": "Происхождение греха, падение сатаны и его действия против человечества.",
+      "badge": "Разоблачитель Истины",
+      "completion_message": "Ты разоблачил древнейший обман во вселенной.",
+      "card_subtitle": "5 глав · 42 страницы · ~157 мин всего"
+    },
+    "Spiritualism": {
+      "title": "Шепот из Могилы",
+      "description": "Представления о смерти, бессмертии души и общении с умершими.",
+      "badge": "Проницательный Ум",
+      "completion_message": "Ты научился отличать истину от шепота во тьме.",
+      "card_subtitle": "1 глава · 8 страниц · ~30 мин всего"
+    },
+    "Liberty": {
+      "title": "Последняя Свобода",
+      "description": "Религиозная свобода, гонения за убеждения и союз церкви и государства.",
+      "badge": "Защитник Свободы",
+      "completion_message": "Ты понял, что действительно поставлено на карту, когда свобода под угрозой.",
+      "card_subtitle": "1 глава · 14 страниц · ~49 мин всего"
+    },
+    "Final-Conflict": {
+      "title": "Финальный Отсчет",
+      "description": "Последние эсхатологические события: мировой конфликт, время скорби и завершение великой борьбы.",
+      "badge": "Победитель",
+      "completion_message": "Ты достиг конца истории — и начала вечности.",
+      "card_subtitle": "7 глав · 69 страниц · ~252 мин всего"
+    },
+    "Appendix": {
+      "title": "За Кулисами",
+      "description": "Примечания, ссылки и дополнительные уточнения к основному тексту.",
+      "badge": "Истинный Знаток",
+      "completion_message": "Ты погрузился глубже, чем большинство когда-либо решается. Настоящая эрудиция.",
+      "card_subtitle": "1 глава · 20 страниц · ~60 мин всего",
+      "nullChapterTitles": [
+        "Приложение"
+      ]
+    }
+  },
+  "zh": {
+    "Introduction": {
+      "title": "为何这场战役与你息息相关",
+      "description": "介绍本书目的与基础的引言文字。",
+      "badge": "真理寻求者",
+      "completion_message": "你已迈出了通往有史以来最伟大故事的第一步。",
+      "card_subtitle": "2 章 · 8 页 · 共约 24 分钟",
+      "nullChapterTitles": [
+        "序言",
+        "引言"
+      ]
+    },
+    "Decline": {
+      "title": "当光明渐逝：一座圣城的陷落",
+      "description": "以色列与早期基督教会的属灵衰落，最终演变为中世纪的大背道。",
+      "badge": "陷落的见证者",
+      "completion_message": "你目睹了黑暗如何悄然潜入——请为接下来的内容保持警醒。",
+      "card_subtitle": "3 章 · 31 页 · 共约 112 分钟"
+    },
+    "Forerunners": {
+      "title": "旷野中的呼声",
+      "description": "为新教改教运动铺路的运动与人物。",
+      "badge": "火炬手",
+      "completion_message": "你结识了那些拒绝沉默的勇敢声音。",
+      "card_subtitle": "3 章 · 42 页 · 共约 148 分钟"
+    },
+    "Reformation": {
+      "title": "一人对抗一个帝国",
+      "description": "由马丁·路德及其同时代人在德国与瑞士领导的改教运动核心。",
+      "badge": "改革者之心",
+      "completion_message": "你与那些撼动了一个帝国的改教者并肩而立。",
+      "card_subtitle": "5 章 · 65 页 · 共约 229 分钟"
+    },
+    "Europe": {
+      "title": "星火燎原",
+      "description": "改教运动在其他欧洲国家的扩展与所面临的挑战。",
+      "badge": "火焰传播者",
+      "completion_message": "你见证了真理如野火般席卷整个大陆。",
+      "card_subtitle": "4 章 · 56 页 · 共约 197 分钟"
+    },
+    "America": {
+      "title": "新大陆，最后的希望",
+      "description": "迁往新大陆的宗教移民，以及新兴属灵领袖的崛起。",
+      "badge": "新大陆先锋",
+      "completion_message": "你已跨越大洋，进入充满希望的新篇章。",
+      "card_subtitle": "3 章 · 40 页 · 共约 141 分钟"
+    },
+    "Prophecy": {
+      "title": "时钟正在滴答作响",
+      "description": "十九世纪的复临运动、预言研究，以及对基督复临的期盼。",
+      "badge": "时间守望者",
+      "completion_message": "你与那些仰望天空的人一同数算日子。",
+      "card_subtitle": "4 章 · 48 页 · 共约 171 分钟"
+    },
+    "Sanctuary": {
+      "title": "幔子之后",
+      "description": "天上圣所的教义与基督在审判中的服事。",
+      "badge": "幔内行者",
+      "completion_message": "你已踏入幔子之后，来到最神圣的真理面前。",
+      "card_subtitle": "3 章 · 30 页 · 共约 109 分钟"
+    },
+    "Revival": {
+      "title": "灵魂之镜",
+      "description": "呼召个人悔改、属灵复兴，以及为审判作准备。",
+      "badge": "明镜寻索者",
+      "completion_message": "你已照过镜子——现在是真正悔改的时候了。",
+      "card_subtitle": "3 章 · 29 页 · 共约 106 分钟"
+    },
+    "Origin-of-Evil": {
+      "title": "揭露仇敌",
+      "description": "罪恶的起源、撒但的堕落，以及他针对人类所采取的行动。",
+      "badge": "真理揭示者",
+      "completion_message": "你揭穿了宇宙中最古老的谎言。",
+      "card_subtitle": "5 章 · 42 页 · 共约 157 分钟"
+    },
+    "Spiritualism": {
+      "title": "来自坟墓的低语",
+      "description": "关于死亡、灵魂不朽以及与死者交流的种种信念。",
+      "badge": "明辨之心",
+      "completion_message": "你学会了在黑暗中的低语中分辨出真理。",
+      "card_subtitle": "1 章 · 8 页 · 共约 30 分钟"
+    },
+    "Liberty": {
+      "title": "最后的自由",
+      "description": "宗教自由、因良心问题而受到的逼迫，以及政教合一。",
+      "badge": "自由捍卫者",
+      "completion_message": "你已发现，当自由受到威胁时，真正的利害关系是什么。",
+      "card_subtitle": "1 章 · 14 页 · 共约 49 分钟"
+    },
+    "Final-Conflict": {
+      "title": "最后倒计时",
+      "description": "末世的最终事件：全球冲突、大艰难时期，以及大斗争的终结。",
+      "badge": "得胜者",
+      "completion_message": "你已到达故事的终点——也是永恒的起点。",
+      "card_subtitle": "7 章 · 69 页 · 共约 252 分钟"
+    },
+    "Appendix": {
+      "title": "幕后花絮",
+      "description": "对正文的注释、参考资料与补充修订。",
+      "badge": "博学之士",
+      "completion_message": "你比大多数人钻研得更深。这才是真正的学识。",
+      "card_subtitle": "1 章 · 20 页 · 共约 60 分钟",
+      "nullChapterTitles": [
+        "附录"
+      ]
+    }
+  },
+  "ar": {
+    "Introduction": {
+      "title": "لماذا تهمّك هذه المعركة",
+      "description": "نصوص تمهيدية تعرض هدف الكتاب وأساسه.",
+      "badge": "الباحث عن الحق",
+      "completion_message": "لقد خطوت الخطوة الأولى في أعظم قصة رويت على الإطلاق.",
+      "card_subtitle": "فصلان · 8 صفحات · نحو 24 دقيقة إجمالاً",
+      "nullChapterTitles": [
+        "تصدير",
+        "مقدمة"
+      ]
+    },
+    "Decline": {
+      "title": "حين يخبو النور: سقوط مدينة مقدسة",
+      "description": "الانحدار الروحي لإسرائيل والكنيسة المسيحية الأولى، الذي بلغ ذروته في الردة في العصور الوسطى.",
+      "badge": "شاهد السقوط",
+      "completion_message": "لقد شهدت كيف يمكن للظلام أن يتسلل دون أن يُلحظ — ابقَ يقظًا لما هو آتٍ.",
+      "card_subtitle": "3 فصول · 31 صفحة · نحو 112 دقيقة إجمالاً"
+    },
+    "Forerunners": {
+      "title": "أصوات في البرية",
+      "description": "الحركات والأفراد الذين مهّدوا الطريق للإصلاح البروتستانتي.",
+      "badge": "حامل الشعلة",
+      "completion_message": "لقد تعرّفت على الأصوات الشجاعة التي رفضت الصمت.",
+      "card_subtitle": "3 فصول · 42 صفحة · نحو 148 دقيقة إجمالاً"
+    },
+    "Reformation": {
+      "title": "رجل واحد في مواجهة إمبراطورية",
+      "description": "جوهر حركة الإصلاح بقيادة لوثر ومعاصريه في ألمانيا وسويسرا.",
+      "badge": "قلب مُصلِح",
+      "completion_message": "لقد وقفت إلى جانب المصلحين الذين هزّوا إمبراطورية.",
+      "card_subtitle": "5 فصول · 65 صفحة · نحو 229 دقيقة إجمالاً"
+    },
+    "Europe": {
+      "title": "النار تنتشر",
+      "description": "توسّع الإصلاح وتحدياته في أمم أوروبية أخرى.",
+      "badge": "ناشر اللهب",
+      "completion_message": "لقد رأيت الحق ينتشر كالنار في الهشيم عبر قارة بأكملها.",
+      "card_subtitle": "4 فصول · 56 صفحة · نحو 197 دقيقة إجمالاً"
+    },
+    "America": {
+      "title": "عالم جديد، أمل أخير",
+      "description": "الهجرة الدينية إلى العالم الجديد وظهور قادة روحيين جدد.",
+      "badge": "رائد العالم الجديد",
+      "completion_message": "لقد عبرت المحيط نحو فصل جديد من الأمل.",
+      "card_subtitle": "3 فصول · 40 صفحة · نحو 141 دقيقة إجمالاً"
+    },
+    "Prophecy": {
+      "title": "الساعة تدق",
+      "description": "حركة الأدفنتست في القرن التاسع عشر، ودراسة النبوة، وترقّب عودة المسيح.",
+      "badge": "حارس الزمن",
+      "completion_message": "لقد أحصيت الأيام مع أولئك الذين راقبوا السماء.",
+      "card_subtitle": "4 فصول · 48 صفحة · نحو 171 دقيقة إجمالاً"
+    },
+    "Sanctuary": {
+      "title": "خلف الحجاب",
+      "description": "عقيدة المقدس السماوي وخدمة المسيح في الدينونة.",
+      "badge": "سالك خلف الحجاب",
+      "completion_message": "لقد دخلت إلى ما وراء الحجاب، نحو أقدس الحقائق.",
+      "card_subtitle": "3 فصول · 30 صفحة · نحو 109 دقيقة إجمالاً"
+    },
+    "Revival": {
+      "title": "مرآة النفس",
+      "description": "دعوة إلى الإصلاح الشخصي والانتعاش الروحي والاستعداد للدينونة.",
+      "badge": "الباحث في المرآة",
+      "completion_message": "لقد نظرت في المرآة — وقد حان الوقت الآن للإصلاح الحقيقي.",
+      "card_subtitle": "3 فصول · 29 صفحة · نحو 106 دقيقة إجمالاً"
+    },
+    "Origin-of-Evil": {
+      "title": "كشف العدو",
+      "description": "أصل الخطية، وسقوط الشيطان، وأعماله ضد البشرية.",
+      "badge": "كاشف الحق",
+      "completion_message": "لقد كشفت أقدم خديعة في الكون.",
+      "card_subtitle": "5 فصول · 42 صفحة · نحو 157 دقيقة إجمالاً"
+    },
+    "Spiritualism": {
+      "title": "همسات من القبر",
+      "description": "معتقدات حول الموت وخلود النفس والتواصل مع الموتى.",
+      "badge": "العقل المُميِّز",
+      "completion_message": "لقد تعلمت كيف تميّز الحق من الهمسات في الظلام.",
+      "card_subtitle": "فصل واحد · 8 صفحات · نحو 30 دقيقة إجمالاً"
+    },
+    "Liberty": {
+      "title": "الحرية الأخيرة",
+      "description": "الحرية الدينية، والاضطهاد بسبب قضايا الضمير، واتحاد الكنيسة والدولة.",
+      "badge": "المدافع عن الحرية",
+      "completion_message": "لقد اكتشفت ما هو المُعرَّض للخطر حقًا حين تتهدد الحرية.",
+      "card_subtitle": "فصل واحد · 14 صفحة · نحو 49 دقيقة إجمالاً"
+    },
+    "Final-Conflict": {
+      "title": "العد التنازلي الأخير",
+      "description": "الأحداث الأخروية الختامية: الصراع العالمي، وزمن الضيقة، ونهاية الصراع العظيم.",
+      "badge": "الغالب",
+      "completion_message": "لقد بلغت نهاية القصة — وبداية الأبدية.",
+      "card_subtitle": "7 فصول · 69 صفحة · نحو 252 دقيقة إجمالاً"
+    },
+    "Appendix": {
+      "title": "خلف الكواليس",
+      "description": "ملاحظات ومراجع ومراجعات تكميلية للنص الرئيسي.",
+      "badge": "العالِم المتمرّس",
+      "completion_message": "لقد تعمّقت أكثر مما يفعل معظم الناس. علمٌ حقيقي.",
+      "card_subtitle": "فصل واحد · 20 صفحة · نحو 60 دقيقة إجمالاً",
+      "nullChapterTitles": [
+        "ملحق"
+      ]
+    }
+  },
+  "cz": {
+    "Introduction": {
+      "title": "Proč Je Tento Boj Důležitý i Pro Tebe",
+      "description": "Úvodní texty představující účel a základ knihy.",
+      "badge": "Hledač Pravdy",
+      "completion_message": "Udělal jsi první krok do největšího příběhu, jaký byl kdy vyprávěn.",
+      "card_subtitle": "2 kapitoly · 8 stran · ~24 min celkem",
+      "nullChapterTitles": [
+        "Předmluva",
+        "Úvod"
+      ]
+    },
+    "Decline": {
+      "title": "Když Světlo Slábne: Pád Svatého Města",
+      "description": "Duchovní úpadek Izraele a rané křesťanské církve, vrcholící středověkým odpadnutím.",
+      "badge": "Svědek Pádu",
+      "completion_message": "Byl jsi svědkem toho, jak se temnota může vplížit nepozorovaně — zůstaň bdělý na to, co přijde dál.",
+      "card_subtitle": "3 kapitoly · 31 stran · ~112 min celkem"
+    },
+    "Forerunners": {
+      "title": "Hlasy na Poušti",
+      "description": "Hnutí a jednotlivci, kteří připravili cestu protestantské reformaci.",
+      "badge": "Nositel Pochodně",
+      "completion_message": "Poznal jsi odvážné hlasy, které odmítly mlčet.",
+      "card_subtitle": "3 kapitoly · 42 stran · ~148 min celkem"
+    },
+    "Reformation": {
+      "title": "Jeden Muž Proti Impériu",
+      "description": "Jádro reformačního hnutí vedeného Lutherem a jeho současníky v Německu a Švýcarsku.",
+      "badge": "Srdce Reformátora",
+      "completion_message": "Stál jsi po boku reformátorů, kteří otřásli impériem.",
+      "card_subtitle": "5 kapitol · 65 stran · ~229 min celkem"
+    },
+    "Europe": {
+      "title": "Oheň se Šíří",
+      "description": "Šíření a výzvy reformace v dalších evropských zemích.",
+      "badge": "Šiřitel Plamene",
+      "completion_message": "Viděl jsi, jak se pravda šíří jako požár napříč celým kontinentem.",
+      "card_subtitle": "4 kapitoly · 56 stran · ~197 min celkem"
+    },
+    "America": {
+      "title": "Nový Svět, Poslední Naděje",
+      "description": "Náboženská migrace do Nového světa a vzestup nových duchovních vůdců.",
+      "badge": "Průkopník Nového Světa",
+      "completion_message": "Přeplul jsi oceán do nové kapitoly naděje.",
+      "card_subtitle": "3 kapitoly · 40 stran · ~141 min celkem"
+    },
+    "Prophecy": {
+      "title": "Hodiny Odtikávají",
+      "description": "Adventní hnutí 19. století, prorocké studium a očekávání Kristova návratu.",
+      "badge": "Strážce Času",
+      "completion_message": "Počítal jsi dny spolu s těmi, kdo sledovali nebesa.",
+      "card_subtitle": "4 kapitoly · 48 stran · ~171 min celkem"
+    },
+    "Sanctuary": {
+      "title": "Za Oponou",
+      "description": "Nauka o nebeské svatyni a Kristově službě v soudu.",
+      "badge": "Poutník za Oponou",
+      "completion_message": "Vstoupil jsi za oponu, k nejsvětější ze všech pravd.",
+      "card_subtitle": "3 kapitoly · 30 stran · ~109 min celkem"
+    },
+    "Revival": {
+      "title": "Zrcadlo Duše",
+      "description": "Výzva k osobní nápravě, duchovnímu probuzení a přípravě na soud.",
+      "badge": "Hledač Zrcadla",
+      "completion_message": "Podíval ses do zrcadla — teď je čas se opravdu napravit.",
+      "card_subtitle": "3 kapitoly · 29 stran · ~106 min celkem"
+    },
+    "Origin-of-Evil": {
+      "title": "Nepřítel Odhalen",
+      "description": "Původ hříchu, pád Satana a jeho jednání proti lidstvu.",
+      "badge": "Odhalovatel Pravdy",
+      "completion_message": "Odhalil jsi nejstarší klam ve vesmíru.",
+      "card_subtitle": "5 kapitol · 42 stran · ~157 min celkem"
+    },
+    "Spiritualism": {
+      "title": "Šepot z Hrobu",
+      "description": "Přesvědčení o smrti, nesmrtelnosti duše a komunikaci s mrtvými.",
+      "badge": "Rozlišující Mysl",
+      "completion_message": "Naučil ses rozeznávat pravdu od šepotu ve tmě.",
+      "card_subtitle": "1 kapitola · 8 stran · ~30 min celkem"
+    },
+    "Liberty": {
+      "title": "Poslední Svoboda",
+      "description": "Náboženská svoboda, pronásledování za otázky svědomí a spojení církve se státem.",
+      "badge": "Obhájce Svobody",
+      "completion_message": "Zjistil jsi, co je skutečně v sázce, když je svoboda ohrožena.",
+      "card_subtitle": "1 kapitola · 14 stran · ~49 min celkem"
+    },
+    "Final-Conflict": {
+      "title": "Poslední Odpočet",
+      "description": "Poslední eschatologické události: celosvětový konflikt, čas soužení a konec velkého sporu.",
+      "badge": "Vítěz",
+      "completion_message": "Dosáhl jsi konce příběhu — a začátku věčnosti.",
+      "card_subtitle": "7 kapitol · 69 stran · ~252 min celkem"
+    },
+    "Appendix": {
+      "title": "Zákulisí",
+      "description": "Poznámky, odkazy a doplňující revize k hlavnímu textu.",
+      "badge": "Mistr Učenec",
+      "completion_message": "Zašel jsi hlouběji, než kam se dostane většina lidí. Skutečné bádání.",
+      "card_subtitle": "1 kapitola · 20 stran · ~60 min celkem",
+      "nullChapterTitles": [
+        "Dodatek"
+      ]
+    }
+  },
+  "tw": {
+    "Introduction": {
+      "title": "Adɛn Nti a Saa Ko Yi Ho Hia Wo",
+      "description": "Nsɛm a edi kan a ɛkyerɛ nwoma no botae ne ne fapem.",
+      "badge": "Nokware Hwehwɛfoɔ",
+      "completion_message": "Woatu anammɔn a edi kan akɔ asɛm kɛseɛ a wɔaka pɛn no mu.",
+      "card_subtitle": "Ti 2 · Nkratafa 8 · Bɛyɛ simma 24",
+      "nullChapterTitles": [
+        "Nkyerɛkyerɛmu",
+        "Nnianim Asɛm"
+      ]
+    },
+    "Decline": {
+      "title": "Sɛ Hann No Yera: Kuropɔn Kronkron Bi Asehwe",
+      "description": "Israel ne tete Kristofoɔ asɔre honhom fam asehwe, a ɛkɔsi Atemmufoɔ mfeɛ mu gyidie a wɔapa.",
+      "badge": "Asehwe No Ho Danseni",
+      "completion_message": "Woahunu sɛnea esum tumi kɔ mu kɔyɛ kɔkɔɔkɔɔ a obiara nnhu — hwɛ yie ma deɛ ɛreba.",
+      "card_subtitle": "Ti 3 · Nkratafa 31 · Bɛyɛ simma 112"
+    },
+    "Forerunners": {
+      "title": "Nnyeɛ a Ɛwɔ Ɛserɛ So",
+      "description": "Nkabɔmu ne nnipa a wɔsiesiee ɛkwan maa Protestant Reformation no.",
+      "badge": "Kanea Sokafoɔ",
+      "completion_message": "Woahyia nnyeɛ a wɔyɛ akokoɔdurufoɔ a wɔampene sɛ wɔbɛyɛ komm.",
+      "card_subtitle": "Ti 3 · Nkratafa 42 · Bɛyɛ simma 148"
+    },
+    "Reformation": {
+      "title": "Ɔbarima Baako Tia Ahemman Kɛseɛ",
+      "description": "Reformation dwumadie no fapem a Luther ne ne mmerɛ sofoɔ dii anim wɔ Germany ne Switzerland.",
+      "badge": "Ɔyɛsiesiefoɔ Akoma",
+      "completion_message": "Wo ne wɔn a wɔyɛɛ nsakraeɛ a wɔwosoo ahemman kɛseɛ bi gyinaeɛ.",
+      "card_subtitle": "Ti 5 · Nkratafa 65 · Bɛyɛ simma 229"
+    },
+    "Europe": {
+      "title": "Ogya No Trɛ",
+      "description": "Reformation no mu nkɔsoɔ ne nsɛnnennen a ɛbaa aman a aka wɔ Europe mu.",
+      "badge": "Ogyaframa Trɛfoɔ",
+      "completion_message": "Woahunu sɛnea nokware trɛ te sɛ ogyaframa wɔ asaase kɛseɛ bi so.",
+      "card_subtitle": "Ti 4 · Nkratafa 56 · Bɛyɛ simma 197"
+    },
+    "America": {
+      "title": "Ewiase Foforɔ, Anidasoɔ A Etwa Toɔ",
+      "description": "Ɔsom mu akwantuo a wɔkɔɔ Ewiase Foforɔ no mu ne akwankyerɛfoɔ honhom fam foforɔ a wɔsɔree.",
+      "badge": "Ewiase Foforɔ Kanea Sofoɔ",
+      "completion_message": "Woatwa ɛpo akɔ anidasoɔ ti foforɔ mu.",
+      "card_subtitle": "Ti 3 · Nkratafa 40 · Bɛyɛ simma 141"
+    },
+    "Prophecy": {
+      "title": "Dɔnhwere No Rekan",
+      "description": "Adventist dwumadie a ɛbaa mfeha 19 mu, nkɔmhyɛ ho adesua, ne Kristo ba a wɔretwɛn no.",
+      "badge": "Berɛ Sohwɛfoɔ",
+      "completion_message": "Wo ne wɔn a wɔhwɛɛ ɔsoro no kanee nna no.",
+      "card_subtitle": "Ti 4 · Nkratafa 48 · Bɛyɛ simma 171"
+    },
+    "Sanctuary": {
+      "title": "Ntwamu Ntoma No Akyi",
+      "description": "Ɔsoro kronkronbea ho nkyerɛkyerɛ ne Kristo adwuma wɔ atemmuo mu.",
+      "badge": "Ntwamu Ntoma Akyi Ɔnanteni",
+      "completion_message": "Woahyɛn ntwamu ntoma no akyi akɔ nokware a ɛkron sene biara mu.",
+      "card_subtitle": "Ti 3 · Nkratafa 30 · Bɛyɛ simma 109"
+    },
+    "Revival": {
+      "title": "Ɔkra Ahwehwɛ",
+      "description": "Frɛ a ɛfa ankasa nsakraeɛ, honhom mu nkanyane, ne ntoso a wɔyɛ ma atemmuo ho.",
+      "badge": "Ahwehwɛ Hwehwɛfoɔ",
+      "completion_message": "Woahwɛ ahwehwɛ no mu — seesei berɛ aduru sɛ wosakra ampa.",
+      "card_subtitle": "Ti 3 · Nkratafa 29 · Bɛyɛ simma 106"
+    },
+    "Origin-of-Evil": {
+      "title": "Wɔayi Ɔtamfoɔ No Adi",
+      "description": "Bɔne mfitiaseɛ, Ɔbonsam asehwe, ne ne nneyɛe a ɔde tia adasamma.",
+      "badge": "Nokware Adikyerɛfoɔ",
+      "completion_message": "Woayi nnaadaa a ɛtete sene biara wɔ amansan mu no adi.",
+      "card_subtitle": "Ti 5 · Nkratafa 42 · Bɛyɛ simma 157"
+    },
+    "Spiritualism": {
+      "title": "Nsɛm A Ɛfiri Damena Mu",
+      "description": "Gyidie a ɛfa owuo, ɔkra a ɛnwu da, ne nkitahodie a wɔne awufoɔ yɛ ho.",
+      "badge": "Nhunumu Adwene",
+      "completion_message": "Woasua sɛnea wobɛhu nokware wɔ esum mu nsɛm mu.",
+      "card_subtitle": "Ti 1 · Nkratafa 8 · Bɛyɛ simma 30"
+    },
+    "Liberty": {
+      "title": "Ahofadie A Etwa Toɔ",
+      "description": "Ɔsom mu ahofadie, ɔtaneɛ a ɛfiri adwene ho nsɛm, ne asɔre ne ɔman a wɔabɔ mu.",
+      "badge": "Ahofadie Ɔbanbɔfoɔ",
+      "completion_message": "Woahunu deɛ ɛyɛ nokware wɔ hɔ ɛberɛ a wɔretwintwan ahofadie ho.",
+      "card_subtitle": "Ti 1 · Nkratafa 14 · Bɛyɛ simma 49"
+    },
+    "Final-Conflict": {
+      "title": "Nkan A Etwa Toɔ",
+      "description": "Awieeɛ mmerɛ nsɛm a etwa toɔ: ewiase nyinaa akokoakoko, ɔhaw berɛ, ne ko kɛseɛ no awieeɛ.",
+      "badge": "Nkonimdifoɔ",
+      "completion_message": "Woaduru asɛm no awieeɛ — ne daa daa mfitiaseɛ.",
+      "card_subtitle": "Ti 7 · Nkratafa 69 · Bɛyɛ simma 252"
+    },
+    "Appendix": {
+      "title": "Deɛ Ɛwɔ Akyi",
+      "description": "Nsɛm foforɔ, nkyerɛkyerɛmu, ne nsakraeɛ a wɔde ka nsɛm titire no ho.",
+      "badge": "Nyansahwehwɛfoɔ Kɛseɛ",
+      "completion_message": "Wokɔɔ mu dɔɔso sene sɛdeɛ nnipa dodoɔ no ara yɛ. Nokware nimdeɛ.",
+      "card_subtitle": "Ti 1 · Nkratafa 20 · Bɛyɛ simma 60",
+      "nullChapterTitles": [
+        "Deɛ Wɔde Ka Ho"
+      ]
+    }
+  },
+  "en": {
+    "Introduction": {
+      "title": "Why This Battle Matters to You",
+      "description": "Introductory texts presenting the purpose and foundation of the book.",
+      "badge": "Seeker of Truth",
+      "completion_message": "You've taken the first step into the greatest story ever told.",
+      "card_subtitle": "2 chapters · 8 pages · ~24 min total",
+      "nullChapterTitles": [
+        "Preface",
+        "Introduction"
+      ]
+    },
+    "Decline": {
+      "title": "When Light Fades: The Fall of a Holy City",
+      "description": "The spiritual decline of Israel and the early Christian church, culminating in medieval apostasy.",
+      "badge": "Witness of the Fall",
+      "completion_message": "You've witnessed how darkness can creep in unnoticed — stay alert for what comes next.",
+      "card_subtitle": "3 chapters · 31 pages · ~112 min total"
+    },
+    "Forerunners": {
+      "title": "Voices in the Wilderness",
+      "description": "Movements and individuals who paved the way for the Protestant Reformation.",
+      "badge": "Torchbearer",
+      "completion_message": "You've met the brave voices who refused to stay silent.",
+      "card_subtitle": "3 chapters · 42 pages · ~148 min total"
+    },
+    "Reformation": {
+      "title": "One Man Against an Empire",
+      "description": "The core of the Reformation movement led by Luther and his contemporaries in Germany and Switzerland.",
+      "badge": "Reformer's Heart",
+      "completion_message": "You've stood beside the reformers who shook an empire.",
+      "card_subtitle": "5 chapters · 65 pages · ~229 min total"
+    },
+    "Europe": {
+      "title": "The Fire Spreads",
+      "description": "The expansion and challenges of the Reformation in other European nations.",
+      "badge": "Flame Spreader",
+      "completion_message": "You've watched truth spread like wildfire across a continent.",
+      "card_subtitle": "4 chapters · 56 pages · ~197 min total"
+    },
+    "America": {
+      "title": "A New World, A Final Hope",
+      "description": "Religious migration to the New World and the rise of new spiritual leaders.",
+      "badge": "New World Pioneer",
+      "completion_message": "You've crossed the ocean into a new chapter of hope.",
+      "card_subtitle": "3 chapters · 40 pages · ~141 min total"
+    },
+    "Prophecy": {
+      "title": "The Clock Is Ticking",
+      "description": "The 19th-century Adventist movement, prophetic study, and the expectation of Christ's return.",
+      "badge": "Time Watcher",
+      "completion_message": "You've counted down the days with those who watched the skies.",
+      "card_subtitle": "4 chapters · 48 pages · ~171 min total"
+    },
+    "Sanctuary": {
+      "title": "Behind the Veil",
+      "description": "The doctrine of the heavenly sanctuary and Christ's ministry in judgment.",
+      "badge": "Veil Walker",
+      "completion_message": "You've stepped behind the veil into the holiest truth of all.",
+      "card_subtitle": "3 chapters · 30 pages · ~109 min total"
+    },
+    "Revival": {
+      "title": "The Mirror of the Soul",
+      "description": "A call to personal reform, spiritual revival, and preparation for judgment.",
+      "badge": "Mirror Seeker",
+      "completion_message": "You've looked into the mirror — now it's time to truly reform.",
+      "card_subtitle": "3 chapters · 29 pages · ~106 min total"
+    },
+    "Origin-of-Evil": {
+      "title": "The Enemy Unmasked",
+      "description": "The origin of sin, the fall of Satan, and his actions against humanity.",
+      "badge": "Truth Unveiler",
+      "completion_message": "You've unmasked the oldest deception in the universe.",
+      "card_subtitle": "5 chapters · 42 pages · ~157 min total"
+    },
+    "Spiritualism": {
+      "title": "Whispers From the Grave",
+      "description": "Beliefs about death, the immortality of the soul, and communication with the dead.",
+      "badge": "Discerning Mind",
+      "completion_message": "You've learned to tell truth from whispers in the dark.",
+      "card_subtitle": "1 chapter · 8 pages · ~30 min total"
+    },
+    "Liberty": {
+      "title": "The Last Freedom",
+      "description": "Religious liberty, persecution over matters of conscience, and the union of church and state.",
+      "badge": "Freedom Defender",
+      "completion_message": "You've discovered what's truly at stake when freedom is threatened.",
+      "card_subtitle": "1 chapter · 14 pages · ~49 min total"
+    },
+    "Final-Conflict": {
+      "title": "The Final Countdown",
+      "description": "The final eschatological events: worldwide conflict, the time of trouble, and the close of the great controversy.",
+      "badge": "Overcomer",
+      "completion_message": "You've reached the end of the story — and the beginning of eternity.",
+      "card_subtitle": "7 chapters · 69 pages · ~252 min total"
+    },
+    "Appendix": {
+      "title": "Behind the Scenes",
+      "description": "Notes, references, and supplementary revisions to the main text.",
+      "badge": "Master Scholar",
+      "completion_message": "You've gone deeper than most ever do. True scholarship.",
+      "card_subtitle": "1 chapter · 20 pages · ~60 min total",
+      "nullChapterTitles": [
+        "Appendix"
+      ]
+    }
+  }
+}

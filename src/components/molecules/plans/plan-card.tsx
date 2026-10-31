@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle2, PlayCircle } from "lucide-react";
 import { Plan } from "@/database/plans";
-import { usePlanProgress } from "@/hooks/use-plan-progress";
+import { useProgress } from "@/contexts/progress-context";
+import { useTranslations } from "next-intl";
 import { languages } from "@/config/languages";
 import { track } from "@vercel/analytics";
 
@@ -29,7 +30,8 @@ interface Props {
 }
 
 export function PlanCard({ plan, locale }: Props) {
-  const { getPlanEntry, startPlan } = usePlanProgress();
+  const { getPlanEntry, startPlan } = useProgress();
+  const t = useTranslations("reading-plan");
   const entry = getPlanEntry(plan.plan);
 
   const isStarted = !!entry;
@@ -39,6 +41,10 @@ export function PlanCard({ plan, locale }: Props) {
   const progressPct =
     totalDays > 0 ? Math.round((completedDays / totalDays) * 100) : 0;
 
+  // Use the first chapter's video thumbnail; fall back to locale book cover
+  const videoCover = plan.chapters.find((c) => c.videoCover)?.videoCover ?? null;
+  const coverSrc = videoCover ?? getBookCover(locale);
+
   return (
     <Link
       href={`/${locale}/guide/plan/${plan.plan}`}
@@ -46,13 +52,13 @@ export function PlanCard({ plan, locale }: Props) {
         if (!isStarted) startPlan(plan.plan);
         track("readingPlan_click", { planId: plan.plan });
       }}
-      className="group flex flex-col gap-4 text-primary transition-all duration-500 hover:scale-105"
+      className="group flex flex-col gap-4 rounded-2xl border border-transparent p-3 text-primary transition-all duration-300 hover:border-[#4fa6c2]/40 hover:bg-primary/[0.03]"
     >
       {/* Thumbnail — same aspect-video + rounded-xl as StudyGuideChapterCard */}
       <div className="relative aspect-video w-full overflow-hidden rounded-xl">
         <Image
-          src={getBookCover(locale)}
-          alt={`${plan.title} — book cover`}
+          src={coverSrc}
+          alt={`${plan.title} — cover`}
           fill
           className="cursor-pointer object-cover transition-all duration-500 ease-in-out"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -101,7 +107,7 @@ export function PlanCard({ plan, locale }: Props) {
           className="text-xs font-semibold uppercase tracking-widest text-[#4fa6c2]"
           style={{ fontFamily: "var(--font-rubik)" }}
         >
-          Plan {plan.order}
+          {t("plan-order", { order: plan.order })}
         </span>
         <p className="line-clamp-2 text-sm font-semibold leading-snug">
           {plan.title}
@@ -115,8 +121,8 @@ export function PlanCard({ plan, locale }: Props) {
       </div>
 
       {/* CTA — mirrors "Watch →" button */}
-      <span className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-xs font-semibold transition-colors group-hover:bg-primary/15">
-        {isCompleted ? "Review →" : isStarted ? "Continue →" : "Start plan →"}
+      <span className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-xs font-semibold transition-all duration-300 group-hover:border-[#4fa6c2] group-hover:bg-[#4fa6c2] group-hover:text-white">
+        {isCompleted ? t("card-review") : isStarted ? t("card-continue") : t("card-start")}
       </span>
     </Link>
   );

@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "El Conflicto de Los Siglos",
     "subtitle": "Descubra las respuestas a las preguntas más profundas sobre el destino de la humanidad. Descargue o reciba en casa el libro que revela la batalla entre el bien y el mal, y cómo puede prepararse para el futuro.",
-    "download-button": "Descargar",
+    "quote": "El acto capital que coronará el gran drama del engaño será que el mismo Satanás se dará por el Cristo.",
+    "quote-citation": "El Conflicto de Los Siglos, capítulo 39",
     "receive-at-home-button": "Recibir en casa"
   },
   "participate-page-container": {
@@ -307,6 +308,8 @@
     "no-account": "¿No tienes cuenta?",
     "have-account": "¿Ya tienes cuenta?",
     "success-verify": "Revisa tu correo para confirmar tu cuenta.",
+    "error-oauth": "Error al iniciar sesión con Google. Por favor, inténtalo de nuevo.",
+    "save-progress-banner": "¡Acabas de terminar un plan! Inicia sesión para guardar tu progreso, así podrás encontrar este plan más tarde y continuar desde cualquier dispositivo.",
     "hero-eyebrow": "Planes de lectura",
     "hero-title": "Sigue tu viaje a través de El Gran Conflicto",
     "hero-subtitle": "Inicia sesión para guardar tu progreso, marcar planes y continuar exactamente donde lo dejaste — en cualquier dispositivo.",
@@ -339,7 +342,24 @@
     "next-plan": "Siguiente: {title}",
     "reading-plans-label": "Planes de lectura",
     "chapters-label": "Capítulos",
-    "days-label": "Días para completar"
+    "days-label": "Días para completar",
+    "plan-order": "Plan {order}",
+    "card-review": "Revisar →",
+    "card-continue": "Continuar →",
+    "card-start": "Iniciar plan →",
+    "plans-title": "Planes de Lectura",
+    "tab-all": "Todos los planes",
+    "tab-in-progress": "En progreso",
+    "tab-completed": "Completados",
+    "empty-in-progress": "Aún no hay planes en progreso. ¡Comienza uno arriba!",
+    "empty-completed": "Aún no hay planes completados. ¡Sigue leyendo!",
+    "next-plan-teaser": "¿Listo para lo que sigue? Continúa con \"{title}\"",
+    "all-plans-completed": "¡Has completado todo el recorrido a través de {book}! 🎉",
+    "chapter-unavailable-offline": "Este capítulo aún no se ha descargado — conéctate a internet para leerlo.",
+    "retry": "Intentar de nuevo",
+    "chapter-english-fallback": "Esta sección aún no está traducida a tu idioma — mostrando el texto original en inglés.",
+    "watch-chapter-preview": "Ver el video de vista previa del capítulo",
+    "read-the-chapter": "Leer el capítulo"
   },
   "xp": {
     "level-label": "Nivel {level} · {label}",
@@ -355,6 +375,23 @@
     "level-4": "Historiador",
     "level-5": "Teólogo",
     "level-6": "Profeta",
-    "level-7": "Vencedor"
+    "level-7": "Vencedor",
+    "tier-bronze": "Bronce",
+    "tier-silver": "Plata",
+    "tier-gold": "Oro"
+  },
+  "world-age-section": {
+    "eyebrow": "Según la cronología bíblica",
+    "hook": "Los días de este mundo están contados",
+    "days-label": "días de conflicto entre el bien y el mal",
+    "caption": "Desde la creación, hace más de seis mil años, la Tierra ha sido el escenario de una batalla entre el bien y el mal — la misma historia que este libro revela.",
+    "mute-trailer": "Silenciar tráiler",
+    "unmute-trailer": "Activar sonido del tráiler",
+    "days": "Días",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "years": "Años",
+    "months": "Meses"
   }
 }

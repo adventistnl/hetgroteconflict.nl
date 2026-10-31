@@ -1,15 +1,9 @@
 "use client";
 
 import FormData from "@/app/interfaces/form-data";
-import { Button } from "@/components/atoms/button";
-import { BookCoverContainer } from "@/components/molecules/book-cover-container";
 import { CompaniesContainer } from "@/components/molecules/companies-container";
 // import { ReceiveAtHomeContainer } from "@/components/molecules/receive-at-home-container";
-import { SummaryContainer } from "@/components/organisms/summary-container";
-import { useTranslations } from "next-intl";
 import { useEffect } from "react";
-import { HiOutlineCloudDownload as CloudIcon } from "react-icons/hi";
-import { MdOutlineMail as MailIcon } from "react-icons/md";
 
 import { useRefStore } from "../stores/ref-store";
 import { scrollToSection } from "@/utils/scroll-to-section";
@@ -17,6 +11,8 @@ import { TalkToUsContainer } from "./talk-to-us-container";
 import TalkToUsFormData from "@/app/interfaces/talk-to-us-form-data";
 import { Footer } from "../molecules/footer";
 import { BookCarousel } from "../molecules/book-carousel";
+import { BookRevealScrollVideo } from "./book-reveal-scroll-video";
+import GlobeScrollDemo from "@/components/ui/landing-page";
 
 interface Props {
   receiveAtHomeFunctions: (formData: FormData) => Promise<null>;
@@ -27,9 +23,7 @@ export const HomePageContainer = ({
   // receiveAtHomeFunctions,
   talkToUsFunctions,
 }: Props) => {
-  const translations = useTranslations("home-page-container");
-  const talkToUsTranslations = useTranslations("talk-to-us-container");
-  const { ref_DownloadSection, ref_TalkToUsSection, pendingScroll, setPendingScroll } = useRefStore();
+  const { ref_TalkToUsSection, pendingScroll, setPendingScroll } = useRefStore();
 
   useEffect(() => {
     if (pendingScroll === "talk-to-us" && ref_TalkToUsSection?.current) {
@@ -40,42 +34,17 @@ export const HomePageContainer = ({
 
   return (
     <>
-      <div className="relative flex w-full flex-col items-center laptop:justify-around pb-12 mt-[80px] gap-6">
-        <div className="relative flex w-full flex-col items-center laptop:flex-row laptop:justify-around laptop:px-10">
-          <div className="p-3 z-10 flex gap-6 flex-col laptop:w-1/3">
-            <h1 className="text-5xl font-bold text-primary drop-shadow-2xl">
-              {translations("title")}
-            </h1>
-            <p className="text-gray drop-shadow-md">
-              {translations("subtitle")}
-            </p>
-            <div className="flex w-full flex-col justify-start gap-3 tablet:items-center mobile:items-center laptop:items-start">
-              <Button
-                variant="specialGray"
-                size="lg"
-                onClick={() => scrollToSection(ref_DownloadSection)}
-              >
-                {translations("download-button")}
-                <div className="rounded-full bg-white p-1">
-                  <CloudIcon className="text-2xl text-primary" />
-                </div>
-              </Button>
-              <Button
-                variant="specialBlue"
-                size="lg"
-                onClick={() => scrollToSection(ref_TalkToUsSection)}
-              >
-                {talkToUsTranslations("title")}
-                <div className="rounded-full bg-white p-1">
-                  <MailIcon className="text-2xl text-primary" />
-                </div>
-              </Button>
-            </div>
-          </div>
-          <BookCoverContainer />
-        </div>
+      {/* Scroll-driven globe intro, placed above the book-reveal hero. */}
+      <GlobeScrollDemo />
+      {/* Hero: pinned scroll-scrubbed book reveal, with the download CTA
+          shown up front and the full summary + download options inside its
+          own Resumo panel further along the scrub. Right after, in the same
+          continuous pin, it renders the World Age trailer as a second
+          sticky layer that slides up to cover it while the book closes back
+          up in reverse. */}
+      <BookRevealScrollVideo />
+      <div className="relative flex w-full flex-col items-center laptop:justify-around gap-6 pb-12 pt-12">
         <CompaniesContainer />
-        <SummaryContainer />
         <BookCarousel />
       </div>
       {/* <ReceiveAtHomeContainer receiveAtHomeFunctions={receiveAtHomeFunctions} /> */}

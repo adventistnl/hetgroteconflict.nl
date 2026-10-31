@@ -1,0 +1,61 @@
+{
+  "globe": {
+    "sizeVh": 66,
+    "sizeVw": 49,
+    "transitionDurationMs": 1000,
+    "transitionEasing": "ease-in-out",
+    "opacityBySection": [1, 0.75, 1, 0.8]
+  },
+  "positions": [
+    { "top": "50%", "left": "75%", "scale": 1, "note": "Hero: right side, balanced" },
+    { "top": "25%", "left": "50%", "scale": 0.65, "note": "Innovation: top side, subtle" },
+    { "top": "15%", "left": "90%", "scale": 1.4, "note": "Discovery: left side, medium" },
+    { "top": "50%", "left": "50%", "scale": 1.3, "note": "Future: center, large backdrop" }
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "badge": "Welcome",
+      "title": "Explore",
+      "subtitle": "Our World",
+      "description": "Journey through an immersive experience where technology meets innovation. Watch as perspectives shift and possibilities unfold with every interaction, creating a symphony of digital artistry.",
+      "align": "left",
+      "actions": [
+        { "id": "begin-journey", "label": "Begin Journey", "variant": "primary" },
+        { "id": "learn-more", "label": "Learn More", "variant": "secondary" }
+      ]
+    },
+    {
+      "id": "innovation",
+      "badge": "Innovation",
+      "title": "Connected Worldwide",
+      "description": "From every corner of the globe, we witness the interconnected web of human achievement. Each connection represents progress, every interaction drives innovation forward into uncharted territories.",
+      "align": "center"
+    },
+    {
+      "id": "discovery",
+      "badge": "Discovery",
+      "title": "Expanding",
+      "subtitle": "Possibilities",
+      "description": "As we push beyond familiar boundaries, new worlds of opportunity emerge from the horizon. What seemed impossible yesterday becomes tomorrow's foundation for extraordinary achievements.",
+      "align": "left",
+      "features": [
+        { "title": "Limitless Exploration", "description": "Discover new dimensions of possibility and innovation" },
+        { "title": "Seamless Integration", "description": "Where cutting-edge technology meets human intuition" },
+        { "title": "Future-Ready Solutions", "description": "Built for tomorrow's challenges and opportunities" }
+      ]
+    },
+    {
+      "id": "future",
+      "badge": "Future",
+      "title": "Our Shared",
+      "subtitle": "Tomorrow",
+      "description": "In this moment of unity, we see not just a planet, but a canvas of infinite human potential. Every connection represents hope, every innovation builds bridges to our collective future of endless possibilities.",
+      "align": "center",
+      "actions": [
+        { "id": "join-movement", "label": "Join the Movement", "variant": "primary" },
+        { "id": "explore-more", "label": "Explore More", "variant": "secondary" }
+      ]
+    }
+  ]
+}

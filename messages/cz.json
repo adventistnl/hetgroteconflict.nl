@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "Velké Drama Věků",
     "subtitle": "Objevte odpovědi na nejhlubší otázky o osudu lidstva. Stáhněte si nebo obdržíte doma knihu, která odhaluje bitvu mezi dobrem a zlem a jak se můžete připravit na budoucnost.",
-    "download-button": "Stáhnout",
+    "quote": "Vrcholným činem tohoto podvodného dramatu bude satanovo napodobení Ježíše Krista.",
+    "quote-citation": "Velké Drama Věků, kapitola 39",
     "receive-at-home-button": "Obdržet doma"
   },
   "participate-page-container": {
@@ -307,6 +308,8 @@
     "no-account": "Nemáte účet?",
     "have-account": "Máte již účet?",
     "success-verify": "Zkontrolujte e-mail pro potvrzení účtu.",
+    "error-oauth": "Přihlášení přes Google selhalo. Zkuste to prosím znovu.",
+    "save-progress-banner": "Právě jste dokončili plán! Přihlaste se a uložte si svůj pokrok, abyste tento plán později snadno našli a mohli pokračovat na jakémkoli zařízení.",
     "hero-eyebrow": "Plány čtení",
     "hero-title": "Sledujte svou cestu Velkým sporem věků",
     "hero-subtitle": "Přihlaste se pro uložení pokroku, přidávání plánů do záložek a pokračování přesně tam, kde jste přestali — na jakémkoli zařízení.",
@@ -339,7 +342,24 @@
     "next-plan": "Další: {title}",
     "reading-plans-label": "Plány čtení",
     "chapters-label": "Kapitoly",
-    "days-label": "Dní k dokončení"
+    "days-label": "Dní k dokončení",
+    "plan-order": "Plán {order}",
+    "card-review": "Opakovat →",
+    "card-continue": "Pokračovat →",
+    "card-start": "Spustit plán →",
+    "plans-title": "Plány čtení",
+    "tab-all": "Všechny plány",
+    "tab-in-progress": "Probíhající",
+    "tab-completed": "Dokončené",
+    "empty-in-progress": "Zatím žádné probíhající plány. Začněte jeden výše!",
+    "empty-completed": "Zatím žádné dokončené plány. Čtěte dál!",
+    "next-plan-teaser": "Připraven na to, co přijde dál? Pokračuj u \"{title}\"",
+    "all-plans-completed": "Dokončil jsi celou cestu knihou {book}! 🎉",
+    "chapter-unavailable-offline": "Tato kapitola ještě nebyla stažena — pro čtení se připoj k internetu.",
+    "retry": "Zkusit znovu",
+    "chapter-english-fallback": "Tato část ještě není přeložena do tvého jazyka — zobrazuje se původní anglický text.",
+    "watch-chapter-preview": "Sledovat ukázkové video kapitoly",
+    "read-the-chapter": "Číst kapitolu"
   },
   "xp": {
     "level-label": "Úroveň {level} · {label}",
@@ -355,6 +375,23 @@
     "level-4": "Historik",
     "level-5": "Teolog",
     "level-6": "Prorok",
-    "level-7": "Přemožitel"
+    "level-7": "Přemožitel",
+    "tier-bronze": "Bronz",
+    "tier-silver": "Stříbro",
+    "tier-gold": "Zlato"
+  },
+  "world-age-section": {
+    "eyebrow": "Podle biblické chronologie",
+    "hook": "Dny tohoto světa jsou sečteny",
+    "days-label": "dní boje mezi dobrem a zlem",
+    "caption": "Již více než šest tisíc let, od stvoření, je Země jevištěm boje mezi dobrem a zlem — stejného příběhu, který odhaluje tato kniha.",
+    "mute-trailer": "Ztlumit trailer",
+    "unmute-trailer": "Zapnout zvuk traileru",
+    "days": "Dny",
+    "hours": "Hodiny",
+    "minutes": "Minuty",
+    "seconds": "Sekundy",
+    "years": "Roky",
+    "months": "Měsíce"
   }
 }

@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "O Grande Conflito",
     "subtitle": "Descubra as respostas para as perguntas mais profundas sobre o destino da humanidade. Baixe ou receba em casa o livro que revela a batalha entre o bem e o mal, e como você pode se preparar para o futuro.",
-    "download-button": "Baixar",
+    "quote": "Como ato culminante no grande drama do engano, o próprio Satanás personificará Cristo.",
+    "quote-citation": "O Grande Conflito, cap. 39, pág. 624",
     "receive-at-home-button": "Receber em casa"
   },
   "participate-page-container": {
@@ -308,6 +309,8 @@
     "no-account": "Não tem uma conta?",
     "have-account": "Já tem uma conta?",
     "success-verify": "Verifique seu e-mail para confirmar sua conta.",
+    "error-oauth": "Erro ao entrar com o Google. Por favor, tente novamente.",
+    "save-progress-banner": "Você acabou de concluir um plano! Faça login para salvar seu progresso, assim você encontra esse plano facilmente depois e pode continuar em qualquer dispositivo.",
     "hero-eyebrow": "Planos de Leitura",
     "hero-title": "Acompanhe sua jornada pelo Grande Conflito",
     "hero-subtitle": "Entre para salvar seu progresso, marcar planos e continuar exatamente de onde parou — em qualquer dispositivo.",
@@ -340,7 +343,24 @@
     "next-plan": "Próximo: {title}",
     "reading-plans-label": "Planos de leitura",
     "chapters-label": "Capítulos",
-    "days-label": "Dias para concluir"
+    "days-label": "Dias para concluir",
+    "plan-order": "Plano {order}",
+    "card-review": "Rever →",
+    "card-continue": "Continuar →",
+    "card-start": "Iniciar plano →",
+    "plans-title": "Planos de Leitura",
+    "tab-all": "Todos os planos",
+    "tab-in-progress": "Em andamento",
+    "tab-completed": "Concluídos",
+    "empty-in-progress": "Nenhum plano em andamento ainda. Comece um acima!",
+    "empty-completed": "Nenhum plano concluído ainda. Continue lendo!",
+    "next-plan-teaser": "Pronto para o que vem a seguir? Continue em \"{title}\"",
+    "all-plans-completed": "Você concluiu toda a jornada através de {book}! 🎉",
+    "chapter-unavailable-offline": "Este capítulo ainda não foi baixado — conecte-se à internet para lê-lo.",
+    "retry": "Tentar novamente",
+    "chapter-english-fallback": "Esta seção ainda não foi traduzida para o seu idioma — mostrando o texto original em inglês.",
+    "watch-chapter-preview": "Assistir ao vídeo de prévia do capítulo",
+    "read-the-chapter": "Ler o capítulo"
   },
   "xp": {
     "level-label": "Nível {level} · {label}",
@@ -356,6 +376,23 @@
     "level-4": "Historiador",
     "level-5": "Teólogo",
     "level-6": "Profeta",
-    "level-7": "Vencedor"
+    "level-7": "Vencedor",
+    "tier-bronze": "Bronze",
+    "tier-silver": "Prata",
+    "tier-gold": "Ouro"
+  },
+  "world-age-section": {
+    "eyebrow": "Segundo a cronologia bíblica",
+    "hook": "Esse mundo já está com seus dias contados",
+    "days-label": "dias de conflito entre o bem e o mal",
+    "caption": "Há mais de seis mil anos, desde a criação, a Terra é palco de uma batalha entre o bem e o mal — a mesma história que este livro revela.",
+    "mute-trailer": "Silenciar trailer",
+    "unmute-trailer": "Ativar som do trailer",
+    "days": "Dias",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "years": "Anos",
+    "months": "Meses"
   }
 }

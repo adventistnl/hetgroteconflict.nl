@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Rubik } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./styles/globals.css";
 import "flag-icons/css/flag-icons.min.css";
 import { Analytics } from "@vercel/analytics/next"
 
-const rubik = Rubik({
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-rubik",
+// Single primary typeface for the whole site (variable font — every weight
+// from 100–900 is available through it, no need to enumerate a weight list).
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-  variable: "--font-plus-jakarta-sans",
+// Display/editorial typeface used for titles site-wide. Exposed as
+// --font-fraunces here and consumed as --font-display-accent in
+// globals.css (which is what --font-secondary / --font-plus-jakarta-sans —
+// the tokens every heading already renders through — resolve to).
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -29,9 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${rubik.variable} ${plusJakartaSans.variable} bg-secondary antialiased`}
-      >
+      <body className={`${inter.variable} ${fraunces.variable} bg-secondary antialiased`}>
         {children}
         <Analytics />
       </body>

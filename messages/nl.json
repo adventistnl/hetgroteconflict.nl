@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "Het Grote Conflict",
     "subtitle": "Ontdek de antwoorden op de diepste vragen over het lot van de mensheid. Download of ontvang thuis het boek dat de strijd tussen goed en kwaad onthult en hoe je je kunt voorbereiden op de toekomst.",
-    "download-button": "Downloaden",
+    "quote": "Het alles overtreffende toneel in dit grote drama van bedrog zal wezen, dat Satan in persoon Christus-zelf zal voorstellen.",
+    "quote-citation": "Het Grote Conflict, hoofdstuk 39",
     "receive-at-home-button": "Thuis ontvangen"
   },
   "participate-page-container": {
@@ -307,6 +308,8 @@
     "no-account": "Heb je geen account?",
     "have-account": "Heb je al een account?",
     "success-verify": "Controleer je e-mail om je account te bevestigen.",
+    "error-oauth": "Inloggen met Google mislukt. Probeer het opnieuw.",
+    "save-progress-banner": "Je hebt net een plan afgerond! Log in om je voortgang op te slaan, zodat je dit plan later makkelijk terugvindt en op elk apparaat verder kunt gaan.",
     "hero-eyebrow": "Leesplannen",
     "hero-title": "Volg je reis door Het Grote Conflict",
     "hero-subtitle": "Log in om je voortgang op te slaan, plannen te bookmarken en precies door te gaan waar je was gebleven — op elk apparaat.",
@@ -339,7 +342,24 @@
     "next-plan": "Volgende: {title}",
     "reading-plans-label": "Leesplannen",
     "chapters-label": "Hoofdstukken",
-    "days-label": "Dagen om te voltooien"
+    "days-label": "Dagen om te voltooien",
+    "plan-order": "Plan {order}",
+    "card-review": "Herzien →",
+    "card-continue": "Doorgaan →",
+    "card-start": "Start plan →",
+    "plans-title": "Leesplannen",
+    "tab-all": "Alle plannen",
+    "tab-in-progress": "Bezig",
+    "tab-completed": "Voltooid",
+    "empty-in-progress": "Nog geen plannen in uitvoering. Begin er een hierboven!",
+    "empty-completed": "Nog geen voltooide plannen. Blijf lezen!",
+    "next-plan-teaser": "Klaar voor wat komt? Ga verder met \"{title}\"",
+    "all-plans-completed": "Je hebt de hele reis door {book} voltooid! 🎉",
+    "chapter-unavailable-offline": "Dit hoofdstuk is nog niet gedownload — maak verbinding met internet om het te lezen.",
+    "retry": "Opnieuw proberen",
+    "chapter-english-fallback": "Dit gedeelte is nog niet vertaald naar jouw taal — de originele Engelse tekst wordt getoond.",
+    "watch-chapter-preview": "Bekijk de hoofdstukvoorbeeldvideo",
+    "read-the-chapter": "Hoofdstuk lezen"
   },
   "xp": {
     "level-label": "Niveau {level} · {label}",
@@ -355,6 +375,23 @@
     "level-4": "Historicus",
     "level-5": "Theoloog",
     "level-6": "Profeet",
-    "level-7": "Overwinnaar"
+    "level-7": "Overwinnaar",
+    "tier-bronze": "Brons",
+    "tier-silver": "Zilver",
+    "tier-gold": "Goud"
+  },
+  "world-age-section": {
+    "eyebrow": "Volgens de bijbelse chronologie",
+    "hook": "De dagen van deze wereld zijn geteld",
+    "days-label": "dagen van strijd tussen goed en kwaad",
+    "caption": "Al meer dan zesduizend jaar, sinds de schepping, is de aarde het toneel van een strijd tussen goed en kwaad — hetzelfde verhaal dat dit boek onthult.",
+    "mute-trailer": "Geluid dempen",
+    "unmute-trailer": "Geluid aanzetten",
+    "days": "Dagen",
+    "hours": "Uren",
+    "minutes": "Minuten",
+    "seconds": "Seconden",
+    "years": "Jaren",
+    "months": "Maanden"
   }
 }

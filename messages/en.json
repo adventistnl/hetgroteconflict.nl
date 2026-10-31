@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "The Great Controversy",
     "subtitle": "Discover the answers to the deepest questions about the fate of humanity. Download or receive at home the book that reveals the battle between good and evil, and how you can be prepared for the future.",
-    "download-button": "Download",
+    "quote": "As the crowning act in the great drama of deception, Satan himself will personate Christ.",
+    "quote-citation": "The Great Controversy, chapter 39",
     "receive-at-home-button": "Receive at home"
   },
   "participate-page-container": {
@@ -307,6 +308,8 @@
     "no-account": "Don't have an account?",
     "have-account": "Already have an account?",
     "success-verify": "Check your email to confirm your account.",
+    "error-oauth": "Google sign-in failed. Please try again.",
+    "save-progress-banner": "You just finished a plan! Sign in to save your progress so you can find it again and keep going from any device.",
     "hero-eyebrow": "Reading Plans",
     "hero-title": "Track your journey through the Great Controversy",
     "hero-subtitle": "Sign in to save your progress, bookmark plans, and pick up exactly where you left off — on any device.",
@@ -339,7 +342,24 @@
     "next-plan": "Next: {title}",
     "reading-plans-label": "Reading plans",
     "chapters-label": "Chapters",
-    "days-label": "Days to complete"
+    "days-label": "Days to complete",
+    "plan-order": "Plan {order}",
+    "card-review": "Review →",
+    "card-continue": "Continue →",
+    "card-start": "Start plan →",
+    "plans-title": "Reading Plans",
+    "tab-all": "All Plans",
+    "tab-in-progress": "In Progress",
+    "tab-completed": "Completed",
+    "empty-in-progress": "No plans in progress yet. Start one above!",
+    "empty-completed": "No completed plans yet. Keep reading!",
+    "next-plan-teaser": "Ready for what's next? Continue to \"{title}\"",
+    "all-plans-completed": "You've completed the entire journey through {book}! 🎉",
+    "chapter-unavailable-offline": "This chapter isn't downloaded yet — connect to the internet to read it.",
+    "retry": "Try again",
+    "chapter-english-fallback": "This section isn't translated into your language yet — showing the original English text.",
+    "watch-chapter-preview": "Watch the chapter preview video",
+    "read-the-chapter": "Read the chapter"
   },
   "xp": {
     "level-label": "Level {level} · {label}",
@@ -355,6 +375,23 @@
     "level-4": "Historian",
     "level-5": "Theologian",
     "level-6": "Prophet",
-    "level-7": "Overcomer"
+    "level-7": "Overcomer",
+    "tier-bronze": "Bronze",
+    "tier-silver": "Silver",
+    "tier-gold": "Gold"
+  },
+  "world-age-section": {
+    "eyebrow": "According to biblical chronology",
+    "hook": "This world's days are numbered",
+    "days-label": "days of conflict between good and evil",
+    "caption": "For over six thousand years, since creation, Earth has been the stage for a battle between good and evil — the same story this book reveals.",
+    "mute-trailer": "Mute trailer",
+    "unmute-trailer": "Unmute trailer",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "years": "Years",
+    "months": "Months"
   }
 }

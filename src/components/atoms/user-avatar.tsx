@@ -5,15 +5,18 @@ import { User, LogOut, Star, Trophy } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { useXp } from "@/hooks/use-xp";
+import { useProgress } from "@/contexts/progress-context";
+import { TIER_CONFIG } from "@/database/insignia";
+import { getLocalizedInsignia } from "@/utils/get-localized-insignia";
 
-export function UserAvatar() {
+export function UserAvatar({ compact = false }: { compact?: boolean }) {
   const { user, loading, signOut } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
   const locale = useLocale();
   const router = useRouter();
-  const { totalXp, skills, levelInfo } = useXp();
+  const { totalXp, skills, levelInfo } = useProgress();
   const t = useTranslations("xp");
+  const tAuth = useTranslations("auth");
 
   if (loading) {
     return (
@@ -24,13 +27,25 @@ export function UserAvatar() {
   }
 
   if (!user) {
+    if (compact) {
+      return (
+        <button
+          onClick={() => router.push(`/${locale}/auth`)}
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary/60 transition hover:border-[#4fa6c2]/50 hover:text-[#4fa6c2]"
+          aria-label="Sign in"
+        >
+          <User className="h-4 w-4" />
+        </button>
+      );
+    }
+
     return (
       <button
-        onClick={() => router.push(`/${locale}/auth`)}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary/60 transition hover:border-[#4fa6c2]/50 hover:text-[#4fa6c2]"
-        aria-label="Sign in"
+        onClick={() => router.push(`/${locale}/auth?mode=sign-up`)}
+        className="inline-flex items-center gap-2 rounded-full bg-[#4fa6c2] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#3d91ad] active:scale-[0.97]"
       >
-        <User className="h-4 w-4" />
+        <User className="h-3.5 w-3.5" />
+        {tAuth("btn-create-account")}
       </button>
     );
   }
@@ -70,10 +85,10 @@ export function UserAvatar() {
       {showMenu && (
         <>
           <div className="fixed inset-0 z-30" onClick={() => setShowMenu(false)} />
-          <div className="absolute right-0 top-11 z-40 w-72 overflow-hidden rounded-2xl border border-primary/10 bg-secondary shadow-xl">
+          <div className="absolute right-0 top-11 z-40 w-72 rounded-2xl border border-primary/10 bg-secondary shadow-xl">
 
             {/* User info */}
-            <div className="flex items-center gap-3 border-b border-primary/10 px-4 py-3">
+            <div className="flex items-center gap-3 overflow-hidden rounded-t-2xl border-b border-primary/10 px-4 py-3">
               <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-[#4fa6c2]/60 bg-[#4fa6c2]/20 text-xs font-bold text-[#4fa6c2]">
                 {avatarUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -117,35 +132,79 @@ export function UserAvatar() {
 
             {/* Skills */}
             <div className="border-b border-primary/10 px-4 py-3">
-              <div className="mb-2 flex items-center gap-1.5">
-                <Trophy className="h-3 w-3 text-primary/40" />
-                <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40">
-                  {t("skills-title", { count: skills.length })}
-                </p>
+              <div className="mb-2.5 flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <Trophy className="h-3 w-3 text-primary/40" />
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40">
+                    {t("skills-title", { count: skills.length })}
+                  </p>
+                </div>
+                {skills.length > 0 && (
+                  <span className="text-[10px] font-bold text-[#4fa6c2]">
+                    +{skills.reduce((s, k) => s + k.xp, 0)} XP
+                  </span>
+                )}
               </div>
               {skills.length === 0 ? (
-                <p className="text-[11px] italic text-primary/30">
-                  {t("no-skills")}
-                </p>
-              ) : (
-                <div className="flex max-h-[140px] flex-col gap-1 overflow-y-auto">
-                  {[...skills].reverse().map((skill) => (
-                    <div
-                      key={skill.planId}
-                      className="flex items-center justify-between gap-2 rounded-lg bg-primary/5 px-2.5 py-1.5"
-                    >
-                      <span className="text-xs text-primary">{skill.badge}</span>
-                      <span className="shrink-0 text-[10px] font-bold text-[#4fa6c2]">+{skill.xp} XP</span>
+                <p className="text-[11px] italic text-primary/30">{t("no-skills")}</p>
+              ) : (() => {
+                  const MAX_VISIBLE = 6;
+                  const sorted = [...skills].reverse();
+                  const visible = sorted.slice(0, MAX_VISIBLE);
+                  const overflow = sorted.length - MAX_VISIBLE;
+                  return (
+                    <div className="flex -space-x-2.5">
+                      {visible.map((skill) => {
+                        const ins = getLocalizedInsignia(locale, skill.planId);
+                        const tier = ins ? TIER_CONFIG[ins.tier] : null;
+                        return (
+                          <div
+                            key={skill.planId}
+                            className="group/badge relative flex shrink-0"
+                          >
+                            {/* Icon circle */}
+                            <div
+                              className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#4fa6c2]/60 bg-secondary text-base ring-2 ring-secondary transition-transform group-hover/badge:z-10 group-hover/badge:scale-110"
+                            >
+                              {ins?.icon ?? "🏅"}
+                            </div>
+
+                            {/* Tooltip */}
+                            <div className="pointer-events-none absolute bottom-full left-0 z-[60] mb-2 scale-95 opacity-0 transition-all duration-150 group-hover/badge:scale-100 group-hover/badge:opacity-100">
+                              <div className="min-w-[130px] rounded-xl border border-primary/10 bg-secondary px-3 py-2 shadow-lg">
+                                <p className="text-left text-[11px] font-semibold leading-tight text-primary">
+                                  {ins?.badge ?? skill.badge}
+                                </p>
+                                {tier && ins && (
+                                  <p className={`mt-0.5 text-left text-[9px] font-bold uppercase tracking-widest ${tier.color}`}>
+                                    {t(`tier-${ins.tier}` as "tier-bronze" | "tier-silver" | "tier-gold")}
+                                  </p>
+                                )}
+                                <p className="mt-1 text-left text-[10px] font-bold text-[#4fa6c2]">
+                                  +{skill.xp} XP
+                                </p>
+                              </div>
+                              {/* Arrow */}
+                              <div className="absolute left-4 top-full border-4 border-transparent border-t-secondary" />
+                            </div>
+                          </div>
+                        );
+                      })}
+                      {overflow > 0 && (
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-primary/20 bg-primary/10 text-[10px] font-bold text-primary/60 ring-2 ring-secondary">
+                          +{overflow}
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </div>
-              )}
+                  );
+                })()
+              }
             </div>
 
             {/* Sign out */}
             <button
               onClick={async () => { await signOut(); setShowMenu(false); }}
-              className="flex w-full items-center gap-2 px-4 py-3 text-sm text-primary transition hover:bg-primary/10"
+              className="flex w-full items-center gap-2 rounded-b-2xl px-4 py-3 text-sm text-primary transition hover:bg-primary/10"
             >
               <LogOut className="h-3.5 w-3.5" />
               {t("sign-out")}

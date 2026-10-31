@@ -1,17 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { X, Mail, Lock, User, Chrome } from "lucide-react";
+import { X, Mail, Lock, User, Chrome, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useAuth } from "@/hooks/use-auth";
 
 type Mode = "sign-in" | "sign-up";
+type Variant = "default" | "save-progress";
 
 interface Props {
   onClose: () => void;
   defaultMode?: Mode;
+  /** "save-progress" shows a banner explaining why sign-in is being requested
+   *  (e.g. right after finishing a plan while not logged in). */
+  variant?: Variant;
 }
 
-export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
+export function AuthModal({ onClose, defaultMode = "sign-in", variant = "default" }: Props) {
+  const t = useTranslations("auth");
   const { signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
   const [mode, setMode] = useState<Mode>(defaultMode);
   const [email, setEmail] = useState("");
@@ -33,7 +39,7 @@ export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
     } else {
       const { error } = await signUpWithEmail(email, password, fullName);
       if (error) setError(error.message);
-      else setSuccess("Check your email to confirm your account.");
+      else setSuccess(t("success-verify"));
     }
     setLoading(false);
   }
@@ -68,14 +74,20 @@ export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
             className="text-xl font-bold text-white"
             style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
           >
-            {mode === "sign-in" ? "Welcome back" : "Create your account"}
+            {mode === "sign-in" ? t("sign-in-title") : t("sign-up-title")}
           </h2>
           <p className="mt-1 text-sm text-primary/50">
-            {mode === "sign-in"
-              ? "Sign in to track your reading plans."
-              : "Track your progress across all devices."}
+            {mode === "sign-in" ? t("sign-in-subtitle") : t("sign-up-subtitle")}
           </p>
         </div>
+
+        {/* Explanation banner — shown right after finishing a plan while logged out */}
+        {variant === "save-progress" && !success && (
+          <div className="mb-5 flex items-start gap-2.5 rounded-xl bg-[#4fa6c2]/10 p-3.5 text-xs leading-relaxed text-[#4fa6c2]">
+            <Sparkles className="mt-0.5 h-4 w-4 shrink-0" />
+            <p>{t("save-progress-banner")}</p>
+          </div>
+        )}
 
         {success ? (
           <div className="rounded-xl bg-[#4fa6c2]/10 p-4 text-sm text-[#4fa6c2]">
@@ -89,12 +101,12 @@ export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
               className="mb-4 flex w-full items-center justify-center gap-2 rounded-xl border border-primary/20 bg-primary/5 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10"
             >
               <Chrome className="h-4 w-4" />
-              Continue with Google
+              {t("btn-google")}
             </button>
 
             <div className="mb-4 flex items-center gap-3 text-xs text-primary/30">
               <div className="flex-1 border-t border-primary/10" />
-              or
+              {t("divider")}
               <div className="flex-1 border-t border-primary/10" />
             </div>
 
@@ -105,7 +117,7 @@ export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
                   <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/30" />
                   <input
                     type="text"
-                    placeholder="Full name"
+                    placeholder={t("field-name-placeholder")}
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     className="w-full rounded-xl border border-primary/20 bg-primary/5 py-3 pl-10 pr-4 text-sm text-primary placeholder:text-primary/30 focus:border-[#4fa6c2] focus:outline-none"
@@ -117,7 +129,7 @@ export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
                 <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/30" />
                 <input
                   type="email"
-                  placeholder="Email address"
+                  placeholder={t("field-email")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -129,7 +141,7 @@ export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
                 <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/30" />
                 <input
                   type="password"
-                  placeholder="Password"
+                  placeholder={t("field-password")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -147,17 +159,17 @@ export function AuthModal({ onClose, defaultMode = "sign-in" }: Props) {
                 disabled={loading}
                 className="mt-1 rounded-xl bg-[#4fa6c2] py-3 text-sm font-bold text-white transition hover:bg-[#3d91ad] disabled:opacity-50"
               >
-                {loading ? "…" : mode === "sign-in" ? "Sign in" : "Create account"}
+                {loading ? "…" : mode === "sign-in" ? t("btn-sign-in") : t("btn-create-account")}
               </button>
             </form>
 
             <p className="mt-4 text-center text-xs text-primary/40">
-              {mode === "sign-in" ? "No account? " : "Already have one? "}
+              {mode === "sign-in" ? t("no-account") : t("have-account")}{" "}
               <button
                 onClick={() => { setMode(mode === "sign-in" ? "sign-up" : "sign-in"); setError(null); }}
                 className="text-[#4fa6c2] underline-offset-2 hover:underline"
               >
-                {mode === "sign-in" ? "Sign up free" : "Sign in"}
+                {mode === "sign-in" ? t("btn-create-account") : t("btn-sign-in")}
               </button>
             </p>
           </>

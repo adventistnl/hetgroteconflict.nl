@@ -127,7 +127,7 @@ export function MobileBottomNav() {
 
         {/* User avatar — always last */}
         <div className="flex items-center justify-center px-1">
-          <UserAvatar />
+          <UserAvatar compact />
         </div>
       </div>
     </nav>

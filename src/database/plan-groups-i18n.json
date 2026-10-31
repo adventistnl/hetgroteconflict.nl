@@ -1,0 +1,200 @@
+{
+  "pt": {
+    "quick": {
+      "label": "Maratona Rápida",
+      "subtitle": "4 histórias independentes · terminadas antes do seu café esfriar"
+    },
+    "weekend": {
+      "label": "Maratona de Fim de Semana",
+      "subtitle": "5 arcos de três partes · feitos para um sábado tranquilo"
+    },
+    "deep": {
+      "label": "Série Limitada",
+      "subtitle": "3 arcos de múltiplos episódios · um capítulo por dia, cada vez mais profundo"
+    },
+    "epic": {
+      "label": "O Evento Principal",
+      "subtitle": "2 sagas completas · a história inteira, do início ao fim"
+    }
+  },
+  "es": {
+    "quick": {
+      "label": "Maratón Rápido",
+      "subtitle": "4 historias independientes · terminadas antes de que se enfríe tu café"
+    },
+    "weekend": {
+      "label": "El Maratón del Fin de Semana",
+      "subtitle": "5 arcos de tres partes · hechos para un sábado tranquilo"
+    },
+    "deep": {
+      "label": "Serie Limitada",
+      "subtitle": "3 arcos de múltiples episodios · un capítulo al día, cada vez más profundo"
+    },
+    "epic": {
+      "label": "El Evento Principal",
+      "subtitle": "2 sagas completas · la historia entera, de principio a fin"
+    }
+  },
+  "fr": {
+    "quick": {
+      "label": "Visionnage Rapide",
+      "subtitle": "4 récits indépendants · terminés avant que votre café refroidisse"
+    },
+    "weekend": {
+      "label": "Le Marathon du Week-end",
+      "subtitle": "5 arcs en trois parties · faits pour un samedi tranquille"
+    },
+    "deep": {
+      "label": "Série Limitée",
+      "subtitle": "3 arcs à plusieurs épisodes · un chapitre par jour, toujours plus profond"
+    },
+    "epic": {
+      "label": "L'Événement Principal",
+      "subtitle": "2 sagas complètes · l'histoire entière, du début à la fin"
+    }
+  },
+  "de": {
+    "quick": {
+      "label": "Schnell Angeschaut",
+      "subtitle": "4 eigenständige Geschichten · fertig, bevor dein Kaffee kalt wird"
+    },
+    "weekend": {
+      "label": "Das Wochenend-Binge",
+      "subtitle": "5 Drei-Teile-Bögen · gemacht für einen ruhigen Samstag"
+    },
+    "deep": {
+      "label": "Miniserie",
+      "subtitle": "3 mehrteilige Bögen · ein Kapitel pro Tag, jedes Mal tiefer"
+    },
+    "epic": {
+      "label": "Das Hauptereignis",
+      "subtitle": "2 vollständige Sagen · die ganze Geschichte, von Anfang bis Ende"
+    }
+  },
+  "nl": {
+    "quick": {
+      "label": "Snel Bekeken",
+      "subtitle": "4 op zichzelf staande verhalen · klaar voordat je koffie koud is"
+    },
+    "weekend": {
+      "label": "De Weekend Marathon",
+      "subtitle": "5 verhaallijnen in drie delen · gemaakt voor een rustige zaterdag"
+    },
+    "deep": {
+      "label": "Beperkte Serie",
+      "subtitle": "3 verhaallijnen met meerdere afleveringen · elke dag een hoofdstuk, steeds dieper"
+    },
+    "epic": {
+      "label": "Het Hoofdevenement",
+      "subtitle": "2 complete sagen · het volledige verhaal, van begin tot eind"
+    }
+  },
+  "ru": {
+    "quick": {
+      "label": "Быстрый Просмотр",
+      "subtitle": "4 самостоятельные истории · успеешь до того, как остынет кофе"
+    },
+    "weekend": {
+      "label": "Марафон на Выходные",
+      "subtitle": "5 арок из трех частей · для спокойной субботы"
+    },
+    "deep": {
+      "label": "Мини-сериал",
+      "subtitle": "3 многосерийные арки · по одной главе в день, каждый раз глубже"
+    },
+    "epic": {
+      "label": "Главное Событие",
+      "subtitle": "2 полные саги · вся история от начала до конца"
+    }
+  },
+  "zh": {
+    "quick": {
+      "label": "快速观影",
+      "subtitle": "4 个独立故事 · 一杯咖啡还没凉就能看完"
+    },
+    "weekend": {
+      "label": "周末连读",
+      "subtitle": "5 组三部曲 · 专为悠闲的周六准备"
+    },
+    "deep": {
+      "label": "限定剧集",
+      "subtitle": "3 组多集连载 · 每天一章，层层深入"
+    },
+    "epic": {
+      "label": "压轴大戏",
+      "subtitle": "2 部完整史诗 · 从头到尾的完整故事"
+    }
+  },
+  "ar": {
+    "quick": {
+      "label": "مشاهدة سريعة",
+      "subtitle": "4 قصص مستقلة · تُنجَز قبل أن يبرد قهوتك"
+    },
+    "weekend": {
+      "label": "ماراثون نهاية الأسبوع",
+      "subtitle": "5 سلاسل ثلاثية الأجزاء · مُعدّة ليوم سبت هادئ"
+    },
+    "deep": {
+      "label": "سلسلة محدودة",
+      "subtitle": "3 سلاسل متعددة الحلقات · فصل واحد يوميًا، وتعمّق أكبر في كل مرة"
+    },
+    "epic": {
+      "label": "الحدث الرئيسي",
+      "subtitle": "ملحمتان كاملتان · القصة كاملة من البداية إلى النهاية"
+    }
+  },
+  "cz": {
+    "quick": {
+      "label": "Rychlé Zhlédnutí",
+      "subtitle": "4 samostatné příběhy · hotovo dřív, než vychladne káva"
+    },
+    "weekend": {
+      "label": "Víkendový Maraton",
+      "subtitle": "5 třídílných příběhů · stvořených pro klidnou sobotu"
+    },
+    "deep": {
+      "label": "Minisérie",
+      "subtitle": "3 vícedílné příběhy · jedna kapitola denně, pokaždé hlouběji"
+    },
+    "epic": {
+      "label": "Hlavní Událost",
+      "subtitle": "2 kompletní ságy · celý příběh od začátku do konce"
+    }
+  },
+  "tw": {
+    "quick": {
+      "label": "Ntɛmntɛm Hwɛ",
+      "subtitle": "Anansesɛm 4 a ɛgyina ne ho · wie ansa na wo kɔfe ayɛ nwunyeeɛ"
+    },
+    "weekend": {
+      "label": "Nnaawɔtwe Awieeɛ Mmirika",
+      "subtitle": "Nsakraeɛ 5 a ɛyɛ akwaa mmiɛnsa mmiɛnsa · wɔyɛɛ maa Memeneda a ɛyɛ komm"
+    },
+    "deep": {
+      "label": "Nsakraeɛ A Ɛtɔ Twa",
+      "subtitle": "Nsakraeɛ 3 a ɛwɔ afã bebree · da biara ti baako, mu dɔ berɛ biara"
+    },
+    "epic": {
+      "label": "Adeyɛ Titire",
+      "subtitle": "Anansesɛm awieeɛ 2 · asɛm no nyinaa, ɛfiri mfiaseɛ kɔsi awieeɛ"
+    }
+  },
+  "en": {
+    "quick": {
+      "label": "Quick Watch",
+      "subtitle": "4 standalone stories · done before your coffee's cold"
+    },
+    "weekend": {
+      "label": "The Weekend Binge",
+      "subtitle": "5 three-part arcs · made for a slow Saturday"
+    },
+    "deep": {
+      "label": "Limited Series",
+      "subtitle": "3 multi-episode arcs · one chapter a day, deeper every time"
+    },
+    "epic": {
+      "label": "The Main Event",
+      "subtitle": "2 complete sagas · the full story, start to finish"
+    }
+  }
+}

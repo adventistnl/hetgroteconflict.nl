@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { Eye, EyeOff, Mail, Lock, User, ArrowLeft } from "lucide-react";
@@ -41,6 +41,8 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
   const locale = useLocale();
   const t = useTranslations("auth");
 
+  const searchParams = useSearchParams();
+
   const [mode, setMode] = useState<Mode>(defaultMode);
   const [email, setEmail]       = useState("");
   const [password, setPassword] = useState("");
@@ -49,6 +51,15 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
   const [loading, setLoading]   = useState(false);
   const [error, setError]       = useState<string | null>(null);
   const [success, setSuccess]   = useState<string | null>(null);
+
+  useEffect(() => {
+    if (searchParams.get("error") === "oauth") {
+      setError(t("error-oauth"));
+    }
+    if (searchParams.get("mode") === "sign-up") {
+      setMode("sign-up");
+    }
+  }, [searchParams, t]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -69,8 +80,13 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
 
   async function handleGoogle() {
     setError(null);
+    setLoading(true);
     const { error } = await signInWithGoogle(`/${locale}/guide`);
-    if (error) setError(error.message);
+    if (error) {
+      setError(error.message);
+      setLoading(false);
+    }
+    // em caso de sucesso o browser navega para o OAuth — não resetar loading
   }
 
   return (
@@ -174,9 +190,14 @@ export function AuthPage({ defaultMode = "sign-in" }: { defaultMode?: Mode }) {
           {/* Google */}
           <button
             onClick={handleGoogle}
-            className="flex w-full items-center justify-center gap-3 rounded-xl border border-primary/15 bg-primary/5 py-3.5 text-sm font-semibold text-primary transition hover:border-[#4fa6c2]/40 hover:bg-[#4fa6c2]/5"
+            disabled={loading}
+            className="flex w-full items-center justify-center gap-3 rounded-xl border border-primary/15 bg-primary/5 py-3.5 text-sm font-semibold text-primary transition hover:border-[#4fa6c2]/40 hover:bg-[#4fa6c2]/5 disabled:opacity-60"
           >
-            <GoogleIcon />
+            {loading ? (
+              <span className="h-5 w-5 animate-spin rounded-full border-2 border-primary/20 border-t-primary/70" />
+            ) : (
+              <GoogleIcon />
+            )}
             {t("btn-google")}
           </button>
 

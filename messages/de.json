@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "Vom Schatten Zum Licht",
     "subtitle": "Entdecken Sie die Antworten auf die tiefsten Fragen über das Schicksal der Menschheit. Laden Sie das Buch herunter oder erhalten Sie es zu Hause, das den Kampf zwischen Gut und Böse offenbart und wie Sie sich auf die Zukunft vorbereiten können.",
-    "download-button": "Herunterladen",
+    "quote": "Als Krönung dieses Täuschungsmanövers wird sich Satan selbst als Christus ausgeben.",
+    "quote-citation": "Vom Schatten Zum Licht, Kapitel 39",
     "receive-at-home-button": "Zu Hause erhalten"
   },
   "participate-page-container": {
@@ -307,6 +308,8 @@
     "no-account": "Noch kein Konto?",
     "have-account": "Bereits ein Konto?",
     "success-verify": "Überprüfe deine E-Mail zur Kontobestätigung.",
+    "error-oauth": "Google-Anmeldung fehlgeschlagen. Bitte erneut versuchen.",
+    "save-progress-banner": "Du hast gerade einen Plan abgeschlossen! Melde dich an, um deinen Fortschritt zu speichern, damit du diesen Plan später leicht wiederfindest und auf jedem Gerät weitermachen kannst.",
     "hero-eyebrow": "Lesepläne",
     "hero-title": "Verfolge deine Reise durch Den Großen Kampf",
     "hero-subtitle": "Melde dich an, um deinen Fortschritt zu speichern, Pläne zu bookmarken und genau dort weiterzumachen, wo du aufgehört hast — auf jedem Gerät.",
@@ -339,7 +342,24 @@
     "next-plan": "Nächste: {title}",
     "reading-plans-label": "Lesepläne",
     "chapters-label": "Kapitel",
-    "days-label": "Tage bis zur Fertigstellung"
+    "days-label": "Tage bis zur Fertigstellung",
+    "plan-order": "Plan {order}",
+    "card-review": "Wiederholen →",
+    "card-continue": "Weiter →",
+    "card-start": "Plan starten →",
+    "plans-title": "Lesepläne",
+    "tab-all": "Alle Pläne",
+    "tab-in-progress": "In Bearbeitung",
+    "tab-completed": "Abgeschlossen",
+    "empty-in-progress": "Noch keine Pläne in Bearbeitung. Starte einen oben!",
+    "empty-completed": "Noch keine abgeschlossenen Pläne. Lies weiter!",
+    "next-plan-teaser": "Bereit für das, was als Nächstes kommt? Weiter mit „{title}“",
+    "all-plans-completed": "Du hast die gesamte Reise durch {book} abgeschlossen! 🎉",
+    "chapter-unavailable-offline": "Dieses Kapitel wurde noch nicht heruntergeladen — verbinde dich mit dem Internet, um es zu lesen.",
+    "retry": "Erneut versuchen",
+    "chapter-english-fallback": "Dieser Abschnitt ist noch nicht in deine Sprache übersetzt — der englische Originaltext wird angezeigt.",
+    "watch-chapter-preview": "Kapitel-Vorschauvideo ansehen",
+    "read-the-chapter": "Kapitel lesen"
   },
   "xp": {
     "level-label": "Level {level} · {label}",
@@ -355,6 +375,23 @@
     "level-4": "Historiker",
     "level-5": "Theologe",
     "level-6": "Prophet",
-    "level-7": "Überwinder"
+    "level-7": "Überwinder",
+    "tier-bronze": "Bronze",
+    "tier-silver": "Silber",
+    "tier-gold": "Gold"
+  },
+  "world-age-section": {
+    "eyebrow": "Nach biblischer Chronologie",
+    "hook": "Die Tage dieser Welt sind gezählt",
+    "days-label": "Tage des Kampfes zwischen Gut und Böse",
+    "caption": "Seit der Schöpfung, vor über sechstausend Jahren, ist die Erde Schauplatz eines Kampfes zwischen Gut und Böse — derselben Geschichte, die dieses Buch enthüllt.",
+    "mute-trailer": "Ton stumm schalten",
+    "unmute-trailer": "Ton aktivieren",
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "seconds": "Sekunden",
+    "years": "Jahre",
+    "months": "Monate"
   }
 }

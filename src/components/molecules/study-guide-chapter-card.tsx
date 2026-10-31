@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { track } from "@vercel/analytics";
+import { type ChapterPlanInfo } from "@/contexts/progress-context";
 
 interface Props {
   chapterNumber: string;
@@ -14,6 +15,8 @@ interface Props {
   isVisited: boolean;
   isLast: boolean;
   isNext?: boolean;
+  /** Plan progress for this chapter — supplied by StudyGuidePageContainer */
+  planInfo?: ChapterPlanInfo | null;
 }
 
 export function StudyGuideChapterCard({
@@ -25,6 +28,7 @@ export function StudyGuideChapterCard({
   isVisited,
   isLast,
   isNext = false,
+  planInfo,
 }: Props) {
   const t = useTranslations("study-guide");
 
@@ -72,6 +76,22 @@ export function StudyGuideChapterCard({
             </svg>
             {t("watched")}
           </span>
+        )}
+
+        {/* Plan progress badge — bottom-right corner */}
+        {planInfo && (
+          <div className="absolute bottom-2 right-2">
+            {planInfo.isCompleted ? (
+              <span className="flex items-center gap-1 rounded-full bg-[#4fa6c2] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white shadow">
+                {planInfo.insignia?.icon ?? "✓"} {planInfo.insignia?.badge ?? "Done"}
+              </span>
+            ) : (
+              <span className="flex items-center gap-1.5 rounded-full bg-black/60 px-2.5 py-0.5 text-[9px] font-semibold text-white backdrop-blur-sm">
+                <span className="text-[#4fa6c2]">{planInfo.insignia?.icon}</span>
+                {planInfo.progressPct}%
+              </span>
+            )}
+          </div>
         )}
       </div>
 

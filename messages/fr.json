@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "La Tragédie des Siècles",
     "subtitle": "Découvrez les réponses aux questions les plus profondes sur le destin de l'humanité. Téléchargez ou recevez chez vous le livre qui révèle la bataille entre le bien et le mal, et comment vous pouvez vous préparer pour l'avenir.",
-    "download-button": "Télécharger",
+    "quote": "Pour couronner le grand drame de la séduction, Satan lui-même simulera l’avènement du Seigneur que l’Église attend depuis si longtemps comme la consommation de ses espérances.",
+    "quote-citation": "La Tragédie des Siècles, chapitre 39",
     "receive-at-home-button": "Recevoir à domicile"
   },
   "participate-page-container": {
@@ -307,6 +308,8 @@
     "no-account": "Vous n'avez pas de compte ?",
     "have-account": "Vous avez déjà un compte ?",
     "success-verify": "Vérifiez votre e-mail pour confirmer votre compte.",
+    "error-oauth": "La connexion avec Google a échoué. Veuillez réessayer.",
+    "save-progress-banner": "Vous venez de terminer un plan ! Connectez-vous pour enregistrer votre progression, afin de retrouver facilement ce plan plus tard et de continuer sur n'importe quel appareil.",
     "hero-eyebrow": "Plans de lecture",
     "hero-title": "Suivez votre parcours dans La Grande Controverse",
     "hero-subtitle": "Connectez-vous pour sauvegarder votre progression, ajouter des plans en favoris et reprendre exactement où vous en étiez — sur tout appareil.",
@@ -339,7 +342,24 @@
     "next-plan": "Suivant : {title}",
     "reading-plans-label": "Plans de lecture",
     "chapters-label": "Chapitres",
-    "days-label": "Jours pour terminer"
+    "days-label": "Jours pour terminer",
+    "plan-order": "Plan {order}",
+    "card-review": "Revoir →",
+    "card-continue": "Continuer →",
+    "card-start": "Démarrer le plan →",
+    "plans-title": "Plans de lecture",
+    "tab-all": "Tous les plans",
+    "tab-in-progress": "En cours",
+    "tab-completed": "Terminés",
+    "empty-in-progress": "Aucun plan en cours pour l'instant. Commencez-en un ci-dessus !",
+    "empty-completed": "Aucun plan terminé pour l'instant. Continuez à lire !",
+    "next-plan-teaser": "Prêt pour la suite ? Continuez avec « {title} »",
+    "all-plans-completed": "Vous avez achevé tout le parcours à travers {book} ! 🎉",
+    "chapter-unavailable-offline": "Ce chapitre n'a pas encore été téléchargé — connectez-vous à internet pour le lire.",
+    "retry": "Réessayer",
+    "chapter-english-fallback": "Cette section n'est pas encore traduite dans votre langue — affichage du texte original en anglais.",
+    "watch-chapter-preview": "Regarder la vidéo d'aperçu du chapitre",
+    "read-the-chapter": "Lire le chapitre"
   },
   "xp": {
     "level-label": "Niveau {level} · {label}",
@@ -355,6 +375,23 @@
     "level-4": "Historien",
     "level-5": "Théologien",
     "level-6": "Prophète",
-    "level-7": "Vainqueur"
+    "level-7": "Vainqueur",
+    "tier-bronze": "Bronze",
+    "tier-silver": "Argent",
+    "tier-gold": "Or"
+  },
+  "world-age-section": {
+    "eyebrow": "Selon la chronologie biblique",
+    "hook": "Les jours de ce monde sont comptés",
+    "days-label": "jours de conflit entre le bien et le mal",
+    "caption": "Depuis la création, il y a plus de six mille ans, la Terre est le théâtre d'une bataille entre le bien et le mal — la même histoire que ce livre révèle.",
+    "mute-trailer": "Couper le son",
+    "unmute-trailer": "Activer le son",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "years": "Ans",
+    "months": "Mois"
   }
 }

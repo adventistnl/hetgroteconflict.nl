@@ -2,7 +2,8 @@
   "home-page-container": {
     "title": "Nkyerɛkyerɛ Kɛse",
     "subtitle": "Bɔ mmɔden na hu nsɛm a ɛyɛ den fa ɔman no ho. Download anaa fa nkɔ fie na kɔfa nwoma a ɛda ɔkɛse ne bɔne ntam a ɛda ho adi, na sɛnea wubetumi ayɛ no yɛ.",
-    "download-button": "Download",
+    "quote": "As the crowning act in the great drama of deception, Satan himself will personate Christ.",
+    "quote-citation": "The Great Controversy, chapter 39",
     "receive-at-home-button": "Fa nkɔ fie"
   },
   "participate-page-container": {
@@ -307,6 +308,8 @@
     "no-account": "Wuni account?",
     "have-account": "Wowɔ account?",
     "success-verify": "Hwɛ wo email na gyina so.",
+    "error-oauth": "Google sign-in yɛɛ faree. Xhosa bio.",
+    "save-progress-banner": "Woawie plan bi! Hyɛ wo din ase na sie wo nkɔso, na wubehu plan yi bio na woatoa so wɔ mfiri biara so.",
     "hero-eyebrow": "Kenkan Plannom",
     "hero-title": "Hwɛ wo kwan wɔ Ɔtomfo ne Onyankopɔn Ntakranetwa mu",
     "hero-subtitle": "Hyɛ wo din ase na hwɛ wo kɛse, plan akyerɛw a na toa so wɔ wobɛgyaw mu — machine biara so.",
@@ -339,7 +342,24 @@
     "next-plan": "Edi so: {title}",
     "reading-plans-label": "Kenkan plannom",
     "chapters-label": "Nkurɔfoɔ",
-    "days-label": "Nnɛ a ɛsɛ sɛ woawie"
+    "days-label": "Nnɛ a ɛsɛ sɛ woawie",
+    "plan-order": "Nhyehyɛe {order}",
+    "card-review": "San Hwɛ →",
+    "card-continue": "Kɔ So →",
+    "card-start": "Hyɛ Nhyehyɛe Ase →",
+    "plans-title": "Kenkan Nhyehyɛe",
+    "tab-all": "Nhyehyɛe Nyinaa",
+    "tab-in-progress": "Wɔ Kɔso",
+    "tab-completed": "Wie Ato",
+    "empty-in-progress": "Nhyehyɛe biara nni so wɔ kɔso. Hyɛ biako ase saa!",
+    "empty-completed": "Nhyehyɛe biara anto wie. Kɔ so kenkan!",
+    "next-plan-teaser": "Wo asiesie wo ho ama deɛ ɛdi hɔ no? Kɔ so wɔ \"{title}\" mu",
+    "all-plans-completed": "Woawie akwantuo no nyinaa afiri {book} mu! 🎉",
+    "chapter-unavailable-offline": "Wɔnntwe ti yi mmaa da — fa wo ho bɔ Internet so na woakenkan.",
+    "retry": "Sɔ hwɛ bio",
+    "chapter-english-fallback": "Wɔntwaa saa fa yi ase mmaa wo kasa mu da — wɔreyi Borɔfo asɛm no kyerɛ.",
+    "watch-chapter-preview": "Hwɛ ti no ho preview video",
+    "read-the-chapter": "Kenkan ti no"
   },
   "xp": {
     "level-label": "Mmerɛ {level} · {label}",
@@ -355,6 +375,23 @@
     "level-4": "Amantamfo",
     "level-5": "Onkyerɛkyerɛfo Onyankopɔn",
     "level-6": "Odiyifo",
-    "level-7": "Ogye Nkonim"
+    "level-7": "Ogye Nkonim",
+    "tier-bronze": "Kɔbere",
+    "tier-silver": "Dwetɛ",
+    "tier-gold": "Sikakɔkɔɔ"
+  },
+  "world-age-section": {
+    "eyebrow": "Sɛnea Bible nkyerɛkyerɛmu kyerɛ",
+    "hook": "Wiase yi awiei abɛn",
+    "days-label": "nna a papa ne bɔne redi akoko",
+    "caption": "Efi adebɔ mfeɛ mpem nsia ne mmoro yi, Asase ayɛ baabi a papa ne bɔne ko — anansesɛm korɔ no ara a saa nhoma yi da no adi.",
+    "mute-trailer": "Yi trailer no so mum",
+    "unmute-trailer": "Bue trailer no so",
+    "days": "Nna",
+    "hours": "Nnɔnhwerew",
+    "minutes": "Nsimma",
+    "seconds": "Sikan",
+    "years": "Mfe",
+    "months": "Bosome"
   }
 }

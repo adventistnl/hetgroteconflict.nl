@@ -1,0 +1,794 @@
+{
+  "pt": {
+    "Introduction": {
+      "rewardTitle": "Primeiros Passos",
+      "rewardDescription": "Você abriu a porta para uma das maiores narrativas da história.",
+      "badge": "Buscador da Verdade"
+    },
+    "Decline": {
+      "rewardTitle": "Trevas Testemunhadas",
+      "rewardDescription": "Você traçou como a luz espiritual pode se apagar ao longo dos séculos.",
+      "badge": "Testemunha da Queda"
+    },
+    "Forerunners": {
+      "rewardTitle": "Vozes Ouvidas",
+      "rewardDescription": "Você caminhou ao lado das almas corajosas que se recusaram a ser silenciadas.",
+      "badge": "Portador da Tocha"
+    },
+    "Reformation": {
+      "rewardTitle": "Império Abalado",
+      "rewardDescription": "Você esteve com os reformadores que desafiaram o poder mais forte de sua época.",
+      "badge": "Coração de Reformador"
+    },
+    "Europe": {
+      "rewardTitle": "A Verdade se Espalha",
+      "rewardDescription": "Você viu o fogo da reforma cruzar fronteiras e incendiar um continente.",
+      "badge": "Propagador da Chama"
+    },
+    "America": {
+      "rewardTitle": "Novo Começo",
+      "rewardDescription": "Você descobriu como uma nova terra se tornou o último refúgio da liberdade religiosa.",
+      "badge": "Pioneiro do Novo Mundo"
+    },
+    "Prophecy": {
+      "rewardTitle": "Profecia Decifrada",
+      "rewardDescription": "Você desvendou a linha do tempo profética que molda o nosso presente.",
+      "badge": "Vigia do Tempo"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Véu Erguido",
+      "rewardDescription": "Você percorreu o santuário celestial e encontrou seu significado para hoje.",
+      "badge": "Andarilho do Véu"
+    },
+    "Revival": {
+      "rewardTitle": "Espelho Erguido",
+      "rewardDescription": "Você examinou os testes que separam o avivamento genuíno da mera emoção.",
+      "badge": "Buscador do Espelho"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Origem Compreendida",
+      "rewardDescription": "Você traçou a própria raiz do mal — e a resposta escondida em Cristo.",
+      "badge": "Revelador da Verdade"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Engano Identificado",
+      "rewardDescription": "Você se armou contra um dos últimos e maiores enganos da Terra.",
+      "badge": "Mente Discernidora"
+    },
+    "Liberty": {
+      "rewardTitle": "Liberdade Protegida",
+      "rewardDescription": "Você entendeu por que a consciência nunca pode se curvar ao poder terreno.",
+      "badge": "Defensor da Liberdade"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Vitória Garantida",
+      "rewardDescription": "Você enfrentou o conflito final — e viu como a história termina em triunfo.",
+      "badge": "Vencedor"
+    },
+    "Appendix": {
+      "rewardTitle": "Quadro Completo",
+      "rewardDescription": "Você concluiu cada página — uma jornada que poucos leitores terminam.",
+      "badge": "Erudito"
+    }
+  },
+  "es": {
+    "Introduction": {
+      "rewardTitle": "Primeros Pasos",
+      "rewardDescription": "Abriste la puerta a una de las narrativas más grandes de la historia.",
+      "badge": "Buscador de la Verdad"
+    },
+    "Decline": {
+      "rewardTitle": "Oscuridad Presenciada",
+      "rewardDescription": "Trazaste cómo la luz espiritual puede apagarse a lo largo de los siglos.",
+      "badge": "Testigo de la Caída"
+    },
+    "Forerunners": {
+      "rewardTitle": "Voces Escuchadas",
+      "rewardDescription": "Caminaste junto a las almas valientes que se negaron a ser silenciadas.",
+      "badge": "Portador de la Antorcha"
+    },
+    "Reformation": {
+      "rewardTitle": "Imperio Sacudido",
+      "rewardDescription": "Estuviste con los reformadores que desafiaron el poder más fuerte de su época.",
+      "badge": "Corazón de Reformador"
+    },
+    "Europe": {
+      "rewardTitle": "La Verdad se Extiende",
+      "rewardDescription": "Viste el fuego de la reforma cruzar fronteras e incendiar un continente.",
+      "badge": "Propagador de la Llama"
+    },
+    "America": {
+      "rewardTitle": "Nuevo Comienzo",
+      "rewardDescription": "Descubriste cómo una nueva tierra se convirtió en el último refugio de la libertad religiosa.",
+      "badge": "Pionero del Nuevo Mundo"
+    },
+    "Prophecy": {
+      "rewardTitle": "Profecía Descifrada",
+      "rewardDescription": "Desentrañaste la línea de tiempo profética que da forma a nuestro presente.",
+      "badge": "Vigía del Tiempo"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Velo Levantado",
+      "rewardDescription": "Recorriste el santuario celestial y encontraste su significado para hoy.",
+      "badge": "Caminante del Velo"
+    },
+    "Revival": {
+      "rewardTitle": "Espejo en Alto",
+      "rewardDescription": "Examinaste las pruebas que separan el avivamiento genuino de la mera emoción.",
+      "badge": "Buscador del Espejo"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Origen Comprendido",
+      "rewardDescription": "Trazaste la raíz misma del mal — y la respuesta escondida en Cristo.",
+      "badge": "Revelador de la Verdad"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Engaño Detectado",
+      "rewardDescription": "Te armaste contra uno de los últimos y grandes engaños de la tierra.",
+      "badge": "Mente Discernidora"
+    },
+    "Liberty": {
+      "rewardTitle": "Libertad Protegida",
+      "rewardDescription": "Comprendiste por qué la conciencia nunca puede doblegarse ante el poder terrenal.",
+      "badge": "Defensor de la Libertad"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Victoria Asegurada",
+      "rewardDescription": "Enfrentaste el conflicto final — y viste cómo la historia termina en triunfo.",
+      "badge": "Vencedor"
+    },
+    "Appendix": {
+      "rewardTitle": "Panorama Completo",
+      "rewardDescription": "Completaste cada página — un viaje que pocos lectores terminan.",
+      "badge": "Erudito Consumado"
+    }
+  },
+  "fr": {
+    "Introduction": {
+      "rewardTitle": "Premiers Pas",
+      "rewardDescription": "Vous avez ouvert la porte sur l'un des plus grands récits de l'histoire.",
+      "badge": "Chercheur de Vérité"
+    },
+    "Decline": {
+      "rewardTitle": "Témoin des Ténèbres",
+      "rewardDescription": "Vous avez retracé comment la lumière spirituelle peut s'éteindre au fil des siècles.",
+      "badge": "Témoin de la Chute"
+    },
+    "Forerunners": {
+      "rewardTitle": "Voix Entendues",
+      "rewardDescription": "Vous avez marché aux côtés des âmes courageuses qui ont refusé d'être réduites au silence.",
+      "badge": "Porteur de Flambeau"
+    },
+    "Reformation": {
+      "rewardTitle": "Empire Ébranlé",
+      "rewardDescription": "Vous avez été aux côtés des réformateurs qui ont défié la puissance la plus redoutable de leur époque.",
+      "badge": "Cœur de Réformateur"
+    },
+    "Europe": {
+      "rewardTitle": "La Vérité se Répand",
+      "rewardDescription": "Vous avez vu le feu de la réforme franchir les frontières et embraser un continent.",
+      "badge": "Propagateur de Flamme"
+    },
+    "America": {
+      "rewardTitle": "Nouveau Départ",
+      "rewardDescription": "Vous avez découvert comment une nouvelle terre est devenue le dernier refuge de la liberté religieuse.",
+      "badge": "Pionnier du Nouveau Monde"
+    },
+    "Prophecy": {
+      "rewardTitle": "Prophétie Décryptée",
+      "rewardDescription": "Vous avez percé la chronologie prophétique qui façonne notre présent même.",
+      "badge": "Veilleur du Temps"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Voile Levé",
+      "rewardDescription": "Vous avez parcouru le sanctuaire céleste et découvert sa signification pour aujourd'hui.",
+      "badge": "Marcheur du Voile"
+    },
+    "Revival": {
+      "rewardTitle": "Miroir Dévoilé",
+      "rewardDescription": "Vous avez examiné les critères qui distinguent le véritable réveil de la simple émotion.",
+      "badge": "Chercheur du Miroir"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Origine Comprise",
+      "rewardDescription": "Vous avez retracé la racine même du mal — et la réponse cachée en Christ.",
+      "badge": "Révélateur de Vérité"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Tromperie Décelée",
+      "rewardDescription": "Vous vous êtes armé contre l'une des dernières grandes tromperies de la terre.",
+      "badge": "Esprit Discernant"
+    },
+    "Liberty": {
+      "rewardTitle": "Liberté Protégée",
+      "rewardDescription": "Vous avez compris pourquoi la conscience ne peut jamais se plier au pouvoir terrestre.",
+      "badge": "Défenseur de la Liberté"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Victoire Assurée",
+      "rewardDescription": "Vous avez affronté le conflit final — et vu comment l'histoire s'achève en triomphe.",
+      "badge": "Vainqueur"
+    },
+    "Appendix": {
+      "rewardTitle": "Vue d'Ensemble",
+      "rewardDescription": "Vous avez terminé chaque page — un parcours que peu de lecteurs achèvent.",
+      "badge": "Érudit Accompli"
+    }
+  },
+  "de": {
+    "Introduction": {
+      "rewardTitle": "Erste Schritte",
+      "rewardDescription": "Du hast die Tür zu einer der größten Erzählungen der Geschichte geöffnet.",
+      "badge": "Wahrheitssucher"
+    },
+    "Decline": {
+      "rewardTitle": "Finsternis Miterlebt",
+      "rewardDescription": "Du hast nachgezeichnet, wie geistliches Licht über Jahrhunderte hinweg schwinden kann.",
+      "badge": "Zeuge des Falls"
+    },
+    "Forerunners": {
+      "rewardTitle": "Stimmen Gehört",
+      "rewardDescription": "Du bist an der Seite der mutigen Seelen gegangen, die sich weigerten, zum Schweigen gebracht zu werden.",
+      "badge": "Fackelträger"
+    },
+    "Reformation": {
+      "rewardTitle": "Imperium Erschüttert",
+      "rewardDescription": "Du hast mit den Reformatoren gestanden, die die mächtigste Macht ihrer Zeit herausforderten.",
+      "badge": "Herz eines Reformators"
+    },
+    "Europe": {
+      "rewardTitle": "Die Wahrheit Breitet Sich Aus",
+      "rewardDescription": "Du hast gesehen, wie das Feuer der Reformation Grenzen überschritt und einen Kontinent entzündete.",
+      "badge": "Flammenträger"
+    },
+    "America": {
+      "rewardTitle": "Neuer Anfang",
+      "rewardDescription": "Du hast entdeckt, wie ein neues Land zur letzten Zuflucht für Religionsfreiheit wurde.",
+      "badge": "Pionier der Neuen Welt"
+    },
+    "Prophecy": {
+      "rewardTitle": "Prophetie Entschlüsselt",
+      "rewardDescription": "Du hast die prophetische Zeitlinie entschlüsselt, die unsere Gegenwart prägt.",
+      "badge": "Zeitwächter"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Vorhang Gelüftet",
+      "rewardDescription": "Du bist durch das himmlische Heiligtum gewandert und hast seine Bedeutung für heute entdeckt.",
+      "badge": "Wanderer hinter dem Vorhang"
+    },
+    "Revival": {
+      "rewardTitle": "Spiegel Vorgehalten",
+      "rewardDescription": "Du hast die Prüfsteine untersucht, die echte Erweckung von bloßer Emotion unterscheiden.",
+      "badge": "Spiegelsucher"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Ursprung Verstanden",
+      "rewardDescription": "Du hast die eigentliche Wurzel des Bösen zurückverfolgt — und die Antwort, die in Christus verborgen liegt.",
+      "badge": "Enthüller der Wahrheit"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Täuschung Entdeckt",
+      "rewardDescription": "Du hast dich gegen eine der letzten großen Täuschungen der Erde gewappnet.",
+      "badge": "Unterscheidender Geist"
+    },
+    "Liberty": {
+      "rewardTitle": "Freiheit Bewahrt",
+      "rewardDescription": "Du hast verstanden, warum sich das Gewissen niemals irdischer Macht beugen darf.",
+      "badge": "Verteidiger der Freiheit"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Sieg Gesichert",
+      "rewardDescription": "Du hast dich dem letzten Konflikt gestellt — und gesehen, wie die Geschichte im Triumph endet.",
+      "badge": "Überwinder"
+    },
+    "Appendix": {
+      "rewardTitle": "Gesamtbild",
+      "rewardDescription": "Du hast jede Seite abgeschlossen — eine Reise, die nur wenige Leser je vollenden.",
+      "badge": "Meistergelehrter"
+    }
+  },
+  "nl": {
+    "Introduction": {
+      "rewardTitle": "Eerste Stappen",
+      "rewardDescription": "Je hebt de deur geopend naar een van de grootste verhalen uit de geschiedenis.",
+      "badge": "Zoeker van Waarheid"
+    },
+    "Decline": {
+      "rewardTitle": "Duisternis Aanschouwd",
+      "rewardDescription": "Je hebt nagegaan hoe geestelijk licht door de eeuwen heen kan vervagen.",
+      "badge": "Getuige van de Val"
+    },
+    "Forerunners": {
+      "rewardTitle": "Stemmen Gehoord",
+      "rewardDescription": "Je liep naast de moedige zielen die weigerden tot zwijgen te worden gebracht.",
+      "badge": "Fakkeldrager"
+    },
+    "Reformation": {
+      "rewardTitle": "Rijk Geschokt",
+      "rewardDescription": "Je stond naast de hervormers die de machtigste macht van hun tijd trotseerden.",
+      "badge": "Hart van een Hervormer"
+    },
+    "Europe": {
+      "rewardTitle": "De Waarheid Verspreidt Zich",
+      "rewardDescription": "Je zag het vuur van de hervorming grenzen oversteken en een continent doen ontvlammen.",
+      "badge": "Vlamverspreider"
+    },
+    "America": {
+      "rewardTitle": "Nieuw Begin",
+      "rewardDescription": "Je ontdekte hoe een nieuw land het laatste toevluchtsoord voor godsdienstvrijheid werd.",
+      "badge": "Pionier van de Nieuwe Wereld"
+    },
+    "Prophecy": {
+      "rewardTitle": "Profetie Ontcijferd",
+      "rewardDescription": "Je ontrafelde de profetische tijdlijn die ons huidige moment vormt.",
+      "badge": "Tijdwachter"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Sluier Opgeheven",
+      "rewardDescription": "Je reisde door het hemels heiligdom en ontdekte de betekenis ervan voor vandaag.",
+      "badge": "Wandelaar achter de Sluier"
+    },
+    "Revival": {
+      "rewardTitle": "Spiegel Voorgehouden",
+      "rewardDescription": "Je onderzocht de toetsen die echte opwekking onderscheiden van louter gevoel.",
+      "badge": "Zoeker van de Spiegel"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Oorsprong Begrepen",
+      "rewardDescription": "Je herleidde de wortel van het kwaad zelf — en het antwoord verborgen in Christus.",
+      "badge": "Onthuller van Waarheid"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Bedrog Doorzien",
+      "rewardDescription": "Je hebt jezelf gewapend tegen een van de laatste grote bedriegerijen op aarde.",
+      "badge": "Onderscheidende Geest"
+    },
+    "Liberty": {
+      "rewardTitle": "Vrijheid Bewaakt",
+      "rewardDescription": "Je begreep waarom het geweten zich nooit mag buigen voor aardse macht.",
+      "badge": "Verdediger van Vrijheid"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Overwinning Verzekerd",
+      "rewardDescription": "Je trotseerde het laatste conflict — en zag hoe het verhaal eindigt in triomf.",
+      "badge": "Overwinnaar"
+    },
+    "Appendix": {
+      "rewardTitle": "Volledig Beeld",
+      "rewardDescription": "Je hebt elke pagina voltooid — een reis die maar weinig lezers ooit afmaken.",
+      "badge": "Meestergeleerde"
+    }
+  },
+  "ru": {
+    "Introduction": {
+      "rewardTitle": "Первые Шаги",
+      "rewardDescription": "Ты открыл дверь в одно из величайших повествований в истории.",
+      "badge": "Искатель Истины"
+    },
+    "Decline": {
+      "rewardTitle": "Свидетель Тьмы",
+      "rewardDescription": "Ты проследил, как духовный свет может угасать на протяжении веков.",
+      "badge": "Свидетель Падения"
+    },
+    "Forerunners": {
+      "rewardTitle": "Голоса Услышаны",
+      "rewardDescription": "Ты шел рядом с отважными душами, отказавшимися молчать.",
+      "badge": "Носитель Факела"
+    },
+    "Reformation": {
+      "rewardTitle": "Империя Потрясена",
+      "rewardDescription": "Ты был с реформаторами, бросившими вызов самой могущественной власти своего времени.",
+      "badge": "Сердце Реформатора"
+    },
+    "Europe": {
+      "rewardTitle": "Истина Распространяется",
+      "rewardDescription": "Ты видел, как огонь реформации пересекал границы и охватывал континент.",
+      "badge": "Разносчик Пламени"
+    },
+    "America": {
+      "rewardTitle": "Новое Начало",
+      "rewardDescription": "Ты узнал, как новая земля стала последним прибежищем религиозной свободы.",
+      "badge": "Первопроходец Нового Мира"
+    },
+    "Prophecy": {
+      "rewardTitle": "Пророчество Разгадано",
+      "rewardDescription": "Ты раскрыл пророческую хронологию, формирующую само наше время.",
+      "badge": "Страж Времени"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Завеса Приподнята",
+      "rewardDescription": "Ты прошел через небесное святилище и открыл его значение для сегодняшнего дня.",
+      "badge": "Странник за Завесой"
+    },
+    "Revival": {
+      "rewardTitle": "Зеркало Поднято",
+      "rewardDescription": "Ты изучил критерии, отличающие подлинное пробуждение от простой эмоции.",
+      "badge": "Искатель Зеркала"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Происхождение Понято",
+      "rewardDescription": "Ты проследил самый корень зла — и ответ, сокрытый во Христе.",
+      "badge": "Разоблачитель Истины"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Обман Раскрыт",
+      "rewardDescription": "Ты вооружился против одного из последних великих обманов земли.",
+      "badge": "Проницательный Ум"
+    },
+    "Liberty": {
+      "rewardTitle": "Свобода Защищена",
+      "rewardDescription": "Ты понял, почему совесть никогда не может склониться перед земной властью.",
+      "badge": "Защитник Свободы"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Победа Обеспечена",
+      "rewardDescription": "Ты встретил последний конфликт — и увидел, как история завершается триумфом.",
+      "badge": "Победитель"
+    },
+    "Appendix": {
+      "rewardTitle": "Полная Картина",
+      "rewardDescription": "Ты прочитал каждую страницу — путь, который проходят немногие читатели.",
+      "badge": "Истинный Знаток"
+    }
+  },
+  "zh": {
+    "Introduction": {
+      "rewardTitle": "第一步",
+      "rewardDescription": "你打开了通往历史上最伟大叙事之一的大门。",
+      "badge": "真理寻求者"
+    },
+    "Decline": {
+      "rewardTitle": "黑暗的见证",
+      "rewardDescription": "你追溯了属灵之光如何在数世纪间逐渐熄灭。",
+      "badge": "陷落的见证者"
+    },
+    "Forerunners": {
+      "rewardTitle": "聆听之声",
+      "rewardDescription": "你与那些拒绝被压制的勇敢灵魂同行。",
+      "badge": "火炬手"
+    },
+    "Reformation": {
+      "rewardTitle": "帝国震动",
+      "rewardDescription": "你与挑战那个时代最强权力的改教者们同在。",
+      "badge": "改革者之心"
+    },
+    "Europe": {
+      "rewardTitle": "真理蔓延",
+      "rewardDescription": "你目睹改革之火跨越国界，点燃整个大陆。",
+      "badge": "火焰传播者"
+    },
+    "America": {
+      "rewardTitle": "崭新的开始",
+      "rewardDescription": "你发现了一片新大陆如何成为宗教自由的最后避难所。",
+      "badge": "新大陆先锋"
+    },
+    "Prophecy": {
+      "rewardTitle": "预言解开",
+      "rewardDescription": "你解开了塑造我们当下时代的预言时间线。",
+      "badge": "时间守望者"
+    },
+    "Sanctuary": {
+      "rewardTitle": "幔子揭开",
+      "rewardDescription": "你走遍天上圣所，发现了它对今日的意义。",
+      "badge": "幔内行者"
+    },
+    "Revival": {
+      "rewardTitle": "明镜高悬",
+      "rewardDescription": "你查验了区分真实复兴与单纯情感的标准。",
+      "badge": "明镜寻索者"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "起源已明",
+      "rewardDescription": "你追溯了罪恶本身的根源——以及隐藏在基督里的答案。",
+      "badge": "真理揭示者"
+    },
+    "Spiritualism": {
+      "rewardTitle": "识破诡计",
+      "rewardDescription": "你已武装自己，抵御世上最后的大骗局之一。",
+      "badge": "明辨之心"
+    },
+    "Liberty": {
+      "rewardTitle": "自由得护",
+      "rewardDescription": "你明白了为何良心永不应向地上的权势屈服。",
+      "badge": "自由捍卫者"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "胜利在握",
+      "rewardDescription": "你直面最后的冲突——并见证了故事以得胜收场。",
+      "badge": "得胜者"
+    },
+    "Appendix": {
+      "rewardTitle": "全貌尽览",
+      "rewardDescription": "你读完了每一页——这是很少有读者能完成的旅程。",
+      "badge": "博学之士"
+    }
+  },
+  "ar": {
+    "Introduction": {
+      "rewardTitle": "الخطوات الأولى",
+      "rewardDescription": "لقد فتحت الباب أمام واحدة من أعظم الروايات في التاريخ.",
+      "badge": "الباحث عن الحق"
+    },
+    "Decline": {
+      "rewardTitle": "شهادة الظلام",
+      "rewardDescription": "لقد تتبعت كيف يمكن للنور الروحي أن يخبو عبر القرون.",
+      "badge": "شاهد السقوط"
+    },
+    "Forerunners": {
+      "rewardTitle": "أصوات سُمعت",
+      "rewardDescription": "لقد سرت جنبًا إلى جنب مع النفوس الشجاعة التي رفضت أن تُسكَت.",
+      "badge": "حامل الشعلة"
+    },
+    "Reformation": {
+      "rewardTitle": "إمبراطورية مهتزّة",
+      "rewardDescription": "لقد وقفت مع المصلحين الذين تحدّوا أقوى سلطة في عصرهم.",
+      "badge": "قلب مُصلِح"
+    },
+    "Europe": {
+      "rewardTitle": "الحق ينتشر",
+      "rewardDescription": "لقد رأيت نار الإصلاح تعبر الحدود وتشعل قارة بأكملها.",
+      "badge": "ناشر اللهب"
+    },
+    "America": {
+      "rewardTitle": "بداية جديدة",
+      "rewardDescription": "لقد اكتشفت كيف أصبحت أرض جديدة الملاذ الأخير للحرية الدينية.",
+      "badge": "رائد العالم الجديد"
+    },
+    "Prophecy": {
+      "rewardTitle": "النبوة مفكوكة الرموز",
+      "rewardDescription": "لقد كشفت الخط الزمني النبوي الذي يشكّل لحظتنا الحاضرة ذاتها.",
+      "badge": "حارس الزمن"
+    },
+    "Sanctuary": {
+      "rewardTitle": "الحجاب مرفوع",
+      "rewardDescription": "لقد سرت عبر المقدس السماوي واكتشفت معناه لهذا اليوم.",
+      "badge": "سالك خلف الحجاب"
+    },
+    "Revival": {
+      "rewardTitle": "المرآة مرفوعة",
+      "rewardDescription": "لقد فحصت المعايير التي تميّز الانتعاش الحقيقي عن مجرد العاطفة.",
+      "badge": "الباحث في المرآة"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "الأصل مفهوم",
+      "rewardDescription": "لقد تتبعت جذر الشر ذاته — والجواب المخفي في المسيح.",
+      "badge": "كاشف الحق"
+    },
+    "Spiritualism": {
+      "rewardTitle": "الخديعة مكشوفة",
+      "rewardDescription": "لقد تسلّحت ضد واحدة من آخر الخدع الكبرى على الأرض.",
+      "badge": "العقل المُميِّز"
+    },
+    "Liberty": {
+      "rewardTitle": "الحرية محروسة",
+      "rewardDescription": "لقد فهمت لماذا لا يمكن للضمير أن ينحني أبدًا أمام السلطة الأرضية.",
+      "badge": "المدافع عن الحرية"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "النصر مضمون",
+      "rewardDescription": "لقد واجهت الصراع الأخير — ورأيت كيف تنتهي القصة بالانتصار.",
+      "badge": "الغالب"
+    },
+    "Appendix": {
+      "rewardTitle": "الصورة الكاملة",
+      "rewardDescription": "لقد أتممت كل صفحة — رحلة قلّة من القراء يكملونها.",
+      "badge": "العالِم المتمرّس"
+    }
+  },
+  "cz": {
+    "Introduction": {
+      "rewardTitle": "První Kroky",
+      "rewardDescription": "Otevřel jsi dveře k jednomu z největších příběhů v dějinách.",
+      "badge": "Hledač Pravdy"
+    },
+    "Decline": {
+      "rewardTitle": "Temnota Spatřena",
+      "rewardDescription": "Vysledoval jsi, jak duchovní světlo může v průběhu staletí slábnout.",
+      "badge": "Svědek Pádu"
+    },
+    "Forerunners": {
+      "rewardTitle": "Hlasy Vyslyšeny",
+      "rewardDescription": "Kráčel jsi po boku odvážných duší, které odmítly být umlčeny.",
+      "badge": "Nositel Pochodně"
+    },
+    "Reformation": {
+      "rewardTitle": "Impérium Otřeseno",
+      "rewardDescription": "Byl jsi s reformátory, kteří vzdorovali nejmocnější moci své doby.",
+      "badge": "Srdce Reformátora"
+    },
+    "Europe": {
+      "rewardTitle": "Pravda se Šíří",
+      "rewardDescription": "Viděl jsi, jak oheň reformace překračuje hranice a zapaluje celý kontinent.",
+      "badge": "Šiřitel Plamene"
+    },
+    "America": {
+      "rewardTitle": "Nový Začátek",
+      "rewardDescription": "Zjistil jsi, jak se nová země stala posledním útočištěm náboženské svobody.",
+      "badge": "Průkopník Nového Světa"
+    },
+    "Prophecy": {
+      "rewardTitle": "Proroctví Rozluštěno",
+      "rewardDescription": "Odhalil jsi prorockou časovou linii, která utváří samotnou naši přítomnost.",
+      "badge": "Strážce Času"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Opona Odhalena",
+      "rewardDescription": "Prošel jsi nebeskou svatyní a objevil její význam pro dnešek.",
+      "badge": "Poutník za Oponou"
+    },
+    "Revival": {
+      "rewardTitle": "Zrcadlo Nastaveno",
+      "rewardDescription": "Prozkoumal jsi zkoušky, které odlišují opravdové probuzení od pouhé emoce.",
+      "badge": "Hledač Zrcadla"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Původ Pochopen",
+      "rewardDescription": "Vysledoval jsi samotný kořen zla — a odpověď skrytou v Kristu.",
+      "badge": "Odhalovatel Pravdy"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Klam Odhalen",
+      "rewardDescription": "Vyzbrojil ses proti jednomu z posledních velkých klamů na zemi.",
+      "badge": "Rozlišující Mysl"
+    },
+    "Liberty": {
+      "rewardTitle": "Svoboda Chráněna",
+      "rewardDescription": "Pochopil jsi, proč se svědomí nikdy nesmí sklonit před pozemskou mocí.",
+      "badge": "Obhájce Svobody"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Vítězství Zajištěno",
+      "rewardDescription": "Postavil ses poslednímu konfliktu — a viděl jsi, jak příběh končí triumfem.",
+      "badge": "Vítěz"
+    },
+    "Appendix": {
+      "rewardTitle": "Celkový Obraz",
+      "rewardDescription": "Dokončil jsi každou stránku — cestu, kterou dokončí jen málo čtenářů.",
+      "badge": "Mistr Učenec"
+    }
+  },
+  "tw": {
+    "Introduction": {
+      "rewardTitle": "Anammɔn A Ɛdi Kan",
+      "rewardDescription": "Wobuee ɛpono a ɛkɔ abakɔsɛm mu anansesɛm akɛseɛ no baako mu.",
+      "badge": "Nokware Hwehwɛfoɔ"
+    },
+    "Decline": {
+      "rewardTitle": "Esum A Wohunuiɛ",
+      "rewardDescription": "Wodii honhom fam kanea a ɛtumi kɔ mu wɔ mfeha bebree mu no akyi.",
+      "badge": "Asehwe No Ho Danseni"
+    },
+    "Forerunners": {
+      "rewardTitle": "Nnyeɛ A Wɔtiee",
+      "rewardDescription": "Wo ne akokoɔdurufoɔ a wɔampene sɛ wɔbɛma wɔayɛ komm no nantee.",
+      "badge": "Kanea Sokafoɔ"
+    },
+    "Reformation": {
+      "rewardTitle": "Ahemman A Wososeeɛ",
+      "rewardDescription": "Wo ne nsakraeɛ sofoɔ a wɔsɔree tumi kɛseɛ a ɛwɔ hɔ saa berɛ no gyinaeɛ.",
+      "badge": "Ɔyɛsiesiefoɔ Akoma"
+    },
+    "Europe": {
+      "rewardTitle": "Nokware No Trɛ",
+      "rewardDescription": "Woahunu sɛnea nsakraeɛ ogya no twaa ahyeɛ na ɛsɔɔ asaase kɛseɛ bi mu gya.",
+      "badge": "Ogyaframa Trɛfoɔ"
+    },
+    "America": {
+      "rewardTitle": "Mfiaseɛ Foforɔ",
+      "rewardDescription": "Wohunuu sɛnea asaase foforɔ bi bɛyɛɛ baabi a ɔsom mu ahofadie kɔhintaeɛ.",
+      "badge": "Ewiase Foforɔ Kanea Sofoɔ"
+    },
+    "Prophecy": {
+      "rewardTitle": "Nkɔmhyɛ A Wɔasan Mu",
+      "rewardDescription": "Wosanee nkɔmhyɛ berɛso a ɛkyerɛkyerɛ yɛn seesei berɛ ase.",
+      "badge": "Berɛ Sohwɛfoɔ"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Ntwamu Ntoma A Wɔayi",
+      "rewardDescription": "Wonantee ɔsoro kronkronbea mu na wohunuu deɛ ɛkyerɛ ma ɛnnɛ.",
+      "badge": "Ntwamu Ntoma Akyi Ɔnanteni"
+    },
+    "Revival": {
+      "rewardTitle": "Ahwehwɛ A Wɔama So",
+      "rewardDescription": "Wohwehwɛɛ nsɔhwɛ a ɛpaapae nokware nkanyane ne nkate kɛkɛ mu.",
+      "badge": "Ahwehwɛ Hwehwɛfoɔ"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Mfitiaseɛ A Wɔte Aseɛ",
+      "rewardDescription": "Wodii bɔne ankasa ne aseɛ akyi kwan — ne mmuaeɛ a ahinta wɔ Kristo mu.",
+      "badge": "Nokware Adikyerɛfoɔ"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Nnaadaa A Wɔahunu",
+      "rewardDescription": "Wode wo ho siesiee tia nnaadaa akɛseɛ a ɛtoɔ toɔ wɔ asaase so no baako.",
+      "badge": "Nhunumu Adwene"
+    },
+    "Liberty": {
+      "rewardTitle": "Ahofadie A Wɔabɔ Ho Ban",
+      "rewardDescription": "Wote aseɛ sɛ adɛn nti a adwene rentumi mmu ne ti nkɔ asaase so tumi ase da.",
+      "badge": "Ahofadie Ɔbanbɔfoɔ"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Nkonim A Wɔahyɛ Mu Den",
+      "rewardDescription": "Wohyiaa ko a ɛtwa toɔ no — na wohunuu sɛnea asɛm no wie nkonim mu.",
+      "badge": "Nkonimdifoɔ"
+    },
+    "Appendix": {
+      "rewardTitle": "Mfonini Nyinaa",
+      "rewardDescription": "Wokenkanee kratafa biara — akwantuo a akenkanfoɔ kakraa bi na wie.",
+      "badge": "Nyansahwehwɛfoɔ Kɛseɛ"
+    }
+  },
+  "en": {
+    "Introduction": {
+      "rewardTitle": "First Steps",
+      "rewardDescription": "You opened the door to one of history's greatest narratives.",
+      "badge": "Seeker of Truth"
+    },
+    "Decline": {
+      "rewardTitle": "Darkness Witnessed",
+      "rewardDescription": "You traced how spiritual light can fade across centuries.",
+      "badge": "Witness of the Fall"
+    },
+    "Forerunners": {
+      "rewardTitle": "Voices Heard",
+      "rewardDescription": "You walked beside the brave souls who refused to be silenced.",
+      "badge": "Torchbearer"
+    },
+    "Reformation": {
+      "rewardTitle": "Empire Shaken",
+      "rewardDescription": "You stood with the reformers who challenged the mightiest power of their age.",
+      "badge": "Reformer's Heart"
+    },
+    "Europe": {
+      "rewardTitle": "Truth Spreads",
+      "rewardDescription": "You watched the fire of reform cross borders and ignite a continent.",
+      "badge": "Flame Spreader"
+    },
+    "America": {
+      "rewardTitle": "New Beginning",
+      "rewardDescription": "You discovered how a new land became a last refuge for religious liberty.",
+      "badge": "New World Pioneer"
+    },
+    "Prophecy": {
+      "rewardTitle": "Prophecy Decoded",
+      "rewardDescription": "You unlocked the prophetic timeline that shapes our very present moment.",
+      "badge": "Time Watcher"
+    },
+    "Sanctuary": {
+      "rewardTitle": "Veil Lifted",
+      "rewardDescription": "You journeyed through the heavenly sanctuary and found its meaning for today.",
+      "badge": "Veil Walker"
+    },
+    "Revival": {
+      "rewardTitle": "Mirror Held Up",
+      "rewardDescription": "You examined the tests that separate genuine revival from mere emotion.",
+      "badge": "Mirror Seeker"
+    },
+    "Origin-of-Evil": {
+      "rewardTitle": "Origin Understood",
+      "rewardDescription": "You traced the very root of evil — and the answer hidden in Christ.",
+      "badge": "Truth Unveiler"
+    },
+    "Spiritualism": {
+      "rewardTitle": "Deception Spotted",
+      "rewardDescription": "You armed yourself against one of the last great deceptions of earth.",
+      "badge": "Discerning Mind"
+    },
+    "Liberty": {
+      "rewardTitle": "Liberty Guarded",
+      "rewardDescription": "You understood why conscience can never bow to earthly power.",
+      "badge": "Freedom Defender"
+    },
+    "Final-Conflict": {
+      "rewardTitle": "Victory Secured",
+      "rewardDescription": "You faced the final conflict — and saw how the story ends in triumph.",
+      "badge": "Overcomer"
+    },
+    "Appendix": {
+      "rewardTitle": "Full Picture",
+      "rewardDescription": "You completed every page — a journey few readers ever finish.",
+      "badge": "Master Scholar"
+    }
+  }
+}

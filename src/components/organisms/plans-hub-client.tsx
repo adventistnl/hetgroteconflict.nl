@@ -6,11 +6,11 @@ import Image from "next/image";
 import {
   BookOpen, CheckCircle2, Bookmark, Compass, ListChecks, Clock, PlayCircle
 } from "lucide-react";
-import { Plan, plansDatabase } from "@/database/plans";
+import { Plan } from "@/database/plans";
 import { useAuth } from "@/hooks/use-auth";
 import { usePlanEnrollment } from "@/hooks/use-plan-enrollment";
 import { AuthModal } from "@/components/atoms/auth-modal";
-import { PLAN_GROUPS } from "@/components/molecules/plans/plan-groups";
+import { getLocalizedPlanGroups } from "@/utils/get-localized-plan-groups";
 import { languages } from "@/config/languages";
 import { Footer } from "@/components/molecules/footer";
 import { track } from "@vercel/analytics";
@@ -242,7 +242,7 @@ export function PlansHubClient({ plans, locale }: Props) {
         {/* Discover: grouped by PLAN_GROUPS */}
         {activeTab === "discover" && (
           <div className="flex flex-col gap-10">
-            {PLAN_GROUPS.map((group) => {
+            {getLocalizedPlanGroups(locale).map((group) => {
               const groupPlans = group.planIds
                 .map((id) => plans.find((p) => p.plan === id))
                 .filter((p): p is Plan => p !== undefined);

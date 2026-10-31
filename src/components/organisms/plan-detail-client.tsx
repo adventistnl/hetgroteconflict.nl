@@ -3,17 +3,15 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, type SetStateAction } from "react";
 import {
   BookOpen, Clock, CheckCircle2, PlayCircle, ArrowLeft, ArrowRight,
   Lock, ChevronDown, ChevronUp, Bookmark, X,
 } from "lucide-react";
 import { plansDatabase, PlanDay } from "@/database/plans";
-import { usePlanProgress } from "@/hooks/use-plan-progress";
-import { useAuth } from "@/hooks/use-auth";
-import { usePlanEnrollment } from "@/hooks/use-plan-enrollment";
+import { getLocalizedPlan } from "@/utils/get-localized-plans";
 import { useReadAloud } from "@/hooks/use-read-aloud";
-import { useXp, xpForPlan } from "@/hooks/use-xp";
+import { useProgress } from "@/contexts/progress-context";
 import { useTranslations } from "next-intl";
 import { AuthModal } from "@/components/atoms/auth-modal";
 import { ReadAloudPlayer } from "@/components/atoms/read-aloud-player";
@@ -21,6 +19,8 @@ import { HighlightedText } from "@/components/molecules/highlighted-text";
 import { languages } from "@/config/languages";
 import { getVideoEmbedUrl } from "@/utils/get-video-embed-url";
 import { track } from "@vercel/analytics";
+import { SelectLanguage } from "@/components/molecules/select-language";
+import { LanguageObj, languagesList } from "@/utils/languages-list";
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -40,19 +40,159 @@ function formatMinutes(min: number) {
 
 interface BookChapter { chapter_number: number | null; title: string; content: string; }
 interface BookData { chapters: BookChapter[]; }
-const _bookCache: Record<string, BookData> = {};
-async function getBookData(locale = "en"): Promise<BookData> {
-  if (_bookCache[locale]) return _bookCache[locale];
-  // Try locale-specific file first, fall back to English
-  try {
-    const res = await fetch(`/book/${locale}.the-great-controversy-chapters.json`);
-    if (res.ok) { _bookCache[locale] = await res.json() as BookData; return _bookCache[locale]; }
-  } catch { /* fall through */ }
-  if (!_bookCache["en"]) {
-    const res = await fetch("/book/en.the-great-controversy-chapters.json");
-    _bookCache["en"] = await res.json() as BookData;
+
+// public/book/*.json filenames don't follow a uniform `${locale}.the-great-controversy-chapters.json`
+// pattern (legacy exports use different suffixes/codes per language), so map explicitly.
+const LOCALE_TO_BOOK_FILE: Record<string, string> = {
+  ar: "ar.the-great-controversy.json",
+  cz: "cs.the-great-controversy.json",
+  de: "de.the-great-controversy.json",
+  en: "en.the-great-controversy-chapters.json",
+  es: "es.the-great-controversy.json",
+  fr: "fr.the-great-controversy_.json",
+  nl: "nl.the-great-controversy.json",
+  pt: "pt-brasil.the-great-controversy.json",
+  ru: "ru.the-great-controversy.json",
+  tw: "twi.the-great-controversy.json",
+  zh: "zh.the-great-controversy.json",
+};
+
+// In-memory cache for the current session + a persisted Cache Storage copy
+// (`BOOK_CACHE_NAME`) so a plan already opened once while online keeps
+// working offline. No service worker required — we read/write the Cache
+// Storage API directly from the page.
+const BOOK_CACHE_NAME = "gc-book-cache-v1";
+const _bookMemCache: Record<string, BookData> = {};
+const _bookInflight: Record<string, Promise<BookData> | undefined> = {};
+
+async function fetchAndPersist(url: string): Promise<BookData> {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Book fetch failed: ${url} (${res.status})`);
+  if (typeof caches !== "undefined") {
+    try {
+      const cache = await caches.open(BOOK_CACHE_NAME);
+      await cache.put(url, res.clone());
+    } catch { /* Cache Storage unavailable (e.g. private browsing) — best-effort only */ }
   }
-  return _bookCache["en"];
+  return (await res.json()) as BookData;
+}
+
+async function readPersisted(url: string): Promise<BookData | null> {
+  if (typeof caches === "undefined") return null;
+  try {
+    const cache = await caches.open(BOOK_CACHE_NAME);
+    const cached = await cache.match(url);
+    return cached ? ((await cached.json()) as BookData) : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Loads book content for a locale: network first (for freshness), falling
+ * back to the persisted offline copy, then to English (network, then its
+ * own offline copy). Throws only if nothing is available anywhere.
+ */
+async function getBookData(locale = "en"): Promise<BookData> {
+  if (_bookMemCache[locale]) return _bookMemCache[locale];
+  if (_bookInflight[locale]) return _bookInflight[locale];
+
+  const fileName = LOCALE_TO_BOOK_FILE[locale] ?? LOCALE_TO_BOOK_FILE.en;
+  const url = `/book/${fileName}`;
+  const enUrl = `/book/${LOCALE_TO_BOOK_FILE.en}`;
+
+  const promise = (async () => {
+    try {
+      return await fetchAndPersist(url);
+    } catch {
+      const cached = await readPersisted(url);
+      if (cached) return cached;
+
+      if (locale !== "en") {
+        try {
+          return await fetchAndPersist(enUrl);
+        } catch {
+          const cachedEn = await readPersisted(enUrl);
+          if (cachedEn) return cachedEn;
+        }
+      }
+      throw new Error("Book content unavailable — offline and not yet downloaded.");
+    }
+  })().then((data) => { _bookMemCache[locale] = data; return data; });
+
+  _bookInflight[locale] = promise;
+  try {
+    return await promise;
+  } finally {
+    delete _bookInflight[locale];
+  }
+}
+
+/** Fire-and-forget preload so content (and its offline copy) is ready before the reader opens. */
+function prefetchBookData(locale: string) {
+  void getBookData(locale).catch(() => { /* surfaced later if the reader is actually opened */ });
+}
+
+// ── Chapter resolution ──────────────────────────────────────────────────────
+// Translated editions don't always mirror the 42-chapter EN structure the
+// plans are numbered against: front/back matter gets renamed, reordered, or
+// dropped, and es.the-great-controversy.json inserts an extra chapter
+// ("El despertar de España", ch. 13) not present in the EN edition, shifting
+// every following chapter number by +1. Verified against EN by content-length
+// correlation (r=0.999 for this mapping vs r=0.293 unshifted); every other
+// locale's numbered chapters correlate 1:1 with EN with no remap needed.
+const NUMBERED_CHAPTER_REMAP: Partial<Record<string, (n: number) => number>> = {
+  es: (n) => (n >= 13 ? n + 1 : n),
+};
+
+function resolveChapterNumber(locale: string, chapterNumber: number): number {
+  return NUMBERED_CHAPTER_REMAP[locale]?.(chapterNumber) ?? chapterNumber;
+}
+
+/** Which front/back-matter slot a null-chapter_number day maps to. Only the
+ *  "Introduction" plan (Preface, Introduction) and "Appendix" plan use this. */
+interface NullChapterRole { group: "front" | "back"; position: "first" | "last" }
+
+function getNullChapterRole(planId: string, day: number): NullChapterRole | null {
+  if (planId === "Introduction") return { group: "front", position: day === 1 ? "first" : "last" };
+  if (planId === "Appendix") return { group: "back", position: "last" };
+  return null;
+}
+
+/**
+ * Front/back matter is matched by position, not title — translated editions
+ * rename, merge, reorder, or drop it entirely (e.g. several locales have no
+ * separate Appendix chapter). Returns undefined if that side has no
+ * front/back matter at all, so the caller can fall back to English.
+ */
+function findNullChapterByPosition(data: BookData, role: NullChapterRole): BookChapter | undefined {
+  const firstNumberedIdx = data.chapters.findIndex((c) => c.chapter_number !== null);
+  let lastNumberedIdx = -1;
+  for (let i = data.chapters.length - 1; i >= 0; i--) {
+    if (data.chapters[i].chapter_number !== null) { lastNumberedIdx = i; break; }
+  }
+
+  const group = (
+    role.group === "front"
+      ? data.chapters.slice(0, firstNumberedIdx === -1 ? data.chapters.length : firstNumberedIdx)
+      : data.chapters.slice(lastNumberedIdx + 1)
+  ).filter((c) => c.chapter_number === null);
+
+  if (group.length === 0) return undefined;
+  return role.position === "first" ? group[0] : group[group.length - 1];
+}
+
+function findChapter(
+  data: BookData,
+  locale: string,
+  chapterNumber: number | null,
+  nullChapterRole: NullChapterRole | null
+): BookChapter | undefined {
+  if (chapterNumber !== null) {
+    const mapped = resolveChapterNumber(locale, chapterNumber);
+    return data.chapters.find((c) => c.chapter_number === mapped);
+  }
+  return nullChapterRole ? findNullChapterByPosition(data, nullChapterRole) : undefined;
 }
 
 function parseContent(raw: string): string[] {
@@ -89,8 +229,8 @@ function buildPages(paragraphs: string[]): string[][] {
   return pages.length ? pages : [[]];
 }
 
-function readerProgressKey(chapterNumber: number | null, chapterTitle: string) {
-  return `gc_rp_${chapterNumber ?? chapterTitle.replace(/\W+/g, "_").slice(0, 25)}`;
+function readerProgressKey(bookLocale: string, chapterNumber: number | null, chapterTitle: string) {
+  return `gc_rp_${bookLocale}_${chapterNumber ?? chapterTitle.replace(/\W+/g, "_").slice(0, 25)}`;
 }
 
 function loadReaderPage(key: string): number {
@@ -105,62 +245,172 @@ function saveReaderPage(key: string, page: number) {
   try { localStorage.setItem(key, JSON.stringify({ page, ts: Date.now() })); } catch { /* noop */ }
 }
 
+// ── Reading-language preference (independent of the site UI locale) ──────────
+
+const BOOK_LOCALE_KEY = "gc_book_locale";
+
+function loadPreferredBookLocale(): string | null {
+  if (typeof window === "undefined") return null;
+  try { return localStorage.getItem(BOOK_LOCALE_KEY); } catch { return null; }
+}
+
+function savePreferredBookLocale(bookLocale: string) {
+  try { localStorage.setItem(BOOK_LOCALE_KEY, bookLocale); } catch { /* noop */ }
+}
+
+// ── Cross-language position mapping ───────────────────────────────────────────
+// Pages are paginated by character count, and translations have very
+// different lengths, so "page 5" in English and "page 5" in Portuguese are
+// not the same content. Instead we track *where in the chapter* (as a 0–1
+// fraction of its total characters) the reader currently is, and re-derive
+// the matching page once the new language's content has loaded.
+
+function pageCharLength(page: string[]): number {
+  return page.reduce((sum, p) => sum + p.length, 0);
+}
+
+function totalParagraphChars(paragraphs: string[]): number {
+  return paragraphs.reduce((sum, p) => sum + p.length, 0);
+}
+
+function charOffsetBeforePage(pages: string[][], pageIndex: number): number {
+  let sum = 0;
+  for (let i = 0; i < pageIndex; i++) sum += pageCharLength(pages[i]);
+  return sum;
+}
+
+function pageForFraction(pages: string[][], fraction: number): number {
+  const total = pages.reduce((sum, p) => sum + pageCharLength(p), 0);
+  if (total === 0 || pages.length === 0) return 0;
+  const target = fraction * total;
+  let cumulative = 0;
+  for (let i = 0; i < pages.length; i++) {
+    cumulative += pageCharLength(pages[i]);
+    if (cumulative >= target) return i;
+  }
+  return pages.length - 1;
+}
+
 // ── Immersive Reader ──────────────────────────────────────────────────────────
 
+const BOOK_LANGUAGE_OPTIONS = languages.filter((l) => l.routeLocale in LOCALE_TO_BOOK_FILE);
+
+// The reader's language switcher reuses the same <SelectLanguage> widget as
+// the download picker (BookLanguageContainer) instead of a bespoke dropdown,
+// so "pick a language" looks and behaves the same everywhere on the site.
+// SelectLanguage speaks in languagesList's { label, value: englishName }
+// shape rather than route-locale codes, so these bridge the two.
+function routeLocaleToLanguageObj(routeLocale: string): LanguageObj {
+  const name = BOOK_LANGUAGE_OPTIONS.find((l) => l.routeLocale === routeLocale)?.name ?? "English";
+  return languagesList.find((l) => l.value === name) ?? { label: "English", value: "English" };
+}
+
+function languageObjToRouteLocale(lang: LanguageObj): string {
+  return BOOK_LANGUAGE_OPTIONS.find((l) => l.name === lang.value)?.routeLocale ?? "en";
+}
+
 function ImmersiveReader({
-  chapterNumber, chapterTitle, locale, onClose, onComplete,
+  chapterNumber, chapterTitle, nullChapterRole, locale, onClose, onComplete,
 }: {
   chapterNumber: number | null;
   chapterTitle: string;
+  nullChapterRole: NullChapterRole | null;
+  /** Site UI locale — used as the default reading language until the reader overrides it. */
   locale: string;
   onClose: () => void;
   onComplete: () => void;
 }) {
   const t = useTranslations("reading-plan");
+  // Reading language is independent of the site UI locale so readers can
+  // switch the book's language without changing the whole app.
+  const [bookLocale, setBookLocale] = useState(() => loadPreferredBookLocale() ?? locale);
   const [paragraphs, setParagraphs] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
+  const [englishFallback, setEnglishFallback] = useState(false);
+  const [reloadToken, setReloadToken] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [resumedFrom, setResumedFrom] = useState<number | null>(null);
   const readAloud = useReadAloud();
   const contentRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
+  // Set right before switching languages: the 0–1 fraction of the chapter
+  // the reader was at, so the next load can jump to the equivalent spot.
+  const fractionOverrideRef = useRef<number | null>(null);
 
-  const progressKey = readerProgressKey(chapterNumber, chapterTitle);
+  const progressKey = readerProgressKey(bookLocale, chapterNumber, chapterTitle);
   const pages = useMemo(() => buildPages(paragraphs), [paragraphs]);
   const safePage = Math.min(currentPage, Math.max(0, pages.length - 1));
   const isLastPage = safePage === pages.length - 1 && pages.length > 0;
-  const currentPageParas = pages[safePage] ?? [];
+  const currentPageParas = useMemo(() => pages[safePage] ?? [], [pages, safePage]);
   const currentPageText = useMemo(() => currentPageParas.join("\n\n"), [currentPageParas]);
-  const paraOffsets = currentPageParas.map((_, i) =>
-    currentPageParas.slice(0, i).reduce((sum, p) => sum + p.length + 2, 0)
+  const paraOffsets = useMemo(
+    () => currentPageParas.map((_, i) =>
+      currentPageParas.slice(0, i).reduce((sum, p) => sum + p.length + 2, 0)
+    ),
+    [currentPageParas]
   );
 
   // Load chapter + restore saved page
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    getBookData(locale).then((data) => {
-      if (cancelled) return;
-      const ch = chapterNumber !== null
-        ? data.chapters.find((c) => c.chapter_number === chapterNumber)
-        : data.chapters.find((c) => c.title === chapterTitle);
-      if (ch) {
-        setParagraphs(parseContent(ch.content));
-        const saved = loadReaderPage(progressKey);
-        if (saved > 0) {
-          setCurrentPage(saved);
-          setResumedFrom(saved);
+    setLoadError(false);
+    setEnglishFallback(false);
+
+    (async () => {
+      try {
+        const data = await getBookData(bookLocale);
+        let ch = findChapter(data, bookLocale, chapterNumber, nullChapterRole);
+        let usedEnglish = false;
+
+        // Structural gap in this locale's book (e.g. no Appendix chapter,
+        // or fewer front-matter sections than the plan expects) — fall back
+        // to the English edition rather than showing an error.
+        if (!ch && bookLocale !== "en") {
+          const enData = await getBookData("en");
+          ch = findChapter(enData, "en", chapterNumber, nullChapterRole);
+          usedEnglish = true;
         }
+
+        if (cancelled) return;
+        if (ch) {
+          const newParagraphs = parseContent(ch.content);
+          setParagraphs(newParagraphs);
+          setEnglishFallback(usedEnglish);
+
+          const fraction = fractionOverrideRef.current;
+          fractionOverrideRef.current = null;
+          if (fraction !== null) {
+            // Explicit language switch — resume at the equivalent position
+            // in the new language rather than any page saved for it before.
+            const target = pageForFraction(buildPages(newParagraphs), fraction);
+            setCurrentPage(target);
+            saveReaderPage(progressKey, target);
+            setResumedFrom(target > 0 ? target : null);
+          } else {
+            const saved = loadReaderPage(progressKey);
+            setCurrentPage(saved);
+            setResumedFrom(saved > 0 ? saved : null);
+          }
+        } else {
+          setLoadError(true);
+        }
+        setLoading(false);
+      } catch {
+        if (cancelled) return;
+        setLoadError(true);
+        setLoading(false);
       }
-      setLoading(false);
-    });
+    })();
+
     return () => { cancelled = true; };
-  }, [chapterNumber, chapterTitle, progressKey]);
+  }, [chapterNumber, chapterTitle, nullChapterRole, bookLocale, progressKey, reloadToken]);
 
   // Save progress on page change
   useEffect(() => {
-    if (!loading && pages.length > 0) saveReaderPage(progressKey, safePage);
-  }, [safePage, loading, pages.length, progressKey]);
+    if (!loading && !loadError && pages.length > 0) saveReaderPage(progressKey, safePage);
+  }, [safePage, loading, loadError, pages.length, progressKey]);
 
   // Scroll content to top on page change
   useEffect(() => {
@@ -208,19 +458,43 @@ function ImmersiveReader({
     onClose();
   }
 
+  function switchBookLocale(newLocale: string) {
+    if (newLocale === bookLocale) return;
+    const fraction = totalParagraphChars(paragraphs) > 0
+      ? Math.min(1, charOffsetBeforePage(pages, safePage) / totalParagraphChars(paragraphs))
+      : 0;
+    fractionOverrideRef.current = fraction;
+    readAloud.stop();
+    savePreferredBookLocale(newLocale);
+    setBookLocale(newLocale);
+  }
+
+  const selectedLanguageObj = routeLocaleToLanguageObj(bookLocale);
+
+  function handleSelectLanguage(update: SetStateAction<LanguageObj>) {
+    const resolved = typeof update === "function" ? update(selectedLanguageObj) : update;
+    switchBookLocale(languageObjToRouteLocale(resolved));
+  }
+
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-[#F6F2EB]">
 
       {/* Header */}
-      <div className="flex shrink-0 items-center justify-between border-b border-black/10 bg-[#F6F2EB] px-5 py-3">
+      <div className="flex shrink-0 flex-wrap items-center justify-between gap-y-2 border-b border-black/10 bg-[#F6F2EB] px-5 py-3">
         <div className="min-w-0">
           <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-black/30">{t("book-label")}</p>
           <p className="mt-0.5 max-w-[220px] truncate text-xs font-semibold text-black/55 sm:max-w-sm">{chapterTitle}</p>
         </div>
-        <div className="flex items-center gap-4">
-          {!loading && pages.length > 0 && (
-            <span className="text-[10px] tabular-nums text-black/35">{safePage + 1}&nbsp;/&nbsp;{pages.length}</span>
+        <div className="flex items-center gap-2">
+          {!loading && !loadError && pages.length > 0 && (
+            <span className="mr-2 text-[10px] tabular-nums text-black/35">{safePage + 1}&nbsp;/&nbsp;{pages.length}</span>
           )}
+
+          {/* Reading-language switcher — same <SelectLanguage> widget used
+              for the book-download language picker, so choosing a language
+              looks and works the same everywhere on the site. */}
+          <SelectLanguage selectedLanguage={selectedLanguageObj} setSelectedLanguage={handleSelectLanguage} />
+
           <button
             onClick={() => { readAloud.stop(); onClose(); }}
             aria-label="Close reader"
@@ -246,10 +520,17 @@ function ImmersiveReader({
         </div>
       )}
 
+      {/* English-fallback notice */}
+      {!loading && !loadError && englishFallback && (
+        <div className="shrink-0 border-b border-black/[0.08] bg-black/[0.03] px-5 py-2">
+          <p className="text-[11px] text-black/45">{t("chapter-english-fallback")}</p>
+        </div>
+      )}
+
       {/* TTS player */}
-      {!loading && pages.length > 0 && (
+      {!loading && !loadError && pages.length > 0 && (
         <div className="shrink-0 border-b border-black/[0.08] bg-[#F6F2EB] px-5 py-2.5">
-          <ReadAloudPlayer text={currentPageText} lang="en" readAloud={readAloud} />
+          <ReadAloudPlayer text={currentPageText} lang={bookLocale} readAloud={readAloud} />
         </div>
       )}
 
@@ -266,6 +547,16 @@ function ImmersiveReader({
         {loading ? (
           <div className="flex h-full items-center justify-center">
             <div className="h-6 w-6 animate-spin rounded-full border-2 border-black/10 border-t-[#4fa6c2]" />
+          </div>
+        ) : loadError ? (
+          <div className="flex h-full flex-col items-center justify-center gap-4 px-6 text-center">
+            <p className="max-w-xs text-sm text-black/50">{t("chapter-unavailable-offline")}</p>
+            <button
+              onClick={() => setReloadToken((n) => n + 1)}
+              className="rounded-xl border border-black/15 px-4 py-2 text-xs font-semibold text-black/70 transition hover:border-[#4fa6c2]/50 hover:text-[#4fa6c2]"
+            >
+              {t("retry")}
+            </button>
           </div>
         ) : (
           <div className="mx-auto max-w-[62ch] px-6 py-10 sm:py-14">
@@ -289,7 +580,7 @@ function ImmersiveReader({
       </div>
 
       {/* Bottom nav */}
-      {!loading && pages.length > 0 && (
+      {!loading && !loadError && pages.length > 0 && (
         <div className="shrink-0 border-t border-black/10 bg-[#F6F2EB] px-5 pb-6 pt-4">
           {/* Progress bar */}
           <div className="mb-4 h-0.5 overflow-hidden rounded-full bg-black/10">
@@ -548,7 +839,7 @@ function DayCard({
                   className="flex w-full items-center gap-4 rounded-xl border border-primary/15 bg-primary/5 p-4 text-left transition hover:border-[#4fa6c2]/50"
                   onClick={() => {
                     setVideoUrl(step.videoUrl!);
-                    setVideoTitle(step.label ?? day.title);
+                    setVideoTitle(t("watch-chapter-preview"));
                     track("readingPlan_watchVideo", { planId, day: day.day });
                   }}
                 >
@@ -559,7 +850,7 @@ function DayCard({
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold text-primary">{step.label}</p>
+                    <p className="text-xs font-semibold text-primary">{t("watch-chapter-preview")}</p>
                     <p className="mt-1 text-[11px] text-primary/50">{step.duration_minutes} min · {t("watch-cta")}</p>
                   </div>
                   <PlayCircle className="h-5 w-5 shrink-0 text-[#4fa6c2]" />
@@ -584,7 +875,7 @@ function DayCard({
                       <BookOpen className="h-5 w-5 text-[#4fa6c2]" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold text-primary">{step.label}</p>
+                      <p className="text-xs font-semibold text-primary">{t("read-the-chapter")}</p>
                       <p className="mt-1 text-[11px] text-primary/50">
                         <Clock className="mr-0.5 inline h-2.5 w-2.5" />
                         {step.duration_minutes} min · {step.pages} pages
@@ -600,6 +891,7 @@ function DayCard({
                     <ImmersiveReader
                       chapterNumber={day.chapter_number}
                       chapterTitle={day.title}
+                      nullChapterRole={getNullChapterRole(planId, day.day)}
                       locale={locale}
                       onClose={() => setReaderOpen(false)}
                       onComplete={handleMarkComplete}
@@ -640,49 +932,71 @@ function DayCard({
 // ── PlanDetailClient ──────────────────────────────────────────────────────────
 
 export default function PlanDetailClient({ planId, locale }: { planId: string; locale: string }) {
-  const plan = plansDatabase.find((p) => p.plan === planId);
+  const plan = getLocalizedPlan(locale, planId);
   if (!plan) notFound();
 
-  const { user } = useAuth();
-  const { getEnrollment, startPlan: dbStartPlan, markDayComplete: dbMarkDay, savePlan } = usePlanEnrollment(user?.id ?? null);
-  const dbEnrollment = getEnrollment(planId);
+  const {
+    isLoggedIn,
+    getPlanEntry,
+    getEnrollment,
+    startPlan,
+    markDayComplete,
+    savePlan,
+    awardPlanXp,
+  } = useProgress();
 
-  const { addSkill } = useXp();
-  const { progress, getPlanEntry, startPlan: lsStartPlan, markDayComplete: lsMarkDay } = usePlanProgress();
-  const [lsEntry, setLsEntry] = useState<ReturnType<typeof getPlanEntry>>(null);
-  useEffect(() => { setLsEntry(getPlanEntry(planId)); }, [getPlanEntry, planId, progress]);
+  const dbEnrollment = getEnrollment(planId);
+  const lsEntry = getPlanEntry(planId);
 
   const [showAuth, setShowAuth] = useState(false);
+  const [authVariant, setAuthVariant] = useState<"default" | "save-progress">("default");
   const [focusDay, setFocusDay] = useState<number | null>(null);
 
-  const completedDays: number[] = user ? (dbEnrollment?.completed_days ?? []) : (lsEntry?.completedDays ?? []);
-  const isStarted   = user ? !!dbEnrollment           : !!lsEntry;
-  const isCompleted = user ? !!dbEnrollment?.completed_at : !!lsEntry?.completedAt;
+  // Preload this locale's book content (and persist it for offline reading)
+  // as soon as the plan page opens, so the reader has no wait on first click.
+  // Also preload the reader's last-picked language, if different, so a
+  // returning reader who switched languages doesn't wait on that either.
+  useEffect(() => {
+    prefetchBookData(locale);
+    const preferred = loadPreferredBookLocale();
+    if (preferred && preferred !== locale) prefetchBookData(preferred);
+  }, [locale]);
+
+  const completedDays: number[] = isLoggedIn
+    ? (dbEnrollment?.completed_days ?? [])
+    : (lsEntry?.completedDays ?? []);
+  const isStarted   = isLoggedIn ? !!dbEnrollment          : !!lsEntry;
+  const isCompleted = isLoggedIn ? !!dbEnrollment?.completed_at : !!lsEntry?.completedAt;
   const isSaved     = dbEnrollment?.is_saved ?? false;
 
   const totalDays   = plan.daily_breakdown_standard.length;
   const progressPct = totalDays > 0 ? Math.round((completedDays.length / totalDays) * 100) : 0;
   const upNextDay   = completedDays.length < totalDays ? completedDays.length + 1 : null;
-  const nextPlan    = plan.next_plan ? plansDatabase.find((p) => p.plan === plan.next_plan) : null;
+  const nextPlan    = plan.next_plan ? getLocalizedPlan(locale, plan.next_plan) : null;
   const t = useTranslations("reading-plan");
 
   function handleStart() {
-    if (user) dbStartPlan(planId); else lsStartPlan(planId);
+    startPlan(planId);
     setFocusDay(1);
     track("readingPlan_start", { planId });
   }
 
   function handleMarkComplete(day: number) {
-    // Check before mutating state whether this completion finishes the whole plan
     const willFinishPlan =
       !completedDays.includes(day) &&
       completedDays.length + 1 >= totalDays &&
       !isCompleted;
 
-    if (user) dbMarkDay(planId, day, totalDays); else lsMarkDay(planId, day, totalDays);
+    markDayComplete(planId, day, totalDays);
 
-    if (willFinishPlan && plan) {
-      addSkill(planId, plan.badge, plan.title, xpForPlan(plan.total_pages));
+    if (willFinishPlan) {
+      awardPlanXp(planId);
+      // Anonymous users finishing a plan lose their progress if they never sign in —
+      // prompt them right away, while the win is fresh, explaining why it matters.
+      if (!isLoggedIn) {
+        setAuthVariant("save-progress");
+        setShowAuth(true);
+      }
     }
 
     setFocusDay(null);
@@ -718,7 +1032,7 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
           </div>
         </div>
 
-        {user && (
+        {isLoggedIn && (
           <button onClick={() => savePlan(planId, !isSaved)}
                   className="absolute right-4 top-4 rounded-full bg-black/40 p-2.5 text-white backdrop-blur-sm transition hover:bg-black/60 sm:right-6 sm:top-6">
             <Bookmark className="h-4 w-4" fill={isSaved ? "currentColor" : "none"} />
@@ -751,8 +1065,8 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
                     className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#4fa6c2] py-3.5 text-sm font-bold text-white transition hover:bg-[#3d91ad] active:scale-[0.98]">
               <PlayCircle className="h-4 w-4" /> {t("start")}
             </button>
-            {!user && (
-              <button onClick={() => setShowAuth(true)}
+            {!isLoggedIn && (
+              <button onClick={() => { setAuthVariant("default"); setShowAuth(true); }}
                       className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-primary/15 py-3.5 text-sm font-semibold text-primary/65 transition hover:border-primary/40 hover:text-primary">
                 {t("sign-in-save")}
               </button>
@@ -797,17 +1111,21 @@ export default function PlanDetailClient({ planId, locale }: { planId: string; l
                 {t("next-plan", { title: nextPlan.title })} <ArrowRight className="h-4 w-4" />
               </Link>
             ) : (
-              <p className="text-sm font-semibold text-primary">{plan.next_plan_cta}</p>
+              <p className="text-sm font-semibold text-primary">
+                {t("all-plans-completed", { book: t("book-label") })}
+              </p>
             )}
           </div>
         )}
 
-        {!isCompleted && plan.next_plan && (
-          <p className="mt-8 text-center text-xs text-primary/40">{plan.next_plan_cta}</p>
+        {!isCompleted && nextPlan && (
+          <p className="mt-8 text-center text-xs text-primary/40">
+            {t("next-plan-teaser", { title: nextPlan.title })}
+          </p>
         )}
       </div>
 
-      {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
+      {showAuth && <AuthModal onClose={() => setShowAuth(false)} variant={authVariant} />}
     </div>
   );
 }

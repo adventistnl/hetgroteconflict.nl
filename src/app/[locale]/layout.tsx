@@ -2,6 +2,7 @@ import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { MainContainer } from "@/components/molecules/main-container";
+import { ProgressProvider } from "@/contexts/progress-context";
 import dynamic from "next/dynamic";
 
 const ExitIntentModal = dynamic(
@@ -24,9 +25,10 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <MainContainer>{children}</MainContainer>
-      <ExitIntentModal />
-      {/* {DevTestModalButton && <DevTestModalButton />} */}
+      <ProgressProvider>
+        <MainContainer>{children}</MainContainer>
+        <ExitIntentModal />
+      </ProgressProvider>
     </NextIntlClientProvider>
   );
 }
